@@ -2,15 +2,13 @@ package com.example.groupassignment;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 
-public class select_location extends AppCompatActivity {
+public class my_favourite extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.select_location);
+        setContentView(R.layout.my_favourite);
     }
-
 }

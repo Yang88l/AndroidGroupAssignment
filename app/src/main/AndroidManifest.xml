@@ -13,6 +13,66 @@
         android:theme="@style/Theme.GroupAssignment"
         tools:targetApi="31">
         <activity
+            android:name=".transport"
+            android:exported="false" />
+        <activity
+            android:name=".train_type"
+            android:exported="false" />
+        <activity
+            android:name=".state_flight"
+            android:exported="false" />
+        <activity
+            android:name=".state_bus"
+            android:exported="false" />
+        <activity
+            android:name=".seat_bus"
+            android:exported="false" />
+        <activity
+            android:name=".plan_history"
+            android:exported="false" />
+        <activity
+            android:name=".pax_flight"
+            android:exported="false" />
+        <activity
+            android:name=".notification"
+            android:exported="false" />
+        <activity
+            android:name=".my_favourite"
+            android:exported="false" />
+        <activity
+            android:name=".mrt_putrajaya"
+            android:exported="false" />
+        <activity
+            android:name=".mrt_kajang"
+            android:exported="false" />
+        <activity
+            android:name=".message"
+            android:exported="false" />
+        <activity
+            android:name=".lrt_sripetaling"
+            android:exported="false" />
+        <activity
+            android:name=".lrt_ampang"
+            android:exported="false" />
+        <activity
+            android:name=".info_flight"
+            android:exported="false" />
+        <activity
+            android:name=".date_flight"
+            android:exported="false" />
+        <activity
+            android:name=".calendar_flight"
+            android:exported="false" />
+        <activity
+            android:name=".book_history"
+            android:exported="false" />
+        <activity
+            android:name=".airline"
+            android:exported="false" />
+        <activity
+            android:name=".terms_conditions"
+            android:exported="false" />
+        <activity
             android:name=".accommodation"
             android:exported="false" />
         <activity
