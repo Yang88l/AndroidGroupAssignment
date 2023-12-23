@@ -53,6 +53,7 @@
             android:layout_width="205dp"
             android:layout_height="match_parent"
             android:background="#000000"
+            android:onClick="book_history"
             android:text="Book History" />
     </LinearLayout>
 
@@ -322,6 +323,7 @@
         android:layout_width="77dp"
         android:layout_height="75dp"
         android:layout_marginEnd="16dp"
+        android:onClick="favourite"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton9"
         app:layout_constraintEnd_toStartOf="@+id/imageButton9"
         app:layout_constraintStart_toEndOf="@+id/imageButton11"
@@ -333,6 +335,7 @@
         android:layout_width="77dp"
         android:layout_height="75dp"
         android:layout_marginEnd="27dp"
+        android:onClick="history"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton10"
         app:layout_constraintEnd_toStartOf="@+id/imageButton10"
         app:layout_constraintStart_toEndOf="@+id/imageButton8"
@@ -345,6 +348,7 @@
         android:layout_height="75dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="11dp"
+        android:onClick="profile"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageButton9"
@@ -356,6 +360,7 @@
         android:layout_height="75dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="28dp"
+        android:onClick="main"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton8"
         app:layout_constraintEnd_toStartOf="@+id/imageButton8"
         app:layout_constraintStart_toStartOf="parent"
