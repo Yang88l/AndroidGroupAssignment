@@ -38,20 +38,19 @@
         android:id="@+id/from2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginStart="116dp"
         android:labelFor="@id/inputfrom2"
         android:text="Go Return"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputfrom" />
+        tools:layout_editor_absoluteY="349dp" />
 
     <TextView
         android:id="@+id/from3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="492dp"
+        android:layout_marginStart="164dp"
+        android:layout_marginTop="396dp"
         android:labelFor="@id/inputfrom3"
         android:text="Go"
         android:textSize="24sp"
@@ -62,8 +61,8 @@
         android:id="@+id/from4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="556dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="436dp"
         android:labelFor="@id/inputfrom4"
         android:text="\t\t\t\t\tEach \nArrival Time"
         android:textSize="24sp"
@@ -141,21 +140,22 @@
         app:srcCompat="@drawable/circle" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/heart"
         android:layout_width="50dp"
         android:layout_height="65dp"
         android:layout_marginStart="48dp"
         android:layout_marginBottom="4dp"
+        android:onClick="heart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
+        app:layout_constraintStart_toEndOf="@+id/home"
         app:layout_constraintTop_toBottomOf="@+id/line2"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/heart" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/home"
         android:layout_width="82dp"
         android:layout_height="71dp"
         android:layout_marginStart="4dp"
@@ -164,25 +164,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/line2"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/home" />
+        android:onClick="home"
+        app:srcCompat="@drawable/home"/>
 
     <ImageView
         android:id="@+id/imageView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:layout_marginEnd="100dp"
+        android:onClick="history"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.328"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/heart"
         app:layout_constraintTop_toTopOf="@+id/line2"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.888"
         app:srcCompat="@drawable/history" />
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/user"
         android:layout_width="61dp"
         android:layout_height="56dp"
+        android:onClick="profile"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -211,42 +215,44 @@
         android:id="@+id/inputfrom2"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginTop="58dp"
-        android:layout_marginEnd="104dp"
         android:layout_marginBottom="144dp"
         android:ems="10"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/line2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputfrom"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintHorizontal_bias="0.862"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.737" />
 
     <EditText
         android:id="@+id/inputfrom3"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginTop="38dp"
-        android:layout_marginEnd="104dp"
-        android:layout_marginBottom="56dp"
+        android:layout_marginStart="1dp"
+        android:editable="false"
         android:ems="10"
         android:inputType="text"
-        android:editable="false"
-        app:layout_constraintBottom_toTopOf="@+id/line2"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputfrom2"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintHorizontal_bias="0.861"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.654" />
 
     <EditText
         android:id="@+id/inputfrom4"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginTop="124dp"
-        android:layout_marginEnd="104dp"
+        android:editable="false"
         android:ems="10"
         android:inputType="text"
-        android:editable="false"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputfrom2" />
+        app:layout_constraintHorizontal_bias="0.862"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.508" />
 
     <EditText
         android:id="@+id/inputto"
