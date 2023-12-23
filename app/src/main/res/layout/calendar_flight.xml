@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".calender"
+    tools:context=".calendar_flight"
     android:background="@drawable/gradient_bg">
 
     <Button
