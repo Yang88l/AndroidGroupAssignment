@@ -72,8 +72,7 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:src="@tools:sample/avatars"
-            tools:srcCompat="@tools:sample/backgrounds/scenic[1]" />
+            app:srcCompat="@drawable/sunway_lagoon" />
 
         <TextView
             android:id="@+id/text_1"
@@ -104,8 +103,7 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:src="@tools:sample/avatars"
-            tools:srcCompat="@tools:sample/backgrounds/scenic[11]" />
+            app:srcCompat="@drawable/sunway_lagoon" />
 
         <TextView
             android:id="@+id/text_2"
@@ -136,8 +134,7 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:src="@tools:sample/avatars"
-            tools:srcCompat="@tools:sample/backgrounds/scenic[7]" />
+            app:srcCompat="@drawable/sunway_lagoon" />
 
         <TextView
             android:id="@+id/text_3"
@@ -168,8 +165,7 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_weight="1"
-            android:src="@tools:sample/avatars"
-            tools:srcCompat="@tools:sample/backgrounds/scenic[5]" />
+            app:srcCompat="@drawable/sunway_lagoon" />
 
         <TextView
             android:id="@+id/text_4"
