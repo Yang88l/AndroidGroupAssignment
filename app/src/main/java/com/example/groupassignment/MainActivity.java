@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent intent = new Intent(this,airline.class);
+        Intent intent = new Intent(this,info_flight.class);
         startActivity(intent);
 
     }
