@@ -14,17 +14,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-    }
-
-    public void plan(View view) {
-
-        Intent intent = new Intent(this,select_location.class);
+        Intent intent = new Intent(this,main.class);
         startActivity(intent);
+
     }
 
-    public void Book(View view) {
-
-        Intent intent = new Intent(this,select_location.class);
-        startActivity(intent);
-    }
 }
