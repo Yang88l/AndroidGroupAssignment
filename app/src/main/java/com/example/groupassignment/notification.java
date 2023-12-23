@@ -33,4 +33,9 @@ public class notification extends AppCompatActivity {
         Intent intent = new Intent(this,main.class);
         startActivity(intent);
     }
+
+    public void message(View view) {
+        Intent intent = new Intent(this,message.class);
+        startActivity(intent);
+    }
 }
