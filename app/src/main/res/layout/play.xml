@@ -40,7 +40,7 @@
         android:contentDescription="NULL "
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_notifications_black_24dp" />
+        app:srcCompat="@drawable/notif" />
 
     <ImageButton
         android:id="@+id/imageButton8"
@@ -133,7 +133,7 @@
         app:layout_constraintEnd_toStartOf="@+id/button26"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/sunwayLagoon" />
+        app:srcCompat="@drawable/sunway_lagoon" />
 
     <Button
         android:id="@+id/button26"
