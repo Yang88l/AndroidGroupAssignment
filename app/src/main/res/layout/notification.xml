@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".notification">
 
     <TextView
         android:id="@+id/textView12"
@@ -213,7 +213,7 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:background="#FFFFFF"
-            tools:srcCompat="@drawable/home_1" />
+            tools:srcCompat="@drawable/home" />
 
         <ImageButton
             android:id="@+id/imageButton2"

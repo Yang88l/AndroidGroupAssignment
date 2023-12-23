@@ -39,7 +39,7 @@
         android:contentDescription="NULL "
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_notifications_black_24dp" />
+        app:srcCompat="@drawable/notif" />
 
     <ImageButton
         android:id="@+id/imageButton8"
@@ -129,7 +129,7 @@
         android:layout_height="77dp"
         android:layout_marginStart="44dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/mrWu"
+        app:srcCompat="@drawable/mr_wu"
         tools:layout_editor_absoluteY="191dp" />
 
     <Button
