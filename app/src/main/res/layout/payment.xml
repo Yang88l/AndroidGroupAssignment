@@ -38,7 +38,7 @@
         android:contentDescription="NULL "
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_notifications_black_24dp" />
+        app:srcCompat="@drawable/notif" />
 
     <ImageButton
         android:id="@+id/imageButton8"
@@ -110,11 +110,13 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
         android:background="@drawable/search_view_bg"
         android:text="Price : RM 12"
-        android:textSize="30"
-        tools:layout_editor_absoluteX="117dp"
-        tools:layout_editor_absoluteY="235dp" />
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/editTextText"
