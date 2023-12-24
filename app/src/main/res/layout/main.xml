@@ -53,10 +53,10 @@
         android:id="@+id/button"
         android:layout_width="170dp"
         android:layout_height="80dp"
+        android:layout_marginTop="60dp"
         android:onClick="plan"
         android:text="Plan Your Trip"
         android:textSize="22dp"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchView" />
@@ -65,24 +65,24 @@
         android:id="@+id/button2"
         android:layout_width="170dp"
         android:layout_height="80dp"
+        android:layout_marginTop="60dp"
         android:onClick="Book"
         android:text="Book Now!"
         android:textSize="23dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView" />
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <ImageButton
         android:id="@+id/imageButton8"
         android:layout_width="77dp"
         android:layout_height="75dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="11dp"
         android:onClick="favourite"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton9"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageButton9"
         app:layout_constraintStart_toEndOf="@+id/imageButton11"
-        app:layout_constraintTop_toTopOf="@+id/imageButton9"
         app:srcCompat="@drawable/heart" />
 
     <ImageButton
@@ -90,11 +90,11 @@
         android:layout_width="77dp"
         android:layout_height="75dp"
         android:layout_marginEnd="27dp"
+        android:layout_marginBottom="11dp"
         android:onClick="history"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton10"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageButton10"
         app:layout_constraintStart_toEndOf="@+id/imageButton8"
-        app:layout_constraintTop_toTopOf="@+id/imageButton10"
         app:srcCompat="@drawable/order" />
 
     <ImageButton
@@ -115,11 +115,11 @@
         android:layout_height="75dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="28dp"
+        android:layout_marginBottom="11dp"
         android:onClick="main"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton8"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageButton8"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageButton8"
         app:srcCompat="@drawable/home" />
 
     <View
@@ -129,6 +129,7 @@
         android:layout_marginTop="628dp"
         android:background="?android:attr/listDivider"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
