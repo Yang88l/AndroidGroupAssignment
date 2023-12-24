@@ -20,13 +20,18 @@ public class airline extends AppCompatActivity {
         setContentView(R.layout.airline);
 
         button = findViewById(R.id.airasia);
+        button.setTag("AirAsia");
         button2 = findViewById(R.id.firefly);
+        button2.setTag("FireFly");
         button3 = findViewById(R.id.berjaya_air);
+        button3.setTag("Berjaya Air");
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String airlineName = (String) button.getTag();
                 Intent intent = new Intent(airline.this, date_flight.class);
+                intent.putExtra("AirAsia",airlineName.toString());
                 startActivity(intent);
             }
         });
@@ -34,7 +39,9 @@ public class airline extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String airlineName2 = (String) button2.getTag();
                 Intent intent = new Intent(airline.this, date_flight.class);
+                intent.putExtra("FireFly",airlineName2.toString());
                 startActivity(intent);
             }
         });
@@ -42,7 +49,9 @@ public class airline extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String airlineName3 = (String) button3.getTag();
                 Intent intent = new Intent(airline.this, date_flight.class);
+                intent.putExtra("Berjaya_Air",airlineName3.toString());
                 startActivity(intent);
             }
         });
