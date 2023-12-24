@@ -12,6 +12,7 @@
         android:layout_height="100dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="32dp"
+        android:onClick="profile1"
         app:layout_constraintStart_toEndOf="@+id/imageButton16"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
         app:srcCompat="@drawable/profile1_100" />
@@ -22,6 +23,7 @@
         android:layout_height="100dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="84dp"
+        android:onClick="profile2"
         app:layout_constraintStart_toEndOf="@+id/imageButton"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/profile2_100" />
@@ -32,6 +34,7 @@
         android:layout_height="100dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="28dp"
+        android:onClick="profile3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton16"
         app:srcCompat="@drawable/profile3_100" />
@@ -42,6 +45,7 @@
         android:layout_height="100dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="28dp"
+        android:onClick="profile4"
         app:layout_constraintStart_toEndOf="@+id/imageButton4"
         app:layout_constraintTop_toBottomOf="@+id/imageButton"
         app:srcCompat="@drawable/profile4_100" />
@@ -52,6 +56,7 @@
         android:layout_height="100dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="28dp"
+        android:onClick="profile5"
         app:layout_constraintStart_toEndOf="@+id/imageButton5"
         app:layout_constraintTop_toBottomOf="@+id/imageButton3"
         app:srcCompat="@drawable/profile5_100" />
@@ -62,6 +67,7 @@
         android:layout_height="100dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="84dp"
+        android:onClick="camera"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/camera_50" />
