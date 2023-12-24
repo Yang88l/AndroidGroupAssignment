@@ -14,12 +14,9 @@ public class settings extends AppCompatActivity {
         setContentView(R.layout.settings);
     }
 
-    public void back_settings(View view) {
-        Intent intent = new Intent (this, profile.class);
-        startActivity(intent);
-    }
-
     public void reset_password(View view) {
+        Intent intent = new Intent (this, reset_password.class);
+        startActivity(intent);
     }
 
     public void delete_account(View view) {
