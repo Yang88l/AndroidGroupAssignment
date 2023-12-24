@@ -44,7 +44,7 @@ public class select_location extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(select_location.this, accommodation.class);
+                Intent intent = new Intent(select_location.this, choose.class);
                 startActivity(intent);
             }
         });
@@ -52,7 +52,7 @@ public class select_location extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(select_location.this, accommodation.class);
+                Intent intent = new Intent(select_location.this, choose.class);
                 startActivity(intent);
             }
         });
@@ -60,7 +60,7 @@ public class select_location extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(select_location.this, accommodation.class);
+                Intent intent = new Intent(select_location.this, choose.class);
                 startActivity(intent);
             }
         });
@@ -68,7 +68,7 @@ public class select_location extends AppCompatActivity {
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(select_location.this, accommodation.class);
+                Intent intent = new Intent(select_location.this, choose.class);
                 startActivity(intent);
             }
         });
@@ -76,7 +76,7 @@ public class select_location extends AppCompatActivity {
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(select_location.this, accommodation.class);
+                Intent intent = new Intent(select_location.this, choose.class);
                 startActivity(intent);
             }
         });
@@ -84,7 +84,7 @@ public class select_location extends AppCompatActivity {
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(select_location.this, accommodation.class);
+                Intent intent = new Intent(select_location.this, choose.class);
                 startActivity(intent);
             }
         });
@@ -92,7 +92,7 @@ public class select_location extends AppCompatActivity {
         button7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(select_location.this, accommodation.class);
+                Intent intent = new Intent(select_location.this, choose.class);
                 startActivity(intent);
             }
         });
@@ -100,7 +100,7 @@ public class select_location extends AppCompatActivity {
         button8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(select_location.this, accommodation.class);
+                Intent intent = new Intent(select_location.this, choose.class);
                 startActivity(intent);
             }
         });
@@ -108,7 +108,7 @@ public class select_location extends AppCompatActivity {
         button9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(select_location.this, accommodation.class);
+                Intent intent = new Intent(select_location.this, choose.class);
                 startActivity(intent);
             }
         });
@@ -116,7 +116,7 @@ public class select_location extends AppCompatActivity {
         button10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(select_location.this, accommodation.class);
+                Intent intent = new Intent(select_location.this, choose.class);
                 startActivity(intent);
             }
         });
@@ -124,7 +124,7 @@ public class select_location extends AppCompatActivity {
         button11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(select_location.this, accommodation.class);
+                Intent intent = new Intent(select_location.this, choose.class);
                 startActivity(intent);
             }
         });
@@ -132,7 +132,7 @@ public class select_location extends AppCompatActivity {
         button12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(select_location.this, accommodation.class);
+                Intent intent = new Intent(select_location.this, choose.class);
                 startActivity(intent);
             }
         });
@@ -140,14 +140,14 @@ public class select_location extends AppCompatActivity {
         button13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(select_location.this, accommodation.class);
+                Intent intent = new Intent(select_location.this, choose.class);
                 startActivity(intent);
             }
         });
     }
 
     public void toChoose(View view) {
-        Intent intent = new Intent(this,choose.class);//前往下一页
+        Intent intent = new Intent(this,main.class);//前往下一页
         startActivity(intent);//开启下一页
     }
 }
