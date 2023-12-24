@@ -16,8 +16,8 @@ public class payment_method extends AppCompatActivity {
 
     //TOUCH N GO
     public void touchngo(View view) {
-    Intent intent = new Intent(payment_method.this, payment.class);
-    startActivity(intent);
+        Intent intent = new Intent(payment_method.this, payment.class);
+        startActivity(intent);
     }
 
     //BOTTOM BUTTONS DIRECTORY
@@ -35,6 +35,11 @@ public class payment_method extends AppCompatActivity {
     }
     public void profile(View view) {
         Intent intent = new Intent(payment_method.this, profile.class);
+        startActivity(intent);
+    }
+
+    public void notification(View view) {
+        Intent intent = new Intent(this,notification.class);
         startActivity(intent);
     }
 }
