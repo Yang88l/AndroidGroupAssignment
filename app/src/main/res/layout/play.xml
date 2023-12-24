@@ -120,34 +120,34 @@
         android:id="@+id/imageButton"
         android:layout_width="77dp"
         android:layout_height="77dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginBottom="464dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button26"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="192dp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/sunway_lagoon" />
 
     <Button
         android:id="@+id/button26"
         android:layout_width="167dp"
         android:layout_height="83dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="192dp"
         android:onClick="detail"
         android:text="Sunway Lagoon"
         android:textSize="25dp"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="184dp" />
+        app:layout_constraintStart_toEndOf="@+id/imageButton"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/imageButton7"
         android:layout_width="45dp"
         android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="68dp"
         android:onClick="add"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button26"
-        app:srcCompat="@drawable/love"
-        tools:layout_editor_absoluteY="202dp" />
-
+        app:layout_constraintTop_toBottomOf="@+id/button23"
+        app:srcCompat="@drawable/love" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
