@@ -35,15 +35,6 @@ public class set_picture extends AppCompatActivity {
         button4 = findViewById(R.id.imageButton4);
         button5 = findViewById(R.id.imageButton5);
         button6 = findViewById(R.id.imageButton6);
-        button7 = findViewById(R.id.imageButton7);
-        button8 = findViewById(R.id.imageButton8);
-        button9 = findViewById(R.id.imageButton9);
-        button10 = findViewById(R.id.imageButton10);
-        button11 = findViewById(R.id.imageButton11);
-        button12 = findViewById(R.id.imageButton12);
-        button13 = findViewById(R.id.imageButton13);
-        button14 = findViewById(R.id.imageButton14);
-        button15 = findViewById(R.id.imageButton15);
 
 
         button.setOnClickListener(new View.OnClickListener() {
