@@ -24,4 +24,9 @@ public class edit_profile extends AppCompatActivity {
         Intent intent = new Intent (this, profile.class);
         startActivity(intent);
     }
+
+    public void edit_image(View view) {
+        Intent intent = new Intent (this, set_picture.class);
+        startActivity(intent);
+    }
 }

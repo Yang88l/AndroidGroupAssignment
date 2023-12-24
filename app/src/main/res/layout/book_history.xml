@@ -46,6 +46,7 @@
             android:layout_height="match_parent"
 
             android:background="#000000"
+            android:onClick="planhistory"
             android:text="Plan History" />
 
         <Button

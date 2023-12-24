@@ -20,5 +20,7 @@ public class settings extends AppCompatActivity {
     }
 
     public void delete_account(View view) {
+        Intent intent = new Intent (this, main.class);
+        startActivity(intent);
     }
 }

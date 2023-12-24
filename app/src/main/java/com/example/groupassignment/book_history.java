@@ -33,4 +33,9 @@ public class book_history extends AppCompatActivity {
         Intent intent = new Intent (this, profile.class);
         startActivity(intent);
     }
+
+    public void planhistory(View view) {
+        Intent intent = new Intent (this, plan_history.class);
+        startActivity(intent);
+    }
 }
