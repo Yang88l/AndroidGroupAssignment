@@ -44,6 +44,7 @@
             android:layout_width="206dp"
             android:layout_height="match_parent"
             android:background="#000000"
+            android:onClick="notification"
             android:text="Notification" />
 
         <Button
@@ -184,6 +185,7 @@
         android:layout_width="77dp"
         android:layout_height="75dp"
         android:layout_marginEnd="16dp"
+        android:onClick="heart"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton9"
         app:layout_constraintEnd_toStartOf="@+id/imageButton9"
         app:layout_constraintStart_toEndOf="@+id/imageButton11"
@@ -195,6 +197,7 @@
         android:layout_width="77dp"
         android:layout_height="75dp"
         android:layout_marginEnd="27dp"
+        android:onClick="history"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton10"
         app:layout_constraintEnd_toStartOf="@+id/imageButton10"
         app:layout_constraintStart_toEndOf="@+id/imageButton8"
@@ -207,6 +210,7 @@
         android:layout_height="75dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="11dp"
+        android:onClick="profile"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageButton9"
@@ -218,6 +222,7 @@
         android:layout_height="75dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="28dp"
+        android:onClick="home"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton8"
         app:layout_constraintEnd_toStartOf="@+id/imageButton8"
         app:layout_constraintStart_toStartOf="parent"
@@ -233,6 +238,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
