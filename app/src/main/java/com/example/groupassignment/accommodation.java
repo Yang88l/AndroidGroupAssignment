@@ -5,15 +5,34 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 public class accommodation extends AppCompatActivity {
+    private dbmanager_choose_accomodation dbmanager_choose_accomodation;
+    private Button bovelord_hotel;
+    public int input, user_id;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.accommodation);
-    }
 
+        dbmanager_choose_accomodation = new dbmanager_choose_accomodation(this);
+
+        bovelord_hotel = findViewById(R.id.bovelord_hotel);
+
+
+    }
+    public void choose(View view) {
+        //get user id
+        //get hotel_id
+        input = 1;
+
+        dbmanager_choose_accomodation.open();
+        dbmanager_choose_accomodation.insert(input, user_id);
+        dbmanager_choose_accomodation.close();
+    }
     public void notification(View view) {
         Intent intent = new Intent (this, notification.class);
         startActivity(intent);

@@ -140,11 +140,12 @@
         app:srcCompat="@drawable/bevelord_hotel" />
 
     <Button
-        android:id="@+id/button26"
+        android:id="@+id/bovelord_hotel"
         android:layout_width="167dp"
         android:layout_height="83dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="196dp"
+        android:onClick="choose"
         android:text="Bevelord Hotel"
         android:textSize="25dp"
         app:layout_constraintStart_toEndOf="@+id/imageButton"
@@ -156,7 +157,7 @@
         android:layout_height="45dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="216dp"
-        app:layout_constraintStart_toEndOf="@+id/button26"
+        app:layout_constraintStart_toEndOf="@+id/bovelord_hotel"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/love" />
 

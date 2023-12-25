@@ -1,8 +1,12 @@
 package com.example.groupassignment;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import java.util.ArrayList;
+
 public class dbhelper_book_history extends SQLiteOpenHelper {
 
     // Table Name
@@ -48,5 +52,23 @@ public class dbhelper_book_history extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
+    }
+
+    public ArrayList<book_history> fetch_book_history() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT location, cost, date, status FROM " + TABLE_NAME , null);
+        ArrayList<book_history> arraylist = new ArrayList<>();
+
+        while (cursor.moveToNext()) {
+            book_history book_history = new book_history();
+            book_history.book_history_id = cursor.getInt(0);
+            book_history.location = cursor.getString(1);
+            book_history.cost = cursor.getString(2);
+            book_history.date = cursor.getString(3);
+            book_history.status = cursor.getString(4);
+
+            arraylist.add(book_history);
+        }
+            return arraylist;
     }
 }
