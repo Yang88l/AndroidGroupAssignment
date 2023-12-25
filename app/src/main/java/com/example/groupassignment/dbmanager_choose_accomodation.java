@@ -27,22 +27,20 @@ public class dbmanager_choose_accomodation {
     public void close() {
         dbHelper.close();
     }
-/*
-    public void insert(String income, String category1, String percentage1, String category2,
-                       String percentage2,String category3, String percentage3) {
+
+    public void insert(int hotel_id, int user_id) {
         ContentValues contentValue = new ContentValues();
-        contentValue.put(dbhelper_choose_accomodation.INCOME, income);
-        contentValue.put(dbhelper_choose_accomodation.CATEGORY1, category1);
-        contentValue.put(dbhelper_choose_accomodation.PERCENTAGE1, percentage1);
-        contentValue.put(dbhelper_choose_accomodation.CATEGORY2, category2);
-        contentValue.put(dbhelper_choose_accomodation.PERCENTAGE2, percentage2);
-        contentValue.put(dbhelper_choose_accomodation.CATEGORY3, category3);
-        contentValue.put(dbhelper_choose_accomodation.PERCENTAGE3, percentage3);
+        contentValue.put(dbhelper_choose_accomodation.HOTEL_ID, hotel_id);
+        contentValue.put(dbhelper_choose_accomodation.USER_ID, user_id);
         database.insert(dbhelper_choose_accomodation.TABLE_NAME, null, contentValue);
     }
 
+    // SELECT hotel_id, user_id FROM table
     public Cursor fetch() {
-        String[] columns = new String[] { dbhelper_choose_accomodation._ID, dbhelper_choose_accomodation.INCOME, dbhelper_choose_accomodation.CATEGORY1, dbhelper_choose_accomodation.PERCENTAGE1, dbhelper_choose_accomodation.CATEGORY2, dbhelper_choose_accomodation.PERCENTAGE2, dbhelper_choose_accomodation.CATEGORY3, dbhelper_choose_accomodation.PERCENTAGE3 };
+        String[] columns = new String[] {
+                dbhelper_choose_accomodation.HOTEL_ID,
+                dbhelper_choose_accomodation.USER_ID
+        };
         Cursor cursor = database.query(dbhelper_choose_accomodation.TABLE_NAME, columns, null, null, null, null, null);
         if (cursor != null) {
             cursor.moveToFirst();
@@ -50,32 +48,17 @@ public class dbmanager_choose_accomodation {
         return cursor;
     }
 
-
-    public Cursor fetch(string _id) { //pass parameter
-        String[] columns = new String[] { dbhelper_choose_accomodation._ID, dbhelper_choose_accomodation.SUBJECT, dbhelper_choose_accomodation.DESC };
-        Cursor cursor = database.query(dbhelper_choose_accomodation.TABLE_NAME, columns, null, null, null, null, null);
-        if (cursor != null) {
-            cursor.moveToFirst();
-        }
-        return cursor;
-    }
-
-
-    public int update(long _id, String income, String category1, String percentage1, String category2, String percentage2, String category3, String percentage3) {
+    //UPDATE hotel_id, user_id FROM table WHERE choose_accomodation_id = _id
+    public int update(int _id, int hotel_id, int user_id) {
         ContentValues contentValues = new ContentValues();
-        if (income!=null) contentValues.put(dbhelper_choose_accomodation.INCOME, income);
-        if (category1!=null) contentValues.put(dbhelper_choose_accomodation.CATEGORY1, category1);
-        if (percentage1!=null) contentValues.put(dbhelper_choose_accomodation.PERCENTAGE1, percentage1);
-        if (category2!=null) contentValues.put(dbhelper_choose_accomodation.CATEGORY2, category2);
-        if (percentage2!=null) contentValues.put(dbhelper_choose_accomodation.PERCENTAGE2, percentage2);
-        if (category3!=null) contentValues.put(dbhelper_choose_accomodation.CATEGORY3, category3);
-        if (percentage3!=null) contentValues.put(dbhelper_choose_accomodation.PERCENTAGE3, percentage3);
-        int i = database.update(dbhelper_choose_accomodation.TABLE_NAME, contentValues, dbhelper_choose_accomodation._ID + " = " + _id, null);
+        contentValues.put(dbhelper_choose_accomodation.HOTEL_ID, hotel_id);
+        contentValues.put(dbhelper_choose_accomodation.USER_ID, user_id);
+        int i = database.update(dbhelper_choose_accomodation.TABLE_NAME, contentValues, dbhelper_choose_accomodation.CHOOSE_ACCOMODATION_ID + " = " + _id, null);
         return i;
     }
 
+    //DELETE * FROM table WHERE choose_accomodation_id = _id
     public void delete(long _id) {
-        database.delete(dbhelper_choose_accomodation.TABLE_NAME, dbhelper_choose_accomodation._ID + "=" + _id, null);
+        database.delete(dbhelper_choose_accomodation.TABLE_NAME, dbhelper_choose_accomodation.CHOOSE_ACCOMODATION_ID + "=" + _id, null);
     }
-*/
 }
