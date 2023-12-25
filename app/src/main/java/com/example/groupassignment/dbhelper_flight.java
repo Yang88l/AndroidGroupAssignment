@@ -31,7 +31,7 @@ public class dbhelper_flight extends SQLiteOpenHelper {
             + FLIGHT_NUMBER + " TEXT NOT NULL, "
             + DEPARTURE_TIME + " TEXT NOT NULL, "
             + STATE + " TEXT NOT NULL, "
-            + USER_ID + " INT NOT NULL, "
+            + USER_ID + " INTEGER NOT NULL, "
             + ")";
 
     public dbhelper_flight(Context context) {

@@ -11,8 +11,8 @@ public class dbhelper_terms_conditions extends SQLiteOpenHelper {
 
     // Table columns
     public static final String TERMS_CONDITIONS_ID = "terms_conditions_id";
-    public static final String PRICE = "price";
-    public static final String FOOD  = "food";
+    public static final String TITLE = "title";
+    public static final String DESCRIPTION  = "description";
 
     // Database Information
     static final String DB_NAME = "JOURNALDEV_TRAVEL_BOOKING.DB";
@@ -24,8 +24,8 @@ public class dbhelper_terms_conditions extends SQLiteOpenHelper {
     private static final String CREATE_TABLE = "create table "
             + TABLE_NAME + "("
             + TERMS_CONDITIONS_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-            + PRICE + " DOUBLE NOT NULL, "
-            + FOOD + " TEXT NOT NULL, "
+            + TITLE + " TEXT NOT NULL, "
+            + DESCRIPTION + " TEXT NOT NULL, "
             + ")";
 
     public dbhelper_terms_conditions(Context context) {

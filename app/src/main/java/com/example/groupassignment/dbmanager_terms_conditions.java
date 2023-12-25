@@ -49,7 +49,7 @@ public class dbmanager_terms_conditions {
         return cursor;
     }
 
-    public int update(long _id, double price, String food) {
+    public int update(long _id, String title, String description) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(dbhelper_terms_conditions.TITLE, title);
         contentValues.put(dbhelper_terms_conditions.DESCRIPTION, description);

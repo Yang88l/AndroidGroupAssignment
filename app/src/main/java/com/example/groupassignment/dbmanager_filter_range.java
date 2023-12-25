@@ -64,7 +64,7 @@ public class dbmanager_filter_range {
     }
 
     public void delete(long _id) {
-        database.delete(dbhelper_filter_range.TABLE_NAME, dbhelper_filter_range.FLIGHT_ID + "=" + _id, null);
+        database.delete(dbhelper_filter_range.TABLE_NAME, dbhelper_filter_range.FILTER_ID + "=" + _id, null);
     }
 
 }
