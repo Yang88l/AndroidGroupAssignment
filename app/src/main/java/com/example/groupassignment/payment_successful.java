@@ -9,10 +9,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class payment_successful extends AppCompatActivity {
-    private TextView output_price;
+    private TextView price_text;
+    ;
     private Intent intent;
-
-    private double price;
+    private String price;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,17 +20,15 @@ public class payment_successful extends AppCompatActivity {
         setContentView(R.layout.payment_successful);
 
         //ASSIGN ID
-        output_price = findViewById(R.id.output_price);
+        price_text = findViewById(R.id.price_text);
+
+        //GET VALUE
+        Intent intent = new Intent(getIntent());
+        price = intent.getStringExtra("price");
+
+        //SET TEXT
+        price_text.setText("RM" + price);
     }
-
-
-
-    //ASSIGN ID
-
-    //SET TEXT TO ITEM PRICE
-   // intent = getIntent();
-   // price = intent.getDoubleExtra("output_price",0);
-    //output_price.setText(price);
 
     //FINISH BUTTON
     public void finish(View view) {
@@ -53,6 +51,11 @@ public class payment_successful extends AppCompatActivity {
     }
     public void profile(View view) {
         Intent intent = new Intent(payment_successful.this, profile.class);
+        startActivity(intent);
+    }
+
+    public void notification(View view) {
+        Intent intent = new Intent(payment_successful.this, notification.class);
         startActivity(intent);
     }
 }
