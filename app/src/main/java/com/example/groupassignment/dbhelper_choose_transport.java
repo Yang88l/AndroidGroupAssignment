@@ -3,14 +3,14 @@ package com.example.groupassignment;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-public class dbhelper_choose_accomodation extends SQLiteOpenHelper {
+public class dbhelper_choose_transport extends SQLiteOpenHelper {
 
     // Table Name
-    public static final String TABLE_NAME = "choose_accomodation";
+    public static final String TABLE_NAME = "choose_transport";
 
     // Table columns
-    public static final String CHOOSE_ACCOMODATION_ID = "choose_accomodation_id";
-    public static final String HOTEL_ID = "hotel_id";
+    public static final String CHOOSE_TRANSPORT_ID = "choose_transport_id";
+    public static final String TRANSPORT_ID = "transport_id";
     public static final String USER_ID = "user_id";
 
     // Database Information
@@ -22,12 +22,12 @@ public class dbhelper_choose_accomodation extends SQLiteOpenHelper {
     // Creating table query
     private static final String CREATE_TABLE = "create table "
             + TABLE_NAME + "("
-            + CHOOSE_ACCOMODATION_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-            + HOTEL_ID + " INT NOT NULL, "
+            + CHOOSE_TRANSPORT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+            + TRANSPORT_ID + " INT NOT NULL, "
             + USER_ID + " INT NOT NULL, "
             + ")";
 
-    public dbhelper_choose_accomodation(Context context) {
+    public dbhelper_choose_transport(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
 
