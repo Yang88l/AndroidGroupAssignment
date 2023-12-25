@@ -23,8 +23,8 @@ public class dbhelper_choose_airline extends SQLiteOpenHelper {
     private static final String CREATE_TABLE = "create table "
             + TABLE_NAME + "("
             + CHOOSE_AIRLINE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-            + AIRLINE_ID + " INT NOT NULL, "
-            + USER_ID + " INT NOT NULL, "
+            + AIRLINE_ID + " INTEGER NOT NULL, "
+            + USER_ID + " INTEGER NOT NULL, "
             + ")";
 
     public dbhelper_choose_airline(Context context) {

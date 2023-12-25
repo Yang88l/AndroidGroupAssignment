@@ -28,7 +28,7 @@ public class dbmanager_accomodation_info {
         dbHelper.close();
     }
 
-    public void insert(int hotel_name, double price) {
+    public void insert(String hotel_name, double price) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(dbhelper_accomodation_info.HOTEL_NAME, hotel_name);
         contentValue.put(dbhelper_accomodation_info.PRICE, price);

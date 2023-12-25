@@ -23,8 +23,8 @@ public class dbhelper_choose_transport extends SQLiteOpenHelper {
     private static final String CREATE_TABLE = "create table "
             + TABLE_NAME + "("
             + CHOOSE_TRANSPORT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-            + TRANSPORT_ID + " INT NOT NULL, "
-            + USER_ID + " INT NOT NULL, "
+            + TRANSPORT_ID + " INTEGER NOT NULL, "
+            + USER_ID + " INTEGER NOT NULL, "
             + ")";
 
     public dbhelper_choose_transport(Context context) {
