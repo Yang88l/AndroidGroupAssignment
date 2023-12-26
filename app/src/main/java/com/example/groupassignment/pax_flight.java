@@ -12,6 +12,10 @@ import com.google.android.material.textfield.TextInputLayout;
 
 public class pax_flight extends AppCompatActivity {
     private TextInputLayout ticket_amount, adult_amount, kid_amount;
+    private com.example.groupassignment.dbmanager_pax dbmanager;
+    private int user_id,amount,adult,kid;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +24,13 @@ public class pax_flight extends AppCompatActivity {
         ticket_amount = findViewById(R.id.ticket_amount);
         adult_amount = findViewById(R.id.adult_amount);
         kid_amount = findViewById(R.id.kid_amount);
+
+        dbmanager = new dbmanager_pax(this);
+        dbmanager.open();
+        dbmanager.insert(user_id,amount, adult,kid);
+        dbmanager.close();
+
+
     }
 
 
