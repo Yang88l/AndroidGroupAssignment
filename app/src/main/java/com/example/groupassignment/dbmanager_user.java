@@ -40,8 +40,9 @@ public class dbmanager_user {
     }
 
     // SELECT * FROM table
-    public Cursor fetch() {
+    public Cursor fetchALL(String[] columnsToSelect, String name, String password) {
         String[] columns = new String[] {
+                dbhelper_user.USER_ID,
                 dbhelper_user.NAME,
                 dbhelper_user.EMAIL,
                 dbhelper_user.PHONE,
@@ -49,7 +50,36 @@ public class dbmanager_user {
                 dbhelper_user.PASSWORD,
                 dbhelper_user.PICTURE
         };
-        Cursor cursor = database.query(dbhelper_user.TABLE_NAME, columns, null, null, null, null, null);
+        // WHERE
+        String selection = dbhelper_user.NAME + " = ? AND" + dbhelper_user.PASSWORD + " = ?";
+        // Contains the values for name and password
+        String[] selectionArgs = { name, password };
+
+        // Retrieve the data
+        Cursor cursor = database.query(dbhelper_user.TABLE_NAME, columnsToSelect, selection, selectionArgs, null, null, null);
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
+        return cursor;
+    }
+
+    public Cursor fetch(String[] columnsToSelect, int user_id) {
+        String[] columns = new String[] {
+                dbhelper_user.USER_ID,
+                dbhelper_user.NAME,
+                dbhelper_user.EMAIL,
+                dbhelper_user.PHONE,
+                dbhelper_user.BIRTHDAY,
+                dbhelper_user.PASSWORD,
+                dbhelper_user.PICTURE
+        };
+        // WHERE
+        String selection = dbhelper_user.NAME + " = ?";
+        // Contains the values for user id
+        String[] selectionArgs = { String.valueOf(user_id) };
+
+        // Retrieve the data
+        Cursor cursor = database.query(dbhelper_user.TABLE_NAME, columnsToSelect, selection, selectionArgs, null, null, null);
         if (cursor != null) {
             cursor.moveToFirst();
         }
@@ -68,6 +98,7 @@ public class dbmanager_user {
         int i = database.update(dbhelper_user.TABLE_NAME, contentValues, dbhelper_user.USER_ID + " = " + _id, null);
         return i;
     }
+
 
     //DELETE * FROM table WHERE hotel_id = _id
     public void delete(long _id) {

@@ -12,7 +12,7 @@ public class airline extends AppCompatActivity {
     private Button button;
     private Button button2;
     private Button button3;
-    public int input, user_id;
+    public int airline_id, user_id =1;
 
 
 
@@ -66,28 +66,27 @@ public class airline extends AppCompatActivity {
     public void airasia(View view) {
         //get user id
         //get airline_id
-        input = 1;
+        airline_id = 1;
 
         dbmanager_choose_airline.open();
-        dbmanager_choose_airline.insert(input, user_id);
+        dbmanager_choose_airline.insert(airline_id, user_id);
         dbmanager_choose_airline.close();
     }
     public void firefly(View view) {
         //get user id
         //get airline_id
-        input = 2;
+        airline_id = 2;
 
         dbmanager_choose_airline.open();
-        dbmanager_choose_airline.insert(input, user_id);
+        dbmanager_choose_airline.insert(airline_id, user_id);
         dbmanager_choose_airline.close();
     }
     public void berjaya_air(View view) {
         //get user id
-        //get airline_id
-        input = 3;
+        airline_id = 3;
 
         dbmanager_choose_airline.open();
-        dbmanager_choose_airline.insert(input, user_id);
+        dbmanager_choose_airline.insert(airline_id, user_id);
         dbmanager_choose_airline.close();
     }
 }

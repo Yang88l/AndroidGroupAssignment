@@ -30,12 +30,13 @@ public class dbmanager_filter_range {
         dbHelper.close();
     }
 
-    public void insert(double price, double distance, int rating, String availability) {
+    public void insert(double price, double distance, int rating, String availability, int user_id) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(dbhelper_filter_range.PRICE, price);
         contentValue.put(dbhelper_filter_range.DISTANCE, distance);
         contentValue.put(dbhelper_filter_range.RATING, rating);
         contentValue.put(dbhelper_filter_range.AVAILABILITY, availability);
+        contentValue.put(dbhelper_flight.USER_ID, user_id);
         database.insert(dbhelper_filter_range.TABLE_NAME, null, contentValue);
     }
 

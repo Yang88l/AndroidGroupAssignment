@@ -145,7 +145,7 @@
         android:layout_height="83dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="196dp"
-        android:onClick="choose"
+        android:onClick="bovelord_hotel"
         android:text="Bevelord Hotel"
         android:textSize="25dp"
         app:layout_constraintStart_toEndOf="@+id/imageButton"

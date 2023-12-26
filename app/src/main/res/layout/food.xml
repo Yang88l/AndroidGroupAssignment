@@ -101,7 +101,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button26" />
+        app:layout_constraintTop_toBottomOf="@+id/mr_wu" />
 
     <Button
         android:id="@+id/button21"
@@ -126,12 +126,13 @@
         app:srcCompat="@drawable/mr_wu" />
 
     <Button
-        android:id="@+id/button26"
+        android:id="@+id/mr_wu"
         android:layout_width="167dp"
         android:layout_height="83dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="188dp"
         android:text="Mr Wu"
+        android:onClick="mr_wu"
         android:textSize="25dp"
         app:layout_constraintStart_toEndOf="@+id/imageButton"
         app:layout_constraintTop_toTopOf="parent" />
@@ -143,7 +144,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="208dp"
         android:onClick="like"
-        app:layout_constraintStart_toEndOf="@+id/button26"
+        app:layout_constraintStart_toEndOf="@+id/mr_wu"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/love" />
 

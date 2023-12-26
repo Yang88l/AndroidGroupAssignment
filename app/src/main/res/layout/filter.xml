@@ -55,7 +55,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <SeekBar
-                android:id="@+id/seekBar2"
+                android:id="@+id/filter_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
@@ -73,7 +73,7 @@
                 android:text="RM 10"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/seekBar2" />
+                app:layout_constraintTop_toBottomOf="@+id/filter_id" />
 
             <TextView
                 android:id="@+id/textView27"
@@ -83,7 +83,7 @@
                 android:text="RM 50"
                 android:textSize="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/seekBar2" />
+                app:layout_constraintTop_toBottomOf="@+id/filter_id" />
 
             <Button
                 android:id="@+id/button11"
@@ -136,7 +136,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <SeekBar
-                android:id="@+id/seekBar2"
+                android:id="@+id/filter_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
@@ -154,7 +154,7 @@
                 android:text="1"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/seekBar2" />
+                app:layout_constraintTop_toBottomOf="@+id/filter_id" />
 
             <TextView
                 android:id="@+id/textView27"
@@ -164,7 +164,7 @@
                 android:text="5"
                 android:textSize="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/seekBar2" />
+                app:layout_constraintTop_toBottomOf="@+id/filter_id" />
 
             <Button
                 android:id="@+id/button11"
@@ -217,7 +217,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <SeekBar
-                android:id="@+id/seekBar2"
+                android:id="@+id/filter_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
@@ -234,7 +234,7 @@
                 android:text="12 a.m."
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/seekBar2" />
+                app:layout_constraintTop_toBottomOf="@+id/filter_id" />
 
             <TextView
                 android:id="@+id/textView27"
@@ -244,7 +244,7 @@
                 android:text="12 p.m."
                 android:textSize="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/seekBar2" />
+                app:layout_constraintTop_toBottomOf="@+id/filter_id" />
 
             <Button
                 android:id="@+id/button11"
@@ -298,7 +298,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <SeekBar
-                android:id="@+id/seekBar2"
+                android:id="@+id/filter_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
@@ -316,7 +316,7 @@
                 android:text="1 km"
                 android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/seekBar2" />
+                app:layout_constraintTop_toBottomOf="@+id/filter_id" />
 
             <TextView
                 android:id="@+id/textView27"
@@ -326,7 +326,7 @@
                 android:text="10 km"
                 android:textSize="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/seekBar2" />
+                app:layout_constraintTop_toBottomOf="@+id/filter_id" />
 
             <Button
                 android:id="@+id/button11"
@@ -391,7 +391,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/button15"
+                android:id="@+id/save"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"

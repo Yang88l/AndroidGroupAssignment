@@ -40,7 +40,7 @@ public class dbmanager_book_history {
     }
 
     // SELECT * FROM table
-    public Cursor fetch() {
+    public Cursor fetch(String[] columnsToSelect, int user_id) {
         String[] columns = new String[] {
                 dbhelper_book_history.USER_ID,
                 dbhelper_book_history.LOCATION,
@@ -49,12 +49,21 @@ public class dbmanager_book_history {
                 dbhelper_book_history.STATUS,
                 dbhelper_book_history.BOOK_SUMMARY_ID
         };
-        Cursor cursor = database.query(dbhelper_book_history.TABLE_NAME, columns, null, null, null, null, null);
+        // WHERE
+        String selection = dbhelper_book_history.USER_ID + " = ?";
+        //contains the user ID value
+        String[] selectionArgs = { String.valueOf(user_id) };
+
+        // Retrieve the data
+        Cursor cursor = database.query(dbhelper_book_history.TABLE_NAME, columnsToSelect, selection, selectionArgs, null, null, null);
         if (cursor != null) {
             cursor.moveToFirst();
         }
         return cursor;
     }
+
+
+
 
     //UPDATE * FROM table WHERE book_history_id = _id
     public int update(int _id, int user_id, String location, double cost, String date, String status, int book_summary_id) {

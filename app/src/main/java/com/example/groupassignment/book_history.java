@@ -13,10 +13,10 @@ import java.util.ArrayList;
 public class book_history extends AppCompatActivity {
     private dbmanager_book_history dbmanager_book_history;
     private dbhelper_book_history dbhelper_book_history;
-    private TextView locations, costs, dates, statuses ;
-    public int book_history_id;
-    public String location, cost, date, status;
 
+    private TextView location_text, cost_text, date_text, status_text ;
+    private String location, cost, date, status ;
+    public int user_id=1; // Replace with the actual user ID
 
 
     @Override
@@ -25,18 +25,51 @@ public class book_history extends AppCompatActivity {
         setContentView(R.layout.book_history);
 
         dbmanager_book_history = new dbmanager_book_history(this);
-        dbhelper_book_history =  new dbhelper_book_history(this);
+        dbhelper_book_history = new dbhelper_book_history(this);
 
-        locations = findViewById(R.id.state_location);
-        costs = findViewById(R.id.cost);
-        dates = findViewById(R.id.date);
-        statuses = findViewById(R.id.status);
 
-        //Get DATA
-        ArrayList<book_history> data = dbhelper_book_history.fetch_book_history();
+        location_text = findViewById(R.id.state_location);
+        cost_text = findViewById(R.id.cost);
+        date_text = findViewById(R.id.date);
+        status_text = findViewById(R.id.status);
 
-        //Display DATA
-        //locations.setText();
+        //Specify Specific Data you want to get
+        dbmanager_book_history.open();
+
+        String[] columnsToSelect = new String[]{
+                dbhelper_book_history.LOCATION,
+                dbhelper_book_history.DATE,
+                dbhelper_book_history.COST,
+                dbhelper_book_history.STATUS
+        };
+
+        //Retrieve the data
+        Cursor cursor = dbmanager_book_history.fetch(columnsToSelect, user_id);
+
+        // Get column indices
+        int locationIndex = cursor.getColumnIndex(dbhelper_book_history.LOCATION);
+        int dateIndex = cursor.getColumnIndex(dbhelper_book_history.DATE);
+        int costIndex = cursor.getColumnIndex(dbhelper_book_history.COST);
+        int statusIndex = cursor.getColumnIndex(dbhelper_book_history.STATUS);
+
+        // Check if column indices are valid
+        if (locationIndex >= 0 && dateIndex >= 0 && costIndex >= 0 && statusIndex >= 0) {
+            // Extract values from the Cursor
+            location = cursor.getString(locationIndex);
+            date = cursor.getString(locationIndex);
+            cost = cursor.getString(locationIndex);
+            status = cursor.getString(locationIndex);;
+        }
+
+            //Display the data
+            location_text.setText(location);
+            cost_text.setText(cost);
+            date_text.setText(date);
+
+        cursor.close();
+        dbmanager_book_history.close();
+
+        // if else to check if date is smaller than current date > display expire
     }
 
     public void home(View view) {

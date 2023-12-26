@@ -20,69 +20,43 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/from"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="264dp"
-        android:labelFor="@id/inputfrom"
-        android:text="From"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/notif"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/from2"
+        android:id="@+id/text3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="116dp"
         android:layout_marginTop="6dp"
-        android:labelFor="@id/inputfrom2"
+        android:labelFor="@id/go"
         android:text="Go Return"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputfrom" />
+        app:layout_constraintTop_toBottomOf="@+id/from" />
 
     <TextView
-        android:id="@+id/from3"
+        android:id="@+id/text4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="164dp"
         android:layout_marginTop="396dp"
-        android:labelFor="@id/inputfrom3"
+        android:labelFor="@id/each_arrival_time"
         android:text="Go"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/from4"
+        android:id="@+id/text5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="96dp"
         android:layout_marginTop="436dp"
-        android:labelFor="@id/inputfrom4"
+        android:labelFor="@id/go_return"
         android:text="\t\t\t\t\tEach \nArrival Time"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/to"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="264dp"
-        android:labelFor="@id/inputto"
-        android:text="To"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/notif"
-        app:layout_constraintHorizontal_bias="0.866"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/notif"
@@ -196,29 +170,12 @@
         app:layout_constraintVertical_bias="0.831"
         app:srcCompat="@drawable/user" />
 
-    <EditText
-        android:id="@+id/inputfrom"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="29dp"
-        android:layout_marginEnd="232dp"
-        android:layout_marginBottom="252dp"
-        android:ems="10"
-        android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/line2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/from"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <EditText
-        android:id="@+id/inputfrom2"
+    <TextView
+        android:id="@+id/go"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginBottom="144dp"
         android:ems="10"
-        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.862"
@@ -226,14 +183,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.737" />
 
-    <EditText
-        android:id="@+id/inputfrom3"
+    <TextView
+        android:id="@+id/each_arrival_time"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginStart="1dp"
-        android:editable="false"
         android:ems="10"
-        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="@+id/imageView7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.861"
@@ -241,13 +196,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.654" />
 
-    <EditText
-        android:id="@+id/inputfrom4"
+    <TextView
+        android:id="@+id/go_return"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:editable="false"
         android:ems="10"
-        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.862"
@@ -255,30 +208,131 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.508" />
 
-    <EditText
-        android:id="@+id/inputto"
+    <Button
+        android:id="@+id/ampang"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:onClick="ampang"
+        android:text="Ampang"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.174"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.124" />
+
+
+    <Button
+        android:id="@+id/button_to"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:onClick="to"
+        android:text="To"
+        android:labelFor="@id/to"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.802"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.363" />
+
+    <Button
+        android:id="@+id/button_from"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:onClick="from"
+        android:text="From"
+        android:labelFor="@id/from"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.174"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.363" />
+
+    <Button
+        android:id="@+id/cahaya"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:onClick="cahaya"
+        android:text="Cahaya"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.124" />
+
+    <Button
+        android:id="@+id/cempaka"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:onClick="cempaka"
+        android:text="Cempaka"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.881"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.124" />
+
+    <Button
+        android:id="@+id/pandan_jaya"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:onClick="pandan_jaya"
+        android:text="Pandan Jaya"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.764"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.194" />
+
+    <Button
+        android:id="@+id/pandan_indah"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:onClick="pandan_indah"
+        android:text="Pandan Indah"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.194" />
+
+    <TextView
+        android:id="@+id/from"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginEnd="232dp"
+        android:layout_marginBottom="252dp"
+        android:ems="10"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/line2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_from"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/to"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginStart="46dp"
         android:layout_marginEnd="36dp"
         android:layout_marginBottom="252dp"
         android:ems="10"
-        android:inputType="text"
+        android:text=""
         app:layout_constraintBottom_toTopOf="@+id/line2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/inputfrom"
-        app:layout_constraintTop_toBottomOf="@+id/to"
+        app:layout_constraintStart_toEndOf="@+id/from"
+        app:layout_constraintTop_toBottomOf="@+id/button_to"
         app:layout_constraintVertical_bias="0.0" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="235dp"
-        android:layout_height="134dp"
-        android:layout_marginTop="88dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ampang" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
