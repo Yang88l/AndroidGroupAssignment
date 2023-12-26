@@ -3,15 +3,48 @@ package com.example.groupassignment;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class plan_history extends AppCompatActivity {
+
+    private com.example.groupassignment.dbmanager_plan_history dbmanager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.plan_history);
+
+        TextView state_location = findViewById(R.id.text_state1);
+        TextView plan_cost = findViewById(R.id.text_cost1);
+        TextView plan_date = findViewById(R.id.text_date1);
+        TextView plan_statu = findViewById(R.id.text_status1);
+
+        dbmanager = new com.example.groupassignment.dbmanager_plan_history(this);
+        dbmanager.open();
+        Cursor cursor = dbmanager.fetch();
+
+        String location ="";
+        double cost = 0;
+        String date = "";
+        String status = "";
+
+        cursor.moveToLast();
+        location = cursor.getString(2);
+        cost = Double.parseDouble(cursor.getString(3));
+        date = cursor.getString(4);
+        status = cursor.getString(5);
+        cursor.close();
+
+        state_location.setText(location);
+        plan_cost.setText(String.format("RM%.2f",cost));;
+        plan_date.setText(date);
+        plan_statu.setText(status);
+
+        dbmanager.close();
     }
 
     public void main(View view) {
