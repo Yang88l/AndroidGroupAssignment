@@ -20,14 +20,18 @@ public class pax_flight extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pax_flight);
-
+/*
         ticket_amount = findViewById(R.id.ticket_amount);
         adult_amount = findViewById(R.id.adult_amount);
         kid_amount = findViewById(R.id.kid_amount);
-
+*/
+        user_id=1;
+        amount=200;
+        adult=3;
+        kid=2;
         dbmanager = new dbmanager_pax(this);
         dbmanager.open();
-        dbmanager.insert(user_id,amount, adult,kid);
+        dbmanager.insert(user_id, amount, adult, kid);
         dbmanager.close();
 
 

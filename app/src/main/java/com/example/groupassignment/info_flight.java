@@ -40,7 +40,7 @@ public class info_flight extends AppCompatActivity {
         };
 
         //Retrieve the data
-        Cursor cursor = dbmanager_flight.fetch(columnsToSelect, user_id);
+        Cursor cursor = dbmanager_flight.fetch(user_id);
 
         // Get column indices
         int flight_numberIndex = cursor.getColumnIndex(dbhelper_flight.FLIGHT_NUMBER);

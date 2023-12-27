@@ -19,7 +19,7 @@ public class choose extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.choose);
-
+/*
         dbmanager_choose_accomodation = new dbmanager_choose_accomodation(this);
         dbhelper_choose_accomodation = new dbhelper_choose_accomodation(this);
 
@@ -55,7 +55,7 @@ public class choose extends AppCompatActivity {
             }
             cursor.close();
         }
-        database.close();
+        database.close();*/
     }
 
     public void play(View view) {

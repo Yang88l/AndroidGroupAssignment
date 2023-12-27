@@ -36,7 +36,7 @@ public class date_flight extends AppCompatActivity {
         };
 
         //Retrieve the data
-        Cursor cursor = dbmanager_flight.fetch(columnsToSelect, user_id);
+        Cursor cursor = dbmanager_flight.fetch(user_id);
 
         // Get column indices
         int dateIndex = cursor.getColumnIndex(dbhelper_flight.DATE);
