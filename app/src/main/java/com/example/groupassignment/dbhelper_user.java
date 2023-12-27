@@ -21,7 +21,7 @@ public class dbhelper_user extends SQLiteOpenHelper {
     static final String DB_NAME = "JOURNALDEV_TRAVEL_BOOKING.DB";
 
     // database version
-    static final int DB_VERSION = 1;
+    static final int DB_VERSION = 4;
 
     // Creating table query
     private static final String CREATE_TABLE = "create table "
@@ -29,7 +29,7 @@ public class dbhelper_user extends SQLiteOpenHelper {
             + USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + NAME + " TEXT NOT NULL, "
             + EMAIL + " TEXT NOT NULL, "
-            + PHONE + " TEXT PRIMARY KEY AUTOINCREMENT, "
+            + PHONE + " TEXT NOT NULL, "
             + BIRTHDAY + " DATE NOT NULL, "
             + PASSWORD + " TEXT NOT NULL, "
             + PICTURE + " TEXT NOT NULL "
