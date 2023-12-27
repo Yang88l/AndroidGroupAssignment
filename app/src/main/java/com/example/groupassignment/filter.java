@@ -4,12 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 public class filter extends AppCompatActivity {
     private dbmanager_filter_range dbmanager_filter_range;
     private String availability;
     private double price,distance;
-    private int rating, filter_id=1, user_id=1;
+    private int rating, user_id=1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,8 +52,13 @@ public class filter extends AppCompatActivity {
     }
 
     public void save(View view) {
+        price=20.50;
+        distance=10.102;
+        rating=5;
+        availability="yes";
         dbmanager_filter_range.open();
         dbmanager_filter_range.insert(price, distance,rating,availability,user_id);
         dbmanager_filter_range.close();
+        Toast.makeText(this, "data insereted", Toast.LENGTH_SHORT).show();
     }
 }

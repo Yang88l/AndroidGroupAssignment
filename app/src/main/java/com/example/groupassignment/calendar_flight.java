@@ -31,12 +31,13 @@ public class calendar_flight extends AppCompatActivity {
             public void onClick(View v) {
                 //date = calendarView.getText().toString();
 
+                date="2023-05-08";
                 dbmanager_flight.open();
                 dbmanager_flight.insert(date, "","","",user_id);
                 dbmanager_flight.close();
-
+/*
                 Intent intent = new Intent(calendar_flight.this, date_flight.class);
-                startActivity(intent);
+                startActivity(intent);*/
             }
         });
     }

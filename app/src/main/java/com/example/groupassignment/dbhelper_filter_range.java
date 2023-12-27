@@ -15,6 +15,7 @@ public class dbhelper_filter_range extends SQLiteOpenHelper {
     public static final String DISTANCE  = "distance";
     public static final String RATING = "rating";
     public static final String AVAILABILITY = "availability";
+    public static final String USER_ID = "user_id";
 
     // Database Information
     static final String DB_NAME = "JOURNALDEV_TRAVEL_BOOKING.DB";
@@ -29,7 +30,8 @@ public class dbhelper_filter_range extends SQLiteOpenHelper {
             + PRICE + " DOUBLE NOT NULL, "
             + DISTANCE + " DOUBLE NOT NULL, "
             + RATING + " INTEGER NOT NULL, "
-            + AVAILABILITY + " TEXT NOT NULL "
+            + AVAILABILITY + " TEXT NOT NULL, "
+            + USER_ID + " INTEGER NOT NULL "
             + ")";
 
     public dbhelper_filter_range(Context context) {
