@@ -37,6 +37,7 @@ public class dbmanager_user {
         contentValue.put(dbhelper_user.BIRTHDAY, birthday);
         contentValue.put(dbhelper_user.PASSWORD, password);
         contentValue.put(dbhelper_user.PICTURE, picture);
+        database.insert(dbhelper_transport_info.TABLE_NAME, null, contentValue);
     }
 
     // SELECT * FROM table
