@@ -23,7 +23,7 @@ public class dbhelper_notification extends SQLiteOpenHelper {
     private static final String CREATE_TABLE = "create table "
             + TABLE_NAME + "("
             + NOTIFICATION_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-            + CONTENT + " TEXT NOT NULL, "
+            + CONTENT + " TEXT NOT NULL "
             + ")";
 
     public dbhelper_notification(Context context) {

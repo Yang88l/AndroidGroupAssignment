@@ -31,7 +31,7 @@ public class dbhelper_pax extends SQLiteOpenHelper {
             + USER_ID + " INTEGER NOT NULL, "
             + AMOUNT + " INTEGER NOT NULL, "
             + ADULT + " INTEGER NOT NULL, "
-            + KID + " INTEGER NOT NULL, "
+            + KID + " INTEGER NOT NULL "
             + ")";
 
     public dbhelper_pax(Context context) {

@@ -31,7 +31,7 @@ public class dbhelper_favourite extends SQLiteOpenHelper {
             + NAME + " TEXT NOT NULL, "
             + REVIEWS + " TEXT NOT NULL, "
             + TICKET_SOLD + " INTEGER NOT NULL, "
-            + PRICE + " DOUBLE NOT NULL, "
+            + PRICE + " DOUBLE NOT NULL "
             + ")";
 
     public dbhelper_favourite(Context context) {

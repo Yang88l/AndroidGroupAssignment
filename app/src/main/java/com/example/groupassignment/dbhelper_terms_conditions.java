@@ -25,7 +25,7 @@ public class dbhelper_terms_conditions extends SQLiteOpenHelper {
             + TABLE_NAME + "("
             + TERMS_CONDITIONS_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + TITLE + " TEXT NOT NULL, "
-            + DESCRIPTION + " TEXT NOT NULL, "
+            + DESCRIPTION + " TEXT NOT NULL "
             + ")";
 
     public dbhelper_terms_conditions(Context context) {

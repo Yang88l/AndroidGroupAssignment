@@ -36,7 +36,7 @@ public class dbhelper_book_history extends SQLiteOpenHelper {
             + COST + " DOUBLE NOT NULL, "
             + DATE + " DATE NOT NULL, "
             + STATUS + " TEXT NOT NULL, "
-            + BOOK_SUMMARY_ID + " INTEGER NOT NULL, "
+            + BOOK_SUMMARY_ID + " INTEGER NOT NULL "
             + ")";
 
     public dbhelper_book_history(Context context) {

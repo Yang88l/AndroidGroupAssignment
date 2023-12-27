@@ -28,7 +28,7 @@ public class dbhelper_message extends SQLiteOpenHelper {
             + MESSAGE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + NAME + " TEXT NOT NULL, "
             + MESSAGE + " TEXT NOT NULL, "
-            + USER_ID + " INTEGER NOT NULL, "
+            + USER_ID + " INTEGER NOT NULL "
             + ")";
 
     public dbhelper_message(Context context) {

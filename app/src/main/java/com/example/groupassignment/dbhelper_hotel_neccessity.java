@@ -29,7 +29,7 @@ public class dbhelper_hotel_neccessity extends SQLiteOpenHelper {
             + HOTEL_NECCESSITY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + WIFI + " TEXT NOT NULL, "
             + AIR_CONDITION + " TEXT NOT NULL, "
-            + USER_ID + " INTEGER NOT NULL, "
+            + USER_ID + " INTEGER NOT NULL "
             + ")";
 
     public dbhelper_hotel_neccessity(Context context) {

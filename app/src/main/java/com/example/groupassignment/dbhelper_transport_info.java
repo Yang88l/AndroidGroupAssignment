@@ -25,7 +25,7 @@ public class dbhelper_transport_info extends SQLiteOpenHelper {
             + TABLE_NAME + "("
             + TRANSPORT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + PRICE + " DOUBLE NOT NULL, "
-            + TRANSPORT + " TEXT NOT NULL, "
+            + TRANSPORT + " TEXT NOT NULL "
             + ")";
 
     public dbhelper_transport_info(Context context) {

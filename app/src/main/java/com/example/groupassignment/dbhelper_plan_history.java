@@ -32,7 +32,7 @@ public class dbhelper_plan_history extends SQLiteOpenHelper {
             + COST + " DOUBLE PRIMARY KEY AUTOINCREMENT, "
             + DATE + " DATE NOT NULL, "
             + STATUS + " TEXT NOT NULL, "
-            + PLAN_SUMMARY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+            + PLAN_SUMMARY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT "
             + ")";
 
     public dbhelper_plan_history(Context context) {

@@ -23,7 +23,7 @@ public class dbhelper_train extends SQLiteOpenHelper {
     private static final String CREATE_TABLE = "create table "
             + TABLE_NAME + "("
             + TRAIN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-            + LOCATION_NAME + " TEXT NOT NULL, "
+            + LOCATION_NAME + " TEXT NOT NULL"
             + ")";
 
     public dbhelper_train(Context context) {

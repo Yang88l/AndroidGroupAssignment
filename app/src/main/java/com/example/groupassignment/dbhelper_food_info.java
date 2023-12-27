@@ -25,7 +25,7 @@ public class dbhelper_food_info extends SQLiteOpenHelper {
             + TABLE_NAME + "("
             + FOOD_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + FOOD + " TEXT NOT NULL, "
-            + PRICE + " DOUBLE NOT NULL, "
+            + PRICE + " DOUBLE NOT NULL "
             + ")";
 
     public dbhelper_food_info(Context context) {

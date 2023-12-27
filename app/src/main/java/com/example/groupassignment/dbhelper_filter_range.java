@@ -29,7 +29,7 @@ public class dbhelper_filter_range extends SQLiteOpenHelper {
             + PRICE + " DOUBLE NOT NULL, "
             + DISTANCE + " DOUBLE NOT NULL, "
             + RATING + " INTEGER NOT NULL, "
-            + AVAILABILITY + " TEXT NOT NULL, "
+            + AVAILABILITY + " TEXT NOT NULL "
             + ")";
 
     public dbhelper_filter_range(Context context) {

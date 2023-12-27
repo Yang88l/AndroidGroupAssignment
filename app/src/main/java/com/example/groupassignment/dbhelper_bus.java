@@ -27,7 +27,7 @@ public class dbhelper_bus extends SQLiteOpenHelper {
             + BUS_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + SEAT + " INTEGER NOT NULL, "
             + BUS + " TEXT NOT NULL, "
-            + STATE + " TEXT NOT NULL, "
+            + STATE + " TEXT NOT NULL "
             + ")";
 
     public dbhelper_bus(Context context) {

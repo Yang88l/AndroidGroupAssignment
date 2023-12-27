@@ -24,7 +24,7 @@ public class dbhelper_airline_info extends SQLiteOpenHelper {
             + TABLE_NAME + "("
             + AIRLINE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + AIRLINE + " TEXT NOT NULL, "
-            + PRICE + " DOUBLE NOT NULL, "
+            + PRICE + " DOUBLE NOT NULL "
             + ")";
 
     public dbhelper_airline_info(Context context) {

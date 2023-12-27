@@ -34,7 +34,7 @@ public class dbhelper_plan_summary extends SQLiteOpenHelper {
             + TRANSPORT_ID + " INTEGER NOT NULL, "
             + FOOD_ID + " INTEGER NOT NULL, "
             + TOTAL_PRICE + " DOUBLE NOT NULL, "
-            + LOCATION + " TEXT NOT NULL, "
+            + LOCATION + " TEXT NOT NULL "
             + ")";
 
     public dbhelper_plan_summary(Context context) {

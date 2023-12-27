@@ -32,7 +32,7 @@ public class dbhelper_user extends SQLiteOpenHelper {
             + PHONE + " TEXT PRIMARY KEY AUTOINCREMENT, "
             + BIRTHDAY + " DATE NOT NULL, "
             + PASSWORD + " TEXT NOT NULL, "
-            + PICTURE + " TEXT NOT NULL, "
+            + PICTURE + " TEXT NOT NULL "
             + ")";
 
     public dbhelper_user(Context context) {
