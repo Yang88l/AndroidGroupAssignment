@@ -13,6 +13,9 @@
         android:theme="@style/Theme.GroupAssignment"
         tools:targetApi="31">
         <activity
+            android:name=".information"
+            android:exported="false" />
+        <activity
             android:name=".test"
             android:exported="false" />
         <activity
@@ -87,25 +90,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.groupassignment.main" />
-        <activity android:name="com.example.groupassignment.booking_summary" />
-        <activity android:name="com.example.groupassignment.choose" />
-        <activity android:name="com.example.groupassignment.edit_profile" />
-        <activity android:name="com.example.groupassignment.filter" />
-        <activity android:name="com.example.groupassignment.food" />
-        <activity android:name="com.example.groupassignment.log_in" />
-        <activity android:name="com.example.groupassignment.other_filter_options" />
-        <activity android:name="com.example.groupassignment.payment" />
-        <activity android:name="com.example.groupassignment.payment_method" />
-        <activity android:name="com.example.groupassignment.payment_successful" />
-        <activity android:name="com.example.groupassignment.planning_summary" />
-        <activity android:name="com.example.groupassignment.play" />
-        <activity android:name="com.example.groupassignment.profile" />
-        <activity android:name="com.example.groupassignment.reset_password" />
-        <activity android:name="com.example.groupassignment.select_location" />
-        <activity android:name="com.example.groupassignment.set_picture" />
-        <activity android:name="com.example.groupassignment.settings" />
-        <activity android:name="com.example.groupassignment.sign_up" />
+        <activity android:name=".main" />
+        <activity android:name=".booking_summary" />
+        <activity android:name=".choose" />
+        <activity android:name=".edit_profile" />
+        <activity android:name=".filter" />
+        <activity android:name=".food" />
+        <activity android:name=".log_in" />
+        <activity android:name=".other_filter_options" />
+        <activity android:name=".payment" />
+        <activity android:name=".payment_method" />
+        <activity android:name=".payment_successful" />
+        <activity android:name=".planning_summary" />
+        <activity android:name=".play" />
+        <activity android:name=".profile" />
+        <activity android:name=".reset_password" />
+        <activity android:name=".select_location" />
+        <activity android:name=".set_picture" />
+        <activity android:name=".settings" />
+        <activity android:name=".sign_up" />
     </application>
 
 </manifest>
