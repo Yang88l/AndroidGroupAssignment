@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.widget.Toast;
 
 public class dbmanager_user {
 
@@ -36,7 +37,6 @@ public class dbmanager_user {
         contentValue.put(dbhelper_user.BIRTHDAY, birthday);
         contentValue.put(dbhelper_user.PASSWORD, password);
         contentValue.put(dbhelper_user.PICTURE, picture);
-        database.insert(dbhelper_user.TABLE_NAME, null, contentValue);
     }
 
     // SELECT * FROM table
