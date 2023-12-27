@@ -28,12 +28,12 @@ public class dbmanager_book_summary {
         dbHelper.close();
     }
 
-    public void insert(int hotel_id, int user_id, String airline, int transport_id, int food_id, double total_price, String location) {
+    public void insert(int hotel_id, int user_id, int airline_id, int transport_id, int food_id, double total_price, String location) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(dbhelper_book_summary.HOTEL_ID, hotel_id);
         contentValue.put(dbhelper_book_summary.USER_ID, user_id);
-        contentValue.put(dbhelper_book_summary.AIRLINE, airline);
-        contentValue.put(dbhelper_book_summary.TRANSPORT, transport_id);
+        contentValue.put(dbhelper_book_summary.AIRLINE_ID, airline_id);
+        contentValue.put(dbhelper_book_summary.TRANSPORT_ID, transport_id);
         contentValue.put(dbhelper_book_summary.FOOD_ID, food_id);
         contentValue.put(dbhelper_book_summary.TOTAL_PRICE, total_price);
         contentValue.put(dbhelper_book_summary.LOCATION, location);
@@ -45,8 +45,8 @@ public class dbmanager_book_summary {
         String[] columns = new String[] {
                 dbhelper_book_summary.HOTEL_ID,
                 dbhelper_book_summary.USER_ID,
-                dbhelper_book_summary.AIRLINE,
-                dbhelper_book_summary.TRANSPORT,
+                dbhelper_book_summary.AIRLINE_ID,
+                dbhelper_book_summary.TRANSPORT_ID,
                 dbhelper_book_summary.FOOD_ID,
                 dbhelper_book_summary.TOTAL_PRICE,
                 dbhelper_book_summary.LOCATION
@@ -58,13 +58,34 @@ public class dbmanager_book_summary {
         return cursor;
     }
 
+    public Cursor fetchInnerJoin(int user_id) {
+        String query = "SELECT " +
+                dbhelper_accomodation_info.HOTEL_NAME + ", " +
+                dbhelper_airline_info.AIRLINE + ", " +
+                dbhelper_food_info.FOOD + ", " +
+                dbhelper_transport_info.TRANSPORT + ", " +
+                dbhelper_book_summary.TOTAL_PRICE +
+                " FROM " + dbhelper_book_summary.TABLE_NAME +
+                " INNER JOIN " + dbhelper_accomodation_info.TABLE_NAME + " ON " + dbhelper_book_summary.HOTEL_ID + " = " + dbhelper_accomodation_info.HOTEL_ID +
+                " INNER JOIN " + dbhelper_airline_info.TABLE_NAME + " ON " + dbhelper_book_summary.AIRLINE_ID + " = " + dbhelper_airline_info.AIRLINE_ID +
+                " INNER JOIN " + dbhelper_food_info.TABLE_NAME + " ON " + dbhelper_book_summary.FOOD_ID + " = " + dbhelper_food_info.FOOD_ID +
+                " INNER JOIN " + dbhelper_transport_info.TABLE_NAME + " ON " + dbhelper_book_summary.TRANSPORT_ID + " = " + dbhelper_transport_info.TRANSPORT_ID +
+                " WHERE " + dbhelper_book_summary.USER_ID + " = ?";
+
+        String[] selectionArgs = {String.valueOf(user_id)};
+
+        return database.rawQuery(query, selectionArgs);
+    }
+
+
+
     //UPDATE * FROM table WHERE book_summary_id = _id
     public int update(int _id, int hotel_id, int user_id, String airline, int transport_id, int food_id, double total_price, String location) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(dbhelper_book_summary.HOTEL_ID, hotel_id);
         contentValues.put(dbhelper_book_summary.USER_ID, user_id);
-        contentValues.put(dbhelper_book_summary.AIRLINE, airline);
-        contentValues.put(dbhelper_book_summary.TRANSPORT, transport_id);
+        contentValues.put(dbhelper_book_summary.AIRLINE_ID, airline);
+        contentValues.put(dbhelper_book_summary.TRANSPORT_ID, transport_id);
         contentValues.put(dbhelper_book_summary.FOOD_ID, food_id);
         contentValues.put(dbhelper_book_summary.TOTAL_PRICE, total_price);
         contentValues.put(dbhelper_book_summary.LOCATION, location);

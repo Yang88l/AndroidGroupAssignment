@@ -33,14 +33,14 @@ public class dbmanager_transport_info {
     public void insert(double price, String food) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(dbhelper_transport_info.PRICE, price);
-        contentValue.put(dbhelper_transport_info.FOOD, food);
+        contentValue.put(dbhelper_transport_info.TRANSPORT, food);
         database.insert(dbhelper_transport_info.TABLE_NAME, null, contentValue);
     }
 
     public Cursor fetch() {
         String[] columns = new String[] {
                 dbhelper_transport_info.TRANSPORT_ID,
-                dbhelper_transport_info.FOOD,
+                dbhelper_transport_info.TRANSPORT,
                 dbhelper_transport_info.PRICE };
         Cursor cursor = database.query(dbhelper_transport_info.TABLE_NAME, columns, null, null, null, null, null);
         if (cursor != null) {
@@ -52,7 +52,7 @@ public class dbmanager_transport_info {
     public int update(long _id, double price, String food) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(dbhelper_transport_info.PRICE, price);
-        contentValues.put(dbhelper_transport_info.FOOD, food);
+        contentValues.put(dbhelper_transport_info.TRANSPORT, food);
         int i = database.update(dbhelper_transport_info.TABLE_NAME, contentValues, dbhelper_transport_info.TRANSPORT_ID + " = " + _id, null);
         return i;
     }
