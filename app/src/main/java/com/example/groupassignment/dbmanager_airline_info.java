@@ -38,6 +38,7 @@ public class dbmanager_airline_info {
     // SELECT airline, price FROM table
     public Cursor fetch() {
         String[] columns = new String[] {
+                dbhelper_airline_info.AIRLINE_ID,
                 dbhelper_airline_info.AIRLINE,
                 dbhelper_airline_info.PRICE
         };

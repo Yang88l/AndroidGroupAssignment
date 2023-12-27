@@ -12,7 +12,7 @@ public class dbhelper_transport_info extends SQLiteOpenHelper {
     // Table columns
     public static final String TRANSPORT_ID = "transport_id";
     public static final String PRICE = "price";
-    public static final String FOOD  = "food";
+    public static final String TRANSPORT  = "transport";
 
     // Database Information
     static final String DB_NAME = "JOURNALDEV_TRAVEL_BOOKING.DB";
@@ -25,7 +25,7 @@ public class dbhelper_transport_info extends SQLiteOpenHelper {
             + TABLE_NAME + "("
             + TRANSPORT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + PRICE + " DOUBLE NOT NULL, "
-            + FOOD + " TEXT NOT NULL, "
+            + TRANSPORT + " TEXT NOT NULL, "
             + ")";
 
     public dbhelper_transport_info(Context context) {

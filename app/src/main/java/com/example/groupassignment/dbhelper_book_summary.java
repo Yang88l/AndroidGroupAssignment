@@ -12,8 +12,8 @@ public class dbhelper_book_summary extends SQLiteOpenHelper {
     public static final String BOOK_SUMMARY_ID = "book_summary_id";
     public static final String HOTEL_ID = "hotel_id";
     public static final String USER_ID = "user_id";
-    public static final String AIRLINE = "airline";
-    public static final String TRANSPORT = "transport_id";
+    public static final String AIRLINE_ID = "airline_id";
+    public static final String TRANSPORT_ID = "transport_id";
     public static final String FOOD_ID = "food_id";
     public static final String TOTAL_PRICE = "total_price";
     public static final String LOCATION = "location";
@@ -28,13 +28,13 @@ public class dbhelper_book_summary extends SQLiteOpenHelper {
     private static final String CREATE_TABLE = "create table "
             + TABLE_NAME + "("
             + BOOK_SUMMARY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-            + HOTEL_ID + " TEXT NOT NULL, "
-            + USER_ID + " DOUBLE NOT NULL, "
-            + AIRLINE + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-            + TRANSPORT + " TEXT NOT NULL, "
-            + FOOD_ID + " DOUBLE NOT NULL, "
+            + HOTEL_ID + " INTEGER NOT NULL, "
+            + USER_ID + " INTEGER NOT NULL, "
+            + AIRLINE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+            + TRANSPORT_ID + " INTEGER NOT NULL, "
+            + FOOD_ID + " INTEGER NOT NULL, "
             + TOTAL_PRICE + " DOUBLE NOT NULL, "
-            + LOCATION + " DOUBLE NOT NULL, "
+            + LOCATION + " TEXT NOT NULL, "
             + ")";
 
     public dbhelper_book_summary(Context context) {

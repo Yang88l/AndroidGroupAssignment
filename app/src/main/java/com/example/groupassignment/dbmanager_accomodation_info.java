@@ -48,6 +48,25 @@ public class dbmanager_accomodation_info {
         return cursor;
     }
 
+    public Cursor fetchInnerJoin(int user_id) {
+        String query = "SELECT " +
+                dbhelper_accomodation_info.HOTEL_NAME + ", " +
+                dbhelper_airline_info.AIRLINE + ", " +
+                dbhelper_food_info.FOOD + ", " +
+                dbhelper_transport_info.TRANSPORT + ", " +
+                dbhelper_book_summary.TOTAL_PRICE +
+                " FROM " + dbhelper_book_summary.TABLE_NAME +
+                " INNER JOIN " + dbhelper_accomodation_info.TABLE_NAME + " ON " + dbhelper_book_summary.HOTEL_ID + " = " + dbhelper_accomodation_info.HOTEL_ID +
+                " INNER JOIN " + dbhelper_airline_info.TABLE_NAME + " ON " + dbhelper_book_summary.AIRLINE_ID + " = " + dbhelper_airline_info.AIRLINE_ID +
+                " INNER JOIN " + dbhelper_food_info.TABLE_NAME + " ON " + dbhelper_book_summary.FOOD_ID + " = " + dbhelper_food_info.FOOD_ID +
+                " INNER JOIN " + dbhelper_transport_info.TABLE_NAME + " ON " + dbhelper_book_summary.TRANSPORT_ID + " = " + dbhelper_transport_info.TRANSPORT_ID +
+                " WHERE " + dbhelper_book_summary.USER_ID + " = ?";
+
+        String[] selectionArgs = {String.valueOf(user_id)};
+
+        return database.rawQuery(query, selectionArgs);
+    }
+
     //UPDATE hotel_name, price FROM table WHERE hotel_id = _id
     public int update(int _id, String hotel_name, double price) {
         ContentValues contentValues = new ContentValues();
