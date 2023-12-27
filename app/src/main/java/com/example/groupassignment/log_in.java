@@ -44,7 +44,7 @@ public class log_in extends AppCompatActivity {
         };
 
         //Retrieve the data
-        Cursor cursor = dbmanager_user.fetchALL(columnsToSelect, input_name, password);
+        Cursor cursor = dbmanager_user.fetchALL();
 
         // Get column indices
         int nameIndex = cursor.getColumnIndex(dbhelper_user.NAME);

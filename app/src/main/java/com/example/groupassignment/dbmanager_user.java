@@ -40,7 +40,7 @@ public class dbmanager_user {
     }
 
     // SELECT * FROM table
-    public Cursor fetchALL(String[] columnsToSelect, String name, String password) {
+    public Cursor fetchALL() {
         String[] columns = new String[] {
                 dbhelper_user.USER_ID,
                 dbhelper_user.NAME,
@@ -53,10 +53,10 @@ public class dbmanager_user {
         // WHERE
         String selection = dbhelper_user.NAME + " = ? AND" + dbhelper_user.PASSWORD + " = ?";
         // Contains the values for name and password
-        String[] selectionArgs = { name, password };
+        String[] selectionArgs = { dbhelper_user.NAME, dbhelper_user.PASSWORD };
 
         // Retrieve the data
-        Cursor cursor = database.query(dbhelper_user.TABLE_NAME, columnsToSelect, selection, selectionArgs, null, null, null);
+        Cursor cursor = database.query(dbhelper_user.TABLE_NAME, columns, selection, selectionArgs, null, null, null);
         if (cursor != null) {
             cursor.moveToFirst();
         }

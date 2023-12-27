@@ -24,7 +24,7 @@ public class dbhelper_accomodation_info extends SQLiteOpenHelper {
             + TABLE_NAME + "("
             + HOTEL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + HOTEL_NAME + " TEXT NOT NULL, "
-            + PRICE + " DOUBLE NOT NULL, "
+            + PRICE + " DOUBLE NOT NULL "
             + ")";
 
     public dbhelper_accomodation_info(Context context) {

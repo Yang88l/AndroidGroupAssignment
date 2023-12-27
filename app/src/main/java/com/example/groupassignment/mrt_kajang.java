@@ -22,9 +22,13 @@ public class mrt_kajang extends AppCompatActivity {
         EditText go = findViewById(R.id.inputfrom3);
         EditText each_arrival_time = findViewById(R.id.inputfrom3);
 
+        String[] columnsToSelect = new String[]{
+                dbhelper_train.TRAIN_ID
+        };
+
         dbmanager = new com.example.groupassignment.dbmanager_train(this);
         dbmanager.open();
-        Cursor cursor = dbmanager.fetch();
+        Cursor cursor = dbmanager.fetch(columnsToSelect);
 
         String location_name = "";
 

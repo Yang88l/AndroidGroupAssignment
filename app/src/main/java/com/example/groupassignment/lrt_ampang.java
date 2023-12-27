@@ -51,7 +51,7 @@ public class lrt_ampang extends AppCompatActivity {
         };
 
         //Retrieve the data
-        Cursor cursor = dbmanager_train.fetch(columnsToSelect, location_name);
+        Cursor cursor = dbmanager_train.fetch(columnsToSelect);
 
         // Get column indices
         int train_idIndex = cursor.getColumnIndex(dbhelper_train.TRAIN_ID);

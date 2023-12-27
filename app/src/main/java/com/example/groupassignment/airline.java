@@ -32,7 +32,7 @@ public class airline extends AppCompatActivity {
 
 
 
-
+/*
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,7 +61,7 @@ public class airline extends AppCompatActivity {
                 intent.putExtra("Berjaya_Air",airlineName3.toString());
                 startActivity(intent);
             }
-        });
+        });*/
     }
     public void airasia(View view) {
         //get user id

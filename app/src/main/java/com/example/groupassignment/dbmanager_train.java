@@ -34,18 +34,12 @@ public class dbmanager_train {
         database.insert(dbhelper_train.TABLE_NAME, null, contentValue);
     }
 
-    public Cursor fetch(String[] columnsToSelect, String location_name) {
-                String[] columns = new String[] {
-                        dbhelper_train.TRAIN_ID,
-                        dbhelper_train.LOCATION_NAME
-                };
+    public Cursor fetch(String[] columnsToSelect) {
         // WHERE
         String selection = dbhelper_train.LOCATION_NAME + " = ?";
-        //contains the location name value
-        String[] selectionArgs = { location_name };
 
         // Retrieve the data
-        Cursor cursor = database.query(dbhelper_train.TABLE_NAME, columnsToSelect, selection, selectionArgs, null, null, null);
+        Cursor cursor = database.query(dbhelper_train.TABLE_NAME, columnsToSelect, selection, null, null, null, null);
         if (cursor != null) {
             cursor.moveToFirst();
         }

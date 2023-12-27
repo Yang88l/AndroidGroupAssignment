@@ -21,7 +21,7 @@ public class plan_history extends AppCompatActivity {
         TextView state_location = findViewById(R.id.text_state1);
         TextView plan_cost = findViewById(R.id.text_cost1);
         TextView plan_date = findViewById(R.id.text_date1);
-        TextView plan_statu = findViewById(R.id.text_status1);
+        TextView plan_status = findViewById(R.id.text_status1);
 
         dbmanager = new com.example.groupassignment.dbmanager_plan_history(this);
         dbmanager.open();
@@ -42,7 +42,7 @@ public class plan_history extends AppCompatActivity {
         state_location.setText(location);
         plan_cost.setText(String.format("RM%.2f",cost));;
         plan_date.setText(date);
-        plan_statu.setText(status);
+        plan_status.setText(status);
 
         dbmanager.close();
     }

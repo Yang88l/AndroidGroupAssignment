@@ -29,7 +29,7 @@ public class profile extends AppCompatActivity {
 
         dbmanager = new com.example.groupassignment.dbmanager_user(this);
         dbmanager.open();
-        Cursor cursor = dbmanager.fetch();
+        Cursor cursor = dbmanager.fetchALL();
 
         String name = "";
         String email = "";

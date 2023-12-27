@@ -57,7 +57,7 @@ public class dbmanager_choose_accomodation {
         return i;
     }
 
-    //DELETE * FROM table WHERE choose_accomodation_id = _id
+    //DELETE * FROM table WHERE choose_accommodation_id = _id
     public void delete(long _id) {
         database.delete(dbhelper_choose_accomodation.TABLE_NAME, dbhelper_choose_accomodation.CHOOSE_ACCOMODATION_ID + "=" + _id, null);
     }

@@ -24,7 +24,7 @@ public class dbhelper_choose_accomodation extends SQLiteOpenHelper {
             + TABLE_NAME + "("
             + CHOOSE_ACCOMODATION_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + HOTEL_ID + " INTEGER NOT NULL, "
-            + USER_ID + " INTEGER NOT NULL, "
+            + USER_ID + " INTEGER NOT NULL"
             + ")";
 
     public dbhelper_choose_accomodation(Context context) {
