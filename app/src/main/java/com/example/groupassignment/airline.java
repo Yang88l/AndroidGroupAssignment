@@ -6,12 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class airline extends AppCompatActivity {
     private dbmanager_choose_airline dbmanager_choose_airline;
-    private Button button;
-    private Button button2;
-    private Button button3;
+    //private Button button;
+    //private Button button2;
+    //private Button button3;
     public int airline_id, user_id =1;
 
 
@@ -22,7 +23,7 @@ public class airline extends AppCompatActivity {
         setContentView(R.layout.airline);
 
         dbmanager_choose_airline = new dbmanager_choose_airline(this);
-
+/*
         button = findViewById(R.id.airasia);
         button.setTag("AirAsia");
         button2 = findViewById(R.id.firefly);
@@ -32,7 +33,6 @@ public class airline extends AppCompatActivity {
 
 
 
-/*
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,6 +67,7 @@ public class airline extends AppCompatActivity {
         //get user id
         //get airline_id
         airline_id = 1;
+        Toast.makeText(this, "You click air asia", Toast.LENGTH_SHORT).show();
 
         dbmanager_choose_airline.open();
         dbmanager_choose_airline.insert(airline_id, user_id);
