@@ -9,9 +9,9 @@ import android.widget.Button;
 
 public class accommodation extends AppCompatActivity {
     private dbmanager_choose_accomodation dbmanager_choose_accomodation;
-    private Button bovelord_hotel;
+    //private Button bovelord_hotel;
     public int user_id=1, hotel_id;
-    public String input;
+    //public String input;
 
 
     @Override
@@ -21,7 +21,7 @@ public class accommodation extends AppCompatActivity {
 
         dbmanager_choose_accomodation = new dbmanager_choose_accomodation(this);
 
-        bovelord_hotel = findViewById(R.id.bovelord_hotel);
+        //bovelord_hotel = findViewById(R.id.bovelord_hotel);
 
 
     }
