@@ -50,7 +50,7 @@ public class info_flight extends AppCompatActivity {
         if (flight_numberIndex >= 0 && departure_timeIndex >= 0) {
             // Extract values from the Cursor
             flight_number = cursor.getString(flight_numberIndex);
-            departure_time = cursor.getString(flight_numberIndex);
+            departure_time = cursor.getString(departure_timeIndex);
         }
 
         //Display the data
