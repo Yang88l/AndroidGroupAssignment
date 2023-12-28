@@ -8,10 +8,12 @@ import android.view.View;
 
 public class play extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.play);
+
     }
 
     public void main(View view) {
@@ -38,6 +40,8 @@ public class play extends AppCompatActivity {
     }
 
     public void detail(View view) {
+        Intent intent = new Intent(this, information.class);
+        startActivity(intent);
     }
 
     public void filter(View view) {
