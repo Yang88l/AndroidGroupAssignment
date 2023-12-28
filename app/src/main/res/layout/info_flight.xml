@@ -156,4 +156,14 @@ IS YET TO BE ADDED"
         app:layout_constraintBottom_toTopOf="@+id/line2"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flight_information_text" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -36,13 +36,13 @@ public class dbmanager_airline_info {
     }
 
     // SELECT airline, price FROM table
-    public Cursor fetch() {
+    public Cursor fetch(int _id) {
         String[] columns = new String[] {
                 dbhelper_airline_info.AIRLINE_ID,
                 dbhelper_airline_info.AIRLINE,
                 dbhelper_airline_info.PRICE
         };
-        Cursor cursor = database.query(dbhelper_airline_info.TABLE_NAME, columns, null, null, null, null, null);
+        Cursor cursor = database.query(dbhelper_airline_info.TABLE_NAME, columns, "airline_id="+Integer.toString(_id), null, null, null, null);
         if (cursor != null) {
             cursor.moveToFirst();
         }

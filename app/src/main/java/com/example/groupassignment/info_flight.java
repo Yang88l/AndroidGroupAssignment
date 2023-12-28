@@ -10,19 +10,34 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class info_flight extends AppCompatActivity {
-    private Button button;
-    private dbmanager_flight dbmanager_flight;
-    private dbhelper_flight dbhelper_flight;
-    private TextView flight_information_text;
+    private dbmanager_airline_info dbmanager;
 
-    private String flight_number, departure_time;
-    public int user_id=1; // Replace with the actual user ID
+    /*
+        private Button button;
+        private dbmanager_flight dbmanager_flight;
+        private dbhelper_flight dbhelper_flight;
+        private TextView flight_information_text;
 
+        private String flight_number, departure_time;
+        public int user_id=1; // Replace with the actual user ID
+    */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.info_flight);
+        dbmanager = new dbmanager_airline_info(this);
+        dbmanager.open();
 
+        Cursor cursor = dbmanager.fetch(2);
+        //cursor.moveToLast();
+
+        TextView text1 = findViewById(R.id.textView30);
+        text1.setText(cursor.getString(1));
+
+        dbmanager.close();
+
+
+/*
         button = findViewById(R.id.finish2);
 
 
@@ -67,5 +82,6 @@ public class info_flight extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        */
     }
 }
