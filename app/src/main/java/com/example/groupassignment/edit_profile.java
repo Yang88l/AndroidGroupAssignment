@@ -7,69 +7,41 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class edit_profile extends AppCompatActivity {
     private dbmanager_user dbmanager_user;
-    private dbhelper_user dbhelper_user;
-    private TextView name_text, email_text, phone_text, birthday_text;
-    private String name, email, phone, birthday, password, picture;
-    public int user_id=1; // Replace with the actual user ID
+    private com.example.groupassignment.dbmanager_login_history dbmanager_login_history;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.edit_profile);
 
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor = dbmanager_login_history.fetch();
+        cursor.moveToLast();
+        int user_id=Integer.parseInt(cursor.getString(1));
+        dbmanager_login_history.close();
+
         dbmanager_user = new dbmanager_user(this);
-        dbhelper_user = new dbhelper_user(this);
-
-        name_text = findViewById(R.id.name_text);
-        email_text = findViewById(R.id.email_text);
-        phone_text = findViewById(R.id.phone_text);
-        birthday_text = findViewById(R.id.birthday_text);
-
-        //Specify Specific Data you want to get
         dbmanager_user.open();
+        Cursor cursor_user = dbmanager_user.fetch("user_id="+user_id);
 
-        String[] columnsToSelect = new String[]{
-                dbhelper_user.NAME,
-                dbhelper_user.EMAIL,
-                dbhelper_user.PHONE,
-                dbhelper_user.BIRTHDAY,
-                dbhelper_user.PASSWORD,
-                dbhelper_user.PICTURE
-        };
+        EditText name = findViewById(R.id.name_text);
+        EditText phone = findViewById(R.id.phone_text);
+        EditText email = findViewById(R.id.email_text);
+        EditText birthday = findViewById(R.id.birthday_text);
 
-        //Retrieve the data
-        Cursor cursor = dbmanager_user.fetch(columnsToSelect, user_id);
+        name.setText(cursor_user.getString(1));
+        phone.setText(cursor_user.getString(3));
+        email.setText(cursor_user.getString(2));
+        birthday.setText(cursor_user.getString(4));
 
-        // Get column indices
-        int nameIndex = cursor.getColumnIndex(dbhelper_user.NAME);
-        int emailIndex = cursor.getColumnIndex(dbhelper_user.EMAIL);
-        int phoneIndex = cursor.getColumnIndex(dbhelper_user.PHONE);
-        int birthdayIndex = cursor.getColumnIndex(dbhelper_user.BIRTHDAY);
-        int passwordIndex = cursor.getColumnIndex(dbhelper_user.PASSWORD);
-        int pictureIndex = cursor.getColumnIndex(dbhelper_user.PICTURE);
-
-        // Check if column indices are valid
-        if (nameIndex >= 0 && emailIndex >= 0 && phoneIndex >= 0 && birthdayIndex >= 0 && passwordIndex >= 0 && pictureIndex >= 0 ) {
-            // Extract values from the Cursor
-            name = cursor.getString(nameIndex);
-            email = cursor.getString(emailIndex);
-            phone = cursor.getString(phoneIndex);
-            birthday = cursor.getString(birthdayIndex);;
-            password = cursor.getString(passwordIndex);;
-            picture = cursor.getString(pictureIndex);;
-        }
-        //Display the data
-        name_text.setText(name);
-        email_text.setText(email);
-        phone_text.setText(phone);
-        birthday_text.setText(birthday);
-
-
-        cursor.close();
+        ImageView picture = findViewById(R.id.imageView);
+        picture.setImageResource(getResources().getIdentifier(cursor_user.getString(6) + "_100", "drawable", getPackageName()));
         dbmanager_user.close();
     }
 
@@ -80,13 +52,21 @@ public class edit_profile extends AppCompatActivity {
     }
 
     public void save_edit(View view) {
-        name = name_text.getText().toString();
-        email = email_text.getText().toString();
-        phone = phone_text.getText().toString();
-        birthday = birthday_text.getText().toString();
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor = dbmanager_login_history.fetch();
+        cursor.moveToLast();
+        int user_id=Integer.parseInt(cursor.getString(1));
+        dbmanager_login_history.close();
 
+        String name = ((EditText) findViewById(R.id.name_text)).getText().toString();
+        String email = ((EditText) findViewById(R.id.email_text)).getText().toString();
+        String phone = ((EditText) findViewById(R.id.phone_text)).getText().toString();
+        String birthday = ((EditText) findViewById(R.id.birthday_text)).getText().toString();
+
+        dbmanager_user = new dbmanager_user(this);
         dbmanager_user.open();
-        dbmanager_user.update(user_id, name, email, phone, birthday, password, picture);
+        dbmanager_user.update(user_id, name, email, phone, birthday, null, null);
         dbmanager_user.close();
 
         Intent intent = new Intent (this, profile.class);

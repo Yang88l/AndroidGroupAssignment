@@ -18,7 +18,7 @@ public class information extends AppCompatActivity {
     private com.example.groupassignment.dbmanager_accomodation_info dbmanager_accomodation_info;
     private com.example.groupassignment.dbmanager_food_info dbmanager_food_info;
     private com.example.groupassignment.dbmanager_play_info dbmanager_play_info;
-    private com.example.groupassignment.dbmanager_play_info dbmanager_login_history;
+    private com.example.groupassignment.dbmanager_login_history dbmanager_login_history;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,7 +98,7 @@ public class information extends AppCompatActivity {
         //get user id
         dbmanager_login_history = new dbmanager_login_history(this);
         dbmanager_login_history.open();
-        Cursor cursor = dbmanager_login_history.fetch(0);
+        Cursor cursor = dbmanager_login_history.fetch();
         cursor.moveToLast();
         int user_id=Integer.parseInt(cursor.getString(1));
         dbmanager_login_history.close();
