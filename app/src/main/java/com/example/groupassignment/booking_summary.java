@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.TextView;
 
 public class booking_summary extends AppCompatActivity {
+
     private dbmanager_book_summary dbmanager_book_summary;
     private dbhelper_book_summary dbhelper_book_summary;
     private int user_id=1;
@@ -23,13 +24,16 @@ public class booking_summary extends AppCompatActivity {
         dbmanager_book_summary = new dbmanager_book_summary(this);
         dbhelper_book_summary = new dbhelper_book_summary(this);
 
+
         booking_summary_text = findViewById(R.id.booking_summary_text);
 
         // Get a readable database
         SQLiteDatabase database = dbhelper_book_summary.getReadableDatabase();
 
         // Call the method to fetch data with INNER JOIN and pass the user_id
+        dbmanager_book_summary.open();
         Cursor cursor = dbmanager_book_summary.fetchInnerJoin(user_id);
+
 
         // Get column indices
         int hotel_idIndex = cursor.getColumnIndex(dbhelper_book_summary.HOTEL_ID);
@@ -60,6 +64,8 @@ public class booking_summary extends AppCompatActivity {
                 String transport = cursor.getString(transportIndex);
 
 
+
+
                 // display
                 booking_summary_text.setText("Hotel Name: " + hotel_name + "\n" +
                                              "Food: " + food + "\n" +
@@ -69,6 +75,7 @@ public class booking_summary extends AppCompatActivity {
             }
             cursor.close();
         }
+        dbmanager_book_summary.close();
         database.close();
     }
 

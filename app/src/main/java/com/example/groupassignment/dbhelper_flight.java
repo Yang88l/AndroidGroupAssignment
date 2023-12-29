@@ -21,7 +21,7 @@ public class dbhelper_flight extends SQLiteOpenHelper {
     static final String DB_NAME = "JOURNALDEV_TRAVEL_BOOKING.DB";
 
     // database version
-    static final int DB_VERSION = 1;
+    static final int DB_VERSION = 2;
 
     // Creating table query
     private static final String CREATE_TABLE = "create table "
@@ -48,4 +48,5 @@ public class dbhelper_flight extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
     }
+
 }

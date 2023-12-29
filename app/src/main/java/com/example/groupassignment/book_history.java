@@ -14,9 +14,9 @@ public class book_history extends AppCompatActivity {
     private dbmanager_book_history dbmanager_book_history;
     private dbhelper_book_history dbhelper_book_history;
 
-    private TextView location_text, cost_text, date_text, status_text ;
-    private String location, cost, date, status ;
-    public int user_id=1; // Replace with the actual user ID
+    private TextView location_text, cost_text, date_text, status_text;
+    private String location, cost, date, status;
+    public int user_id = 1; // Replace with the actual user ID
 
 
     @Override
@@ -58,13 +58,14 @@ public class book_history extends AppCompatActivity {
             location = cursor.getString(locationIndex);
             date = cursor.getString(locationIndex);
             cost = cursor.getString(locationIndex);
-            status = cursor.getString(locationIndex);;
+            status = cursor.getString(locationIndex);
+            ;
         }
 
-            //Display the data
-            location_text.setText(location);
-            cost_text.setText(cost);
-            date_text.setText(date);
+        //Display the data
+        location_text.setText(location);
+        cost_text.setText(cost);
+        date_text.setText(date);
 
         cursor.close();
         dbmanager_book_history.close();
@@ -73,27 +74,27 @@ public class book_history extends AppCompatActivity {
     }
 
     public void home(View view) {
-        Intent intent = new Intent (this, main.class);
+        Intent intent = new Intent(this, main.class);
         startActivity(intent);
     }
 
     public void heart(View view) {
-        Intent intent = new Intent (this, my_favourite.class);
+        Intent intent = new Intent(this, my_favourite.class);
         startActivity(intent);
     }
 
     public void history(View view) {
-        Intent intent = new Intent (this, book_history.class);
+        Intent intent = new Intent(this, book_history.class);
         startActivity(intent);
     }
 
     public void profile(View view) {
-        Intent intent = new Intent (this, profile.class);
+        Intent intent = new Intent(this, profile.class);
         startActivity(intent);
     }
 
     public void planhistory(View view) {
-        Intent intent = new Intent (this, plan_history.class);
+        Intent intent = new Intent(this, plan_history.class);
         startActivity(intent);
     }
 }

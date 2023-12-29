@@ -13,7 +13,7 @@ public class calendar_flight extends AppCompatActivity {
     private dbmanager_flight dbmanager_flight;
     private CalendarView calendarView;
     private String date;
-    private int user_id=1;
+    private int user_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,8 @@ public class calendar_flight extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //date = calendarView.getText().toString();
+                date="27/12/2023";
+                user_id=1;
 
                 date="2023-05-08";
                 dbmanager_flight.open();

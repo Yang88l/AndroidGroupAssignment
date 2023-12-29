@@ -61,4 +61,6 @@ public class filter extends AppCompatActivity {
         dbmanager_filter_range.close();
         Toast.makeText(this, "data insereted", Toast.LENGTH_SHORT).show();
     }
+
+
 }

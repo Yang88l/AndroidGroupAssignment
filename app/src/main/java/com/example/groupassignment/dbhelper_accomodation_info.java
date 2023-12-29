@@ -34,6 +34,7 @@ public class dbhelper_accomodation_info extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE);
+
     }
 
     @Override

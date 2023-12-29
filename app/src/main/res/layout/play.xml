@@ -117,35 +117,135 @@
 
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/sunway_lagoon_picture"
         android:layout_width="77dp"
         android:layout_height="77dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="192dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="164dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/sunway_lagoon" />
 
+    <ImageButton
+        android:id="@+id/genting_highland_picture"
+        android:layout_width="77dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="264dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/genting_highland_77" />
+
+    <ImageButton
+        android:id="@+id/sky_mirror_picture"
+        android:layout_width="77dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="364dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/sky_mirror_77" />
+
+    <ImageButton
+        android:id="@+id/zoo_negara_picture"
+        android:layout_width="77dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="464dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/zoo_negara_77" />
+
+
     <Button
-        android:id="@+id/button26"
+        android:id="@+id/sunway_lagoon_button"
         android:layout_width="167dp"
         android:layout_height="83dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="192dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="160dp"
         android:onClick="detail"
         android:text="Sunway Lagoon"
         android:textSize="25dp"
-        app:layout_constraintStart_toEndOf="@+id/imageButton"
+        app:layout_constraintStart_toEndOf="@+id/sunway_lagoon_picture"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/genting_highland_button"
+        android:layout_width="167dp"
+        android:layout_height="83dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="260dp"
+        android:onClick="detail"
+        android:text="Genting Highland"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="@+id/genting_highland_picture"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/sky_mirror_button"
+        android:layout_width="167dp"
+        android:layout_height="83dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="360dp"
+        android:onClick="detail"
+        android:text="Sky Mirror"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="@+id/sky_mirror_picture"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/zoo_negara_button"
+        android:layout_width="167dp"
+        android:layout_height="83dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="460dp"
+        android:onClick="detail"
+        android:text="Zoo Negara"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="@+id/zoo_negara_picture"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton7"
+        android:id="@+id/heart1"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="36dp"
         android:onClick="add"
-        app:layout_constraintStart_toEndOf="@+id/button26"
+        app:layout_constraintStart_toEndOf="@+id/sunway_lagoon_button"
+        app:layout_constraintTop_toBottomOf="@+id/button23"
+        app:srcCompat="@drawable/love" />
+
+    <ImageButton
+        android:id="@+id/heart2"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="136dp"
+        android:onClick="add"
+        app:layout_constraintStart_toEndOf="@+id/genting_highland_button"
+        app:layout_constraintTop_toBottomOf="@+id/button23"
+        app:srcCompat="@drawable/love" />
+
+    <ImageButton
+        android:id="@+id/heart3"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="236dp"
+        android:onClick="add"
+        app:layout_constraintStart_toEndOf="@+id/sky_mirror_button"
+        app:layout_constraintTop_toBottomOf="@+id/button23"
+        app:srcCompat="@drawable/love" />
+
+    <ImageButton
+        android:id="@+id/heart4"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="336dp"
+        android:onClick="add"
+        app:layout_constraintStart_toEndOf="@+id/zoo_negara_button"
         app:layout_constraintTop_toBottomOf="@+id/button23"
         app:srcCompat="@drawable/love" />
 
