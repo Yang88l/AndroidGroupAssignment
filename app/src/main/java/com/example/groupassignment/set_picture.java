@@ -24,7 +24,7 @@ public class set_picture extends AppCompatActivity {
 
     public void profile1(View view) {
         dbmanager_user.open();
-        Cursor cursor = dbmanager_user.fetch(0);
+        Cursor cursor = dbmanager_user.fetch("user_id=0");
         cursor.moveToLast();
         int user_id=Integer.parseInt(cursor.getString(0));
         dbmanager_user.update(user_id, null, null, null, null, null, "profile1");
