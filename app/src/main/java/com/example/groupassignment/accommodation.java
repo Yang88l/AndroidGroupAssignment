@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 
 public class accommodation extends AppCompatActivity {
     private dbmanager_choose_accomodation dbmanager_choose_accomodation;
@@ -19,14 +21,17 @@ public class accommodation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.accommodation);
 
+        //set picture
+        String hotel1 = "ampang";
+        ImageButton img = findViewById(R.id.imageButton);
+        img.setImageResource(getResources().getIdentifier(hotel1, "drawable", getPackageName()));
+
+        //database
         dbmanager_choose_accomodation = new dbmanager_choose_accomodation(this);
-
-        //bovelord_hotel = findViewById(R.id.bovelord_hotel);
-
-
     }
+
     public void bovelord_hotel(View view) {
-         hotel_id=1;
+        hotel_id=1;
         dbmanager_choose_accomodation.open();
         dbmanager_choose_accomodation.insert(hotel_id, user_id);
         dbmanager_choose_accomodation.close();
