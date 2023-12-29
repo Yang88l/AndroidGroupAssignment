@@ -8,48 +8,49 @@ import android.view.View;
 import android.widget.Button;
 
 public class train_type extends AppCompatActivity {
-    private Button button;
-    private Button button2;
-    private Button button3;
-    private Button button4;
+    private dbmanager_train dbmanager_train;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.train_type);
 
-        button = findViewById(R.id.kajang);
-        button2 = findViewById(R.id.ampang);
-        button3 = findViewById(R.id.putrajaya);
-        button4 = findViewById(R.id.sripetalling);
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(train_type.this, mrt_kajang.class);
-                startActivity(intent);
-            }
-        });
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(train_type.this, lrt_ampang.class);
-                startActivity(intent);
-            }
-        });
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(train_type.this, mrt_putrajaya.class);
-                startActivity(intent);
-            }
-        });
-        button4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(train_type.this, lrt_sripetaling.class);
-                startActivity(intent);
-            }
-        });
+        dbmanager_train = new dbmanager_train(this);
     }
+
+            public void kajang(View v){
+            String location_name = "kajang";
+            dbmanager_train.open();
+            dbmanager_train.insert(location_name);
+            dbmanager_train.close();
+            startActivity(new Intent(train_type.this, mrt_kajang.class));
+            }
+
+
+            public void ampang(View v) {
+                String location_name = "ampang";
+                dbmanager_train.open();
+                dbmanager_train.insert(location_name);
+                dbmanager_train.close();
+        startActivity(new Intent(train_type.this, lrt_ampang.class));
+            }
+
+            public void sri_petaling(View v) {
+                String location_name = "sri petaling";
+                dbmanager_train.open();
+                dbmanager_train.insert(location_name);
+                dbmanager_train.close();
+                startActivity(new Intent(train_type.this, mrt_putrajaya.class));
+            }
+
+
+            public void putrajaya(View v) {
+                String location_name = "putrajaya";
+                dbmanager_train.open();
+                dbmanager_train.insert(location_name);
+                dbmanager_train.close();
+                startActivity(new Intent(train_type.this, lrt_sripetaling.class));
+            }
+
 }

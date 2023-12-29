@@ -19,7 +19,8 @@ public class lrt_sripetaling extends AppCompatActivity {
     private dbhelper_train dbhelper_train;
     private TextView go_return_text, go_text, each_arrival_time_text, from_text, to_text;
     private Button from, to;
-    public String location_name = "Sri Petalling", user_input;
+    public String[] location_name = new String[] {"Sri Petaling"};
+    public String user_input;
     public int train_id, station_travelled, from_pos, to_pos;
     public double go_cost, go_return_cost;
 
@@ -46,21 +47,13 @@ public class lrt_sripetaling extends AppCompatActivity {
         //Specify Specific Data you want to get
         dbmanager_train.open();
 
-        String[] columnsToSelect = new String[]{
-                dbhelper_train.TRAIN_ID
-        };
 
         //Retrieve the data
-        Cursor cursor = dbmanager_train.fetch(columnsToSelect);
+        dbmanager_train.update(1, "lrt sri petaling");
 
-        // Get column indices
-        int train_idIndex = cursor.getColumnIndex(dbhelper_train.TRAIN_ID);
+        Cursor cursor = dbmanager_train.fetch(location_name);
 
-        // Check if column indices are valid
-        if (train_idIndex >= 0) {
-            // Extract values from the Cursor
-            train_id = cursor.getInt(train_idIndex);
-        }
+        train_id = cursor.getInt(0);
 
         //Display the data
         calculate();

@@ -122,6 +122,7 @@
         android:layout_marginStart="212dp"
         android:layout_marginBottom="236dp"
         android:text="LRT Sri Petalling"
+        android:onClick="sri_petaling"
         app:layout_constraintBottom_toTopOf="@+id/line2"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -132,8 +133,10 @@
         android:layout_marginStart="52dp"
         android:layout_marginBottom="236dp"
         android:text="MRT Putrajaya"
+        android:onClick="putrajaya"
         app:layout_constraintBottom_toTopOf="@+id/line2"
         app:layout_constraintStart_toStartOf="parent" />
+
 
     <Button
         android:id="@+id/kajang"
@@ -142,6 +145,7 @@
         android:layout_marginStart="52dp"
         android:layout_marginBottom="332dp"
         android:text="MRT Kajang"
+        android:onClick="kajang"
         app:layout_constraintBottom_toTopOf="@+id/line2"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -152,6 +156,7 @@
         android:layout_marginStart="212dp"
         android:layout_marginBottom="332dp"
         android:text="LRT Ampang"
+        android:onClick="ampang"
         app:layout_constraintBottom_toTopOf="@+id/line2"
         app:layout_constraintStart_toStartOf="parent" />
 
