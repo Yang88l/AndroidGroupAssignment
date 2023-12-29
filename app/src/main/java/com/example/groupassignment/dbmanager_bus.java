@@ -28,7 +28,7 @@ public class dbmanager_bus {
         dbHelper.close();
     }
 
-    public void insert(int seat, String bus, String state) {
+    public void insert(Integer seat, String bus, String state) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(dbhelper_bus.SEAT, seat);
         contentValue.put(dbhelper_bus.BUS, bus);

@@ -63,14 +63,14 @@ public class food extends AppCompatActivity {
     public void horizon_grill(View view) {
         Intent intent = new Intent (this, information.class);
         intent.putExtra("from", "food");
-        intent.putExtra("_id", 1);
+        intent.putExtra("_id", 2);
         startActivity(intent);
     }
 
     public void sky_bar(View view) {
         Intent intent = new Intent (this, information.class);
         intent.putExtra("from", "food");
-        intent.putExtra("_id", 1);
+        intent.putExtra("_id", 3);
         startActivity(intent);
     }
 }
