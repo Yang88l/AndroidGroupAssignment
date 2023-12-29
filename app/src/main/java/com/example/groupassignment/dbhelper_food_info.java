@@ -37,6 +37,10 @@ public class dbhelper_food_info extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE);
+        db.execSQL("INSERT INTO food_info (food_id, food, price)"+
+                "VALUES (1, 'Cielo KL', 150, cielo_kl_77),"+
+                "(2, 'Horizon Grill', 130, horizon_grill_77),"+
+                "(3, 'Sky Bar', 180, sky_bar_77);");
     }
 
     @Override

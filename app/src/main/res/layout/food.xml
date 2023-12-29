@@ -25,8 +25,7 @@
         android:layout_marginTop="324dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/horizon_grill_77
-" />
+        app:srcCompat="@drawable/horizon_grill_77"/>
 
     <Button
         android:id="@+id/horizon_grill"
@@ -60,8 +59,7 @@
         android:layout_marginTop="196dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/cielo_kl_77
-" />
+        app:srcCompat="@drawable/cielo_kl_77" />
 
     <ImageButton
         android:id="@+id/imageButton14"
