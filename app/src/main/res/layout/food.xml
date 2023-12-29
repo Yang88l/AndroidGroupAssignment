@@ -6,6 +6,74 @@
     android:layout_height="match_parent"
     tools:context=".food">
 
+    <ImageButton
+        android:id="@+id/imageButton15"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="336dp"
+        android:onClick="like"
+        app:layout_constraintStart_toEndOf="@id/horizon_grill"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/love" />
+
+    <ImageButton
+        android:id="@+id/image_food2"
+        android:layout_width="77dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="324dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/horizon_grill_77
+" />
+
+    <Button
+        android:id="@+id/horizon_grill"
+        android:layout_width="167dp"
+        android:layout_height="83dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="316dp"
+        android:onClick="horizon_grill"
+        android:text="Horizon Grill"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="@id/image_food2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/cielo_kl"
+        android:layout_width="167dp"
+        android:layout_height="83dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="188dp"
+        android:onClick="cielo_kl"
+        android:text="Cielo KL"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="@id/image_food"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/image_food"
+        android:layout_width="77dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="196dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/cielo_kl_77
+" />
+
+    <ImageButton
+        android:id="@+id/imageButton14"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="208dp"
+        android:onClick="like"
+        app:layout_constraintStart_toEndOf="@id/cielo_kl"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/love" />
+
     <TextView
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
@@ -101,7 +169,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mr_wu" />
+        app:layout_constraintTop_toBottomOf="@+id/sky_bar" />
 
     <Button
         android:id="@+id/button21"
@@ -116,25 +184,25 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/image_food3"
         android:layout_width="77dp"
         android:layout_height="77dp"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="196dp"
+        android:layout_marginTop="452dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/mr_wu" />
+        app:srcCompat="@drawable/sky_bar_77" />
 
     <Button
-        android:id="@+id/mr_wu"
+        android:id="@+id/sky_bar"
         android:layout_width="167dp"
         android:layout_height="83dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="188dp"
-        android:text="Mr Wu"
-        android:onClick="mr_wu"
+        android:layout_marginTop="448dp"
+        android:onClick="sky_bar"
+        android:text="Sky Bar"
         android:textSize="25dp"
-        app:layout_constraintStart_toEndOf="@+id/imageButton"
+        app:layout_constraintStart_toEndOf="@+id/image_food3"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
@@ -142,9 +210,9 @@
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="208dp"
+        android:layout_marginTop="468dp"
         android:onClick="like"
-        app:layout_constraintStart_toEndOf="@+id/mr_wu"
+        app:layout_constraintStart_toEndOf="@+id/sky_bar"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/love" />
 

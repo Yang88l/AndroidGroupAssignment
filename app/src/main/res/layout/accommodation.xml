@@ -8,6 +8,71 @@
     tools:context=".accommodation">
 
 
+    <ImageButton
+        android:id="@+id/imageButton22"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="344dp"
+        app:layout_constraintStart_toEndOf="@id/crystal_hotel"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/love" />
+
+    <ImageButton
+        android:id="@+id/image_hotel2"
+        android:layout_width="77dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="324dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/crystal_hotel_77
+" />
+
+    <Button
+        android:id="@+id/crystal_hotel"
+        android:layout_width="167dp"
+        android:layout_height="83dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="324dp"
+        android:onClick="crystal_hotel"
+        android:text="Crystal Hotel"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="@id/image_hotel2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bovelord_hotel2"
+        android:layout_width="167dp"
+        android:layout_height="83dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="196dp"
+        android:onClick="bovelord_hotel"
+        android:text="Bevelord Hotel"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="@id/image_hotel1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton12"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="216dp"
+        app:layout_constraintStart_toEndOf="@id/bovelord_hotel2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/love" />
+
+    <ImageButton
+        android:id="@+id/image_hotel1"
+        android:layout_width="77dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="196dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bevelord_hotel_77" />
+
     <TextView
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
@@ -129,35 +194,35 @@
         app:layout_constraintTop_toBottomOf="@+id/divider" />
 
 
+    <Button
+        android:id="@+id/ocean_hotel"
+        android:layout_width="167dp"
+        android:layout_height="83dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="452dp"
+        android:onClick="ocean_hotel"
+        android:text="Ocean Hotel"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="@+id/image_hotel3"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/image_hotel3"
         android:layout_width="77dp"
         android:layout_height="77dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="196dp"
+        android:layout_marginTop="452dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/bevelord_hotel" />
-
-    <Button
-        android:id="@+id/bovelord_hotel"
-        android:layout_width="167dp"
-        android:layout_height="83dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="196dp"
-        android:onClick="bovelord_hotel"
-        android:text="Bevelord Hotel"
-        android:textSize="25dp"
-        app:layout_constraintStart_toEndOf="@+id/imageButton"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:srcCompat="@drawable/ocean_hotel_77" />
 
     <ImageButton
         android:id="@+id/imageButton7"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="216dp"
-        app:layout_constraintStart_toEndOf="@+id/bovelord_hotel"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="462dp"
+        app:layout_constraintStart_toEndOf="@+id/ocean_hotel"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/love" />
 
