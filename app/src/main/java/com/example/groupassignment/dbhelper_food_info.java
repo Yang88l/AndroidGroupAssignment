@@ -13,6 +13,7 @@ public class dbhelper_food_info extends SQLiteOpenHelper {
     public static final String FOOD_ID = "food_id";
     public static final String FOOD = "food";
     public static final String PRICE  = "price";
+    public static final String PICTURE  = "picture";
 
     // Database Information
     static final String DB_NAME = "JOURNALDEV_TRAVEL_BOOKING.DB";
@@ -25,7 +26,8 @@ public class dbhelper_food_info extends SQLiteOpenHelper {
             + TABLE_NAME + "("
             + FOOD_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + FOOD + " TEXT NOT NULL, "
-            + PRICE + " DOUBLE NOT NULL "
+            + PRICE + " DOUBLE NOT NULL, "
+            + PICTURE + " TEXT NOT NULL "
             + ")";
 
     public dbhelper_food_info(Context context) {

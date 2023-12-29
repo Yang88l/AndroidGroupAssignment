@@ -11,31 +11,16 @@ import android.widget.ImageView;
 
 public class accommodation extends AppCompatActivity {
     private dbmanager_choose_accomodation dbmanager_choose_accomodation;
-    //private Button bovelord_hotel;
-    public int user_id=1, hotel_id;
-    //public String input;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.accommodation);
 
-        //set picture
-        String hotel1 = "ampang";
-        ImageButton img = findViewById(R.id.imageButton);
-        img.setImageResource(getResources().getIdentifier(hotel1, "drawable", getPackageName()));
-
         //database
         dbmanager_choose_accomodation = new dbmanager_choose_accomodation(this);
     }
 
-    public void bovelord_hotel(View view) {
-        hotel_id=1;
-        dbmanager_choose_accomodation.open();
-        dbmanager_choose_accomodation.insert(hotel_id, user_id);
-        dbmanager_choose_accomodation.close();
-    }
     public void notification(View view) {
         Intent intent = new Intent (this, notification.class);
         startActivity(intent);
@@ -62,6 +47,27 @@ public class accommodation extends AppCompatActivity {
 
     public void profile(View view) {
         Intent intent = new Intent (this, profile.class);
+        startActivity(intent);
+    }
+
+    public void bovelord_hotel(View view) {
+        Intent intent = new Intent (this, information.class);
+        intent.putExtra("from", "hotel");
+        intent.putExtra("_id", 1);
+        startActivity(intent);
+    }
+
+    public void crystal_hotel(View view) {
+        Intent intent = new Intent (this, information.class);
+        intent.putExtra("from", "hotel");
+        intent.putExtra("_id", 2);
+        startActivity(intent);
+    }
+
+    public void ocean_hotel(View view) {
+        Intent intent = new Intent (this, information.class);
+        intent.putExtra("from", "hotel");
+        intent.putExtra("_id", 3);
         startActivity(intent);
     }
 }

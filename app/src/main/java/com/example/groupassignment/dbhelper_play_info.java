@@ -3,39 +3,40 @@ package com.example.groupassignment;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-public class dbhelper_accomodation_info extends SQLiteOpenHelper {
+
+public class dbhelper_play_info extends SQLiteOpenHelper {
+
     // Table Name
-    public static final String TABLE_NAME = "accomodation_info";
+    public static final String TABLE_NAME = "play_info";
+
     // Table columns
-    public static final String HOTEL_ID = "hotel_id";
-    public static final String HOTEL_NAME = "hotel_name";
-    public static final String PRICE = "price";
-    public static final String PICTURE = "picture";
+    public static final String PLAY_ID = "play_id";
+    public static final String PLAY = "play";
+    public static final String PRICE  = "price";
+    public static final String PICTURE  = "picture";
+
     // Database Information
     static final String DB_NAME = "JOURNALDEV_TRAVEL_BOOKING.DB";
+
     // database version
     static final int DB_VERSION = 1;
-    // Creating table query
 
+    // Creating table query
     private static final String CREATE_TABLE = "create table "
             + TABLE_NAME + "("
-            + HOTEL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-            + HOTEL_NAME + " TEXT NOT NULL, "
+            + PLAY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+            + PLAY + " TEXT NOT NULL, "
             + PRICE + " DOUBLE NOT NULL, "
             + PICTURE + " TEXT NOT NULL "
             + ")";
 
-    public dbhelper_accomodation_info(Context context) {
+    public dbhelper_play_info(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE);
-        db.execSQL("INSERT INTO accomodation_info (hotel_id, hotel_name, price)"+
-            "VALUES (1, 'Bevelord Hotel', 300, bevelord_hotel),"+
-            "(2, 'Crystal Hotel', 350, crystal_hotel),"+
-            "(3, 'Ocean Hotel', 250, ocean_hotel);");
     }
 
     @Override

@@ -18,13 +18,7 @@ public class food extends AppCompatActivity {
         dbmanager_choose_food = new dbmanager_choose_food(this);
 
     }
-    public void mr_wu(View view) {
-        int user_id=1, food_id=1;
 
-        dbmanager_choose_food.open();
-        dbmanager_choose_food.insert(food_id, user_id);
-        dbmanager_choose_food.close();
-    }
     public void notification(View view) {
         Intent intent = new Intent (this, notification.class);
         startActivity(intent);
@@ -56,6 +50,27 @@ public class food extends AppCompatActivity {
 
     public void filter(View view) {
         Intent intent = new Intent (this, filter.class);
+        startActivity(intent);
+    }
+
+    public void cielo_kl(View view) {
+        Intent intent = new Intent (this, information.class);
+        intent.putExtra("from", "food");
+        intent.putExtra("_id", 1);
+        startActivity(intent);
+    }
+
+    public void horizon_grill(View view) {
+        Intent intent = new Intent (this, information.class);
+        intent.putExtra("from", "food");
+        intent.putExtra("_id", 1);
+        startActivity(intent);
+    }
+
+    public void sky_bar(View view) {
+        Intent intent = new Intent (this, information.class);
+        intent.putExtra("from", "food");
+        intent.putExtra("_id", 1);
         startActivity(intent);
     }
 }

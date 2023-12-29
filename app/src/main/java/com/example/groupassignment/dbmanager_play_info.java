@@ -6,20 +6,20 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
-public class dbmanager_accomodation_info {
+public class dbmanager_play_info {
 
-    private dbhelper_accomodation_info dbHelper;
+    private dbhelper_play_info dbHelper;
 
     private Context context;
 
     private SQLiteDatabase database;
 
-    public dbmanager_accomodation_info(Context c) {
+    public dbmanager_play_info(Context c) {
         context = c;
     }
 
-    public dbmanager_accomodation_info open() throws SQLException {
-        dbHelper = new dbhelper_accomodation_info(context);
+    public dbmanager_play_info open() throws SQLException {
+        dbHelper = new dbhelper_play_info(context);
         database = dbHelper.getWritableDatabase();
         return this;
     }
@@ -28,37 +28,37 @@ public class dbmanager_accomodation_info {
         dbHelper.close();
     }
 
-    public void insert(String hotel_name, double price) {
+    public void insert(String play_name, double price) {
         ContentValues contentValue = new ContentValues();
-        contentValue.put(dbhelper_accomodation_info.HOTEL_NAME, hotel_name);
-        contentValue.put(dbhelper_accomodation_info.PRICE, price);
-        database.insert(dbhelper_accomodation_info.TABLE_NAME, null, contentValue);
+        contentValue.put(dbhelper_play_info.PLAY, play_name);
+        contentValue.put(dbhelper_play_info.PRICE, price);
+        database.insert(dbhelper_play_info.TABLE_NAME, null, contentValue);
     }
 
-    // SELECT hotel_name, price FROM table
+    // SELECT play_name, price FROM table
     public Cursor fetch(int _id) {
         String[] columns = new String[] {
-                dbhelper_accomodation_info.HOTEL_ID,
-                dbhelper_accomodation_info.HOTEL_NAME,
-                dbhelper_accomodation_info.PRICE,
-                dbhelper_accomodation_info.PICTURE
+                dbhelper_play_info.PLAY_ID,
+                dbhelper_play_info.PLAY,
+                dbhelper_play_info.PRICE,
+                dbhelper_play_info.PICTURE
         };
-        Cursor cursor = database.query(dbhelper_accomodation_info.TABLE_NAME, columns, "hotel_id="+Integer.toString(_id), null, null, null, null);
+        Cursor cursor = database.query(dbhelper_play_info.TABLE_NAME, columns, "play_id="+Integer.toString(_id), null, null, null, null);
         if (cursor != null) {
             cursor.moveToFirst();
         }
         return cursor;
     }
-
+/*
     public Cursor fetchInnerJoin(int user_id) {
         String query = "SELECT " +
-                dbhelper_accomodation_info.HOTEL_NAME + ", " +
+                dbhelper_play_info.PLAY_NAME + ", " +
                 dbhelper_airline_info.AIRLINE + ", " +
                 dbhelper_food_info.FOOD + ", " +
                 dbhelper_transport_info.TRANSPORT + ", " +
                 dbhelper_book_summary.TOTAL_PRICE +
                 " FROM " + dbhelper_book_summary.TABLE_NAME +
-                " INNER JOIN " + dbhelper_accomodation_info.TABLE_NAME + " ON " + dbhelper_book_summary.HOTEL_ID + " = " + dbhelper_accomodation_info.HOTEL_ID +
+                " INNER JOIN " + dbhelper_play_info.TABLE_NAME + " ON " + dbhelper_book_summary.PLAY_ID + " = " + dbhelper_play_info.PLAY_ID +
                 " INNER JOIN " + dbhelper_airline_info.TABLE_NAME + " ON " + dbhelper_book_summary.AIRLINE_ID + " = " + dbhelper_airline_info.AIRLINE_ID +
                 " INNER JOIN " + dbhelper_food_info.TABLE_NAME + " ON " + dbhelper_book_summary.FOOD_ID + " = " + dbhelper_food_info.FOOD_ID +
                 " INNER JOIN " + dbhelper_transport_info.TABLE_NAME + " ON " + dbhelper_book_summary.TRANSPORT_ID + " = " + dbhelper_transport_info.TRANSPORT_ID +
@@ -68,18 +68,18 @@ public class dbmanager_accomodation_info {
 
         return database.rawQuery(query, selectionArgs);
     }
-
-    //UPDATE hotel_name, price FROM table WHERE hotel_id = _id
-    public int update(int _id, String hotel_name, double price) {
+*/
+    //UPDATE play_name, price FROM table WHERE play_id = _id
+    public int update(int _id, String play_name, double price) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(dbhelper_accomodation_info.HOTEL_NAME, hotel_name);
-        contentValues.put(dbhelper_accomodation_info.PRICE, price);
-        int i = database.update(dbhelper_accomodation_info.TABLE_NAME, contentValues, dbhelper_accomodation_info.HOTEL_ID + " = " + _id, null);
+        contentValues.put(dbhelper_play_info.PLAY, play_name);
+        contentValues.put(dbhelper_play_info.PRICE, price);
+        int i = database.update(dbhelper_play_info.TABLE_NAME, contentValues, dbhelper_play_info.PLAY_ID + " = " + _id, null);
         return i;
     }
 
-    //DELETE * FROM table WHERE hotel_id = _id
+    //DELETE * FROM table WHERE play_id = _id
     public void delete(long _id) {
-        database.delete(dbhelper_accomodation_info.TABLE_NAME, dbhelper_accomodation_info.HOTEL_ID + "=" + _id, null);
+        database.delete(dbhelper_play_info.TABLE_NAME, dbhelper_play_info.PLAY_ID + "=" + _id, null);
     }
 }

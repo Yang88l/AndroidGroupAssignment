@@ -37,12 +37,14 @@ public class dbmanager_food_info {
         database.insert(dbhelper_food_info.TABLE_NAME, null, contentValue);
     }
 
-    public Cursor fetch() {
+    public Cursor fetch(int _id) {
         String[] columns = new String[] {
                 dbhelper_food_info.FOOD_ID,
                 dbhelper_food_info.FOOD,
-                dbhelper_food_info.PRICE };
-        Cursor cursor = database.query(dbhelper_food_info.TABLE_NAME, columns, null, null, null, null, null);
+                dbhelper_food_info.PRICE,
+                dbhelper_food_info.PICTURE
+        };
+        Cursor cursor = database.query(dbhelper_food_info.TABLE_NAME, columns, "food_id="+Integer.toString(_id), null, null, null, null);
         if (cursor != null) {
             cursor.moveToFirst();
         }
