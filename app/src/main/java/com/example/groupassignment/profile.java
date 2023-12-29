@@ -12,47 +12,40 @@ import android.widget.TextView;
 
 public class profile extends AppCompatActivity {
 
-    private com.example.groupassignment.dbmanager_user dbmanager;
+    private com.example.groupassignment.dbmanager_user dbmanager_user;
+    private com.example.groupassignment.dbmanager_login_history dbmanager_login_history;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile);
 
-        TextView title = findViewById(R.id.textView);
-        TextView Name = findViewById(R.id.textView3);
-        TextView phone_number = findViewById(R.id.textView7);
-        TextView email_address = findViewById(R.id.textView16);
-        TextView birthday_date = findViewById(R.id.textView17);
-        TextView point = findViewById(R.id.textView19);
-        ImageView user_picture = findViewById(R.id.imageView);
-
-        dbmanager = new com.example.groupassignment.dbmanager_user(this);
-        dbmanager.open();
-        Cursor cursor = dbmanager.fetchALL();
-
-        String name = "";
-        String email = "";
-        String phone = "";
-        String birthday = "";
-        String picture = "";
-
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor = dbmanager_login_history.fetch();
         cursor.moveToLast();
-        name = cursor.getString(2);
-        email = cursor.getString(3);
-        phone = cursor.getString(4);
-        birthday = cursor.getString(5);
-        picture = cursor.getString(7);
-        cursor.close();
+        int user_id=Integer.parseInt(cursor.getString(1));
+        dbmanager_login_history.close();
 
-        title.setText(name);
-        Name.setText(name);
-        phone_number.setText(phone);
-        email_address.setText(email);
-        birthday_date.setText(birthday);
-        user_picture.setImageURI(Uri.parse(picture));
+        dbmanager_user = new dbmanager_user(this);
+        dbmanager_user.open();
+        Cursor cursor_user = dbmanager_user.fetch("user_id="+user_id);
 
-        dbmanager.close();
+        TextView title = findViewById(R.id.textView);
+        TextView name = findViewById(R.id.textView3);
+        TextView phone = findViewById(R.id.textView7);
+        TextView email = findViewById(R.id.textView16);
+        TextView birthday = findViewById(R.id.textView17);
+
+        title.setText("Hi, "+cursor.getString(1));
+        name.setText(cursor_user.getString(1));
+        phone.setText(cursor_user.getString(3));
+        email.setText(cursor_user.getString(2));
+        birthday.setText(cursor_user.getString(4));
+
+        ImageView picture = findViewById(R.id.imageView);
+        picture.setImageResource(getResources().getIdentifier(cursor_user.getString(6) + "_100", "drawable", getPackageName()));
+        dbmanager_user.close();
     }
 
     public void settings(View view) {

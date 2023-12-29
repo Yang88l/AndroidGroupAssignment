@@ -64,7 +64,7 @@ public class dbmanager_user {
         return cursor;
     }
 
-    public Cursor fetch(String[] columnsToSelect, int user_id) {
+    public Cursor fetch(String selection) {
         String[] columns = new String[] {
                 dbhelper_user.USER_ID,
                 dbhelper_user.NAME,
@@ -74,13 +74,7 @@ public class dbmanager_user {
                 dbhelper_user.PASSWORD,
                 dbhelper_user.PICTURE
         };
-        // WHERE
-        String selection = dbhelper_user.NAME + " = ?";
-        // Contains the values for user id
-        String[] selectionArgs = { String.valueOf(user_id) };
-
-        // Retrieve the data
-        Cursor cursor = database.query(dbhelper_user.TABLE_NAME, columnsToSelect, selection, selectionArgs, null, null, null);
+        Cursor cursor = database.query(dbhelper_user.TABLE_NAME, columns, selection, null, null, null, null);
         if (cursor != null) {
             cursor.moveToFirst();
         }

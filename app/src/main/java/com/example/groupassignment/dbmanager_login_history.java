@@ -35,18 +35,8 @@ public class dbmanager_login_history {
     }
 
 
-    public Cursor fetch(String[] columnsToSelect, int login_id) {
-        String[] columns = new String[] {
-                dbhelper_login_history.LOGIN_ID,
-                dbhelper_login_history.USER_ID
-        };
-        // WHERE
-        String selection = dbhelper_login_history.USER_ID + " = ?";
-        // Contains the values for user id
-        String[] selectionArgs = { String.valueOf(login_id) };
-
-        // Retrieve the data
-        Cursor cursor = database.query(dbhelper_login_history.TABLE_NAME, columnsToSelect, selection, selectionArgs, null, null, null);
+    public Cursor fetch() {
+        Cursor cursor = database.query(dbhelper_login_history.TABLE_NAME, null, null, null, null, null, null);
         if (cursor != null) {
             cursor.moveToFirst();
         }
