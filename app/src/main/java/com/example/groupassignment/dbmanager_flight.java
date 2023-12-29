@@ -30,11 +30,11 @@ public class dbmanager_flight {
         dbHelper.close();
     }
 
-    public void insert(String date, String flight_number, String departure_time, String state, int user_id ) {
+    public void insert(String time, String flight_number, String date, String state, int user_id ) {
         ContentValues contentValue = new ContentValues();
-        contentValue.put(dbhelper_flight.DATE, date);
+        contentValue.put(dbhelper_flight.TIME, time);
         contentValue.put(dbhelper_flight.FLIGHT_NUMBER, flight_number);
-        contentValue.put(dbhelper_flight.DEPARTURE_TIME, departure_time);
+        contentValue.put(dbhelper_flight.DATE, date);
         contentValue.put(dbhelper_flight.STATE, state);
         contentValue.put(dbhelper_flight.USER_ID, user_id);
         database.insert(dbhelper_flight.TABLE_NAME, null, contentValue);
@@ -43,9 +43,9 @@ public class dbmanager_flight {
     public Cursor fetch(int user_id) {
         String[] columns = new String[] {
                 dbhelper_flight.FLIGHT_ID,
-                dbhelper_flight.DATE,
+                dbhelper_flight.TIME,
                 dbhelper_flight.FLIGHT_NUMBER,
-                dbhelper_flight.DEPARTURE_TIME,
+                dbhelper_flight.DATE,
                 dbhelper_flight.STATE,
                 dbhelper_flight.USER_ID
         };
@@ -62,11 +62,11 @@ public class dbmanager_flight {
         return cursor;
     }
 
-    public int update(long _id, String date, String flight_number, String departure_time, String state, int user_id) {
+    public int update(int _id, String time, String flight_number, String date, String state, int user_id) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(dbhelper_flight.DATE, date);
+        contentValues.put(dbhelper_flight.TIME, time);
         contentValues.put(dbhelper_flight.FLIGHT_NUMBER, flight_number);
-        contentValues.put(dbhelper_flight.DEPARTURE_TIME, departure_time);
+        contentValues.put(dbhelper_flight.DATE, date);
         contentValues.put(dbhelper_flight.STATE, state);
         contentValues.put(dbhelper_flight.USER_ID, user_id);
         int i = database.update(dbhelper_flight.TABLE_NAME, contentValues, dbhelper_flight.FLIGHT_ID + " = " + _id, null);

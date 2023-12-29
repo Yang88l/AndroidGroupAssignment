@@ -11,6 +11,9 @@ public class dbhelper_flight extends SQLiteOpenHelper {
 
     // Table columns
     public static final String FLIGHT_ID = "flight_id";
+        public static final String TIME = "time";
+
+
     public static final String DATE = "date";
     public static final String FLIGHT_NUMBER  = "flight_number";
     public static final String DEPARTURE_TIME = "departure_time";
@@ -27,6 +30,7 @@ public class dbhelper_flight extends SQLiteOpenHelper {
     private static final String CREATE_TABLE = "create table "
             + TABLE_NAME + "("
             + FLIGHT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+            + TIME + " TEXT NOT NULL, "
             + DATE + " TEXT NOT NULL, "
             + FLIGHT_NUMBER + " TEXT NOT NULL, "
             + DEPARTURE_TIME + " TEXT NOT NULL, "

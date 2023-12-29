@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.EditText;
 
 public class calendar_flight extends AppCompatActivity {
     private Button button;
@@ -21,8 +22,6 @@ public class calendar_flight extends AppCompatActivity {
         setContentView(R.layout.calendar_flight);
 
         button = findViewById(R.id.confirm);
-        calendarView = findViewById(R.id.calendarView);
-
 
         dbmanager_flight = new dbmanager_flight(this);
 
@@ -30,16 +29,15 @@ public class calendar_flight extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //date = calendarView.getText().toString();
-                date="27/12/2023";
+                //date="27/12/2023";
+                EditText date = findViewById(R.id.date);
                 user_id=1;
 
-                date="2023-05-08";
                 dbmanager_flight.open();
-                dbmanager_flight.insert(date, "","","",user_id);
+                dbmanager_flight.update(null,null,null, String.valueOf(date),null,null);
                 dbmanager_flight.close();
-/*
-                Intent intent = new Intent(calendar_flight.this, date_flight.class);
-                startActivity(intent);*/
+                Intent intent = new Intent(calendar_flight.this, time_flight.class);
+                startActivity(intent);
             }
         });
     }

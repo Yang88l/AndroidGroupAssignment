@@ -10,7 +10,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class info_flight extends AppCompatActivity {
-    private dbmanager_airline_info dbmanager;
+    private dbmanager_flight dbmanager_flight;
+    private  dbmanager_user dbmanager_user;
 
     /*
         private Button button;
@@ -25,16 +26,21 @@ public class info_flight extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.info_flight);
-        dbmanager = new dbmanager_airline_info(this);
-        dbmanager.open();
 
-        Cursor cursor = dbmanager.fetch(2);
-        //cursor.moveToLast();
+        dbmanager_flight = new dbmanager_flight(this);
+        dbmanager_user = new dbmanager_user(this);
 
-        TextView text1 = findViewById(R.id.textView30);
-        text1.setText(cursor.getString(1));
+        dbmanager_user.open();
+        Cursor cursor = dbmanager_user.fetch(0);
+        cursor.moveToLast();
+        int user_id=Integer.parseInt(cursor.getString(0));
+        dbmanager_user.close();
 
-        dbmanager.close();
+        dbmanager_flight.open();
+        Cursor cursor1 = dbmanager_flight.fetch();
+        String date = cursor1.getString(3);
+        cursor.moveToLast();
+        dbmanager_flight.close();
 
 
 /*
