@@ -3,6 +3,7 @@ package com.example.groupassignment;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -33,8 +34,14 @@ public class seat_bus extends AppCompatActivity {
 
     public void pick_up(View view) {
         Integer seat = Integer.valueOf(((EditText) findViewById(R.id.inputfrom5)).getText().toString());
+
         dbmanager_bus.open();
-        dbmanager_bus.insert( seat, null,null);
+        Cursor cursor = dbmanager_bus.fetch();
+        cursor.moveToLast();
+        int bus_id=Integer.parseInt(cursor.getString(1));
+        dbmanager_bus.close();
+        dbmanager_bus.open();
+        dbmanager_bus.update( bus_id, seat,null,null);
         dbmanager_bus.close();
     Intent intent = new Intent(seat_bus.this, transport.class);
     startActivity(intent);}
