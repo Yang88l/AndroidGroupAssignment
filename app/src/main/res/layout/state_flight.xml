@@ -134,6 +134,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="22dp"
         android:text="Sabah"
+        android:onClick="sabah"
         app:layout_constraintBottom_toTopOf="@+id/sarawakbut"
         app:layout_constraintEnd_toEndOf="@+id/transport3"
         app:layout_constraintStart_toStartOf="@+id/transport3"
@@ -144,6 +145,7 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="Sarawak"
+        android:onClick="sarawak"
         app:layout_constraintEnd_toEndOf="@+id/transport3"
         app:layout_constraintStart_toStartOf="@+id/transport3"
         app:layout_constraintTop_toBottomOf="@+id/sabahbut" />
@@ -153,6 +155,7 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="Penang"
+        android:onClick="penang"
         app:layout_constraintEnd_toEndOf="@+id/transport3"
         app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="@+id/transport3"
@@ -163,6 +166,7 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="Johor"
+        android:onClick="johor"
         app:layout_constraintEnd_toEndOf="@+id/transport3"
         app:layout_constraintStart_toStartOf="@+id/transport3"
         app:layout_constraintTop_toBottomOf="@+id/sarawakbut" />

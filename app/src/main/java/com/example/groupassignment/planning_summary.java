@@ -11,14 +11,14 @@ import android.widget.TextView;
 public class planning_summary extends AppCompatActivity {
 
     private dbmanager_plan_summary dbmanager_plan_summary;
-    private com.example.groupassignment.dbmanager_login_history dbmanager_login_history;
-    private com.example.groupassignment.dbmanager_choose_accomodation dbmanager_choose_accomodation;
-    private com.example.groupassignment.dbmanager_accomodation_info dbmanager_accomodation_info;
-    private com.example.groupassignment.dbmanager_food_info dbmanager_food_info;
-    private com.example.groupassignment.dbmanager_play_info dbmanager_play_info;
-    private com.example.groupassignment.dbmanager_flight dbmanager_flight;
-    private com.example.groupassignment.dbmanager_bus dbmanager_bus;
-    private com.example.groupassignment.dbmanager_plan_history dbmanager_plan_history;
+    private dbmanager_login_history dbmanager_login_history;
+    private dbmanager_choose_accomodation dbmanager_choose_accomodation;
+    private dbmanager_accomodation_info dbmanager_accomodation_info;
+    private dbmanager_food_info dbmanager_food_info;
+    private dbmanager_play_info dbmanager_play_info;
+    private dbmanager_flight dbmanager_flight;
+    private dbmanager_bus dbmanager_bus;
+    private dbmanager_plan_history dbmanager_plan_history;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

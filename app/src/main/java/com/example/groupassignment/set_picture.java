@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 
 public class set_picture extends AppCompatActivity {
-    private com.example.groupassignment.dbmanager_user dbmanager_user;
+    private dbmanager_user dbmanager_user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

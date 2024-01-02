@@ -8,7 +8,7 @@ import android.widget.Toast;
 
 public class sign_up_login extends AppCompatActivity {
 
-    private com.example.groupassignment.dbmanager_login_history dbmanager_login_history;
+    private dbmanager_login_history dbmanager_login_history;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -10,7 +10,7 @@ import android.view.View;
 public class state_bus extends AppCompatActivity {
 
     private dbmanager_choose_bus dbmanager_choose_bus;
-    private com.example.groupassignment.dbmanager_user dbmanager_login_history;
+    private dbmanager_user dbmanager_login_history;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

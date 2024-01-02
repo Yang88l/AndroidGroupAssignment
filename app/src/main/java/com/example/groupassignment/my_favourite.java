@@ -11,20 +11,11 @@ import android.widget.TextView;
 
 public class my_favourite extends AppCompatActivity {
 
-    private ImageButton button1;
-    private ImageButton button2;
-    private ImageButton button3;
-    private ImageButton button4;
-    private com.example.groupassignment.dbmanager_favourite dbmanager;
+    private dbmanager_favourite dbmanager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.my_favourite);
-
-        button1 = findViewById(R.id.imageButton11);
-        button2 = findViewById(R.id.imageButton8);
-        button3 = findViewById(R.id.imageButton9);
-        button4 = findViewById(R.id.imageButton10);
 
         TextView text1 = findViewById(R.id.text_1);
         TextView text2 = findViewById(R.id.textView);
@@ -53,37 +44,19 @@ public class my_favourite extends AppCompatActivity {
         text4.setText(String.format("RM%.2f", price));
 
         dbmanager.close();
-
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(my_favourite.this, main.class);
-                startActivity(intent);
-            }
-        });
-
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(my_favourite.this, my_favourite.class);
-                startActivity(intent);
-            }
-        });
-
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(my_favourite.this, plan_history.class);
-                startActivity(intent);
-            }
-        });
-
-        button4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(my_favourite.this, profile.class);
-                startActivity(intent);
-            }
-        });
     }
+            public void home(View v) {
+            startActivity(new Intent(my_favourite.this, main.class));
+            }
+            public void heart(View v) {
+            startActivity(new Intent(my_favourite.this, my_favourite.class));
+        }
+            public void history(View v) {
+            startActivity(new Intent(my_favourite.this, plan_history.class));
+        }
+            public void profile(View v) {
+            startActivity(new Intent(my_favourite.this, profile.class));
+
+        }
+
 }

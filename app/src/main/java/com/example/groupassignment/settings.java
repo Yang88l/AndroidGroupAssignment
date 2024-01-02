@@ -9,8 +9,8 @@ import android.view.View;
 
 public class settings extends AppCompatActivity {
 
-    private com.example.groupassignment.dbmanager_user dbmanager_user;
-    private com.example.groupassignment.dbmanager_login_history dbmanager_login_history;
+    private dbmanager_user dbmanager_user;
+    private dbmanager_login_history dbmanager_login_history;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

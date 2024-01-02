@@ -31,10 +31,8 @@ public class state_flight extends AppCompatActivity {
 
         dbmanager_flight = new dbmanager_flight(this);
         dbmanager_user = new dbmanager_user(this);
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+    }
+            public void sabah(View v) {
                 dbmanager_user.open();
                 Cursor cursor = dbmanager_user.fetch(1);
                 cursor.moveToLast();
@@ -47,11 +45,8 @@ public class state_flight extends AppCompatActivity {
                 Intent intent = new Intent(state_flight.this, airline.class);
                 startActivity(intent);
             }
-        });
 
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+         public void sarawak(View v) {
                 dbmanager_user.open();
                 Cursor cursor = dbmanager_user.fetch(1);
                 cursor.moveToLast();
@@ -64,11 +59,8 @@ public class state_flight extends AppCompatActivity {
                 Intent intent = new Intent(state_flight.this, airline.class);
                 startActivity(intent);
             }
-        });
 
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            public void penang(View v) {
                 dbmanager_user.open();
                 Cursor cursor = dbmanager_user.fetch(1);
                 cursor.moveToLast();
@@ -81,11 +73,8 @@ public class state_flight extends AppCompatActivity {
                 Intent intent = new Intent(state_flight.this, airline.class);
                 startActivity(intent);
             }
-        });
 
-        button4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            public void johor(View v) {
                 dbmanager_user.open();
                 Cursor cursor = dbmanager_user.fetch(1);
                 cursor.moveToLast();
@@ -98,6 +87,4 @@ public class state_flight extends AppCompatActivity {
                 Intent intent = new Intent(state_flight.this, airline.class);
                 startActivity(intent);
             }
-        });
-    }
 }
