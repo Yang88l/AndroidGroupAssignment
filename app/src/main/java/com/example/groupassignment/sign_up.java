@@ -43,10 +43,10 @@ public class sign_up extends AppCompatActivity {
             cursor.close();
             dbmanager_user.close();
 
-            dbhelper_login_history.DB_VERSION=main.dbversion++;
+            dbhelper_login_history.DB_VERSION = main.dbversion++;
             dbmanager_login_history = new dbmanager_login_history(this);
             dbmanager_login_history.open();
-            dbmanager_login_history.insert(3, "logged in", "null");
+            dbmanager_login_history.insert(user_id, "logged in", "null");
             dbmanager_login_history.close();
 
             Intent intent = new Intent (this, profile.class);
