@@ -7,17 +7,6 @@
     tools:context=".train_type"
     android:background="@drawable/gradient_bg">
 
-    <Button
-        android:id="@+id/sripetalling"
-        android:layout_width="150dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="216dp"
-        android:layout_marginTop="40dp"
-        android:onClick="sri_petaling"
-        android:text="LRT Sri Petalling"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ampang" />
-
     <TextView
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
@@ -51,51 +40,45 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
 
+    <Button
+        android:id="@+id/sripetalling"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="212dp"
+        android:onClick="sri_petaling"
+        android:text="LRT Sri Petalling"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="343dp" />
 
     <Button
         android:id="@+id/putrajaya"
         android:layout_width="150dp"
         android:layout_height="70dp"
         android:layout_marginStart="52dp"
-        android:layout_marginTop="40dp"
         android:onClick="putrajaya"
         android:text="MRT Putrajaya"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/kajang" />
+        tools:layout_editor_absoluteY="343dp" />
+
 
     <Button
         android:id="@+id/kajang"
         android:layout_width="150dp"
         android:layout_height="70dp"
         android:layout_marginStart="52dp"
-        android:layout_marginTop="148dp"
         android:onClick="kajang"
         android:text="MRT Kajang"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/line" />
+        tools:layout_editor_absoluteY="247dp" />
 
     <Button
         android:id="@+id/ampang"
         android:layout_width="150dp"
         android:layout_height="70dp"
-        android:layout_marginStart="216dp"
-        android:layout_marginTop="148dp"
+        android:layout_marginStart="212dp"
         android:onClick="ampang"
         android:text="LRT Ampang"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/line" />
-
-    <TextView
-        android:id="@+id/textView24"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Select the train you want"
-        android:textSize="24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/line"
-        app:layout_constraintVertical_bias="0.107" />
+        tools:layout_editor_absoluteY="247dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

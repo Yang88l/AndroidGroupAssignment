@@ -42,17 +42,14 @@
 
     <TextView
         android:id="@+id/transport3"
-        android:layout_width="wrap_content"
+        android:layout_width="128dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="142dp"
-        android:layout_marginTop="92dp"
-        android:layout_marginEnd="142dp"
+        android:layout_marginTop="160dp"
         android:text="Select State"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/line" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/sabahbut"
@@ -62,39 +59,41 @@
         android:onClick="sabah"
         android:text="Sabah"
         app:layout_constraintBottom_toTopOf="@+id/sarawakbut"
-        app:layout_constraintEnd_toEndOf="@+id/transport3"
-        app:layout_constraintStart_toStartOf="@+id/transport3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/transport3" />
 
     <Button
         android:id="@+id/sarawakbut"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:onClick="sarawak"
         android:text="Sarawak"
-        app:layout_constraintEnd_toEndOf="@+id/transport3"
-        app:layout_constraintStart_toStartOf="@+id/transport3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sabahbut" />
 
     <Button
         android:id="@+id/penangbut"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:onClick="penang"
         android:text="Penang"
-        app:layout_constraintEnd_toEndOf="@+id/transport3"
-        app:layout_constraintHorizontal_bias="0.521"
-        app:layout_constraintStart_toStartOf="@+id/transport3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/johorbut" />
 
     <Button
         android:id="@+id/johorbut"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:onClick="johor"
         android:text="Johor"
-        app:layout_constraintEnd_toEndOf="@+id/transport3"
-        app:layout_constraintStart_toStartOf="@+id/transport3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sarawakbut" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
