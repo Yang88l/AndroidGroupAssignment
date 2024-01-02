@@ -39,8 +39,8 @@ public class profile extends AppCompatActivity {
 
         title.setText("Hi, "+cursor.getString(1));
         name.setText(cursor_user.getString(1));
-        phone.setText(cursor_user.getString(3));
         email.setText(cursor_user.getString(2));
+        phone.setText(cursor_user.getString(3));
         birthday.setText(cursor_user.getString(4));
 /*
         ImageView picture = findViewById(R.id.imageView);

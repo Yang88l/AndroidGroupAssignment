@@ -21,7 +21,7 @@ public class dbhelper_user extends SQLiteOpenHelper {
     static final String DB_NAME = "JOURNALDEV_TRAVEL_BOOKING.DB";
 
     // database version
-    static final int DB_VERSION = 4;
+    static final int DB_VERSION = 2;
 
     // Creating table query
     private static final String CREATE_TABLE = "create table "
