@@ -50,4 +50,9 @@ public class sign_up extends AppCompatActivity {
             Toast.makeText(this, "The password is not matched", Toast.LENGTH_SHORT).show();
         }
     }
+
+    public void term(View view) {
+        Intent intent = new Intent (this, terms_conditions.class);
+        startActivity(intent);
+    }
 }
