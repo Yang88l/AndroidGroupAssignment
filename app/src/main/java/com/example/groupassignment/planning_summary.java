@@ -41,7 +41,7 @@ public class planning_summary extends AppCompatActivity {
 
         if (cursor_summary != null && cursor_summary.moveToFirst()) {
             do {
-                if (type=="hotel") {
+                if (type.equals("hotel")) {
                     dbmanager_accomodation_info = new dbmanager_accomodation_info(this);
                     dbmanager_accomodation_info.open();
                     Cursor cursor = dbmanager_accomodation_info.fetch(activity_id);
@@ -49,7 +49,7 @@ public class planning_summary extends AppCompatActivity {
                     displayText2.append("RM"+cursor.getString(2));
                     dbmanager_accomodation_info.close();
                 }
-                else if (type=="food") {
+                else if (type.equals("food")) {
                     dbmanager_food_info = new dbmanager_food_info(this);
                     dbmanager_food_info.open();
                     Cursor cursor = dbmanager_food_info.fetch(activity_id);
@@ -57,7 +57,7 @@ public class planning_summary extends AppCompatActivity {
                     displayText2.append("RM"+cursor.getString(2));
                     dbmanager_food_info.close();
                 }
-                else if (type=="play") {
+                else if (type.equals("play")) {
                     dbmanager_play_info = new dbmanager_play_info(this);
                     dbmanager_play_info.open();
                     Cursor cursor = dbmanager_play_info.fetch(activity_id);
@@ -65,7 +65,7 @@ public class planning_summary extends AppCompatActivity {
                     displayText2.append("RM"+cursor.getString(2));
                     dbmanager_play_info.close();
                 }
-                else if (type=="flight") {
+                else if (type.equals("flight")) {
                     dbmanager_flight = new dbmanager_flight(this);
                     dbmanager_flight.open();
                     Cursor cursor = dbmanager_flight.fetch(activity_id);
@@ -73,7 +73,7 @@ public class planning_summary extends AppCompatActivity {
                     displayText2.append("RM"+cursor.getString(2));
                     dbmanager_flight.close();
                 }
-                else if (type=="bus") {
+                else if (type.equals("bus")){
                     dbmanager_bus = new dbmanager_bus(this);
                     dbmanager_bus.open();
                     Cursor cursor = dbmanager_bus.fetch(activity_id);

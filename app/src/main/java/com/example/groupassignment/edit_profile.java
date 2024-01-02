@@ -19,6 +19,8 @@ public class edit_profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.edit_profile);
 
+        dbhelper_login_history.DB_VERSION = main.dbversion++;
+
         dbmanager_login_history = new dbmanager_login_history(this);
         dbmanager_login_history.open();
         Cursor cursor = dbmanager_login_history.fetch();
@@ -26,6 +28,7 @@ public class edit_profile extends AppCompatActivity {
         int user_id=Integer.parseInt(cursor.getString(1));
         dbmanager_login_history.close();
 
+        dbhelper_user.DB_VERSION = main.dbversion++;
         dbmanager_user = new dbmanager_user(this);
         dbmanager_user.open();
         Cursor cursor_user = dbmanager_user.fetch(user_id);
@@ -52,6 +55,9 @@ public class edit_profile extends AppCompatActivity {
     }
 
     public void save_edit(View view) {
+
+        dbhelper_login_history.DB_VERSION = main.dbversion++;
+
         dbmanager_login_history = new dbmanager_login_history(this);
         dbmanager_login_history.open();
         Cursor cursor = dbmanager_login_history.fetch();
@@ -63,6 +69,8 @@ public class edit_profile extends AppCompatActivity {
         String email = ((EditText) findViewById(R.id.email_text)).getText().toString();
         String phone = ((EditText) findViewById(R.id.phone_text)).getText().toString();
         String birthday = ((EditText) findViewById(R.id.birthday_text)).getText().toString();
+
+        dbhelper_user.DB_VERSION = main.dbversion++;
 
         dbmanager_user = new dbmanager_user(this);
         dbmanager_user.open();

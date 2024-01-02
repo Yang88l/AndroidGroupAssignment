@@ -72,7 +72,7 @@ public class seat_bus extends AppCompatActivity {
         }
         dbmanager_bus.close();
 
-        if (activity=="plan") {
+        if (activity.equals("plan")) {
             dbmanager_plan_summary = new dbmanager_plan_summary(this);
             dbmanager_plan_summary.open();
             dbmanager_plan_summary.insert("bus", bus_id, user_id);
@@ -80,7 +80,7 @@ public class seat_bus extends AppCompatActivity {
             Intent intent = new Intent(this,planning_summary.class);
             startActivity(intent);
         }
-        else if (activity=="book") {
+        else if (activity.equals("book")) {
             dbmanager_book_summary = new dbmanager_book_summary(this);
             dbmanager_book_summary.open();
             dbmanager_book_summary.insert("bus", bus_id, user_id);

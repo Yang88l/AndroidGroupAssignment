@@ -24,6 +24,8 @@ public class main extends AppCompatActivity {
     }
 
     public void plan(View view) {
+        dbhelper_login_history.DB_VERSION = main.dbversion++;
+
         dbmanager_login_history = new dbmanager_login_history(this);
         dbmanager_login_history.open();
         Cursor cursor = dbmanager_login_history.fetch();
@@ -36,6 +38,8 @@ public class main extends AppCompatActivity {
     }
 
     public void Book(View view) {
+        dbhelper_login_history.DB_VERSION = main.dbversion++;
+
         dbmanager_login_history = new dbmanager_login_history(this);
         dbmanager_login_history.open();
         Cursor cursor = dbmanager_login_history.fetch();
@@ -66,6 +70,8 @@ public class main extends AppCompatActivity {
     }
 
     public void profile(View view) {
+        dbhelper_login_history.DB_VERSION = main.dbversion++;
+
         dbmanager_login_history = new dbmanager_login_history(this);
         dbmanager_login_history.open();
         Cursor cursor = dbmanager_login_history.fetch();
