@@ -104,14 +104,14 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_weight="1"
-            app:srcCompat="@drawable/sunway_lagoon" />
+            app:srcCompat="@drawable/genting_highland_180" />
 
         <TextView
             android:id="@+id/text_2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="content"
+            android:text="We have a new app user promotion now !!!"
             android:textAlignment="center"
             android:textSize="24sp" />
 
@@ -135,14 +135,14 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_weight="1"
-            app:srcCompat="@drawable/sunway_lagoon" />
+            app:srcCompat="@drawable/sky_mirror_180" />
 
         <TextView
             android:id="@+id/text_3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="content"
+            android:text="Do you want a wondeful trip with your family?"
             android:textAlignment="center"
             android:textSize="24sp" />
 
@@ -166,14 +166,14 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_weight="1"
-            app:srcCompat="@drawable/sunway_lagoon" />
+            app:srcCompat="@drawable/zoo_negara_180" />
 
         <TextView
             android:id="@+id/text_4"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="content"
+            android:text="The next holiday we have a surprise with you !"
             android:textAlignment="center"
             android:textSize="24sp" />
 
