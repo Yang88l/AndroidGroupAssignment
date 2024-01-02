@@ -8,48 +8,21 @@
     android:background="@drawable/gradient_bg">
 
     <TextView
-        android:id="@+id/transport3"
+        android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="148dp"
-        android:layout_marginBottom="18dp"
-        android:text="Select State"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/selangorbut"
-        app:layout_constraintEnd_toStartOf="@+id/notif"
-        app:layout_constraintHorizontal_bias="0.479"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="15dp"
+        android:text="Booking App"
+        android:textSize="24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/booking"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="24dp"
-        android:text="BOOKING APP"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/notif"
-        app:layout_constraintHorizontal_bias="0.062"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/notif"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/notif" />
 
     <ImageView
         android:id="@+id/line"
         android:layout_width="302dp"
         android:layout_height="52dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="36dp"
         android:scaleX="8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -58,120 +31,68 @@
         app:srcCompat="@drawable/straight" />
 
     <ImageView
-        android:id="@+id/line2"
-        android:layout_width="429dp"
-        android:layout_height="100dp"
-        android:scaleX="8"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.947"
-        app:srcCompat="@drawable/straight" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="69dp"
-        android:layout_height="72dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/circle" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="50dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
-        app:layout_constraintTop_toBottomOf="@+id/line2"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/heart" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="82dp"
-        android:layout_height="71dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/line2"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/home" />
-
-    <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.328"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
-        app:layout_constraintTop_toTopOf="@+id/line2"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/history" />
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
 
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="61dp"
-        android:layout_height="56dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/transport3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:text="Select State"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView7"
-        app:layout_constraintTop_toTopOf="@+id/line2"
-        app:layout_constraintVertical_bias="0.831"
-        app:srcCompat="@drawable/user" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/selangorbut"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="132dp"
-        android:layout_marginBottom="8dp"
-        android:text="Selangor"
+        android:layout_marginTop="20dp"
         android:onClick="selangor"
-        app:layout_constraintBottom_toTopOf="@+id/perakbut"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:text="Selangor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/transport3" />
 
     <Button
         android:id="@+id/perakbut"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="132dp"
-        android:layout_marginBottom="296dp"
-        android:text="Perak"
+        android:layout_marginTop="20dp"
         android:onClick="perak"
-        app:layout_constraintBottom_toTopOf="@+id/line2"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:text="Perak"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selangorbut" />
 
     <Button
         android:id="@+id/penangbut"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="132dp"
-        android:layout_marginBottom="172dp"
-        android:text="Penang"
+        android:layout_marginTop="20dp"
         android:onClick="penang"
-        app:layout_constraintBottom_toTopOf="@+id/line2"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:text="Penang"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/johorbut" />
 
     <Button
         android:id="@+id/johorbut"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="132dp"
-        android:layout_marginBottom="236dp"
-        android:text="Johor"
+        android:layout_marginTop="20dp"
         android:onClick="johor"
-        app:layout_constraintBottom_toTopOf="@+id/line2"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:text="Johor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/perakbut" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

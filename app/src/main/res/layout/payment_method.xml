@@ -6,132 +6,49 @@
     android:layout_height="match_parent"
     tools:context=".payment_method">
 
-
     <TextView
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="15dp"
         android:text="Booking App"
         android:textSize="24dp"
-        app:layout_constraintBottom_toBottomOf="@+id/divider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/line"
+        android:layout_width="302dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="36dp"
+        android:scaleX="8"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.228"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:srcCompat="@drawable/straight" />
 
-    <View
-        android:id="@+id/divider"
-        android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.088" />
-
-    <ImageButton
-        android:id="@+id/notification"
-        android:layout_width="54dp"
-        android:layout_height="54dp"
-        android:layout_margin="10dp"
-        android:layout_marginTop="4dp"
-        android:contentDescription="notification"
-        android:onClick="notification"
-        app:layout_constraintBottom_toBottomOf="@+id/divider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/notif" />
-
-    <ImageButton
-        android:id="@+id/heart"
-        android:layout_width="77dp"
-        android:layout_height="75dp"
-        android:layout_marginEnd="16dp"
-        android:contentDescription="heart"
-        android:onClick="heart"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/history"
-        app:layout_constraintStart_toEndOf="@+id/home"
-        app:layout_constraintTop_toTopOf="@+id/divide"
-        app:layout_constraintVertical_bias="0.428"
-        app:srcCompat="@drawable/heart" />
-
-    <ImageButton
-        android:id="@+id/history"
-        android:layout_width="77dp"
-        android:layout_height="75dp"
-        android:layout_marginEnd="27dp"
-        android:contentDescription="history"
-        android:onClick="history"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/profile"
-        app:layout_constraintStart_toEndOf="@+id/heart"
-        app:layout_constraintTop_toTopOf="@+id/divide"
-        app:layout_constraintVertical_bias="0.428"
-        app:srcCompat="@drawable/order" />
-
-    <ImageButton
-        android:id="@+id/profile"
-        android:layout_width="77dp"
-        android:layout_height="75dp"
-        android:layout_marginEnd="16dp"
-        android:autofillHints="creditCardExpirationDate"
-        android:contentDescription="profile"
-        android:onClick="profile"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/history"
-        app:layout_constraintTop_toTopOf="@+id/divide"
-        app:layout_constraintVertical_bias="0.428"
-        app:srcCompat="@drawable/profile" />
-
-    <ImageButton
-        android:id="@+id/home"
-        android:layout_width="77dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="28dp"
-        android:contentDescription="home"
-        android:onClick="home"
-        app:layout_constraintBottom_toBottomOf="@+id/heart"
-        app:layout_constraintEnd_toStartOf="@+id/heart"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/divide"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/home" />
-
-    <View
-        android:id="@+id/divide"
-        android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.874" />
+        app:srcCompat="@drawable/logo" />
 
     <Button
         android:id="@+id/touchngo"
         android:layout_width="265dp"
         android:layout_height="72dp"
-        android:layout_marginBottom="264dp"
         android:onClick="touchngo"
         android:text="TouchNGo"
         android:textSize="22dp"
-        app:layout_constraintBottom_toTopOf="@+id/divide"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider"
-        app:layout_constraintVertical_bias="0.991" />
+        tools:layout_editor_absoluteY="346dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
