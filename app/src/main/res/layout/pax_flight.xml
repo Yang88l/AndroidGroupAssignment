@@ -13,15 +13,34 @@
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="15dp"
         android:text="Booking App"
         android:textSize="24dp"
-        app:layout_constraintBottom_toBottomOf="@+id/divider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/line"
+        android:layout_width="302dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="36dp"
+        android:scaleX="8"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.228"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:srcCompat="@drawable/straight" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
 
     <TextView
         android:id="@+id/text2"
@@ -32,12 +51,10 @@
         android:labelFor="@+id/adult_amount"
         android:text="Adult"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/divide"
         app:layout_constraintEnd_toStartOf="@+id/text3"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/text3"
@@ -47,12 +64,10 @@
         android:labelFor="@+id/kid_amount"
         android:text="Kid"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/divide"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.691"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/text1"
@@ -62,101 +77,11 @@
         android:labelFor="@+id/ticket_amount"
         android:text="Enter Amount of Tickets Purchasing"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/divide"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.553"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/notification"
-        android:layout_width="54dp"
-        android:layout_height="54dp"
-        android:layout_margin="10dp"
-        android:layout_marginTop="4dp"
-        android:contentDescription="notification"
-        android:onClick="notification"
-        app:layout_constraintBottom_toBottomOf="@+id/divider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/notif" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="56dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView12"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.005"
-        app:srcCompat="@drawable/circle" />
-
-
-
-    <ImageButton
-        android:id="@+id/heart"
-        android:layout_width="77dp"
-        android:layout_height="75dp"
-        android:layout_marginEnd="16dp"
-        android:contentDescription="heart"
-        android:onClick="heart"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/history"
-        app:layout_constraintStart_toEndOf="@+id/home"
-        app:layout_constraintTop_toTopOf="@+id/divide"
-        app:layout_constraintVertical_bias="0.428"
-        app:srcCompat="@drawable/heart" />
-
-    <ImageButton
-        android:id="@+id/history"
-        android:layout_width="77dp"
-        android:layout_height="75dp"
-        android:layout_marginEnd="27dp"
-        android:contentDescription="history"
-        android:onClick="history"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/profile"
-        app:layout_constraintStart_toEndOf="@+id/heart"
-        app:layout_constraintTop_toTopOf="@+id/divide"
-        app:layout_constraintVertical_bias="0.428"
-        app:srcCompat="@drawable/order" />
-
-    <ImageButton
-        android:id="@+id/profile"
-        android:layout_width="77dp"
-        android:layout_height="75dp"
-        android:layout_marginEnd="16dp"
-        android:autofillHints="creditCardExpirationDate"
-        android:contentDescription="profile"
-        android:onClick="profile"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/history"
-        app:layout_constraintTop_toTopOf="@+id/divide"
-        app:layout_constraintVertical_bias="0.428"
-        app:srcCompat="@drawable/profile" />
-
-    <ImageButton
-        android:id="@+id/home"
-        android:layout_width="77dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="28dp"
-        android:contentDescription="home"
-        android:onClick="home"
-        app:layout_constraintBottom_toBottomOf="@+id/heart"
-        app:layout_constraintEnd_toStartOf="@+id/heart"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/divide"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/home" />
 
     <Button
         android:id="@+id/buy"
@@ -225,29 +150,5 @@
             tools:layout_editor_absoluteX="1dp"
             tools:layout_editor_absoluteY="439dp" />
     </com.google.android.material.textfield.TextInputLayout>
-
-    <View
-        android:id="@+id/divider"
-        android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.088" />
-
-    <View
-        android:id="@+id/divide"
-        android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.874" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

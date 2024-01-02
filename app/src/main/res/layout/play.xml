@@ -6,115 +6,49 @@
     android:layout_height="match_parent"
     tools:context=".play">
 
-
     <TextView
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:text="Booking App"
         android:textSize="24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <View
-        android:id="@+id/divider"
-        android:layout_width="403dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="18dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toTopOf="@+id/button23"
+    <ImageView
+        android:id="@+id/line"
+        android:layout_width="302dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="36dp"
+        android:scaleX="8"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/straight" />
 
-    <ImageButton
-        android:id="@+id/notification"
-        android:layout_width="54dp"
-        android:layout_height="54dp"
-        android:layout_margin="10dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="24dp"
-        android:contentDescription="NULL "
-        android:onClick="notification"
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:onClick="notif"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/notif" />
-
-    <ImageButton
-        android:id="@+id/imageButton8"
-        android:layout_width="77dp"
-        android:layout_height="75dp"
-        android:layout_marginEnd="16dp"
-        android:onClick="favourite"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton9"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton9"
-        app:layout_constraintStart_toEndOf="@+id/imageButton11"
-        app:layout_constraintTop_toTopOf="@+id/imageButton9"
-        app:srcCompat="@drawable/heart" />
-
-    <ImageButton
-        android:id="@+id/imageButton9"
-        android:layout_width="77dp"
-        android:layout_height="75dp"
-        android:layout_marginEnd="27dp"
-        android:onClick="history"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton10"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton10"
-        app:layout_constraintStart_toEndOf="@+id/imageButton8"
-        app:layout_constraintTop_toTopOf="@+id/imageButton10"
-        app:srcCompat="@drawable/order" />
-
-    <ImageButton
-        android:id="@+id/imageButton10"
-        android:layout_width="77dp"
-        android:layout_height="75dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="11dp"
-        android:onClick="profile"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageButton9"
-        app:srcCompat="@drawable/profile" />
-
-    <ImageButton
-        android:id="@+id/imageButton11"
-        android:layout_width="77dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="28dp"
-        android:onClick="main"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton8"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton8"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageButton8"
-        app:srcCompat="@drawable/home" />
-
-    <View
-        android:id="@+id/divide"
-        android:layout_width="403dp"
-        android:layout_height="5dp"
-        android:layout_marginTop="628dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button23"
-        android:layout_width="129dp"
-        android:layout_height="59dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="589dp"
-        android:onClick="filter"
-        android:text="Filter"
-        android:textSize="22dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider" />
-
+        app:srcCompat="@drawable/notification" />
 
     <ImageButton
         android:id="@+id/sunway_lagoon_picture"
@@ -131,9 +65,9 @@
         android:layout_width="77dp"
         android:layout_height="77dp"
         android:layout_marginStart="44dp"
-        android:layout_marginTop="264dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sunway_lagoon_picture"
         app:srcCompat="@drawable/genting_highland_77" />
 
     <ImageButton
@@ -141,9 +75,9 @@
         android:layout_width="77dp"
         android:layout_height="77dp"
         android:layout_marginStart="44dp"
-        android:layout_marginTop="364dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/genting_highland_picture"
         app:srcCompat="@drawable/sky_mirror_77" />
 
     <ImageButton
@@ -151,9 +85,9 @@
         android:layout_width="77dp"
         android:layout_height="77dp"
         android:layout_marginStart="44dp"
-        android:layout_marginTop="464dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sky_mirror_picture"
         app:srcCompat="@drawable/zoo_negara_77" />
 
 
@@ -174,79 +108,79 @@
         android:layout_width="167dp"
         android:layout_height="83dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="260dp"
+        android:layout_marginTop="20dp"
         android:onClick="genting"
         android:text="Genting Highland"
         android:textSize="25dp"
         app:layout_constraintStart_toEndOf="@+id/genting_highland_picture"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/sunway_lagoon_button" />
 
     <Button
         android:id="@+id/sky_mirror_button"
         android:layout_width="167dp"
         android:layout_height="83dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="360dp"
+        android:layout_marginTop="20dp"
         android:onClick="sky"
         android:text="Sky Mirror"
         android:textSize="25dp"
         app:layout_constraintStart_toEndOf="@+id/sky_mirror_picture"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/genting_highland_button" />
 
     <Button
         android:id="@+id/zoo_negara_button"
         android:layout_width="167dp"
         android:layout_height="83dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="460dp"
+        android:layout_marginTop="20dp"
         android:onClick="zoo"
         android:text="Zoo Negara"
         android:textSize="25dp"
         app:layout_constraintStart_toEndOf="@+id/zoo_negara_picture"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/sky_mirror_button" />
 
     <ImageButton
         android:id="@+id/heart1"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="180dp"
         android:onClick="add"
         app:layout_constraintStart_toEndOf="@+id/sunway_lagoon_button"
-        app:layout_constraintTop_toBottomOf="@+id/button23"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/love" />
 
     <ImageButton
         android:id="@+id/heart2"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="136dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="52dp"
         android:onClick="add"
         app:layout_constraintStart_toEndOf="@+id/genting_highland_button"
-        app:layout_constraintTop_toBottomOf="@+id/button23"
+        app:layout_constraintTop_toBottomOf="@+id/heart1"
         app:srcCompat="@drawable/love" />
 
     <ImageButton
         android:id="@+id/heart3"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="236dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="60dp"
         android:onClick="add"
         app:layout_constraintStart_toEndOf="@+id/sky_mirror_button"
-        app:layout_constraintTop_toBottomOf="@+id/button23"
+        app:layout_constraintTop_toBottomOf="@+id/heart2"
         app:srcCompat="@drawable/love" />
 
     <ImageButton
         android:id="@+id/heart4"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="336dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="60dp"
         android:onClick="add"
         app:layout_constraintStart_toEndOf="@+id/zoo_negara_button"
-        app:layout_constraintTop_toBottomOf="@+id/button23"
+        app:layout_constraintTop_toBottomOf="@+id/heart3"
         app:srcCompat="@drawable/love" />
 
 
