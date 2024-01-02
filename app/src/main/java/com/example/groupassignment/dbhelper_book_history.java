@@ -25,7 +25,7 @@ public class dbhelper_book_history extends SQLiteOpenHelper {
     static final String DB_NAME = "JOURNALDEV_TRAVEL_BOOKING.DB";
 
     // database version
-    static final int DB_VERSION = 1;
+    public static int DB_VERSION = main.dbversion++;
 
     // Creating table query
     private static final String CREATE_TABLE = "create table "
@@ -46,6 +46,8 @@ public class dbhelper_book_history extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE);
+        db.execSQL("INSERT INTO book_history (COST)"+
+                "VALUES (1);");
     }
 
     @Override

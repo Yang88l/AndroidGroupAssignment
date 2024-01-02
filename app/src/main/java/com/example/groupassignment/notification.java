@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class notification extends AppCompatActivity {
 
-    private com.example.groupassignment.dbmanager_notification dbmanager;
+    private com.example.groupassignment.dbmanager_notification dbmanager_notification;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,9 +21,10 @@ public class notification extends AppCompatActivity {
         TextView text3 = findViewById(R.id.text_3);
         TextView text4 = findViewById(R.id.text_4);
 
-        dbmanager = new com.example.groupassignment.dbmanager_notification(this);
-        dbmanager.open();
-        Cursor cursor = dbmanager.fetch();
+        dbhelper_notification.DB_VERSION = main.dbversion++;
+        dbmanager_notification = new dbmanager_notification(this);
+        dbmanager_notification.open();
+        Cursor cursor = dbmanager_notification.fetch();
 
         String notification = "";
 
@@ -36,7 +37,7 @@ public class notification extends AppCompatActivity {
         text3.setText(notification);
         text4.setText(notification);
 
-        dbmanager.close();
+        dbmanager_notification.close();
     }
 
     public void history(View view) {

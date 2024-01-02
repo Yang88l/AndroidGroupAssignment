@@ -20,6 +20,7 @@ public class time_flight extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.time_flight);
 
+        dbhelper_flight.DB_VERSION = main.dbversion++;
         dbmanager_flight = new dbmanager_flight(this);
 
 

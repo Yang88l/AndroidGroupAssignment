@@ -13,12 +13,11 @@ import android.widget.Toast;
 public class sign_up extends AppCompatActivity {
     private com.example.groupassignment.dbmanager_user dbmanager_user;
     private com.example.groupassignment.dbmanager_login_history dbmanager_login_history;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_up);
-        dbmanager_user = new dbmanager_user(this);
-        dbmanager_login_history = new dbmanager_login_history(this);
     }
 
     public void sign_up(View view) {
@@ -28,12 +27,13 @@ public class sign_up extends AppCompatActivity {
         String birthday = ((EditText) findViewById(R.id.editTextDate)).getText().toString();
         String password = ((EditText) findViewById(R.id.editTextTextPassword)).getText().toString();
         String password2 = ((EditText) findViewById(R.id.editTextTextPassword2)).getText().toString();
-        dbmanager_login_history.open();
 
         if (name.equals("")||email.equals("")||phone.equals("")||birthday.equals("")||password.equals("")||password2.equals("")) {
             Toast.makeText(this, "Please fill in all the blank!", Toast.LENGTH_LONG).show();
         }
         else if (password.equals(password2)) {
+            dbhelper_user.DB_VERSION = main.dbversion++;
+            dbmanager_user = new dbmanager_user(this);
             dbmanager_user.open();
             dbmanager_user.insert(name, email, phone, birthday, password, "null");
             Cursor cursor = dbmanager_user.fetchByName(name);
@@ -43,10 +43,12 @@ public class sign_up extends AppCompatActivity {
             cursor.close();
             dbmanager_user.close();
 
-
-            dbmanager_login_history.insert(user_id, "logged in", "null");
+            dbhelper_login_history.DB_VERSION=main.dbversion++;
+            dbmanager_login_history = new dbmanager_login_history(this);
+            dbmanager_login_history.open();
+            dbmanager_login_history.insert(3, "logged in", "null");
             dbmanager_login_history.close();
-            Toast.makeText(this, "Your information has saved to database", Toast.LENGTH_SHORT).show();
+
             Intent intent = new Intent (this, profile.class);
             startActivity(intent);
         }

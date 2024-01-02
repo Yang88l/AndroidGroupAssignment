@@ -44,7 +44,7 @@ public class book_history extends AppCompatActivity {
         };
 
         //Retrieve the data
-        Cursor cursor = dbmanager_book_history.fetch(columnsToSelect, user_id);
+        Cursor cursor = dbmanager_book_history.fetch(user_id);
 
         // Get column indices
         int locationIndex = cursor.getColumnIndex(dbhelper_book_history.LOCATION);

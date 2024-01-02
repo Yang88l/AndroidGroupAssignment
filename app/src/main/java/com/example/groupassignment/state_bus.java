@@ -16,8 +16,6 @@ public class state_bus extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.state_bus);
-
-        dbmanager_choose_bus = new dbmanager_choose_bus(this);
     }
     public void selangor(View view) {
         chooseState("Selangor");
@@ -36,6 +34,7 @@ public class state_bus extends AppCompatActivity {
     }
 
     public void chooseState (String state) {
+        dbhelper_login_history.DB_VERSION = main.dbversion++;
         dbmanager_login_history = new dbmanager_user(this);
         dbmanager_login_history.open();
         Cursor cursor = dbmanager_login_history.fetch(1);
@@ -43,6 +42,8 @@ public class state_bus extends AppCompatActivity {
         int user_id=Integer.parseInt(cursor.getString(1));
         dbmanager_login_history.close();
 
+        dbhelper_choose_bus.DB_VERSION = main.dbversion++;
+        dbmanager_choose_bus = new dbmanager_choose_bus(this);
         dbmanager_choose_bus.open();
         dbmanager_choose_bus.insert(user_id, state);
         dbmanager_choose_bus.close();

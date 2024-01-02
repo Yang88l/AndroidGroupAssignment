@@ -13,6 +13,9 @@
         android:theme="@style/Theme.GroupAssignment"
         tools:targetApi="31">
         <activity
+            android:name=".sign_up_login"
+            android:exported="false" />
+        <activity
             android:name=".bus"
             android:exported="false" />
         <activity
