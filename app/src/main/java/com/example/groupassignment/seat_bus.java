@@ -24,6 +24,8 @@ public class seat_bus extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.seat_bus);
 
+        dbhelper_bus.DB_VERSION = main.dbversion++;
+
         dbmanager_bus = new dbmanager_bus(this);
     /*    button = findViewById(R.id.pickup);
 
@@ -39,6 +41,8 @@ public class seat_bus extends AppCompatActivity {
 
     public void pick_up(View view) {
         //get activity
+        dbhelper_login_history.DB_VERSION = main.dbversion++;
+
         dbmanager_login_history = new dbmanager_login_history(this);
         dbmanager_login_history.open();
         Cursor cursor_login = dbmanager_login_history.fetch();
@@ -46,6 +50,8 @@ public class seat_bus extends AppCompatActivity {
         String activity = cursor_login.getString(2);
 
         //get user id
+        dbhelper_login_history.DB_VERSION = main.dbversion++;
+
         dbmanager_login_history = new dbmanager_login_history(this);
         dbmanager_login_history.open();
         Cursor cursor = dbmanager_login_history.fetch();
@@ -54,6 +60,8 @@ public class seat_bus extends AppCompatActivity {
         dbmanager_login_history.close();
 
         //get bus id
+        dbhelper_choose_bus.DB_VERSION = main.dbversion++;
+
         dbmanager_choose_bus = new dbmanager_choose_bus(this);
         dbmanager_choose_bus.open();
         Cursor cursor_choose = dbmanager_choose_bus.fetch();
@@ -73,6 +81,8 @@ public class seat_bus extends AppCompatActivity {
         dbmanager_bus.close();
 
         if (activity.equals("plan")) {
+            dbhelper_plan_summary.DB_VERSION = main.dbversion++;
+
             dbmanager_plan_summary = new dbmanager_plan_summary(this);
             dbmanager_plan_summary.open();
             dbmanager_plan_summary.insert("bus", bus_id, user_id);
@@ -81,6 +91,8 @@ public class seat_bus extends AppCompatActivity {
             startActivity(intent);
         }
         else if (activity.equals("book")) {
+            dbhelper_book_summary.DB_VERSION = main.dbversion++;
+
             dbmanager_book_summary = new dbmanager_book_summary(this);
             dbmanager_book_summary.open();
             dbmanager_book_summary.insert("bus", bus_id, user_id);
