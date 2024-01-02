@@ -27,6 +27,8 @@ public class profile extends AppCompatActivity {
         int user_id=Integer.parseInt(cursor.getString(1));
         dbmanager_login_history.close();
 
+        dbhelper_user.DB_VERSION=main.dbversion++;
+
         dbmanager_user = new dbmanager_user(this);
         dbmanager_user.open();
         Cursor cursor_user = dbmanager_user.fetch(user_id);
@@ -36,13 +38,13 @@ public class profile extends AppCompatActivity {
         TextView phone = findViewById(R.id.textView7);
         TextView email = findViewById(R.id.textView16);
         TextView birthday = findViewById(R.id.textView17);
-
+/*
         title.setText("Hi, "+cursor.getString(1));
         name.setText(cursor_user.getString(1));
         email.setText(cursor_user.getString(2));
         phone.setText(cursor_user.getString(3));
         birthday.setText(cursor_user.getString(4));
-/*
+
         ImageView picture = findViewById(R.id.imageView);
         picture.setImageResource(getResources().getIdentifier(cursor_user.getString(6) + "_100", "drawable", getPackageName()));
         dbmanager_user.close();*/
