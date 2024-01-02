@@ -13,6 +13,9 @@
         android:theme="@style/Theme.GroupAssignment"
         tools:targetApi="31">
         <activity
+            android:name=".bus"
+            android:exported="false" />
+        <activity
             android:name=".time"
             android:exported="false" />
         <activity
