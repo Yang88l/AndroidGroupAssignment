@@ -68,7 +68,8 @@ public class airline extends AppCompatActivity {
         //get airline_id
         airline_id = 1;
         Toast.makeText(this, "You click air asia", Toast.LENGTH_SHORT).show();
-
+        dbhelper_choose_airline.DB_VERSION = main.dbversion++;
+        dbmanager_choose_airline = new dbmanager_choose_airline(this);
         dbmanager_choose_airline.open();
         dbmanager_choose_airline.insert(airline_id, user_id);
         dbmanager_choose_airline.close();
@@ -77,7 +78,8 @@ public class airline extends AppCompatActivity {
         //get user id
         //get airline_id
         airline_id = 2;
-
+        dbhelper_choose_airline.DB_VERSION = main.dbversion++;
+        dbmanager_choose_airline = new dbmanager_choose_airline(this);
         dbmanager_choose_airline.open();
         dbmanager_choose_airline.insert(airline_id, user_id);
         dbmanager_choose_airline.close();
@@ -85,7 +87,8 @@ public class airline extends AppCompatActivity {
     public void berjaya_air(View view) {
         //get user id
         airline_id = 3;
-
+        dbhelper_choose_airline.DB_VERSION = main.dbversion++;
+        dbmanager_choose_airline = new dbmanager_choose_airline(this);
         dbmanager_choose_airline.open();
         dbmanager_choose_airline.insert(airline_id, user_id);
         dbmanager_choose_airline.close();

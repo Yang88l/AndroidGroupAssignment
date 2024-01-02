@@ -53,6 +53,7 @@ public class bus extends AppCompatActivity {
     }
 
     public void chooseBus(int bus_id) {
+        dbhelper_choose_bus.DB_VERSION = main.dbversion++;
         dbmanager_choose_bus = new dbmanager_choose_bus(this);
         dbmanager_choose_bus.open();
         Cursor cursor_choose = dbmanager_choose_bus.fetch();

@@ -29,6 +29,7 @@ public class planning_summary extends AppCompatActivity {
         TextView contentRight = findViewById(R.id.textView19);
 
         dbhelper_plan_summary.DB_VERSION = main.dbversion++;
+
         dbmanager_plan_summary = new dbmanager_plan_summary(this);
         dbmanager_plan_summary.open();
         Cursor cursor_summary = dbmanager_plan_summary.fetch();
@@ -42,8 +43,9 @@ public class planning_summary extends AppCompatActivity {
 
         if (cursor_summary != null && cursor_summary.moveToFirst()) {
             do {
-                if (type=="hotel") {
+                if (type.equals("hotel")) {
                     dbhelper_accomodation_info.DB_VERSION = main.dbversion++;
+
                     dbmanager_accomodation_info = new dbmanager_accomodation_info(this);
                     dbmanager_accomodation_info.open();
                     Cursor cursor = dbmanager_accomodation_info.fetch(activity_id);
@@ -51,8 +53,9 @@ public class planning_summary extends AppCompatActivity {
                     displayText2.append("RM"+cursor.getString(2));
                     dbmanager_accomodation_info.close();
                 }
-                else if (type=="food") {
+                else if (type.equals("food")) {
                     dbhelper_food_info.DB_VERSION = main.dbversion++;
+
                     dbmanager_food_info = new dbmanager_food_info(this);
                     dbmanager_food_info.open();
                     Cursor cursor = dbmanager_food_info.fetch(activity_id);
@@ -60,8 +63,9 @@ public class planning_summary extends AppCompatActivity {
                     displayText2.append("RM"+cursor.getString(2));
                     dbmanager_food_info.close();
                 }
-                else if (type=="play") {
+                else if (type.equals("play")) {
                     dbhelper_play_info.DB_VERSION = main.dbversion++;
+
                     dbmanager_play_info = new dbmanager_play_info(this);
                     dbmanager_play_info.open();
                     Cursor cursor = dbmanager_play_info.fetch(activity_id);
@@ -69,8 +73,9 @@ public class planning_summary extends AppCompatActivity {
                     displayText2.append("RM"+cursor.getString(2));
                     dbmanager_play_info.close();
                 }
-                else if (type=="flight") {
+                else if (type.equals("flight")) {
                     dbhelper_flight.DB_VERSION = main.dbversion++;
+
                     dbmanager_flight = new dbmanager_flight(this);
                     dbmanager_flight.open();
                     Cursor cursor = dbmanager_flight.fetch(activity_id);
@@ -78,8 +83,9 @@ public class planning_summary extends AppCompatActivity {
                     displayText2.append("RM"+cursor.getString(2));
                     dbmanager_flight.close();
                 }
-                else if (type=="bus") {
+                else if (type.equals("bus")){
                     dbhelper_bus.DB_VERSION = main.dbversion++;
+
                     dbmanager_bus = new dbmanager_bus(this);
                     dbmanager_bus.open();
                     Cursor cursor = dbmanager_bus.fetch(activity_id);
@@ -101,6 +107,7 @@ public class planning_summary extends AppCompatActivity {
 
         //get user id
         dbhelper_login_history.DB_VERSION = main.dbversion++;
+
         dbmanager_login_history = new dbmanager_login_history(this);
         dbmanager_login_history.open();
         Cursor cursor = dbmanager_login_history.fetch();
@@ -109,6 +116,7 @@ public class planning_summary extends AppCompatActivity {
         dbmanager_login_history.close();
 
         dbhelper_plan_history.DB_VERSION = main.dbversion++;
+
         dbmanager_plan_history = new dbmanager_plan_history(this);
         dbmanager_plan_history.open();
         dbmanager_plan_history.insert(user_id, displayText1.toString(), displayText2.toString());

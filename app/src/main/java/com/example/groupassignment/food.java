@@ -15,6 +15,8 @@ public class food extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.food);
 
+        dbhelper_choose_food.DB_VERSION = main.dbversion++;
+
         dbmanager_choose_food = new dbmanager_choose_food(this);
 
     }
