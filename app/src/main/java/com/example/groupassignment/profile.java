@@ -20,6 +20,7 @@ public class profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile);
 
+        dbhelper_login_history.DB_VERSION = main.dbversion++;
         dbmanager_login_history = new dbmanager_login_history(this);
         dbmanager_login_history.open();
         Cursor cursor = dbmanager_login_history.fetch();
@@ -28,7 +29,6 @@ public class profile extends AppCompatActivity {
         dbmanager_login_history.close();
 
         dbhelper_user.DB_VERSION=main.dbversion++;
-
         dbmanager_user = new dbmanager_user(this);
         dbmanager_user.open();
         Cursor cursor_user = dbmanager_user.fetch(user_id);
@@ -61,6 +61,7 @@ public class profile extends AppCompatActivity {
     }
 
     public void log_out(View view) {
+        dbhelper_login_history.DB_VERSION = main.dbversion++;
         dbmanager_login_history = new dbmanager_login_history(this);
         dbmanager_login_history.open();
         Cursor cursor = dbmanager_login_history.fetch();

@@ -31,7 +31,10 @@ public class info_flight extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.info_flight);
 
+        dbhelper_flight.DB_VERSION = main.dbversion++;
         dbmanager_flight = new dbmanager_flight(this);
+
+        dbhelper_user.DB_VERSION = main.dbversion++;
         dbmanager_user = new dbmanager_user(this);
 
         dbmanager_user.open();
@@ -100,6 +103,8 @@ public class info_flight extends AppCompatActivity {
 
     public void finish(View view) {
         //get activity
+        dbhelper_login_history.DB_VERSION = main.dbversion++;
+
         dbmanager_login_history = new dbmanager_login_history(this);
         dbmanager_login_history.open();
         Cursor cursor_login = dbmanager_login_history.fetch();
@@ -107,6 +112,8 @@ public class info_flight extends AppCompatActivity {
         String activity = cursor_login.getString(2);
 
         //get user id
+        dbhelper_login_history.DB_VERSION = main.dbversion++;
+
         dbmanager_login_history = new dbmanager_login_history(this);
         dbmanager_login_history.open();
         Cursor cursor = dbmanager_login_history.fetch();
@@ -115,6 +122,8 @@ public class info_flight extends AppCompatActivity {
         dbmanager_login_history.close();
 
         //get airline id
+        dbhelper_choose_airline.DB_VERSION = main.dbversion++;
+
         dbmanager_choose_airline = new dbmanager_choose_airline(this);
         dbmanager_choose_airline.open();
         Cursor cursor_airline = dbmanager_choose_airline.fetch();
@@ -122,7 +131,9 @@ public class info_flight extends AppCompatActivity {
         int airline_id=Integer.parseInt(cursor_airline.getString(1));
         dbmanager_choose_airline.close();
 
-        if (activity=="plan") {
+        if (activity.equals("plan")) {
+            dbhelper_plan_summary.DB_VERSION = main.dbversion++;
+
             dbmanager_plan_summary = new dbmanager_plan_summary(this);
             dbmanager_plan_summary.open();
             dbmanager_plan_summary.insert("flight", airline_id, user_id);
@@ -130,7 +141,9 @@ public class info_flight extends AppCompatActivity {
             Intent intent = new Intent(this,planning_summary.class);
             startActivity(intent);
         }
-        else if (activity=="book") {
+        else if (activity.equals("book")) {
+            dbhelper_book_summary.DB_VERSION = main.dbversion++;
+
             dbmanager_book_summary = new dbmanager_book_summary(this);
             dbmanager_book_summary.open();
             dbmanager_book_summary.insert("flight", airline_id, user_id);

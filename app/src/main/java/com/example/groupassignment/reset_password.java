@@ -27,6 +27,7 @@ public class reset_password extends AppCompatActivity {
             Toast.makeText(this, "Please fill in all the blank!", Toast.LENGTH_LONG).show();
         }
         else if (password.equals(password2)) {
+            dbhelper_login_history.DB_VERSION = main.dbversion++;
             dbmanager_login_history = new dbmanager_login_history(this);
             dbmanager_login_history.open();
             Cursor cursor = dbmanager_login_history.fetch();
@@ -34,6 +35,7 @@ public class reset_password extends AppCompatActivity {
             int user_id=Integer.parseInt(cursor.getString(1));
             dbmanager_login_history.close();
 
+            dbhelper_user.DB_VERSION = main.dbversion++;
             dbmanager_user = new dbmanager_user(this);
             dbmanager_user.open();
             dbmanager_user.update(user_id, null, null, null, null, password, null);

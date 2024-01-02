@@ -17,6 +17,7 @@ public class filter extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.filter);
 
+        dbhelper_filter_range.DB_VERSION = main.dbversion++;
         dbmanager_filter_range = new dbmanager_filter_range(this);
 
     }

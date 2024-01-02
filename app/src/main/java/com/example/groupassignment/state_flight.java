@@ -23,68 +23,77 @@ public class state_flight extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.state_flight);
-
-        button = findViewById(R.id.sabahbut);
-        button2 = findViewById(R.id.sarawakbut);
-        button3 = findViewById(R.id.penangbut);
-        button4 = findViewById(R.id.johorbut);
-
-        dbmanager_flight = new dbmanager_flight(this);
-        dbmanager_user = new dbmanager_user(this);
     }
-            public void sabah(View v) {
-                dbmanager_user.open();
-                Cursor cursor = dbmanager_user.fetch(1);
-                cursor.moveToLast();
-                int user_id=Integer.parseInt(cursor.getString(0));
-                dbmanager_user.close();
-                String state = "Sabah";
-                dbmanager_flight.open();
-                dbmanager_flight.insert(null,null,null, state,user_id);
-                dbmanager_flight.close();
-                Intent intent = new Intent(state_flight.this, airline.class);
-                startActivity(intent);
-            }
 
-         public void sarawak(View v) {
-                dbmanager_user.open();
-                Cursor cursor = dbmanager_user.fetch(1);
-                cursor.moveToLast();
-                int user_id=Integer.parseInt(cursor.getString(0));
-                dbmanager_user.close();
-                String state = "Sarawak";
-                dbmanager_flight.open();
-                dbmanager_flight.insert(null,null,null, state,user_id);
-                dbmanager_flight.close();
-                Intent intent = new Intent(state_flight.this, airline.class);
-                startActivity(intent);
-            }
+    public void sabah(View view) {
+        dbhelper_user.DB_VERSION = main.dbversion++;
+        dbmanager_user = new dbmanager_user(this);
+        dbmanager_user.open();
+        Cursor cursor = dbmanager_user.fetch(1);
+        cursor.moveToLast();
+        int user_id=Integer.parseInt(cursor.getString(0));
+        dbmanager_user.close();
+        String state = "Sabah";
+        dbhelper_flight.DB_VERSION = main.dbversion++;
+        dbmanager_flight = new dbmanager_flight(this);
+        dbmanager_flight.open();
+        dbmanager_flight.insert(null,null,null, state,user_id);
+        dbmanager_flight.close();
+        Intent intent = new Intent(state_flight.this, airline.class);
+        startActivity(intent);
+    }
 
-            public void penang(View v) {
-                dbmanager_user.open();
-                Cursor cursor = dbmanager_user.fetch(1);
-                cursor.moveToLast();
-                int user_id=Integer.parseInt(cursor.getString(0));
-                dbmanager_user.close();
-                String state = "Penang";
-                dbmanager_flight.open();
-                dbmanager_flight.insert(null,null,null, state,user_id);
-                dbmanager_flight.close();
-                Intent intent = new Intent(state_flight.this, airline.class);
-                startActivity(intent);
-            }
+    public void sarawak(View view) {
+        dbhelper_user.DB_VERSION = main.dbversion++;
+        dbmanager_user = new dbmanager_user(this);
+        dbmanager_user.open();
+        Cursor cursor = dbmanager_user.fetch(1);
+        cursor.moveToLast();
+        int user_id=Integer.parseInt(cursor.getString(0));
+        dbmanager_user.close();
+        String state = "Sarawak";
+        dbhelper_flight.DB_VERSION = main.dbversion++;
+        dbmanager_flight = new dbmanager_flight(this);
+        dbmanager_flight.open();
+        dbmanager_flight.insert(null,null,null, state,user_id);
+        dbmanager_flight.close();
+        Intent intent = new Intent(state_flight.this, airline.class);
+        startActivity(intent);
+    }
 
-            public void johor(View v) {
-                dbmanager_user.open();
-                Cursor cursor = dbmanager_user.fetch(1);
-                cursor.moveToLast();
-                int user_id=Integer.parseInt(cursor.getString(0));
-                dbmanager_user.close();
-                String state = "Johor";
-                dbmanager_flight.open();
-                dbmanager_flight.insert(null,null, null, state,user_id);
-                dbmanager_flight.close();
-                Intent intent = new Intent(state_flight.this, airline.class);
-                startActivity(intent);
-            }
+    public void johor(View view) {
+        dbhelper_user.DB_VERSION = main.dbversion++;
+        dbmanager_user = new dbmanager_user(this);
+        dbmanager_user.open();
+        Cursor cursor = dbmanager_user.fetch(1);
+        cursor.moveToLast();
+        int user_id=Integer.parseInt(cursor.getString(0));
+        dbmanager_user.close();
+        String state = "Johor";
+        dbhelper_flight.DB_VERSION = main.dbversion++;
+        dbmanager_flight = new dbmanager_flight(this);
+        dbmanager_flight.open();
+        dbmanager_flight.insert(null,null, null, state,user_id);
+        dbmanager_flight.close();
+        Intent intent = new Intent(state_flight.this, airline.class);
+        startActivity(intent);
+    }
+
+    public void penang(View view) {
+        dbhelper_user.DB_VERSION = main.dbversion++;
+        dbmanager_user = new dbmanager_user(this);
+        dbmanager_user.open();
+        Cursor cursor = dbmanager_user.fetch(1);
+        cursor.moveToLast();
+        int user_id=Integer.parseInt(cursor.getString(0));
+        dbmanager_user.close();
+        String state = "Penang";
+        dbhelper_flight.DB_VERSION = main.dbversion++;
+        dbmanager_flight = new dbmanager_flight(this);
+        dbmanager_flight.open();
+        dbmanager_flight.insert(null,null,null, state,user_id);
+        dbmanager_flight.close();
+        Intent intent = new Intent(state_flight.this, airline.class);
+        startActivity(intent);
+    }
 }

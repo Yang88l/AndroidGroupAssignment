@@ -23,12 +23,18 @@ public class log_in extends AppCompatActivity {
     public void log_in(View view) {
         String name = ((EditText) findViewById(R.id.input_username)).getText().toString();
         String password = ((EditText) findViewById(R.id.input_password)).getText().toString();
+
+        dbhelper_user.DB_VERSION = main.dbversion++;
+
         dbmanager_user = new dbmanager_user(this);
         dbmanager_user.open();
         Cursor cursor = dbmanager_user.fetchByName(name);
         if (password.equals(cursor.getString(5))) {
             int user_id=Integer.parseInt(cursor.getString(0));
             dbmanager_user.close();
+
+            dbhelper_login_history.DB_VERSION = main.dbversion++;
+
             dbmanager_login_history = new dbmanager_login_history(this);
             dbmanager_login_history.open();
             dbmanager_login_history.insert(user_id, "logged in", "null");

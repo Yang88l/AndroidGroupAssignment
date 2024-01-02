@@ -20,6 +20,7 @@ public class choose extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.choose);
 /*
+        dbhelper_choose_accomodation.DB_VERSION = main.dbversion++;
         dbmanager_choose_accomodation = new dbmanager_choose_accomodation(this);
         dbhelper_choose_accomodation = new dbhelper_choose_accomodation(this);
 

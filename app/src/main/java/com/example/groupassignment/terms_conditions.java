@@ -27,7 +27,8 @@ public class terms_conditions extends AppCompatActivity {
         TextView Terms_description3 = findViewById(R.id.textView6);
         TextView Terms_description4 = findViewById(R.id.textView8);
 
-        dbmanager = new com.example.groupassignment.dbmanager_terms_conditions(this);
+        dbhelper_terms_conditions.DB_VERSION = main.dbversion++;
+        dbmanager = new dbmanager_terms_conditions(this);
         dbmanager.open();
         Cursor cursor = dbmanager.fetch();
 

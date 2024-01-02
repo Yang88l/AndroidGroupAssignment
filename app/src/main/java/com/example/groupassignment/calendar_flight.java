@@ -27,6 +27,7 @@ public class calendar_flight extends AppCompatActivity {
     public void confirm(View view) {
         EditText date = findViewById(R.id.date);
         //get user id
+        dbhelper_login_history.DB_VERSION = main.dbversion++;
         dbmanager_login_history = new dbmanager_login_history(this);
         dbmanager_login_history.open();
         Cursor cursor_login = dbmanager_login_history.fetch();
@@ -34,6 +35,7 @@ public class calendar_flight extends AppCompatActivity {
         int user_id=Integer.parseInt(cursor_login.getString(1));
         dbmanager_login_history.close();
 
+        dbhelper_flight.DB_VERSION = main.dbversion++;
         dbmanager_flight = new dbmanager_flight(this);
         dbmanager_flight.open();
         Cursor cursor = dbmanager_flight.fetch(1);

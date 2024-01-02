@@ -13,7 +13,7 @@ public class set_picture extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.set_picture);
-
+        dbhelper_user.DB_VERSION = main.dbversion++;
         dbmanager_user = new dbmanager_user(this);
     }
 

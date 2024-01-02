@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".state_flight"
-    android:background="@drawable/gradient_bg">
+    android:background="@drawable/gradient_bg"
+    tools:context=".state_flight">
 
     <TextView
         android:id="@+id/transport3"
@@ -133,6 +133,7 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="22dp"
+        android:onClick="sabah"
         android:text="Sabah"
         android:onClick="sabah"
         app:layout_constraintBottom_toTopOf="@+id/sarawakbut"
@@ -144,6 +145,7 @@
         android:id="@+id/sarawakbut"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:onClick="sarawak"
         android:text="Sarawak"
         android:onClick="sarawak"
         app:layout_constraintEnd_toEndOf="@+id/transport3"
@@ -154,6 +156,7 @@
         android:id="@+id/penangbut"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:onClick="penang"
         android:text="Penang"
         android:onClick="penang"
         app:layout_constraintEnd_toEndOf="@+id/transport3"
@@ -165,6 +168,7 @@
         android:id="@+id/johorbut"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:onClick="johor"
         android:text="Johor"
         android:onClick="johor"
         app:layout_constraintEnd_toEndOf="@+id/transport3"

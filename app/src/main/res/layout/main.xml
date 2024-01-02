@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:text="Booking App"
         android:textSize="24dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,17 +26,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/notification"
-        android:layout_width="54dp"
-        android:layout_height="54dp"
-        android:layout_margin="10dp"
-        android:contentDescription="NULL "
-        android:onClick="notification"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/notif" />
 
     <SearchView
         android:id="@+id/searchView"
@@ -73,55 +62,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
-    <ImageButton
-        android:id="@+id/imageButton8"
-        android:layout_width="77dp"
-        android:layout_height="75dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="11dp"
-        android:onClick="favourite"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton9"
-        app:layout_constraintStart_toEndOf="@+id/imageButton11"
-        app:srcCompat="@drawable/heart" />
-
-    <ImageButton
-        android:id="@+id/imageButton9"
-        android:layout_width="77dp"
-        android:layout_height="75dp"
-        android:layout_marginEnd="27dp"
-        android:layout_marginBottom="11dp"
-        android:onClick="history"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton10"
-        app:layout_constraintStart_toEndOf="@+id/imageButton8"
-        app:srcCompat="@drawable/order" />
-
-    <ImageButton
-        android:id="@+id/imageButton10"
-        android:layout_width="77dp"
-        android:layout_height="75dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="11dp"
-        android:onClick="profile"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageButton9"
-        app:srcCompat="@drawable/profile" />
-
-    <ImageButton
-        android:id="@+id/imageButton11"
-        android:layout_width="77dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="11dp"
-        android:onClick="main"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton8"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/home" />
-
     <View
         android:id="@+id/divide"
         android:layout_width="403dp"
@@ -132,5 +72,67 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/notification" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divide"
+        app:srcCompat="@drawable/home" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView10"
+        app:layout_constraintTop_toBottomOf="@+id/divide"
+        app:layout_constraintVertical_bias="0.521"
+        app:srcCompat="@drawable/heart" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="22dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView13"
+        app:layout_constraintTop_toBottomOf="@+id/divide"
+        app:layout_constraintVertical_bias="0.521"
+        app:srcCompat="@drawable/history" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="22dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divide"
+        app:srcCompat="@drawable/profile" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

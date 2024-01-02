@@ -15,8 +15,6 @@ public class play extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.play);
-
-        dbmanager_choose_play = new dbmanager_choose_play(this);
     }
 
     public void main(View view) {
