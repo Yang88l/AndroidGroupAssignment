@@ -28,9 +28,10 @@ public class dbmanager_login_history {
         dbHelper.close();
     }
 
-    public void insert(int user_id, String status) {
+    public void insert(int user_id, String status, String activity) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(dbhelper_login_history.USER_ID, user_id);
+        contentValues.put(dbhelper_login_history.ACTIVITY, activity);
         contentValues.put(dbhelper_login_history.STATUS, status);
         database.insert(dbhelper_login_history.TABLE_NAME, null, contentValues);
     }

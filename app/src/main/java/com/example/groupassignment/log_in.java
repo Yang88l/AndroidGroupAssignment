@@ -31,7 +31,7 @@ public class log_in extends AppCompatActivity {
             dbmanager_user.close();
             dbmanager_login_history = new dbmanager_login_history(this);
             dbmanager_login_history.open();
-            dbmanager_login_history.insert(user_id, "logged in");
+            dbmanager_login_history.insert(user_id, "logged in", "null");
             dbmanager_login_history.close();
             Intent intent = new Intent(this, profile.class);
             startActivity(intent);

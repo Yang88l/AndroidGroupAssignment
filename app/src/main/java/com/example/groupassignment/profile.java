@@ -65,7 +65,7 @@ public class profile extends AppCompatActivity {
         cursor.moveToLast();
         int user_id=Integer.parseInt(cursor.getString(1));
 
-        dbmanager_login_history.insert(user_id, "logged out");
+        dbmanager_login_history.insert(user_id, "logged out", "null");
         dbmanager_login_history.close();
         Intent intent = new Intent (this, main.class);
         startActivity(intent);

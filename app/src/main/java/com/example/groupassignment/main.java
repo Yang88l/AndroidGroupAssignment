@@ -10,12 +10,17 @@ import android.widget.Toast;
 
 public class main extends AppCompatActivity {
     private com.example.groupassignment.dbmanager_login_history dbmanager_login_history;
+    private com.example.groupassignment.dbmanager_user dbmanager_user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        dbmanager_login_history.insert(1, "logged out", "null");
+        dbmanager_login_history.close();
     }
 
     public void notification(View view) {
@@ -30,8 +35,8 @@ public class main extends AppCompatActivity {
         cursor.moveToLast();
         int login_id=Integer.parseInt(cursor.getString(0));
         String status=cursor.getString(3);
-        if (status=="logged out") {
-            dbmanager_login_history.update(login_id, "book", "guest");
+        if (status.equals("logged out")) {
+            dbmanager_login_history.update(login_id, "plan", "logged out");
             dbmanager_login_history.close();
             Intent intent = new Intent(this,select_location.class);
             startActivity(intent);
@@ -46,8 +51,8 @@ public class main extends AppCompatActivity {
         cursor.moveToLast();
         int login_id=Integer.parseInt(cursor.getString(0));
         String status=cursor.getString(3);
-        if (status=="logged in") {
-            dbmanager_login_history.update(login_id, "plan", "logged in");
+        if (status.equals("logged in")) {
+            dbmanager_login_history.update(login_id, "book", "logged in");
             dbmanager_login_history.close();
             Intent intent = new Intent(this,select_location.class);
             startActivity(intent);
@@ -71,11 +76,6 @@ public class main extends AppCompatActivity {
 
     public void profile(View view) {
         Intent intent = new Intent(this,profile.class);
-        startActivity(intent);
-    }
-
-    public void main(View view) {
-        Intent intent = new Intent(this,main.class);
         startActivity(intent);
     }
 }
