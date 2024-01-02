@@ -28,17 +28,14 @@ public class pax_flight extends AppCompatActivity {
         kid_amount = findViewById(R.id.kid_amount);
 */
     }
-
-
-
-
-
     //BUY BUTTON
     public void buy(View view) {
-
-        int amount=findViewById(R.id.ticket_amount);
-        int adult=findViewById(R.id.adult_amount);
-        int kid=findViewById(R.id.kid_amount);
+        EditText ticket_amount = findViewById(R.id.ticket_amount);
+        int amount = Integer.parseInt(ticket_amount.getText().toString());
+        EditText adult_amount = findViewById(R.id.ticket_amount);
+        int adult = Integer.parseInt(adult_amount.getText().toString());
+        EditText kid_amount = findViewById(R.id.ticket_amount);
+        int kid = Integer.parseInt(kid_amount.getText().toString());
 
         dbmanager_user.open();
         Cursor cursor = dbmanager_user.fetch("user_id=0");
@@ -49,14 +46,8 @@ public class pax_flight extends AppCompatActivity {
         dbmanager_pax.insert(user_id, amount, adult, kid);
         dbmanager_pax.close();
 
-        Intent intent = new Intent(pax_flight.this, choose.class);
+        Intent intent = new Intent(pax_flight.this, info_flight.class);
         startActivity(intent);
-
-        intent = new Intent(pax_flight.this, planning_summary.class);
-        intent.putExtra("ticket_amount", ticket_amount.getEditText().getText().toString());
-        intent.putExtra("adult_amount", adult_amount.getEditText().getText().toString());
-        intent.putExtra("kid_amount", kid_amount.getEditText().getText().toString());
-
     }
 
     //BOTTOM BUTTONS DIRECTORY
