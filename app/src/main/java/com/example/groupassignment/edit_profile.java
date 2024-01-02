@@ -28,7 +28,7 @@ public class edit_profile extends AppCompatActivity {
 
         dbmanager_user = new dbmanager_user(this);
         dbmanager_user.open();
-        Cursor cursor_user = dbmanager_user.fetch("user_id="+user_id);
+        Cursor cursor_user = dbmanager_user.fetch(user_id);
 
         EditText name = findViewById(R.id.name_text);
         EditText phone = findViewById(R.id.phone_text);

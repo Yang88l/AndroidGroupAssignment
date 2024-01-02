@@ -37,6 +37,7 @@ public class dbhelper_login_history extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE);
+        db.execSQL("INSERT INTO login_history (user_id, activity, status) VALUES (1, 'null', 'logged out');");
     }
 
     @Override

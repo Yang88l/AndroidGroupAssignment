@@ -36,7 +36,7 @@ public class state_flight extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 dbmanager_user.open();
-                Cursor cursor = dbmanager_user.fetch("user_id=0");
+                Cursor cursor = dbmanager_user.fetch(1);
                 cursor.moveToLast();
                 int user_id=Integer.parseInt(cursor.getString(0));
                 dbmanager_user.close();
@@ -53,7 +53,7 @@ public class state_flight extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 dbmanager_user.open();
-                Cursor cursor = dbmanager_user.fetch("user_id=0");
+                Cursor cursor = dbmanager_user.fetch(1);
                 cursor.moveToLast();
                 int user_id=Integer.parseInt(cursor.getString(0));
                 dbmanager_user.close();
@@ -70,7 +70,7 @@ public class state_flight extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 dbmanager_user.open();
-                Cursor cursor = dbmanager_user.fetch("user_id=0");
+                Cursor cursor = dbmanager_user.fetch(1);
                 cursor.moveToLast();
                 int user_id=Integer.parseInt(cursor.getString(0));
                 dbmanager_user.close();
@@ -87,7 +87,7 @@ public class state_flight extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 dbmanager_user.open();
-                Cursor cursor = dbmanager_user.fetch("user_id=0");
+                Cursor cursor = dbmanager_user.fetch(1);
                 cursor.moveToLast();
                 int user_id=Integer.parseInt(cursor.getString(0));
                 dbmanager_user.close();

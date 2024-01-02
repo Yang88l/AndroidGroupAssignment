@@ -29,7 +29,7 @@ public class profile extends AppCompatActivity {
 
         dbmanager_user = new dbmanager_user(this);
         dbmanager_user.open();
-        Cursor cursor_user = dbmanager_user.fetch("user_id="+user_id);
+        Cursor cursor_user = dbmanager_user.fetch(user_id);
 
         TextView title = findViewById(R.id.textView);
         TextView name = findViewById(R.id.textView3);
@@ -42,10 +42,10 @@ public class profile extends AppCompatActivity {
         phone.setText(cursor_user.getString(3));
         email.setText(cursor_user.getString(2));
         birthday.setText(cursor_user.getString(4));
-
+/*
         ImageView picture = findViewById(R.id.imageView);
         picture.setImageResource(getResources().getIdentifier(cursor_user.getString(6) + "_100", "drawable", getPackageName()));
-        dbmanager_user.close();
+        dbmanager_user.close();*/
     }
 
     public void settings(View view) {

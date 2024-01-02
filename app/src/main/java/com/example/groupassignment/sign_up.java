@@ -28,18 +28,22 @@ public class sign_up extends AppCompatActivity {
         String birthday = ((EditText) findViewById(R.id.editTextDate)).getText().toString();
         String password = ((EditText) findViewById(R.id.editTextTextPassword)).getText().toString();
         String password2 = ((EditText) findViewById(R.id.editTextTextPassword2)).getText().toString();
+        dbmanager_login_history.open();
 
         if (name.equals("")||email.equals("")||phone.equals("")||birthday.equals("")||password.equals("")||password2.equals("")) {
             Toast.makeText(this, "Please fill in all the blank!", Toast.LENGTH_LONG).show();
         }
         else if (password.equals(password2)) {
             dbmanager_user.open();
-            dbmanager_user.insert(name, email, phone, birthday, password, null);
-            Cursor cursor = dbmanager_user.fetch("user_id=0");
+            dbmanager_user.insert(name, email, phone, birthday, password, "null");
+            Cursor cursor = dbmanager_user.fetchByName(name);
             cursor.moveToLast();
             int user_id=Integer.parseInt(cursor.getString(0));
+            Toast.makeText(this, user_id+"", Toast.LENGTH_SHORT).show();
+            cursor.close();
             dbmanager_user.close();
-            dbmanager_login_history.open();
+
+
             dbmanager_login_history.insert(user_id, "logged in", "null");
             dbmanager_login_history.close();
             Toast.makeText(this, "Your information has saved to database", Toast.LENGTH_SHORT).show();

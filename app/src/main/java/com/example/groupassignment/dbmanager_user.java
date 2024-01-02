@@ -64,7 +64,7 @@ public class dbmanager_user {
         return cursor;
     }
 
-    public Cursor fetch(String selection) {
+    public Cursor fetch(int user_id) {
         String[] columns = new String[] {
                 dbhelper_user.USER_ID,
                 dbhelper_user.NAME,
@@ -74,7 +74,24 @@ public class dbmanager_user {
                 dbhelper_user.PASSWORD,
                 dbhelper_user.PICTURE
         };
-        Cursor cursor = database.query(dbhelper_user.TABLE_NAME, columns, selection, null, null, null, null);
+        Cursor cursor = database.query(dbhelper_user.TABLE_NAME, columns, dbhelper_user.USER_ID+"="+user_id, null, null, null, null);
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
+        return cursor;
+    }
+
+    public Cursor fetchByName(String name) {
+        String[] columns = new String[] {
+                dbhelper_user.USER_ID,
+                dbhelper_user.NAME,
+                dbhelper_user.EMAIL,
+                dbhelper_user.PHONE,
+                dbhelper_user.BIRTHDAY,
+                dbhelper_user.PASSWORD,
+                dbhelper_user.PICTURE
+        };
+        Cursor cursor = database.query(dbhelper_user.TABLE_NAME, columns, dbhelper_user.NAME+"="+name, null, null, null, null);
         if (cursor != null) {
             cursor.moveToFirst();
         }

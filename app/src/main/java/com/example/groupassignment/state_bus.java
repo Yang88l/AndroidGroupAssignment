@@ -38,7 +38,7 @@ public class state_bus extends AppCompatActivity {
     public void chooseState (String state) {
         dbmanager_login_history = new dbmanager_user(this);
         dbmanager_login_history.open();
-        Cursor cursor = dbmanager_login_history.fetch("");
+        Cursor cursor = dbmanager_login_history.fetch(1);
         cursor.moveToLast();
         int user_id=Integer.parseInt(cursor.getString(1));
         dbmanager_login_history.close();

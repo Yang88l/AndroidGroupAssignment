@@ -23,7 +23,7 @@ public class set_picture extends AppCompatActivity {
 
     public void profile1(View view) {
         dbmanager_user.open();
-        Cursor cursor = dbmanager_user.fetch("user_id=0");
+        Cursor cursor = dbmanager_user.fetch(1);
         cursor.moveToLast();
         int user_id=Integer.parseInt(cursor.getString(0));
         dbmanager_user.update(user_id, null, null, null, null, null, "profile1");
@@ -34,7 +34,7 @@ public class set_picture extends AppCompatActivity {
 
     public void profile2(View view) {
         dbmanager_user.open();
-        Cursor cursor = dbmanager_user.fetch("user_id=0");
+        Cursor cursor = dbmanager_user.fetch(1);
         cursor.moveToLast();
         int user_id=Integer.parseInt(cursor.getString(0));
         dbmanager_user.update(user_id, null, null, null, null, null, "profile2");
@@ -45,7 +45,7 @@ public class set_picture extends AppCompatActivity {
 
     public void profile3(View view) {
         dbmanager_user.open();
-        Cursor cursor = dbmanager_user.fetch("user_id=0");
+        Cursor cursor = dbmanager_user.fetch(1);
         cursor.moveToLast();
         int user_id=Integer.parseInt(cursor.getString(0));
         dbmanager_user.update(user_id, null, null, null, null, null, "profile3");
@@ -56,7 +56,7 @@ public class set_picture extends AppCompatActivity {
 
     public void profile4(View view) {
         dbmanager_user.open();
-        Cursor cursor = dbmanager_user.fetch("user_id=0");
+        Cursor cursor = dbmanager_user.fetch(1);
         cursor.moveToLast();
         int user_id=Integer.parseInt(cursor.getString(0));
         dbmanager_user.update(user_id, null, null, null, null, null, "profile4");
@@ -67,7 +67,7 @@ public class set_picture extends AppCompatActivity {
 
     public void profile5(View view) {
         dbmanager_user.open();
-        Cursor cursor = dbmanager_user.fetch("user_id=0");
+        Cursor cursor = dbmanager_user.fetch(1);
         cursor.moveToLast();
         int user_id=Integer.parseInt(cursor.getString(0));
         dbmanager_user.update(user_id, null, null, null, null, null, "profile5");

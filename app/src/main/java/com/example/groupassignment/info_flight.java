@@ -35,7 +35,7 @@ public class info_flight extends AppCompatActivity {
         dbmanager_user = new dbmanager_user(this);
 
         dbmanager_user.open();
-        Cursor cursor = dbmanager_user.fetch("0");
+        Cursor cursor = dbmanager_user.fetch(0);
         cursor.moveToLast();
         int user_id=Integer.parseInt(cursor.getString(0));
         dbmanager_user.close();

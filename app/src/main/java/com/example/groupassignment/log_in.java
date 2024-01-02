@@ -25,8 +25,8 @@ public class log_in extends AppCompatActivity {
         String password = ((EditText) findViewById(R.id.input_password)).getText().toString();
         dbmanager_user = new dbmanager_user(this);
         dbmanager_user.open();
-        Cursor cursor = dbmanager_user.fetch("name="+name);
-        if (password==cursor.getString(5)) {
+        Cursor cursor = dbmanager_user.fetchByName(name);
+        if (password.equals(cursor.getString(5))) {
             int user_id=Integer.parseInt(cursor.getString(0));
             dbmanager_user.close();
             dbmanager_login_history = new dbmanager_login_history(this);

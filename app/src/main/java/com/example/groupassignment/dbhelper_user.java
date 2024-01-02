@@ -42,7 +42,7 @@ public class dbhelper_user extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE);
-        db.execSQL("INSERT INTO user (NAME) VALUES ('Guest', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL')");
+        //db.execSQL("INSERT INTO user (name, email, phone, birthday, password, picture) VALUES ('Guest', 'null', 'null', 'null', 'null', 'null');");
     }
 
     @Override
