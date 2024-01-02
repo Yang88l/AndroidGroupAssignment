@@ -17,15 +17,7 @@ public class main extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-
-        dbhelper_login_history.DB_VERSION = main.dbversion++;
-        Toast.makeText(this, main.dbversion+"", Toast.LENGTH_SHORT).show();
-        dbmanager_login_history = new dbmanager_login_history(this);
-        dbmanager_login_history.open();
-        dbmanager_login_history.insert(1, "logged out", "null");
-        dbmanager_login_history.close();
     }
-
 
     public void plan(View view) {
         dbhelper_login_history.DB_VERSION = main.dbversion++;
@@ -66,8 +58,7 @@ public class main extends AppCompatActivity {
     }
 
     public void profile(View view) {
-        dbhelper_login_history.DB_VERSION = main.dbversion++;
-        Toast.makeText(this, main.dbversion+"", Toast.LENGTH_SHORT).show();
+        //dbhelper_login_history.DB_VERSION = main.dbversion++;
         dbmanager_login_history = new dbmanager_login_history(this);
         dbmanager_login_history.open();
         Cursor cursor = dbmanager_login_history.fetch();

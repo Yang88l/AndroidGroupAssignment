@@ -26,7 +26,6 @@ public class log_in extends AppCompatActivity {
 
 
         dbhelper_user.DB_VERSION = main.dbversion++;
-        Toast.makeText(this, main.dbversion+"", Toast.LENGTH_SHORT).show();
         dbmanager_user = new dbmanager_user(this);
         dbmanager_user.open();
         Cursor cursor = dbmanager_user.fetchByName(name);
@@ -34,9 +33,7 @@ public class log_in extends AppCompatActivity {
             int user_id=Integer.parseInt(cursor.getString(0));
             dbmanager_user.close();
 
-            dbhelper_login_history.DB_VERSION = main.dbversion++;
-
-            Toast.makeText(this, main.dbversion+"", Toast.LENGTH_SHORT).show();
+            dbhelper_login_history.DB_VERSION++;
             dbmanager_login_history = new dbmanager_login_history(this);
             dbmanager_login_history.open();
             dbmanager_login_history.insert(user_id, "logged in", "null");
