@@ -21,6 +21,8 @@ public class booking_summary extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.booking_summary);
 /*
+        dbhelper_book_summary.DB_VERSION = main.dbversion++;
+
         dbmanager_book_summary = new dbmanager_book_summary(this);
         dbhelper_book_summary = new dbhelper_book_summary(this);
 

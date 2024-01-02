@@ -31,6 +31,7 @@ public class my_favourite extends AppCompatActivity {
         TextView text3 = findViewById(R.id.textView2);
         TextView text4 = findViewById(R.id.textView3);
 
+        dbhelper_favourite.DB_VERSION = main.dbversion++;
         dbmanager = new com.example.groupassignment.dbmanager_favourite(this);
         dbmanager.open();
         Cursor cursor = dbmanager.fetch();
