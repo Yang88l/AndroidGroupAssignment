@@ -18,7 +18,7 @@ public class dbhelper_choose_bus extends SQLiteOpenHelper {
     static final String DB_NAME = "JOURNALDEV_TRAVEL_BOOKING.DB";
 
     // database version
-    static final int DB_VERSION =1;
+    public static int DB_VERSION = main.dbversion++;
 
     // Creating table query
     private static final String CREATE_TABLE = "create table "

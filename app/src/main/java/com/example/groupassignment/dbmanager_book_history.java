@@ -40,7 +40,7 @@ public class dbmanager_book_history {
     }
 
     // SELECT * FROM table
-    public Cursor fetch(String[] columnsToSelect, int user_id) {
+    public Cursor fetch(int user_id) {
         String[] columns = new String[] {
                 dbhelper_book_history.USER_ID,
                 dbhelper_book_history.LOCATION,
@@ -55,7 +55,7 @@ public class dbmanager_book_history {
         String[] selectionArgs = { String.valueOf(user_id) };
 
         // Retrieve the data
-        Cursor cursor = database.query(dbhelper_book_history.TABLE_NAME, columnsToSelect, selection, selectionArgs, null, null, null);
+        Cursor cursor = database.query(dbhelper_book_history.TABLE_NAME, columns, selection, selectionArgs, null, null, null);
         if (cursor != null) {
             cursor.moveToFirst();
         }
