@@ -18,7 +18,6 @@ public class sign_up extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_up);
-
     }
 
     public void sign_up(View view) {
@@ -29,11 +28,11 @@ public class sign_up extends AppCompatActivity {
         String password = ((EditText) findViewById(R.id.editTextTextPassword)).getText().toString();
         String password2 = ((EditText) findViewById(R.id.editTextTextPassword2)).getText().toString();
 
-
         if (name.equals("")||email.equals("")||phone.equals("")||birthday.equals("")||password.equals("")||password2.equals("")) {
             Toast.makeText(this, "Please fill in all the blank!", Toast.LENGTH_LONG).show();
         }
         else if (password.equals(password2)) {
+            dbhelper_user.DB_VERSION = main.dbversion++;
             dbmanager_user = new dbmanager_user(this);
             dbmanager_user.open();
             dbmanager_user.insert(name, email, phone, birthday, password, "null");
@@ -45,12 +44,10 @@ public class sign_up extends AppCompatActivity {
             dbmanager_user.close();
 
             dbhelper_login_history.DB_VERSION=main.dbversion++;
-
             dbmanager_login_history = new dbmanager_login_history(this);
             dbmanager_login_history.open();
             dbmanager_login_history.insert(3, "logged in", "null");
             dbmanager_login_history.close();
-
 
             Intent intent = new Intent (this, profile.class);
             startActivity(intent);

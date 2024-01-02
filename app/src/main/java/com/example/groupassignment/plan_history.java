@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class plan_history extends AppCompatActivity {
 
-    private com.example.groupassignment.dbmanager_plan_history dbmanager;
+    private com.example.groupassignment.dbmanager_plan_history dbmanager_plan_history;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,9 +23,10 @@ public class plan_history extends AppCompatActivity {
         TextView plan_date = findViewById(R.id.text_date1);
         TextView plan_status = findViewById(R.id.text_status1);
 
-        dbmanager = new com.example.groupassignment.dbmanager_plan_history(this);
-        dbmanager.open();
-        Cursor cursor = dbmanager.fetch();
+        dbhelper_plan_history.DB_VERSION = main.dbversion++;
+        dbmanager_plan_history = new dbmanager_plan_history(this);
+        dbmanager_plan_history.open();
+        Cursor cursor = dbmanager_plan_history.fetch();
 
         String location ="";
         double cost = 0;
@@ -44,7 +45,7 @@ public class plan_history extends AppCompatActivity {
         plan_date.setText(date);
         plan_status.setText(status);
 
-        dbmanager.close();
+        dbmanager_plan_history.close();
     }
 
     public void main(View view) {

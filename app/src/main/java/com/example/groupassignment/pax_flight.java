@@ -37,6 +37,7 @@ public class pax_flight extends AppCompatActivity {
         EditText kid_amount = findViewById(R.id.ticket_amount);
         int kid = Integer.parseInt(kid_amount.getText().toString());
 
+        dbhelper_user.DB_VERSION = main.dbversion++;
         dbmanager_user.open();
         Cursor cursor = dbmanager_user.fetch(1);
         cursor.moveToLast();

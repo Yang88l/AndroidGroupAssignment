@@ -15,7 +15,7 @@ public class train_type extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.train_type);
-
+        dbhelper_train.DB_VERSION = main.dbversion++;
         dbmanager_train = new dbmanager_train(this);
     }
 
