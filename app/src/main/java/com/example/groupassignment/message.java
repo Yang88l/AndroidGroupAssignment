@@ -24,6 +24,7 @@ public class message extends AppCompatActivity {
         TextView text3 = findViewById(R.id.text_3);
         TextView text4 = findViewById(R.id.text_4);
 
+        dbhelper_message.DB_VERSION = main.dbversion++;
         dbmanager = new com.example.groupassignment.dbmanager_message(this);
         dbmanager.open();
         Cursor cursor = dbmanager.fetch();

@@ -18,6 +18,7 @@ public class accommodation extends AppCompatActivity {
         setContentView(R.layout.accommodation);
 
         //database
+        dbhelper_choose_accomodation.DB_VERSION = main.dbversion++;
         dbmanager_choose_accomodation = new dbmanager_choose_accomodation(this);
     }
 
