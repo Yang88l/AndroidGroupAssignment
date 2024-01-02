@@ -150,4 +150,9 @@ public class select_location extends AppCompatActivity {
         Intent intent = new Intent(this,main.class);//前往下一页
         startActivity(intent);//开启下一页
     }
+
+    public void notif(View view) {
+        Intent intent = new Intent(this,notification.class);
+        startActivity(intent);
+    }
 }

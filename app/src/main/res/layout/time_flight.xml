@@ -7,19 +7,52 @@
     tools:context=".time_flight"
     android:background="@drawable/gradient_bg">
 
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="15dp"
+        android:text="Booking App"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/line"
+        android:layout_width="302dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="36dp"
+        android:scaleX="8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/straight" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
     <Button
         android:id="@+id/next"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="156dp"
-        android:layout_marginTop="177dp"
+        android:layout_marginTop="232dp"
         android:layout_marginEnd="156dp"
-        android:layout_marginBottom="96dp"
-        android:text="Next"
         android:onClick="next"
-        app:layout_constraintBottom_toTopOf="@+id/line2"
+        android:text="Next"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/booking2" />
 
     <EditText
         android:id="@+id/time"
@@ -34,126 +67,15 @@
         app:layout_constraintTop_toBottomOf="@+id/booking2" />
 
     <TextView
-        android:id="@+id/booking"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="24dp"
-        android:text="BOOKING APP"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/notif"
-        app:layout_constraintHorizontal_bias="0.062"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/booking2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
         android:layout_marginTop="196dp"
         android:text="Enter the time you want"
         android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/notif"
-        app:layout_constraintHorizontal_bias="0.338"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/notif"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/notif" />
-
-    <ImageView
-        android:id="@+id/line"
-        android:layout_width="302dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="56dp"
-        android:scaleX="8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/straight" />
-
-    <ImageView
-        android:id="@+id/line2"
-        android:layout_width="429dp"
-        android:layout_height="100dp"
-        android:scaleX="8"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.947"
-        app:srcCompat="@drawable/straight" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="69dp"
-        android:layout_height="72dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/circle" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="50dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginBottom="4dp"
-        android:onClick="heart"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
-        app:layout_constraintTop_toBottomOf="@+id/line2"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/heart" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="82dp"
-        android:layout_height="71dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="4dp"
-        android:onClick="main"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/line2"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/home" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="24dp"
-        android:onClick="history"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
-        app:layout_constraintTop_toTopOf="@+id/line2"
-        app:layout_constraintVertical_bias="0.948"
-        app:srcCompat="@drawable/history" />
-
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="61dp"
-        android:layout_height="56dp"
-        android:onClick="profile"
-        android:layout_marginStart="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView7"
-        app:layout_constraintTop_toTopOf="@+id/line2"
-        app:layout_constraintVertical_bias="0.831"
-        app:srcCompat="@drawable/user" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

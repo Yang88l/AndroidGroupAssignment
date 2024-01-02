@@ -49,4 +49,5 @@ public class state_bus extends AppCompatActivity {
         dbmanager_choose_bus.close();
         startActivity(new Intent(this, bus.class));
     }
+
 }
