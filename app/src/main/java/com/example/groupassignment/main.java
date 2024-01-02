@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Toast;
 
 public class main extends AppCompatActivity {
+    public static int dbversion = 1;
     private com.example.groupassignment.dbmanager_login_history dbmanager_login_history;
     private com.example.groupassignment.dbmanager_user dbmanager_user;
 
