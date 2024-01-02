@@ -3,12 +3,14 @@ package com.example.groupassignment;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 
 public class bus extends AppCompatActivity {
 
     private  com.example.groupassignment.dbmanager_bus dbmanager_bus;
+    private com.example.groupassignment.dbmanager_choose_bus dbmanager_choose_bus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,31 +21,15 @@ public class bus extends AppCompatActivity {
     }
 
     public void soutern(View view) {
-        dbmanager_bus.open();
-        dbmanager_bus.update(null, null, "Soutern", null);
-        dbmanager_bus.close();
-
-        Intent intent = new Intent(this,seat_bus.class);
-        startActivity(intent);
-
+        chooseBus(1);
     }
 
     public void mayang_sari(View view) {
-        dbmanager_bus.open();
-        dbmanager_bus.update(null, null, "Mayang Sari", null);
-        dbmanager_bus.close();
-
-        Intent intent = new Intent(this,seat_bus.class);
-        startActivity(intent);
+        chooseBus(2);
     }
 
     public void city_express(View view) {
-        dbmanager_bus.open();
-        dbmanager_bus.update(null, null, "City Express", null);
-        dbmanager_bus.close();
-
-        Intent intent = new Intent(this,seat_bus.class);
-        startActivity(intent);
+        chooseBus(3);
     }
 
     public void main(View view) {
@@ -63,6 +49,20 @@ public class bus extends AppCompatActivity {
 
     public void heart(View view) {
         Intent intent = new Intent(this, my_favourite.class);
+        startActivity(intent);
+    }
+
+    public void chooseBus(int bus_id) {
+        dbmanager_choose_bus = new dbmanager_choose_bus(this);
+        dbmanager_choose_bus.open();
+        Cursor cursor_choose = dbmanager_choose_bus.fetch();
+        cursor_choose.moveToLast();
+        int _id=Integer.parseInt(cursor_choose.getString(0));
+
+        dbmanager_choose_bus.update(_id, bus_id);
+        dbmanager_choose_bus.close();
+
+        Intent intent = new Intent(this,seat_bus.class);
         startActivity(intent);
     }
 }

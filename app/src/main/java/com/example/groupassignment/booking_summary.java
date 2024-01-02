@@ -20,7 +20,7 @@ public class booking_summary extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.booking_summary);
-
+/*
         dbmanager_book_summary = new dbmanager_book_summary(this);
         dbhelper_book_summary = new dbhelper_book_summary(this);
 
@@ -77,6 +77,8 @@ public class booking_summary extends AppCompatActivity {
         }
         dbmanager_book_summary.close();
         database.close();
+        */
+
     }
 
     public void notification(View view) {

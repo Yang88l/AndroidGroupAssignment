@@ -12,6 +12,8 @@ public class dbhelper_login_history extends SQLiteOpenHelper {
     // Table columns
     public static final String LOGIN_ID = "login_id";
     public static final String USER_ID = "user_id";
+    public static final String ACTIVITY = "activity";
+    public static final String STATUS = "status";
 
     // Database Information
     static final String DB_NAME = "JOURNALDEV_TRAVEL_BOOKING.DB";
@@ -23,7 +25,9 @@ public class dbhelper_login_history extends SQLiteOpenHelper {
     private static final String CREATE_TABLE = "create table "
             + TABLE_NAME + "("
             + LOGIN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-            + USER_ID + " INTEGER NOT NULL "
+            + USER_ID + " INTEGER NOT NULL, "
+            + ACTIVITY + " TEXT NOT NULL, "
+            + STATUS + " TEXT NOT NULL "
             + ")";
 
     public dbhelper_login_history(Context context) {

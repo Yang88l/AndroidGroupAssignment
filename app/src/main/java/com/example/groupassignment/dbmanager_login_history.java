@@ -28,10 +28,11 @@ public class dbmanager_login_history {
         dbHelper.close();
     }
 
-    public void insert(int user_id) {
-        ContentValues contentValue = new ContentValues();
-        contentValue.put(dbhelper_login_history.USER_ID, user_id);
-        database.insert(dbhelper_login_history.TABLE_NAME, null, contentValue);
+    public void insert(int user_id, String status) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(dbhelper_login_history.USER_ID, user_id);
+        contentValues.put(dbhelper_login_history.STATUS, status);
+        database.insert(dbhelper_login_history.TABLE_NAME, null, contentValues);
     }
 
 
@@ -44,9 +45,10 @@ public class dbmanager_login_history {
     }
 
     //UPDATE * FROM table WHERE user_id = _id
-    public int update(int _id, int user_id) {
+    public int update(int _id, String activity, String status) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(dbhelper_login_history.USER_ID, user_id);
+        contentValues.put(dbhelper_login_history.ACTIVITY, activity);
+        contentValues.put(dbhelper_login_history.STATUS, status);
         int i = database.update(dbhelper_login_history.TABLE_NAME, contentValues, dbhelper_login_history.LOGIN_ID + " = " + _id, null);
         return i;
     }

@@ -24,10 +24,9 @@ public class dbhelper_bus extends SQLiteOpenHelper {
     // Creating table query
     private static final String CREATE_TABLE = "create table "
             + TABLE_NAME + "("
-            + BUS_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+            + BUS_ID + " INTEGER PRIMARY KEY NOT NULL, "
             + SEAT + " INTEGER NOT NULL, "
-            + BUS + " TEXT NOT NULL, "
-            + STATE + " TEXT NOT NULL "
+            + BUS + " TEXT NOT NULL "
             + ")";
 
     public dbhelper_bus(Context context) {
@@ -37,6 +36,7 @@ public class dbhelper_bus extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE);
+        db.execSQL("INSERT INTO bus (BUS_ID, SEAT, BUS) VALUES (1, 30, 'Soutern'), (2, 30, 'Mayang Sari'), (3, 30, 'City Express');");
     }
 
     @Override

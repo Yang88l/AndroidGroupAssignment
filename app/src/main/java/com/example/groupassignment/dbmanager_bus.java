@@ -28,32 +28,29 @@ public class dbmanager_bus {
         dbHelper.close();
     }
 
-    public void insert(Integer seat, String bus, String state) {
+    public void insert(Integer seat, String bus) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(dbhelper_bus.SEAT, seat);
         contentValue.put(dbhelper_bus.BUS, bus);
-        contentValue.put(dbhelper_bus.STATE, state);
         database.insert(dbhelper_bus.TABLE_NAME, null, contentValue);
     }
 
-    public Cursor fetch() {
+    public Cursor fetch(int _id) {
         String[] columns = new String[] {
                 dbhelper_bus.BUS_ID,
                 dbhelper_bus.SEAT,
-                dbhelper_bus.BUS,
-                dbhelper_bus.STATE };
-        Cursor cursor = database.query(dbhelper_bus.TABLE_NAME, columns, null, null, null, null, null);
+                dbhelper_bus.BUS };
+        Cursor cursor = database.query(dbhelper_bus.TABLE_NAME, columns, dbhelper_bus.BUS_ID+"="+_id, null, null, null, null);
         if (cursor != null) {
             cursor.moveToFirst();
         }
         return cursor;
     }
 
-    public int update(long _id,int seat, String bus, String state) {
+    public int update(int _id, int seat, String bus) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(dbhelper_bus.SEAT, seat);
         contentValues.put(dbhelper_bus.BUS, bus);
-        contentValues.put(dbhelper_bus.STATE, state);
         int i = database.update(dbhelper_bus.TABLE_NAME, contentValues, dbhelper_bus.BUS_ID + " = " + _id, null);
         return i;
     }

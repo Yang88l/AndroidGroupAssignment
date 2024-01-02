@@ -49,7 +49,7 @@ public class dbmanager_accomodation_info {
         }
         return cursor;
     }
-
+/*
     public Cursor fetchInnerJoin(int user_id) {
         String query = "SELECT " +
                 dbhelper_accomodation_info.HOTEL_NAME + ", " +
@@ -68,7 +68,7 @@ public class dbmanager_accomodation_info {
 
         return database.rawQuery(query, selectionArgs);
     }
-
+*/
     //UPDATE hotel_name, price FROM table WHERE hotel_id = _id
     public int update(int _id, String hotel_name, double price) {
         ContentValues contentValues = new ContentValues();

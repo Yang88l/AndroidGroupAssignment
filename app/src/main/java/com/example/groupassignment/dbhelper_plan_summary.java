@@ -10,13 +10,9 @@ public class dbhelper_plan_summary extends SQLiteOpenHelper {
 
     // Table columns
     public static final String PLAN_SUMMARY_ID = "plan_summary_id";
-    public static final String HOTEL_ID = "hotel_id";
+    public static final String TYPE = "type";
+    public static final String ACTIVITY_ID = "activity_id";
     public static final String USER_ID = "user_id";
-    public static final String AIRLINE = "airline";
-    public static final String TRANSPORT_ID = "transport_id";
-    public static final String FOOD_ID = "food_id";
-    public static final String TOTAL_PRICE = "total_price";
-    public static final String LOCATION = "location";
 
     // Database Information
     static final String DB_NAME = "JOURNALDEV_TRAVEL_BOOKING.DB";
@@ -28,13 +24,9 @@ public class dbhelper_plan_summary extends SQLiteOpenHelper {
     private static final String CREATE_TABLE = "create table "
             + TABLE_NAME + "("
             + PLAN_SUMMARY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-            + HOTEL_ID + " INTEGER NOT NULL, "
-            + USER_ID + " INTEGER NOT NULL, "
-            + AIRLINE + " TEXT NOT NULL, "
-            + TRANSPORT_ID + " INTEGER NOT NULL, "
-            + FOOD_ID + " INTEGER NOT NULL, "
-            + TOTAL_PRICE + " DOUBLE NOT NULL, "
-            + LOCATION + " TEXT NOT NULL "
+            + TYPE + " TEXT NOT NULL, "
+            + ACTIVITY_ID + " INTEGER NOT NULL, "
+            + USER_ID + " INTEGER NOT NULL "
             + ")";
 
     public dbhelper_plan_summary(Context context) {

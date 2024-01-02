@@ -28,28 +28,20 @@ public class dbmanager_plan_summary {
         dbHelper.close();
     }
 
-    public void insert(int hotel_id, int user_id, String airline, int transport_id, int food_id, double total_price, String location) {
+    public void insert(String type, int activity_id, int user_id) {
         ContentValues contentValue = new ContentValues();
-        contentValue.put(dbhelper_plan_summary.HOTEL_ID, hotel_id);
+        contentValue.put(dbhelper_plan_summary.TYPE, type);
+        contentValue.put(dbhelper_plan_summary.ACTIVITY_ID, activity_id);
         contentValue.put(dbhelper_plan_summary.USER_ID, user_id);
-        contentValue.put(dbhelper_plan_summary.AIRLINE, airline);
-        contentValue.put(dbhelper_plan_summary.TRANSPORT_ID, transport_id);
-        contentValue.put(dbhelper_plan_summary.FOOD_ID, food_id);
-        contentValue.put(dbhelper_plan_summary.TOTAL_PRICE, total_price);
-        contentValue.put(dbhelper_plan_summary.LOCATION, location);
         database.insert(dbhelper_plan_summary.TABLE_NAME, null, contentValue);
     }
 
     // SELECT * FROM table
     public Cursor fetch() {
         String[] columns = new String[] {
-                dbhelper_plan_summary.HOTEL_ID,
-                dbhelper_plan_summary.USER_ID,
-                dbhelper_plan_summary.AIRLINE,
-                dbhelper_plan_summary.TRANSPORT_ID,
-                dbhelper_plan_summary.FOOD_ID,
-                dbhelper_plan_summary.TOTAL_PRICE,
-                dbhelper_plan_summary.LOCATION
+                dbhelper_plan_summary.TYPE,
+                dbhelper_plan_summary.ACTIVITY_ID,
+                dbhelper_plan_summary.USER_ID
         };
         Cursor cursor = database.query(dbhelper_plan_summary.TABLE_NAME, columns, null, null, null, null, null);
         if (cursor != null) {
@@ -57,7 +49,7 @@ public class dbmanager_plan_summary {
         }
         return cursor;
     }
-
+/*
     //UPDATE * FROM table WHERE plan_summary_id = _id
     public int update(int _id, int hotel_id, int user_id, String airline, int transport_id, int food_id, double total_price, String location) {
         ContentValues contentValues = new ContentValues();
@@ -71,7 +63,7 @@ public class dbmanager_plan_summary {
         int i = database.update(dbhelper_plan_summary.TABLE_NAME, contentValues, dbhelper_plan_summary.PLAN_SUMMARY_ID + " = " + _id, null);
         return i;
     }
-
+*/
     //DELETE * FROM table WHERE plan_summary_id = _id
     public void delete(long _id) {
         database.delete(dbhelper_plan_summary.TABLE_NAME, dbhelper_plan_summary.PLAN_SUMMARY_ID + "=" + _id, null);

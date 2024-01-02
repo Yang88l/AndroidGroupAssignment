@@ -40,7 +40,7 @@ public class dbmanager_flight {
         database.insert(dbhelper_flight.TABLE_NAME, null, contentValue);
     }
 
-    public Cursor fetch(int user_id) {
+    public Cursor fetch(int _id) {
         String[] columns = new String[] {
                 dbhelper_flight.FLIGHT_ID,
                 dbhelper_flight.TIME,
@@ -50,12 +50,10 @@ public class dbmanager_flight {
                 dbhelper_flight.USER_ID
         };
         // WHERE
-        String selection = dbhelper_flight.USER_ID + " = ?";
-        //contains the user ID value
-        String[] selectionArgs = { String.valueOf(user_id) };
+        String selection = dbhelper_flight.FLIGHT_ID + " = " +_id;
 
         // Retrieve the data
-        Cursor cursor = database.query(dbhelper_flight.TABLE_NAME, columns, selection, selectionArgs, null, null, null);
+        Cursor cursor = database.query(dbhelper_flight.TABLE_NAME, columns, selection, null, null, null, null);
         if (cursor != null) {
             cursor.moveToFirst();
         }

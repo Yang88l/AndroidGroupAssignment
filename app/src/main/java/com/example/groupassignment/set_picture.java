@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
 
 public class set_picture extends AppCompatActivity {
     private com.example.groupassignment.dbmanager_user dbmanager_user;
@@ -35,7 +34,7 @@ public class set_picture extends AppCompatActivity {
 
     public void profile2(View view) {
         dbmanager_user.open();
-        Cursor cursor = dbmanager_user.fetch(0);
+        Cursor cursor = dbmanager_user.fetch("user_id=0");
         cursor.moveToLast();
         int user_id=Integer.parseInt(cursor.getString(0));
         dbmanager_user.update(user_id, null, null, null, null, null, "profile2");
@@ -46,7 +45,7 @@ public class set_picture extends AppCompatActivity {
 
     public void profile3(View view) {
         dbmanager_user.open();
-        Cursor cursor = dbmanager_user.fetch(0);
+        Cursor cursor = dbmanager_user.fetch("user_id=0");
         cursor.moveToLast();
         int user_id=Integer.parseInt(cursor.getString(0));
         dbmanager_user.update(user_id, null, null, null, null, null, "profile3");
@@ -57,7 +56,7 @@ public class set_picture extends AppCompatActivity {
 
     public void profile4(View view) {
         dbmanager_user.open();
-        Cursor cursor = dbmanager_user.fetch(0);
+        Cursor cursor = dbmanager_user.fetch("user_id=0");
         cursor.moveToLast();
         int user_id=Integer.parseInt(cursor.getString(0));
         dbmanager_user.update(user_id, null, null, null, null, null, "profile4");
@@ -68,7 +67,7 @@ public class set_picture extends AppCompatActivity {
 
     public void profile5(View view) {
         dbmanager_user.open();
-        Cursor cursor = dbmanager_user.fetch(0);
+        Cursor cursor = dbmanager_user.fetch("user_id=0");
         cursor.moveToLast();
         int user_id=Integer.parseInt(cursor.getString(0));
         dbmanager_user.update(user_id, null, null, null, null, null, "profile5");

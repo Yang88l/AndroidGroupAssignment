@@ -3,91 +3,49 @@ package com.example.groupassignment;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 public class state_bus extends AppCompatActivity {
 
-    private dbmanager_bus dbmanager_bus;
-    /*private Button button;
-    private Button button2;
-    private Button button3;
-    private Button button4;*/
+    private dbmanager_choose_bus dbmanager_choose_bus;
+    private com.example.groupassignment.dbmanager_user dbmanager_login_history;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.state_bus);
 
-        dbmanager_bus = new dbmanager_bus(this);
-
-        /*button = findViewById(R.id.selangorbut);
-        button2 = findViewById(R.id.perakbut);
-        button3 = findViewById(R.id.penangbut);
-        button4 = findViewById(R.id.johorbut);
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(state_bus.this, seat_bus.class);
-                startActivity(intent);
-            }
-        });
-
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(state_bus.this, seat_bus.class);
-                startActivity(intent);
-            }
-        });
-
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(state_bus.this, seat_bus.class);
-                startActivity(intent);
-            }
-        });
-
-        button4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(state_bus.this, seat_bus.class);
-                startActivity(intent);
-            }
-        });*/
+        dbmanager_choose_bus = new dbmanager_choose_bus(this);
     }
     public void selangor(View view) {
-        String state = "Selangor";
-        dbmanager_bus.open();
-        dbmanager_bus.insert(null,null,state);
-        dbmanager_bus.close();
-        startActivity(new Intent(this, seat_bus.class));
+        chooseState("Selangor");
     }
 
     public void perak(View view) {
-        String state = "Perak";
-        dbmanager_bus.open();
-        dbmanager_bus.insert(null, null, state);
-        dbmanager_bus.close();
-        startActivity(new Intent(this, seat_bus.class));
+        chooseState("Perak");
     }
 
     public void penang(View view) {
-        String state = "Penang";
-        dbmanager_bus.open();
-        dbmanager_bus.insert(null, null,state);
-        dbmanager_bus.close();
-        startActivity(new Intent(this, seat_bus.class));
+        chooseState("Penang");
     }
 
     public void johor(View view) {
-        String state = "Johor";
-        dbmanager_bus.open();
-        dbmanager_bus.insert(null, null,state);
-        dbmanager_bus.close();
-        startActivity(new Intent(this, seat_bus.class));
+        chooseState("Johor");
+    }
+
+    public void chooseState (String state) {
+        dbmanager_login_history = new dbmanager_user(this);
+        dbmanager_login_history.open();
+        Cursor cursor = dbmanager_login_history.fetch("");
+        cursor.moveToLast();
+        int user_id=Integer.parseInt(cursor.getString(1));
+        dbmanager_login_history.close();
+
+        dbmanager_choose_bus.open();
+        dbmanager_choose_bus.insert(user_id, state);
+        dbmanager_choose_bus.close();
+        startActivity(new Intent(this, bus.class));
     }
 }

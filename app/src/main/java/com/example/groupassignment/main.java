@@ -3,15 +3,19 @@ package com.example.groupassignment;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 public class main extends AppCompatActivity {
+    private com.example.groupassignment.dbmanager_login_history dbmanager_login_history;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+
     }
 
     public void notification(View view) {
@@ -20,13 +24,39 @@ public class main extends AppCompatActivity {
     }
 
     public void plan(View view) {
-        Intent intent = new Intent(this,select_location.class);
-        startActivity(intent);
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor = dbmanager_login_history.fetch();
+        cursor.moveToLast();
+        int login_id=Integer.parseInt(cursor.getString(0));
+        String status=cursor.getString(3);
+        if (status=="logged out") {
+            dbmanager_login_history.update(login_id, "book", "guest");
+            dbmanager_login_history.close();
+            Intent intent = new Intent(this,select_location.class);
+            startActivity(intent);
+        }
+        dbmanager_login_history.close();
     }
 
     public void Book(View view) {
-        Intent intent = new Intent(this,select_location.class);
-        startActivity(intent);
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor = dbmanager_login_history.fetch();
+        cursor.moveToLast();
+        int login_id=Integer.parseInt(cursor.getString(0));
+        String status=cursor.getString(3);
+        if (status=="logged in") {
+            dbmanager_login_history.update(login_id, "plan", "logged in");
+            dbmanager_login_history.close();
+            Intent intent = new Intent(this,select_location.class);
+            startActivity(intent);
+        }
+        else {
+            Toast.makeText(this, "You are not logged in.", Toast.LENGTH_SHORT).show();
+            dbmanager_login_history.close();
+        }
+
     }
 
     public void favourite(View view) {

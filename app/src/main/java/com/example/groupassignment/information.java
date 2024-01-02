@@ -6,24 +6,40 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class information extends AppCompatActivity {
 
-    private com.example.groupassignment.dbmanager_choose_accomodation dbmanager_choose_accomodation;
-    private com.example.groupassignment.dbmanager_choose_food dbmanager_choose_food;
-    private com.example.groupassignment.dbmanager_choose_play dbmanager_choose_play;
-    private com.example.groupassignment.dbmanager_accomodation_info dbmanager_accomodation_info;
-    private com.example.groupassignment.dbmanager_food_info dbmanager_food_info;
-    private com.example.groupassignment.dbmanager_play_info dbmanager_play_info;
-    private com.example.groupassignment.dbmanager_login_history dbmanager_login_history;
+    private dbmanager_choose_accomodation dbmanager_choose_accomodation;
+    private dbmanager_choose_food dbmanager_choose_food;
+    private dbmanager_choose_play dbmanager_choose_play;
+    private dbmanager_accomodation_info dbmanager_accomodation_info;
+    private dbmanager_food_info dbmanager_food_info;
+    private dbmanager_play_info dbmanager_play_info;
+    private dbmanager_login_history dbmanager_login_history;
+    private dbmanager_plan_summary dbmanager_plan_summary;
+    private com.example.groupassignment.dbmanager_book_summary dbmanager_book_summary;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.information);
+
+        Button button = findViewById(R.id.button19);
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor_login = dbmanager_login_history.fetch();
+        cursor_login.moveToLast();
+        String activity = cursor_login.getString(2);
+        if (activity.equals("plan")) {
+            button.setText("Add to Plan");
+        }
+        else if (activity.equals("book")) {
+            button.setText("Book Now");
+        }
+        dbmanager_login_history.close();
 
         Intent intent = getIntent();
         //get id
@@ -45,7 +61,7 @@ public class information extends AppCompatActivity {
             price.setText(cursor.getString(2));
 
             //display image
-            ImageView img = findViewById(R.id.imageView3);
+            ImageView img = findViewById(R.id.output_user_choose);
             img.setImageResource(getResources().getIdentifier(cursor.getString(3) + "_180", "drawable", getPackageName()));
             dbmanager_accomodation_info.close();
         }
@@ -64,7 +80,7 @@ public class information extends AppCompatActivity {
             price.setText(cursor.getString(2));
 
             //display image
-            ImageView img = findViewById(R.id.imageView3);
+            ImageView img = findViewById(R.id.output_user_choose);
             img.setImageResource(getResources().getIdentifier(cursor.getString(3) + "_180", "drawable", getPackageName()));
             dbmanager_food_info.close();
         }
@@ -83,7 +99,7 @@ public class information extends AppCompatActivity {
             price.setText(cursor.getString(2));
 
             //display image
-            ImageView img = findViewById(R.id.imageView3);
+            ImageView img = findViewById(R.id.output_user_choose);
             img.setImageResource(getResources().getIdentifier(cursor.getString(3) + "_180", "drawable", getPackageName()));
             dbmanager_play_info.close();
         }
@@ -94,6 +110,13 @@ public class information extends AppCompatActivity {
         //get id
         int _id = Integer.parseInt(intent.getStringExtra("_id"));
         String from = intent.getStringExtra("from");
+
+        //get activity
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor_login = dbmanager_login_history.fetch();
+        cursor_login.moveToLast();
+        String activity = cursor_login.getString(2);
 
         //get user id
         dbmanager_login_history = new dbmanager_login_history(this);
@@ -123,6 +146,23 @@ public class information extends AppCompatActivity {
             dbmanager_choose_play.open();
             dbmanager_choose_play.insert(_id, user_id);
             dbmanager_choose_play.close();
+        }
+
+        if (activity=="plan") {
+            dbmanager_plan_summary = new dbmanager_plan_summary(this);
+            dbmanager_plan_summary.open();
+            dbmanager_plan_summary.insert(from, _id, user_id);
+            dbmanager_plan_summary.close();
+            intent = new Intent(this,planning_summary.class);
+            startActivity(intent);
+        }
+        else if (activity=="book") {
+            dbmanager_book_summary = new dbmanager_book_summary(this);
+            dbmanager_book_summary.open();
+            dbmanager_book_summary.insert(from, _id, user_id);
+            dbmanager_book_summary.close();
+            intent = new Intent(this,booking_summary.class);
+            startActivity(intent);
         }
     }
 
