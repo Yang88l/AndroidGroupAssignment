@@ -72,7 +72,9 @@ public class time_flight extends AppCompatActivity {
         EditText time = findViewById(R.id.time);
 
         dbmanager_flight.open();
-        dbmanager_flight.update(null, time, null,null, null, null);
+        Cursor cursor = dbmanager_flight.fetch(1);
+        cursor.moveToLast();
+        dbmanager_flight.update(Integer.parseInt(cursor.getString(0)), String.valueOf(time), null,null, null, Integer.parseInt(cursor.getString(5)));
         dbmanager_flight.close();
         Intent intent = new Intent(this, pax_flight.class);
         startActivity(intent);
