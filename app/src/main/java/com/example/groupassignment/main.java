@@ -63,16 +63,32 @@ public class main extends AppCompatActivity {
         }
 
     }
-    public void favourite(View view) {
+
+    public void profile(View view) {
+        dbhelper_login_history.DB_VERSION = main.dbversion++;
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor = dbmanager_login_history.fetch();
+        cursor.moveToLast();
+        String status=cursor.getString(3);
+        dbmanager_login_history.close();
+        Toast.makeText(this, status, Toast.LENGTH_SHORT).show();
+        if (status.equals("logged out")) {
+            Intent intent = new Intent(this, log_in.class);
+            startActivity(intent);
+        }
+        else if (status.equals("logged in")) {
+            Intent intent = new Intent(this, profile.class);
+            startActivity(intent);
+        }
+    }
+    public void notification(View view) {
+        startActivity(new Intent(this, notification.class));
+    }
+    public void heart(View view) {
         startActivity(new Intent(this, my_favourite.class));
     }
     public void history(View view) {
         startActivity(new Intent(this, book_history.class));
-    }
-    public void profile(View view) {
-        startActivity(new Intent(this, profile.class));
-    }
-    public void notification(View view) {
-        startActivity(new Intent(this, notification.class));
     }
 }
