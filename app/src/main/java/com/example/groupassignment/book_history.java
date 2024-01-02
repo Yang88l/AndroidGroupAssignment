@@ -74,6 +74,10 @@ public class book_history extends AppCompatActivity {
         // if else to check if date is smaller than current date > display expire
     }
 
+    public void notification(View view) {
+        Intent intent = new Intent (this, notification.class);
+        startActivity(intent);
+    }
     public void home(View view) {
         Intent intent = new Intent(this, main.class);
         startActivity(intent);

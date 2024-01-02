@@ -32,6 +32,10 @@ public class bus extends AppCompatActivity {
         chooseBus(3);
     }
 
+    public void notification(View view) {
+        Intent intent = new Intent (this, notification.class);
+        startActivity(intent);
+    }
     public void main(View view) {
         Intent intent = new Intent(this,main.class);
         startActivity(intent);
