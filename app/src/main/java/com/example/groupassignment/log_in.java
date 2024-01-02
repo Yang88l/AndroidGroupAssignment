@@ -24,8 +24,9 @@ public class log_in extends AppCompatActivity {
         String name = ((EditText) findViewById(R.id.input_username)).getText().toString();
         String password = ((EditText) findViewById(R.id.input_password)).getText().toString();
 
-        dbhelper_user.DB_VERSION = main.dbversion++;
 
+        dbhelper_user.DB_VERSION = main.dbversion++;
+        Toast.makeText(this, main.dbversion+"", Toast.LENGTH_SHORT).show();
         dbmanager_user = new dbmanager_user(this);
         dbmanager_user.open();
         Cursor cursor = dbmanager_user.fetchByName(name);
@@ -35,6 +36,7 @@ public class log_in extends AppCompatActivity {
 
             dbhelper_login_history.DB_VERSION = main.dbversion++;
 
+            Toast.makeText(this, main.dbversion+"", Toast.LENGTH_SHORT).show();
             dbmanager_login_history = new dbmanager_login_history(this);
             dbmanager_login_history.open();
             dbmanager_login_history.insert(user_id, "logged in", "null");

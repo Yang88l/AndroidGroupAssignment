@@ -8,23 +8,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class my_favourite extends AppCompatActivity {
-
-    private ImageButton button1;
-    private ImageButton button2;
-    private ImageButton button3;
-    private ImageButton button4;
     private com.example.groupassignment.dbmanager_favourite dbmanager;
+    private com.example.groupassignment.dbmanager_login_history dbmanager_login_history;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.my_favourite);
-
-        button1 = findViewById(R.id.imageButton11);
-        button2 = findViewById(R.id.imageButton8);
-        button3 = findViewById(R.id.imageButton9);
-        button4 = findViewById(R.id.imageButton10);
 
         TextView text1 = findViewById(R.id.text_1);
         TextView text2 = findViewById(R.id.textView);
@@ -54,37 +47,33 @@ public class my_favourite extends AppCompatActivity {
         text4.setText(String.format("RM%.2f", price));
 
         dbmanager.close();
-
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(my_favourite.this, main.class);
-                startActivity(intent);
-            }
-        });
-
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(my_favourite.this, my_favourite.class);
-                startActivity(intent);
-            }
-        });
-
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(my_favourite.this, plan_history.class);
-                startActivity(intent);
-            }
-        });
-
-        button4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(my_favourite.this, profile.class);
-                startActivity(intent);
-            }
-        });
     }
+    public void profile(View view) {
+        dbhelper_login_history.DB_VERSION = main.dbversion++;
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor = dbmanager_login_history.fetch();
+        cursor.moveToLast();
+        String status=cursor.getString(3);
+        dbmanager_login_history.close();
+        Toast.makeText(this, status, Toast.LENGTH_SHORT).show();
+        if (status.equals("logged out")) {
+            Intent intent = new Intent(this, log_in.class);
+            startActivity(intent);
+        }
+        else if (status.equals("logged in")) {
+            Intent intent = new Intent(this, profile.class);
+            startActivity(intent);
+        }
+    }
+    public void notification(View view) {
+        startActivity(new Intent(this, notification.class));
+    }
+    public void heart(View view) {
+        startActivity(new Intent(this, my_favourite.class));
+    }
+    public void history(View view) {
+        startActivity(new Intent(this, book_history.class));
+    }
+
 }
