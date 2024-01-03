@@ -38,7 +38,8 @@ public class profile extends AppCompatActivity {
 
         ImageView picture = findViewById(R.id.imageView);
         picture.setImageResource(getResources().getIdentifier(cursor_user.getString(6) + "_100", "drawable", getPackageName()));
-        dbmanager_user.close();*/
+        dbmanager_user.close()
+        main.updateVersion();;*/
     }
 
     public void settings(View view) {
@@ -56,6 +57,7 @@ public class profile extends AppCompatActivity {
         dbmanager_login_history.open();
         dbmanager_login_history.insert(getUserID(), "logged out", "null");
         dbmanager_login_history.close();
+        main.updateVersion();
         Intent intent = new Intent (this, main.class);
         startActivity(intent);
     }
@@ -93,6 +95,7 @@ public class profile extends AppCompatActivity {
         int user_id=Integer.parseInt(cursor_login.getString(1));
         cursor_login.close();
         dbmanager_login_history.close();
+        main.updateVersion();
         return user_id;
     }
 }

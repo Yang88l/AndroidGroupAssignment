@@ -41,6 +41,7 @@ public class information extends AppCompatActivity {
             button.setText("Book Now");
         }
         dbmanager_login_history.close();
+        main.updateVersion();
 
         Intent intent = getIntent();
         //get id
@@ -65,6 +66,7 @@ public class information extends AppCompatActivity {
             img.setImageResource(getResources().getIdentifier(cursor.getString(3) + "_180", "drawable", getPackageName()));
             cursor.close();
             dbmanager_accomodation_info.close();
+            main.updateVersion();
         }
         else if (from.equals("food")) {
             dbmanager_food_info = new dbmanager_food_info(this);
@@ -84,6 +86,7 @@ public class information extends AppCompatActivity {
             img.setImageResource(getResources().getIdentifier(cursor.getString(3) + "_180", "drawable", getPackageName()));
             cursor.close();
             dbmanager_food_info.close();
+            main.updateVersion();
         }
         else if (from.equals("play")) {
             dbmanager_play_info = new dbmanager_play_info(this);
@@ -103,6 +106,7 @@ public class information extends AppCompatActivity {
             img.setImageResource(getResources().getIdentifier(cursor.getString(3) + "_180", "drawable", getPackageName()));
             cursor.close();
             dbmanager_play_info.close();
+            main.updateVersion();
         }
     }
 
@@ -119,24 +123,28 @@ public class information extends AppCompatActivity {
         String activity = cursor_login.getString(2);
         cursor_login.close();
         dbmanager_login_history.close();
+        main.updateVersion();
 
         if (from.equals("hotel")) {
             dbmanager_choose_accomodation = new dbmanager_choose_accomodation(this);
             dbmanager_choose_accomodation.open();
             dbmanager_choose_accomodation.insert(_id, getUserID());
             dbmanager_choose_accomodation.close();
+            main.updateVersion();
         }
         else if (from.equals("food")) {
             dbmanager_choose_food = new dbmanager_choose_food(this);
             dbmanager_choose_food.open();
             dbmanager_choose_food.insert(_id, getUserID());
             dbmanager_choose_food.close();
+            main.updateVersion();
         }
         else if (from.equals("play")) {
             dbmanager_choose_play = new dbmanager_choose_play(this);
             dbmanager_choose_play.open();
             dbmanager_choose_play.insert(_id, getUserID());
             dbmanager_choose_play.close();
+            main.updateVersion();
         }
 
         if (activity.equals("plan")) {
@@ -144,6 +152,7 @@ public class information extends AppCompatActivity {
             dbmanager_plan_summary.open();
             dbmanager_plan_summary.insert(from, _id, getUserID());
             dbmanager_plan_summary.close();
+            main.updateVersion();
             intent = new Intent(this,planning_summary.class);
             startActivity(intent);
         }
@@ -152,6 +161,7 @@ public class information extends AppCompatActivity {
             dbmanager_book_summary.open();
             dbmanager_book_summary.insert(from, _id, getUserID());
             dbmanager_book_summary.close();
+            main.updateVersion();
             intent = new Intent(this,booking_summary.class);
             startActivity(intent);
         }
@@ -190,6 +200,7 @@ public class information extends AppCompatActivity {
         int user_id=Integer.parseInt(cursor_login.getString(1));
         cursor_login.close();
         dbmanager_login_history.close();
+        main.updateVersion();
         return user_id;
     }
 }

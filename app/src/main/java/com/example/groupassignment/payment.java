@@ -47,6 +47,7 @@ public class payment extends AppCompatActivity {
         user_id = cursor.getInt(1);
         cursor.close();
         dbmanager_login_history.close();
+        main.updateVersion();
 
          //get price of user order
         dbmanager_book_history.open();
@@ -61,6 +62,7 @@ public class payment extends AppCompatActivity {
         totalPriceSum += price;
         }
        dbmanager_book_history.close();
+        main.updateVersion();
         cursor2.close();
 
         //get user pin
@@ -69,6 +71,7 @@ public class payment extends AppCompatActivity {
         account_pin = cursor.getInt(6);
         cursor3.close();
         dbmanager_user.close();
+        main.updateVersion();
 
         //SET TEXT
         price_text.setText(Double.toString(totalPriceSum));

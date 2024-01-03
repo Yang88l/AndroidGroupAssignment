@@ -29,12 +29,14 @@ public class log_in extends AppCompatActivity {
         Cursor cursor = dbmanager_user.fetchByName(name);
         int user_id=Integer.parseInt(cursor.getString(0));
         dbmanager_user.close();
+        main.updateVersion();
 
         if (password.equals(cursor.getString(5))) {
             dbmanager_login_history = new dbmanager_login_history(this);
             dbmanager_login_history.open();
             dbmanager_login_history.insert(user_id, "logged in", "null");
             dbmanager_login_history.close();
+            main.updateVersion();
             Intent intent = new Intent(this, profile.class);
             startActivity(intent);
         }

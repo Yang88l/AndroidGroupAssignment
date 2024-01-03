@@ -73,6 +73,7 @@ public class time_flight extends AppCompatActivity {
         dbmanager_flight.update(Integer.parseInt(cursor.getString(0)), String.valueOf(time), null,null, null, Integer.parseInt(cursor.getString(5)));
         cursor.close();
         dbmanager_flight.close();
+        main.updateVersion();
         Intent intent = new Intent(this, pax_flight.class);
         startActivity(intent);
     }
@@ -85,6 +86,7 @@ public class time_flight extends AppCompatActivity {
         int user_id=Integer.parseInt(cursor_login.getString(1));
         cursor_login.close();
         dbmanager_login_history.close();
+        main.updateVersion();
         return user_id;
     }
 }

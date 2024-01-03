@@ -46,6 +46,7 @@ public class my_favourite extends AppCompatActivity {
         text4.setText(String.format("RM%.2f", price));
 
         dbmanager_favourite.close();
+        main.updateVersion();
     }
     public void profile(View view) {
         dbmanager_login_history = new dbmanager_login_history(this);
@@ -55,6 +56,7 @@ public class my_favourite extends AppCompatActivity {
         String status=cursor.getString(3);
         cursor.close();
         dbmanager_login_history.close();
+        main.updateVersion();
         Toast.makeText(this, status, Toast.LENGTH_SHORT).show();
         if (status.equals("logged out")) {
             Intent intent = new Intent(this, log_in.class);

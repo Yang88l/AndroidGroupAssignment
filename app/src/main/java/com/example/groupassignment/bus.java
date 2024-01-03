@@ -61,6 +61,7 @@ public class bus extends AppCompatActivity {
 
         dbmanager_choose_bus.update(_id, bus_id);
         dbmanager_choose_bus.close();
+        main.updateVersion();
 
         Intent intent = new Intent(this,seat_bus.class);
         startActivity(intent);

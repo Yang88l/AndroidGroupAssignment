@@ -37,6 +37,7 @@ public class train_type extends AppCompatActivity {
         dbmanager_train.open();
         dbmanager_train.insert(train);
         dbmanager_train.close();
+        main.updateVersion();
         startActivity(new Intent(train_type.this, lrt_sripetaling.class));
     }
 }

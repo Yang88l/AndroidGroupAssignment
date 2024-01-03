@@ -40,7 +40,7 @@ public class message extends AppCompatActivity {
         text4.setText(message);
 
         dbmanager_message.close();
-
+        main.updateVersion();
     }
     public void home(View view) {
         Intent intent = new Intent(this,main.class);

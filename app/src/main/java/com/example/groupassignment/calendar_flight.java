@@ -29,6 +29,7 @@ public class calendar_flight extends AppCompatActivity {
         cursor.moveToLast();
         dbmanager_flight.update(Integer.parseInt(cursor.getString(0)),null,null, String.valueOf(date),null,getUserID());
         dbmanager_flight.close();
+        main.updateVersion();
         Intent intent = new Intent(calendar_flight.this, time_flight.class);
         startActivity(intent);
     }
@@ -41,6 +42,7 @@ public class calendar_flight extends AppCompatActivity {
         int user_id=Integer.parseInt(cursor_login.getString(1));
         cursor_login.close();
         dbmanager_login_history.close();
+        main.updateVersion();
         return user_id;
     }
 }

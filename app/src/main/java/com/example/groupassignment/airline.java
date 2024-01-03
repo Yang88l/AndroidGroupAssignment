@@ -37,6 +37,7 @@ public class airline extends AppCompatActivity {
         int user_id=Integer.parseInt(cursor_login.getString(1));
         cursor_login.close();
         dbmanager_login_history.close();
+        main.updateVersion();
         return user_id;
     }
 
@@ -45,5 +46,6 @@ public class airline extends AppCompatActivity {
         dbmanager_choose_airline.open();
         dbmanager_choose_airline.insert(airline_id, getUserID());
         dbmanager_choose_airline.close();
+        main.updateVersion();
     }
 }

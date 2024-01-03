@@ -70,6 +70,7 @@ public class book_history extends AppCompatActivity {
 
         cursor.close();
         dbmanager_book_history.close();
+        main.updateVersion();
 
         // if else to check if date is smaller than current date > display expire
 

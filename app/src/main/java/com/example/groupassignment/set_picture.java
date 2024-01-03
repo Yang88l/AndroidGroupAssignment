@@ -48,6 +48,7 @@ public class set_picture extends AppCompatActivity {
         cursor.close();
         dbmanager_user.update(user_id, null, null, null, null, null, picture);
         dbmanager_user.close();
+        main.updateVersion();
         Intent intent = new Intent(this,edit_profile.class);
         startActivity(intent);
     }
