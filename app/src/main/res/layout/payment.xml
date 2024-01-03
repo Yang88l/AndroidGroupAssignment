@@ -91,7 +91,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/text_price"
-        tools:layout_editor_absoluteY="283dp" />
+        tools:layout_editor_absoluteY="224dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

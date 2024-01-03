@@ -24,9 +24,9 @@ public class dbmanager_favourite {
     }
 
     public void close() {
+        main.saveVersion(context);
         dbHelper.close();
     }
-
     public void insert(String name, String reviews, int ticket_sold, double price) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(dbhelper_favourite.NAME, name);

@@ -24,9 +24,9 @@ public class dbmanager_pax {
     }
 
     public void close() {
+        main.saveVersion(context);
         dbHelper.close();
     }
-
     public void insert(int user_id, int amount, int adult, int kid) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(dbhelper_pax.USER_ID, user_id);

@@ -27,9 +27,9 @@ public class dbmanager_food_info {
     }
 
     public void close() {
+        main.saveVersion(context);
         dbHelper.close();
     }
-
     public void insert(double price, String food) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(dbhelper_food_info.PRICE, price);

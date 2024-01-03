@@ -25,9 +25,9 @@ public class dbmanager_train {
     }
 
     public void close() {
+        main.saveVersion(context);
         dbHelper.close();
     }
-
     public void insert(String location_name) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(dbhelper_train.LOCATION_NAME, location_name);

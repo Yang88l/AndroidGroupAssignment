@@ -93,7 +93,7 @@ public class payment extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void favourite(View view) {
+    public void heart(View view) {
         Intent intent = new Intent(this,my_favourite.class);
         startActivity(intent);
     }

@@ -25,9 +25,9 @@ public class dbmanager_choose_play {
     }
 
     public void close() {
+        main.saveVersion(context);
         dbHelper.close();
     }
-
     public void insert(int play_id, int user_id) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(dbhelper_choose_play.PLAY_ID, play_id);

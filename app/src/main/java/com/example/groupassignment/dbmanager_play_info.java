@@ -23,11 +23,10 @@ public class dbmanager_play_info {
         database = dbHelper.getWritableDatabase();
         return this;
     }
-
     public void close() {
+        main.saveVersion(context);
         dbHelper.close();
     }
-
     public void insert(String play_name, double price) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(dbhelper_play_info.PLAY, play_name);

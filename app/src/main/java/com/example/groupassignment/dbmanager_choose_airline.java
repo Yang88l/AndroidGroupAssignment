@@ -23,11 +23,10 @@ public class dbmanager_choose_airline {
         database = dbHelper.getWritableDatabase();
         return this;
     }
-
     public void close() {
+        main.saveVersion(context);
         dbHelper.close();
     }
-
     public void insert(int airline_id, int user_id) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(dbhelper_choose_airline.AIRLINE_ID, airline_id);

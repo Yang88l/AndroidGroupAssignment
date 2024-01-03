@@ -25,9 +25,9 @@ public class dbmanager_choose_bus {
     }
 
     public void close() {
+        main.saveVersion(context);
         dbHelper.close();
     }
-
     public void insert(int user_id, String state) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(dbhelper_choose_bus.STATE, state);

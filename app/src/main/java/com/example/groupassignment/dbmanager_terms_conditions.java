@@ -27,9 +27,9 @@ public class dbmanager_terms_conditions {
     }
 
     public void close() {
+        main.saveVersion(context);
         dbHelper.close();
     }
-
     public void insert(String title, String description) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(dbhelper_terms_conditions.TITLE, title);

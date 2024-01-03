@@ -27,9 +27,9 @@ public class dbmanager_flight {
     }
 
     public void close() {
+        main.saveVersion(context);
         dbHelper.close();
     }
-
     public void insert(String time, String flight_number, String date, String state, int user_id ) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(dbhelper_flight.TIME, time);

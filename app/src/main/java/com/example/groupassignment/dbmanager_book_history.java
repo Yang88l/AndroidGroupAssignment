@@ -23,11 +23,10 @@ public class dbmanager_book_history {
         database = dbHelper.getWritableDatabase();
         return this;
     }
-
     public void close() {
+        main.saveVersion(context);
         dbHelper.close();
     }
-
     public void insert(int user_id, String location, double cost, String date, String status, int book_summary_id) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(dbhelper_book_history.USER_ID, user_id);

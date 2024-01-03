@@ -11,17 +11,29 @@ import android.widget.TextView;
 
 public class plan_history extends AppCompatActivity {
 
-    private com.example.groupassignment.dbmanager_plan_history dbmanager_plan_history;
+    private dbmanager_plan_history dbmanager_plan_history;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.plan_history);
 
-        TextView state_location = findViewById(R.id.text_state1);
-        TextView plan_cost = findViewById(R.id.text_cost1);
-        TextView plan_date = findViewById(R.id.text_date1);
-        TextView plan_status = findViewById(R.id.text_status1);
+        TextView a = findViewById(R.id.a);
+        TextView b = findViewById(R.id.b);
+        TextView c = findViewById(R.id.c);
+        TextView a2 = findViewById(R.id.a2);
+        TextView b2 = findViewById(R.id.b2);
+        TextView c2 = findViewById(R.id.c2);
+        TextView a3 = findViewById(R.id.a3);
+        TextView b3 = findViewById(R.id.b3);
+        TextView c3 = findViewById(R.id.c3);
+        TextView a4 = findViewById(R.id.a4);
+        TextView b4 = findViewById(R.id.b4);
+        TextView c4 = findViewById(R.id.c4);
+        TextView price = findViewById(R.id.price_text1);
+        TextView price2 = findViewById(R.id.price_text2);
+        TextView price3 = findViewById(R.id.price_text3);
+        TextView price4 = findViewById(R.id.price_text4);
 
         dbmanager_plan_history = new dbmanager_plan_history(this);
         dbmanager_plan_history.open();
@@ -33,16 +45,31 @@ public class plan_history extends AppCompatActivity {
         String status = "";
 
         cursor.moveToLast();
-        location = cursor.getString(2);
+        location = cursor.getString(2); 
         cost = Double.parseDouble(cursor.getString(3));
         date = cursor.getString(4);
         status = cursor.getString(5);
         cursor.close();
 
-        state_location.setText(location);
-        plan_cost.setText(String.format("RM%.2f",cost));;
-        plan_date.setText(date);
-        plan_status.setText(status);
+        a.setText(location);
+        c.setText(date);
+        b.setText(status);
+        price.setText(String.format("RM%.2f",cost));
+
+        a2.setText(location);
+        c2.setText(date);
+        b2.setText(status);
+        price2.setText(String.format("RM%.2f",cost));
+
+        a3.setText(location);
+        c3.setText(date);
+        b3.setText(status);
+        price3.setText(String.format("RM%.2f",cost));
+
+        a4.setText(location);
+        c4.setText(date);
+        b4.setText(status);
+        price4.setText(String.format("RM%.2f",cost));
 
         dbmanager_plan_history.close();
     }
@@ -61,7 +88,7 @@ public class plan_history extends AppCompatActivity {
         Intent intent = new Intent(this,book_history.class);
         startActivity(intent);    }
 
-    public void favourite(View view) {
+    public void heart(View view) {
         Intent intent = new Intent(this, my_favourite.class);
         startActivity(intent);    }
 

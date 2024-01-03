@@ -25,9 +25,9 @@ public class dbmanager_bus {
     }
 
     public void close() {
+        main.saveVersion(context);
         dbHelper.close();
     }
-
     public void insert(Integer seat, String bus) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(dbhelper_bus.SEAT, seat);

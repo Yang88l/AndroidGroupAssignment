@@ -24,9 +24,9 @@ public class dbmanager_hotel_neccessity {
     }
 
     public void close() {
+        main.saveVersion(context);
         dbHelper.close();
     }
-
     public void insert(String wifi, String air_condition, int user_id) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(dbhelper_hotel_neccessity.WIFI, wifi);

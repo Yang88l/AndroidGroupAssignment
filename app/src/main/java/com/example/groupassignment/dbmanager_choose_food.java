@@ -25,9 +25,9 @@ public class dbmanager_choose_food {
     }
 
     public void close() {
+        main.saveVersion(context);
         dbHelper.close();
     }
-
     public void insert(int food_id, int user_id) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(dbhelper_choose_food.FOOD_ID, food_id);

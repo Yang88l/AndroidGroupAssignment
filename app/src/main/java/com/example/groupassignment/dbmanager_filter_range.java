@@ -25,11 +25,10 @@ public class dbmanager_filter_range {
         database = dbHelper.getWritableDatabase();
         return this;
     }
-
     public void close() {
+        main.saveVersion(context);
         dbHelper.close();
     }
-
     public void insert(double price, double distance, int rating, String availability, int user_id) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(dbhelper_filter_range.PRICE, price);

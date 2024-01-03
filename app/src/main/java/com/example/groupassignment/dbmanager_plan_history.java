@@ -25,9 +25,9 @@ public class dbmanager_plan_history {
     }
 
     public void close() {
+        main.saveVersion(context);
         dbHelper.close();
     }
-
     public void insert(int user_id, String activity, String cost) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(dbhelper_plan_history.USER_ID, user_id);

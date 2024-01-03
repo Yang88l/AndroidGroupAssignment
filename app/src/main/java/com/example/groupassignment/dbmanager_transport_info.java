@@ -27,6 +27,7 @@ public class dbmanager_transport_info {
     }
 
     public void close() {
+        main.saveVersion(context);
         dbHelper.close();
     }
 

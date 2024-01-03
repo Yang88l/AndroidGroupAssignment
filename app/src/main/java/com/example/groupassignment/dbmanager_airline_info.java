@@ -25,9 +25,9 @@ public class dbmanager_airline_info {
     }
 
     public void close() {
+        main.saveVersion(context);
         dbHelper.close();
     }
-
     public void insert(String airline, double price) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(dbhelper_airline_info.AIRLINE, airline);

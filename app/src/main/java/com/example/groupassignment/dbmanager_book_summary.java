@@ -25,9 +25,9 @@ public class dbmanager_book_summary {
     }
 
     public void close() {
+        main.saveVersion(context);
         dbHelper.close();
     }
-
     public void insert(String type, int activity_id, int user_id) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(dbhelper_book_summary.TYPE, type);

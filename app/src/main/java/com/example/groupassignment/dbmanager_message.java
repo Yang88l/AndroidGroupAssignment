@@ -27,9 +27,9 @@ public class dbmanager_message {
     }
 
     public void close() {
+        main.saveVersion(context);
         dbHelper.close();
     }
-
     public void insert(String name, String message, int user_id) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(dbhelper_message.NAME, name);

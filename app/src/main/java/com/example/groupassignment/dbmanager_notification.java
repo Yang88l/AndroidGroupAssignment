@@ -25,9 +25,9 @@ public class dbmanager_notification {
     }
 
     public void close() {
+        main.saveVersion(context);
         dbHelper.close();
     }
-
     public void insert(String content) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(dbhelper_notification.CONTENT, content);
