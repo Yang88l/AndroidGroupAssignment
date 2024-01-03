@@ -38,6 +38,7 @@ public class edit_profile extends AppCompatActivity {
 
         cursor_user.close();
         dbmanager_user.close();
+        main.updateVersion();
     }
 
 
@@ -56,6 +57,7 @@ public class edit_profile extends AppCompatActivity {
         dbmanager_user.open();
         dbmanager_user.update(getUserID(), name, email, phone, birthday, null, null);
         dbmanager_user.close();
+        main.updateVersion();
 
         Intent intent = new Intent (this, profile.class);
         startActivity(intent);
@@ -74,6 +76,7 @@ public class edit_profile extends AppCompatActivity {
         int user_id=Integer.parseInt(cursor_login.getString(1));
         cursor_login.close();
         dbmanager_login_history.close();
+        main.updateVersion();
         return user_id;
     }
 }

@@ -49,6 +49,7 @@ public class planning_summary extends AppCompatActivity {
                     displayText1.append(cursor.getString(1));
                     displayText2.append("RM"+cursor.getString(2));
                     dbmanager_accomodation_info.close();
+                    main.updateVersion();
                 }
                 else if (type.equals("food")) {
                     dbmanager_food_info = new dbmanager_food_info(this);
@@ -57,6 +58,7 @@ public class planning_summary extends AppCompatActivity {
                     displayText1.append(cursor.getString(1));
                     displayText2.append("RM"+cursor.getString(2));
                     dbmanager_food_info.close();
+                    main.updateVersion();
                 }
                 else if (type.equals("play")) {
                     dbmanager_play_info = new dbmanager_play_info(this);
@@ -65,6 +67,7 @@ public class planning_summary extends AppCompatActivity {
                     displayText1.append(cursor.getString(1));
                     displayText2.append("RM"+cursor.getString(2));
                     dbmanager_play_info.close();
+                    main.updateVersion();
                 }
                 else if (type.equals("flight")) {
                     dbmanager_flight = new dbmanager_flight(this);
@@ -73,6 +76,7 @@ public class planning_summary extends AppCompatActivity {
                     displayText1.append(cursor.getString(1));
                     displayText2.append("RM"+cursor.getString(2));
                     dbmanager_flight.close();
+                    main.updateVersion();
                 }
                 else if (type.equals("bus")){
                     dbmanager_bus = new dbmanager_bus(this);
@@ -81,6 +85,7 @@ public class planning_summary extends AppCompatActivity {
                     displayText1.append(cursor.getString(1));
                     displayText2.append("RM"+cursor.getString(2));
                     dbmanager_bus.close();
+                    main.updateVersion();
                 }
 
                 if (!cursor_summary.isLast()) {
@@ -101,11 +106,13 @@ public class planning_summary extends AppCompatActivity {
         cursor.moveToLast();
         int user_id=Integer.parseInt(cursor.getString(1));
         dbmanager_login_history.close();
+        main.updateVersion();
 
         dbmanager_plan_history = new dbmanager_plan_history(this);
         dbmanager_plan_history.open();
         dbmanager_plan_history.insert(user_id, displayText1.toString(), displayText2.toString());
         dbmanager_plan_history.close();
+        main.updateVersion();
     }
 
     public void main(View view) {

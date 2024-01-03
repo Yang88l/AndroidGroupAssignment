@@ -41,11 +41,13 @@ public class state_bus extends AppCompatActivity {
         int user_id=Integer.parseInt(cursor.getString(1));
         cursor.close();
         dbmanager_login_history.close();
+        main.updateVersion();
 
         dbmanager_choose_bus = new dbmanager_choose_bus(this);
         dbmanager_choose_bus.open();
         dbmanager_choose_bus.insert(user_id, state);
         dbmanager_choose_bus.close();
+        main.updateVersion();
         startActivity(new Intent(this, bus.class));
     }
 

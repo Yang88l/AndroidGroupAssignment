@@ -31,6 +31,7 @@ public class reset_password extends AppCompatActivity {
             dbmanager_user.open();
             dbmanager_user.update(getUserID(), null, null, null, null, password, null);
             dbmanager_user.close();
+            main.updateVersion();
 
             Intent intent = new Intent (this, settings.class);
             startActivity(intent);
@@ -48,6 +49,7 @@ public class reset_password extends AppCompatActivity {
         int user_id=Integer.parseInt(cursor_login.getString(1));
         cursor_login.close();
         dbmanager_login_history.close();
+        main.updateVersion();
         return user_id;
     }
 }

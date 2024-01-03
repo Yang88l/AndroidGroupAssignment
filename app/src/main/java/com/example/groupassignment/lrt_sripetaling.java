@@ -64,6 +64,7 @@ public class lrt_sripetaling extends AppCompatActivity {
 
         cursor.close();
         dbmanager_train.close();
+        main.updateVersion();
     }
 
 

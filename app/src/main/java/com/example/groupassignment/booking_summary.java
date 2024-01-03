@@ -78,6 +78,7 @@ public class booking_summary extends AppCompatActivity {
             cursor.close();
         }
         dbmanager_book_summary.close();
+        main.updateVersion();
         database.close();
         */
 

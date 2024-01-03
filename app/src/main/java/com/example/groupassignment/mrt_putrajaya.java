@@ -63,6 +63,7 @@ public class mrt_putrajaya extends AppCompatActivity {
 
         cursor.close();
         dbmanager_train.close();
+        main.updateVersion();
     }
 
 

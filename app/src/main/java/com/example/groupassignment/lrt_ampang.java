@@ -65,6 +65,7 @@ public class lrt_ampang extends AppCompatActivity {
 
         cursor.close();
         dbmanager_train.close();
+        main.updateVersion();
     }
 
 

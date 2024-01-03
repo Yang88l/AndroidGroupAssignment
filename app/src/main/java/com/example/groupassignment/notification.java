@@ -37,6 +37,7 @@ public class notification extends AppCompatActivity {
         text4.setText(notification);
 
         dbmanager_notification.close();
+        main.updateVersion();
     }
 
     public void history(View view) {

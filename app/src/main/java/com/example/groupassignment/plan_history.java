@@ -72,6 +72,7 @@ public class plan_history extends AppCompatActivity {
         price4.setText(String.format("RM%.2f",cost));
 
         dbmanager_plan_history.close();
+        main.updateVersion();
     }
 
     public void main(View view) {

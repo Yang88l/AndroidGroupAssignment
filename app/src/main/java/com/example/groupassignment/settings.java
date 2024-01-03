@@ -31,11 +31,13 @@ public class settings extends AppCompatActivity {
         int user_id=Integer.parseInt(cursor.getString(1));
         cursor.close();
         dbmanager_login_history.close();
+        main.updateVersion();
 
         dbmanager_user = new dbmanager_user(this);
         dbmanager_user.open();
         dbmanager_user.delete(user_id);
         dbmanager_user.close();
+        main.updateVersion();
 
         Intent intent = new Intent (this, main.class);
         startActivity(intent);

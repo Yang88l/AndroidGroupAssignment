@@ -36,11 +36,13 @@ public class pax_flight extends AppCompatActivity {
         int user_id=Integer.parseInt(cursor.getString(0));
         cursor.close();
         dbmanager_user.close();
+        main.updateVersion();
 
         dbmanager_pax = new dbmanager_pax(this);
         dbmanager_pax.open();
         dbmanager_pax.insert(user_id, amount, adult, kid);
         dbmanager_pax.close();
+        main.updateVersion();
 
         Intent intent = new Intent(pax_flight.this, info_flight.class);
         startActivity(intent);
