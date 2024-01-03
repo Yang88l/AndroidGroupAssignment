@@ -122,10 +122,8 @@
             android:id="@+id/button1"
             android:layout_width="206dp"
             android:layout_height="match_parent"
-
             android:background="#000000"
-            android:text="Plan History"
-            android:textSize="18sp" />
+            android:text="Plan History" />
 
         <Button
             android:id="@+id/button2"

@@ -20,9 +20,10 @@ public class payment extends AppCompatActivity {
     private dbmanager_login_history dbmanager_login_history;
     private dbmanager_user dbmanager_user;
     private Intent intent;
-    private EditText pin;
-    public int user_id, account_pin, input_pin;
+    private EditText password;
+    public int user_id;
     public double price, totalPriceSum;
+    public String user_password, input_password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +32,7 @@ public class payment extends AppCompatActivity {
 
         //ASSIGN ID
         price_text = findViewById(R.id.price_text);
-        pin = findViewById(R.id.pin);
+        password = findViewById(R.id.password);
 
         //GET VALUE
         Intent intent = new Intent(getIntent());
@@ -68,7 +69,7 @@ public class payment extends AppCompatActivity {
         //get user pin
         dbmanager_user.open();
         Cursor cursor3 = dbmanager_user.fetch(user_id);
-        account_pin = cursor.getInt(6);
+        user_password = cursor.getString(4);
         cursor3.close();
         dbmanager_user.close();
         main.updateVersion();
@@ -77,8 +78,8 @@ public class payment extends AppCompatActivity {
         price_text.setText(Double.toString(totalPriceSum));
     }
     public void pay(View view) {
-        input_pin = Integer.parseInt(pin.getText().toString());
-        if (input_pin == account_pin) {
+        input_password = password.getText().toString();
+        if (input_password.equals(user_password)) {
             Toast.makeText(this, "Payment Successful!", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this, payment_successful.class));
         } else {
