@@ -15,7 +15,7 @@ public class dbhelper_accomodation_info extends SQLiteOpenHelper {
     static final String DB_NAME = "JOURNALDEV_TRAVEL_BOOKING.DB";
 
     // database version
-    public static final int DB_VERSION = 1;
+    public static int DB_VERSION = 1;
 
     // Creating table query
 
