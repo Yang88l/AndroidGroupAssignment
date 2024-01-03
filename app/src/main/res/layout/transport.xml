@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".transport"
-    android:background="@drawable/gradient_bg">
+    android:background="@drawable/gradient_bg"
+    tools:context=".transport">
 
     <TextView
         android:id="@+id/textView12"
@@ -44,10 +44,10 @@
         android:id="@+id/transport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
         android:layout_marginTop="140dp"
         android:text="Select Your Transport"
         android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -56,50 +56,42 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="72dp"
+        android:layout_marginTop="50dp"
         android:background="#BCBCBC"
         android:clickable="true"
         android:contentDescription="bus"
+        android:onClick="bus"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/bus"
-        tools:layout_editor_absoluteY="374dp" />
+        app:layout_constraintTop_toBottomOf="@+id/train"
+        app:srcCompat="@drawable/bus" />
 
     <ImageButton
         android:id="@+id/plane"
         android:layout_width="114dp"
         android:layout_height="110dp"
+        android:layout_marginTop="50dp"
         android:background="#BCBCBC"
         android:clickable="true"
         android:contentDescription="plane"
+        android:onClick="flight"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.342"
         app:layout_constraintStart_toEndOf="@+id/bus"
-        app:srcCompat="@drawable/plane"
-        tools:layout_editor_absoluteY="375dp" />
+        app:layout_constraintTop_toBottomOf="@+id/train"
+        app:srcCompat="@drawable/plane" />
 
     <ImageButton
         android:id="@+id/train"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="73dp"
         android:layout_marginTop="28dp"
         android:background="#BCBCBC"
         android:clickable="true"
         android:contentDescription="train"
+        android:onClick="train"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/transport"
         app:srcCompat="@drawable/train" />
-
-    <ImageButton
-        android:id="@+id/car"
-        android:layout_width="112dp"
-        android:layout_height="109dp"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="28dp"
-        android:background="#BCBCBC"
-        android:clickable="true"
-        android:contentDescription="car"
-        app:layout_constraintStart_toEndOf="@+id/train"
-        app:layout_constraintTop_toBottomOf="@+id/transport"
-        app:srcCompat="@drawable/car" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

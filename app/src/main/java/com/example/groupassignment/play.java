@@ -5,12 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
 
 public class play extends AppCompatActivity {
-    private dbmanager_choose_play dbmanager_choose_play;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,11 +38,6 @@ public class play extends AppCompatActivity {
 
     public void detail(View view) {
         Intent intent = new Intent(this, information.class);
-        startActivity(intent);
-    }
-
-    public void filter(View view) {
-        Intent intent = new Intent(this,filter.class);
         startActivity(intent);
     }
 

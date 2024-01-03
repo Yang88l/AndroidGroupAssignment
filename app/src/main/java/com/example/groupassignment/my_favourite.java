@@ -11,8 +11,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class my_favourite extends AppCompatActivity {
-    private com.example.groupassignment.dbmanager_favourite dbmanager;
-    private com.example.groupassignment.dbmanager_login_history dbmanager_login_history;
+    private dbmanager_favourite dbmanager_favourite;
+    private dbmanager_login_history dbmanager_login_history;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,10 +24,9 @@ public class my_favourite extends AppCompatActivity {
         TextView text3 = findViewById(R.id.textView2);
         TextView text4 = findViewById(R.id.textView3);
 
-        dbhelper_favourite.DB_VERSION = main.dbversion++;
-        dbmanager = new com.example.groupassignment.dbmanager_favourite(this);
-        dbmanager.open();
-        Cursor cursor = dbmanager.fetch();
+        dbmanager_favourite = new dbmanager_favourite(this);
+        dbmanager_favourite.open();
+        Cursor cursor = dbmanager_favourite.fetch();
 
         String name = "";
         String reviews = "";
@@ -46,15 +45,15 @@ public class my_favourite extends AppCompatActivity {
         text3.setText(ticket_sold + "Ticket Sold");
         text4.setText(String.format("RM%.2f", price));
 
-        dbmanager.close();
+        dbmanager_favourite.close();
     }
     public void profile(View view) {
-        dbhelper_login_history.DB_VERSION = main.dbversion++;
         dbmanager_login_history = new dbmanager_login_history(this);
         dbmanager_login_history.open();
         Cursor cursor = dbmanager_login_history.fetch();
         cursor.moveToLast();
         String status=cursor.getString(3);
+        cursor.close();
         dbmanager_login_history.close();
         Toast.makeText(this, status, Toast.LENGTH_SHORT).show();
         if (status.equals("logged out")) {

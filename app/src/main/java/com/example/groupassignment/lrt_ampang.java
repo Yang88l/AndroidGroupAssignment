@@ -31,8 +31,6 @@ public class lrt_ampang extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lrt_ampang);
 
-        dbhelper_train.DB_VERSION = main.dbversion++;
-
         dbmanager_train = new dbmanager_train(this);
         dbhelper_train = new dbhelper_train(this);
 

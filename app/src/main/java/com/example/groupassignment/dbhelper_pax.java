@@ -16,13 +16,11 @@ public class dbhelper_pax extends SQLiteOpenHelper {
     public static final String ADULT = "adult";
     public static final String KID = "kid";
 
-
-
     // Database Information
     static final String DB_NAME = "JOURNALDEV_TRAVEL_BOOKING.DB";
 
     // database version
-    public static int DB_VERSION = main.dbversion++;
+    public static final int DB_VERSION = 1;
 
     // Creating table query
     private static final String CREATE_TABLE = "create table "

@@ -32,8 +32,6 @@ public class sign_up extends AppCompatActivity {
             Toast.makeText(this, "Please fill in all the blank!", Toast.LENGTH_LONG).show();
         }
         else if (password.equals(password2)) {
-            Toast.makeText(this, main.dbversion+"", Toast.LENGTH_SHORT).show();
-            dbhelper_user.version();
             dbmanager_user = new dbmanager_user(this);
             dbmanager_user.open();
             dbmanager_user.insert(name, email, phone, birthday, password, "null");
@@ -41,8 +39,7 @@ public class sign_up extends AppCompatActivity {
             int user_id=Integer.parseInt(cursor.getString(0));
             cursor.close();
             dbmanager_user.close();
-            Toast.makeText(this, main.dbversion+"", Toast.LENGTH_SHORT).show();
-            dbhelper_login_history.version();
+
             dbmanager_login_history = new dbmanager_login_history(this);
             dbmanager_login_history.open();
             dbmanager_login_history.insert(user_id, "logged in", "null");

@@ -8,10 +8,6 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
-
-    private com.example.groupassignment.dbmanager_user dbmanager_user;
-    private com.example.groupassignment.dbmanager_login_history dbmanager_login_history;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +15,5 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, main.class);
         startActivity(intent);
-
     }
-
 }

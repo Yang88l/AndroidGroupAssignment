@@ -27,18 +27,9 @@ public class reset_password extends AppCompatActivity {
             Toast.makeText(this, "Please fill in all the blank!", Toast.LENGTH_LONG).show();
         }
         else if (password.equals(password2)) {
-            dbhelper_login_history.DB_VERSION = main.dbversion++;
-            dbmanager_login_history = new dbmanager_login_history(this);
-            dbmanager_login_history.open();
-            Cursor cursor = dbmanager_login_history.fetch();
-            cursor.moveToLast();
-            int user_id=Integer.parseInt(cursor.getString(1));
-            dbmanager_login_history.close();
-
-            dbhelper_user.DB_VERSION = main.dbversion++;
             dbmanager_user = new dbmanager_user(this);
             dbmanager_user.open();
-            dbmanager_user.update(user_id, null, null, null, null, password, null);
+            dbmanager_user.update(getUserID(), null, null, null, null, password, null);
             dbmanager_user.close();
 
             Intent intent = new Intent (this, settings.class);
@@ -47,5 +38,16 @@ public class reset_password extends AppCompatActivity {
         else {
             Toast.makeText(this, "The password is not matched", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public int getUserID(){
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor_login = dbmanager_login_history.fetch();
+        cursor_login.moveToLast();
+        int user_id=Integer.parseInt(cursor_login.getString(1));
+        cursor_login.close();
+        dbmanager_login_history.close();
+        return user_id;
     }
 }

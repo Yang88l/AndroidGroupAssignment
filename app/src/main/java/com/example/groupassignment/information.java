@@ -28,7 +28,6 @@ public class information extends AppCompatActivity {
         setContentView(R.layout.information);
 
         Button button = findViewById(R.id.button19);
-        dbhelper_login_history.DB_VERSION = main.dbversion++;
 
         dbmanager_login_history = new dbmanager_login_history(this);
         dbmanager_login_history.open();
@@ -49,9 +48,6 @@ public class information extends AppCompatActivity {
         String from = intent.getStringExtra("from");
 
         if (from.equals("hotel")) {
-            //open database
-            dbhelper_accomodation_info.DB_VERSION = main.dbversion++;
-
             dbmanager_accomodation_info = new dbmanager_accomodation_info(this);
             dbmanager_accomodation_info.open();
             Cursor cursor = dbmanager_accomodation_info.fetch(_id);
@@ -67,12 +63,10 @@ public class information extends AppCompatActivity {
             //display image
             ImageView img = findViewById(R.id.output_user_choose);
             img.setImageResource(getResources().getIdentifier(cursor.getString(3) + "_180", "drawable", getPackageName()));
+            cursor.close();
             dbmanager_accomodation_info.close();
         }
         else if (from.equals("food")) {
-            //open database
-            dbhelper_food_info.DB_VERSION = main.dbversion++;
-
             dbmanager_food_info = new dbmanager_food_info(this);
             dbmanager_food_info.open();
             Cursor cursor = dbmanager_food_info.fetch(_id);
@@ -88,12 +82,10 @@ public class information extends AppCompatActivity {
             //display image
             ImageView img = findViewById(R.id.output_user_choose);
             img.setImageResource(getResources().getIdentifier(cursor.getString(3) + "_180", "drawable", getPackageName()));
+            cursor.close();
             dbmanager_food_info.close();
         }
         else if (from.equals("play")) {
-            //open database
-            dbhelper_play_info.DB_VERSION = main.dbversion++;
-
             dbmanager_play_info = new dbmanager_play_info(this);
             dbmanager_play_info.open();
             Cursor cursor = dbmanager_play_info.fetch(_id);
@@ -109,6 +101,7 @@ public class information extends AppCompatActivity {
             //display image
             ImageView img = findViewById(R.id.output_user_choose);
             img.setImageResource(getResources().getIdentifier(cursor.getString(3) + "_180", "drawable", getPackageName()));
+            cursor.close();
             dbmanager_play_info.close();
         }
     }
@@ -119,69 +112,45 @@ public class information extends AppCompatActivity {
         int _id = Integer.parseInt(intent.getStringExtra("_id"));
         String from = intent.getStringExtra("from");
 
-        //get activity
-        dbhelper_login_history.DB_VERSION = main.dbversion++;
-
         dbmanager_login_history = new dbmanager_login_history(this);
         dbmanager_login_history.open();
         Cursor cursor_login = dbmanager_login_history.fetch();
         cursor_login.moveToLast();
         String activity = cursor_login.getString(2);
-
-        //get user id
-        dbhelper_login_history.DB_VERSION = main.dbversion++;
-
-        dbmanager_login_history = new dbmanager_login_history(this);
-        dbmanager_login_history.open();
-        Cursor cursor = dbmanager_login_history.fetch();
-        cursor.moveToLast();
-        int user_id=Integer.parseInt(cursor.getString(1));
+        cursor_login.close();
         dbmanager_login_history.close();
 
         if (from.equals("hotel")) {
-            //open database
-            dbhelper_choose_accomodation.DB_VERSION = main.dbversion++;
-
             dbmanager_choose_accomodation = new dbmanager_choose_accomodation(this);
             dbmanager_choose_accomodation.open();
-            dbmanager_choose_accomodation.insert(_id, user_id);
+            dbmanager_choose_accomodation.insert(_id, getUserID());
             dbmanager_choose_accomodation.close();
         }
         else if (from.equals("food")) {
-            //open database
-            dbhelper_choose_food.DB_VERSION = main.dbversion++;
-
             dbmanager_choose_food = new dbmanager_choose_food(this);
             dbmanager_choose_food.open();
-            dbmanager_choose_food.insert(_id, user_id);
+            dbmanager_choose_food.insert(_id, getUserID());
             dbmanager_choose_food.close();
         }
         else if (from.equals("play")) {
-            //open database
-            dbhelper_choose_play.DB_VERSION = main.dbversion++;
-
             dbmanager_choose_play = new dbmanager_choose_play(this);
             dbmanager_choose_play.open();
-            dbmanager_choose_play.insert(_id, user_id);
+            dbmanager_choose_play.insert(_id, getUserID());
             dbmanager_choose_play.close();
         }
 
         if (activity.equals("plan")) {
-            dbhelper_plan_summary.DB_VERSION = main.dbversion++;
-
             dbmanager_plan_summary = new dbmanager_plan_summary(this);
             dbmanager_plan_summary.open();
-            dbmanager_plan_summary.insert(from, _id, user_id);
+            dbmanager_plan_summary.insert(from, _id, getUserID());
             dbmanager_plan_summary.close();
             intent = new Intent(this,planning_summary.class);
             startActivity(intent);
         }
         else if (activity.equals("book")) {
-            dbhelper_book_summary.DB_VERSION = main.dbversion++;
-
             dbmanager_book_summary = new dbmanager_book_summary(this);
             dbmanager_book_summary.open();
-            dbmanager_book_summary.insert(from, _id, user_id);
+            dbmanager_book_summary.insert(from, _id, getUserID());
             dbmanager_book_summary.close();
             intent = new Intent(this,booking_summary.class);
             startActivity(intent);
@@ -211,5 +180,16 @@ public class information extends AppCompatActivity {
     public void notification(View view) {
         Intent intent = new Intent (this, notification.class);
         startActivity(intent);
+    }
+
+    public int getUserID(){
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor_login = dbmanager_login_history.fetch();
+        cursor_login.moveToLast();
+        int user_id=Integer.parseInt(cursor_login.getString(1));
+        cursor_login.close();
+        dbmanager_login_history.close();
+        return user_id;
     }
 }

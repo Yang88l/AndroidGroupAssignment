@@ -24,7 +24,7 @@ public class book_history extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.book_history);
 
-        dbhelper_book_history.DB_VERSION = main.dbversion++;
+/*
         dbmanager_book_history = new dbmanager_book_history(this);
         dbhelper_book_history = new dbhelper_book_history(this);
 
@@ -72,6 +72,8 @@ public class book_history extends AppCompatActivity {
         dbmanager_book_history.close();
 
         // if else to check if date is smaller than current date > display expire
+
+ */
     }
 
     public void notification(View view) {

@@ -20,18 +20,9 @@ public class profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile);
 
-        dbhelper_login_history.DB_VERSION = main.dbversion++;
-        dbmanager_login_history = new dbmanager_login_history(this);
-        dbmanager_login_history.open();
-        Cursor cursor = dbmanager_login_history.fetch();
-        cursor.moveToLast();
-        int user_id=Integer.parseInt(cursor.getString(1));
-        dbmanager_login_history.close();
-
-        dbhelper_user.DB_VERSION=main.dbversion++;
         dbmanager_user = new dbmanager_user(this);
         dbmanager_user.open();
-        Cursor cursor_user = dbmanager_user.fetch(user_id);
+        Cursor cursor_user = dbmanager_user.fetch(getUserID());
 
         TextView title = findViewById(R.id.textView);
         TextView name = findViewById(R.id.textView3);
@@ -61,14 +52,9 @@ public class profile extends AppCompatActivity {
     }
 
     public void log_out(View view) {
-        dbhelper_login_history.DB_VERSION = main.dbversion++;
         dbmanager_login_history = new dbmanager_login_history(this);
         dbmanager_login_history.open();
-        Cursor cursor = dbmanager_login_history.fetch();
-        cursor.moveToLast();
-        int user_id=Integer.parseInt(cursor.getString(1));
-
-        dbmanager_login_history.insert(user_id, "logged out", "null");
+        dbmanager_login_history.insert(getUserID(), "logged out", "null");
         dbmanager_login_history.close();
         Intent intent = new Intent (this, main.class);
         startActivity(intent);
@@ -97,5 +83,16 @@ public class profile extends AppCompatActivity {
     public void notif(View view) {
         Intent intent = new Intent (this, notification.class);
         startActivity(intent);
+    }
+
+    public int getUserID(){
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor_login = dbmanager_login_history.fetch();
+        cursor_login.moveToLast();
+        int user_id=Integer.parseInt(cursor_login.getString(1));
+        cursor_login.close();
+        dbmanager_login_history.close();
+        return user_id;
     }
 }

@@ -15,12 +15,11 @@ public class dbhelper_message extends SQLiteOpenHelper {
     public static final String MESSAGE = "message";
     public static final String USER_ID = "user_id";
 
-
     // Database Information
     static final String DB_NAME = "JOURNALDEV_TRAVEL_BOOKING.DB";
 
     // database version
-    public static int DB_VERSION = main.dbversion++;
+    public static final int DB_VERSION = 1;
 
     // Creating table query
     private static final String CREATE_TABLE = "create table "

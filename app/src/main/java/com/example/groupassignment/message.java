@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 public class message extends AppCompatActivity {
 
-    private com.example.groupassignment.dbmanager_message dbmanager;
+    private dbmanager_message dbmanager_message;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,10 +24,9 @@ public class message extends AppCompatActivity {
         TextView text3 = findViewById(R.id.text_3);
         TextView text4 = findViewById(R.id.text_4);
 
-        dbhelper_message.DB_VERSION = main.dbversion++;
-        dbmanager = new com.example.groupassignment.dbmanager_message(this);
-        dbmanager.open();
-        Cursor cursor = dbmanager.fetch();
+        dbmanager_message = new dbmanager_message(this);
+        dbmanager_message.open();
+        Cursor cursor = dbmanager_message.fetch();
 
         String message = "";
 
@@ -40,7 +39,7 @@ public class message extends AppCompatActivity {
         text3.setText(message);
         text4.setText(message);
 
-        dbmanager.close();
+        dbmanager_message.close();
 
     }
     public void home(View view) {

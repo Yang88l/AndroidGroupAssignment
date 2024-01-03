@@ -24,15 +24,14 @@ public class settings extends AppCompatActivity {
     }
 
     public void delete_account(View view) {
-        dbhelper_login_history.DB_VERSION = main.dbversion++;
         dbmanager_login_history = new dbmanager_login_history(this);
         dbmanager_login_history.open();
         Cursor cursor = dbmanager_login_history.fetch();
         cursor.moveToLast();
         int user_id=Integer.parseInt(cursor.getString(1));
+        cursor.close();
         dbmanager_login_history.close();
 
-        dbhelper_user.DB_VERSION = main.dbversion++;
         dbmanager_user = new dbmanager_user(this);
         dbmanager_user.open();
         dbmanager_user.delete(user_id);
