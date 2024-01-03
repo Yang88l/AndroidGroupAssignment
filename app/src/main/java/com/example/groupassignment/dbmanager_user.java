@@ -26,6 +26,7 @@ public class dbmanager_user {
     }
 
     public void close() {
+        main.saveVersion(context);
         dbHelper.close();
     }
 

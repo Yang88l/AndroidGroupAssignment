@@ -2,7 +2,9 @@ package com.example.groupassignment;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -10,11 +12,16 @@ import android.widget.Toast;
 
 public class main extends AppCompatActivity {
     private com.example.groupassignment.dbmanager_login_history dbmanager_login_history;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+
+        //get latest version
+        SharedPreferences preferences = getSharedPreferences("DatabasePrefs", Context.MODE_PRIVATE);
+        for (int i=0; i<preferences.getInt("LatestDBVersion", 0); i++){
+            updateVersion();
+        }
     }
 
     public void plan(View view) {
@@ -32,6 +39,7 @@ public class main extends AppCompatActivity {
             startActivity(intent);
         }
         dbmanager_login_history.close();
+        main.updateVersion();
     }
 
     public void Book(View view) {
@@ -55,15 +63,16 @@ public class main extends AppCompatActivity {
     }
 
     public void profile(View view) {
+        Toast.makeText(this, dbhelper_login_history.DB_VERSION+""+dbhelper_user.DB_VERSION, Toast.LENGTH_SHORT).show();
         dbmanager_login_history = new dbmanager_login_history(this);
         dbmanager_login_history.open();
-        Toast.makeText(this, dbhelper_login_history.DB_VERSION+"", Toast.LENGTH_SHORT).show();
         Cursor cursor = dbmanager_login_history.fetch();
         cursor.moveToLast();
         String status=cursor.getString(3);
         cursor.close();
         dbmanager_login_history.close();
         main.updateVersion();
+        Toast.makeText(this, dbhelper_login_history.DB_VERSION+""+dbhelper_user.DB_VERSION, Toast.LENGTH_SHORT).show();
         if (status.equals("logged out")) {
             Intent intent = new Intent(this, log_in.class);
             startActivity(intent);
@@ -112,8 +121,12 @@ public class main extends AppCompatActivity {
         dbhelper_transport_info.DB_VERSION++;
         dbhelper_user.DB_VERSION++;
     }
-    public static int dbversion;
-    public static void initializeVersion(){
 
+    //save version to shared_prefs
+    public static void saveVersion(Context context){
+        SharedPreferences preferences = context.getSharedPreferences("DatabasePrefs", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putInt("LatestDBVersion", dbhelper_user.DB_VERSION);
+        editor.apply();
     }
 }
