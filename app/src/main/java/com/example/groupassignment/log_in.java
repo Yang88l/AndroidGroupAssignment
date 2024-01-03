@@ -28,10 +28,12 @@ public class log_in extends AppCompatActivity {
         dbmanager_user.open();
         Cursor cursor = dbmanager_user.fetchByName(name);
         int user_id=Integer.parseInt(cursor.getString(0));
+        String passwd=cursor.getString(5);
+        cursor.close();
         dbmanager_user.close();
         main.updateVersion();
 
-        if (password.equals(cursor.getString(5))) {
+        if (password.equals(passwd)) {
             dbmanager_login_history = new dbmanager_login_history(this);
             dbmanager_login_history.open();
             dbmanager_login_history.insert(user_id, "logged in", "null");

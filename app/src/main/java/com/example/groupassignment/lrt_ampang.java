@@ -59,7 +59,6 @@ public class lrt_ampang extends AppCompatActivity {
 
         //Display the data
         calculate();
-        go_return_text.setText(String.valueOf(go_return_cost));
         go_text.setText(String.valueOf(go_cost));
         each_arrival_time_text.setText("7 Minutes");
 

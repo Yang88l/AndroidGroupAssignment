@@ -85,29 +85,4 @@ public class payment extends AppCompatActivity {
             Toast.makeText(this, "Error!", Toast.LENGTH_SHORT).show();
         }
     }
-
-    public void notification(View view) {
-        Intent intent = new Intent(this,notification.class);
-        startActivity(intent);
-    }
-
-    public void main(View view) {
-        Intent intent = new Intent(this,main.class);
-        startActivity(intent);
-    }
-
-    public void heart(View view) {
-        Intent intent = new Intent(this,my_favourite.class);
-        startActivity(intent);
-    }
-
-    public void history(View view) {
-        Intent intent = new Intent(this,book_history.class);
-        startActivity(intent);
-    }
-
-    public void profile(View view) {
-        Intent intent = new Intent(this,profile.class);
-        startActivity(intent);
-    }
 }

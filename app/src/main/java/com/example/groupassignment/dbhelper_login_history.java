@@ -1,6 +1,7 @@
 package com.example.groupassignment;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -22,12 +23,12 @@ public class dbhelper_login_history extends SQLiteOpenHelper {
     public static int DB_VERSION = 1;
 
     // Creating table query
-    private static final String CREATE_TABLE = "create table "
+    private static final String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS "
             + TABLE_NAME + "("
             + LOGIN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + USER_ID + " INTEGER NOT NULL, "
             + ACTIVITY + " TEXT NOT NULL, "
-            + STATUS + " TEXT NOT NULL "
+            + STATUS + " TEXT NOT NULL"
             + ")";
 
     public dbhelper_login_history(Context context) {
@@ -37,12 +38,14 @@ public class dbhelper_login_history extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE);
-        db.execSQL("INSERT INTO login_history (user_id, activity, status) VALUES (1, 'null', 'logged out');");
+        Cursor cursor = db.rawQuery("SELECT COUNT(*) FROM sqlite_master", null );
+        if (cursor != null) {
+            db.execSQL("INSERT INTO login_history (user_id, activity, status) VALUES (1, 'null', 'logged out');");
+        }
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
     }
 }

@@ -35,6 +35,7 @@ public class main extends AppCompatActivity {
         if (status.equals("logged out")) {
             dbmanager_login_history.update(login_id, "plan", "logged out");
             dbmanager_login_history.close();
+            main.updateVersion();
             Intent intent = new Intent(this,select_location.class);
             startActivity(intent);
         }
@@ -53,12 +54,14 @@ public class main extends AppCompatActivity {
         if (status.equals("logged in")) {
             dbmanager_login_history.update(login_id, "book", "logged in");
             dbmanager_login_history.close();
+            main.updateVersion();
             Intent intent = new Intent(this,select_location.class);
             startActivity(intent);
         }
         else {
             Toast.makeText(this, "You are not logged in.", Toast.LENGTH_SHORT).show();
             dbmanager_login_history.close();
+            main.updateVersion();
         }
     }
 

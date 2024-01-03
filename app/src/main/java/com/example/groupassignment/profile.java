@@ -29,17 +29,20 @@ public class profile extends AppCompatActivity {
         TextView phone = findViewById(R.id.textView7);
         TextView email = findViewById(R.id.textView16);
         TextView birthday = findViewById(R.id.textView17);
-/*
-        title.setText("Hi, "+cursor.getString(1));
+
+        title.setText("Hi, "+cursor_user.getString(1));
         name.setText(cursor_user.getString(1));
         email.setText(cursor_user.getString(2));
         phone.setText(cursor_user.getString(3));
         birthday.setText(cursor_user.getString(4));
-
+        cursor_user.close();
+/*
         ImageView picture = findViewById(R.id.imageView);
         picture.setImageResource(getResources().getIdentifier(cursor_user.getString(6) + "_100", "drawable", getPackageName()));
-        dbmanager_user.close()
-        main.updateVersion();;*/
+        */
+
+        dbmanager_user.close();
+        main.updateVersion();
     }
 
     public void settings(View view) {

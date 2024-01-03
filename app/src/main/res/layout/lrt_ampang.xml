@@ -12,40 +12,28 @@
         android:id="@+id/text3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="6dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="48dp"
         android:labelFor="@id/go"
-        android:text="Go Return"
+        android:text="Cost"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/from" />
 
-    <TextView
-        android:id="@+id/text4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="396dp"
-        android:labelFor="@id/each_arrival_time"
-        android:text="Go"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/text5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="436dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="472dp"
         android:labelFor="@id/go_return"
-        android:text="\t\t\t\t\tEach \nArrival Time"
+        android:text="Arrival Time"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-        <ImageView
+    <ImageView
         android:id="@+id/line3"
         android:layout_width="302dp"
         android:layout_height="52dp"
@@ -65,10 +53,10 @@
         android:ems="10"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.862"
+        app:layout_constraintHorizontal_bias="0.851"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.737" />
+        app:layout_constraintVertical_bias="0.83" />
 
     <TextView
         android:id="@+id/go_return"
@@ -77,10 +65,10 @@
         android:ems="10"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.862"
+        app:layout_constraintHorizontal_bias="0.851"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.508" />
+        app:layout_constraintVertical_bias="0.563" />
 
     <Button
         android:id="@+id/ampang"
@@ -100,29 +88,25 @@
         android:id="@+id/button_to"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
+        android:layout_marginTop="292dp"
+        android:layout_marginEnd="80dp"
+        android:labelFor="@id/to"
         android:onClick="to"
         android:text="To"
-        android:labelFor="@id/to"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.802"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.363" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button_from"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="292dp"
+        android:labelFor="@id/from"
         android:onClick="from"
         android:text="From"
-        android:labelFor="@id/from"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.174"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.363" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/cahaya"
