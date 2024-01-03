@@ -102,12 +102,12 @@ public class dbmanager_user {
     //UPDATE * FROM table WHERE user_id = _id
     public int update(int _id, String name, String email, String phone, String birthday, String password, String picture) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(dbhelper_user.NAME, name);
-        contentValues.put(dbhelper_user.EMAIL, email);
-        contentValues.put(dbhelper_user.PHONE, phone);
-        contentValues.put(dbhelper_user.BIRTHDAY, birthday);
-        contentValues.put(dbhelper_user.PASSWORD, password);
-        contentValues.put(dbhelper_user.PICTURE, picture);
+        if(name!=null) contentValues.put(dbhelper_user.NAME, name);
+        else if(email!=null) contentValues.put(dbhelper_user.EMAIL, email);
+        else if(phone!=null) contentValues.put(dbhelper_user.PHONE, phone);
+        else if(birthday!=null) contentValues.put(dbhelper_user.BIRTHDAY, birthday);
+        else if(password!=null) contentValues.put(dbhelper_user.PASSWORD, password);
+        else if(picture!=null) contentValues.put(dbhelper_user.PICTURE, picture);
         int i = database.update(dbhelper_user.TABLE_NAME, contentValues, dbhelper_user.USER_ID + " = " + _id, null);
         return i;
     }

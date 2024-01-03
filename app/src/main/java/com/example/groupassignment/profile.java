@@ -35,11 +35,11 @@ public class profile extends AppCompatActivity {
         email.setText(cursor_user.getString(2));
         phone.setText(cursor_user.getString(3));
         birthday.setText(cursor_user.getString(4));
-        cursor_user.close();
-/*
+
+
         ImageView picture = findViewById(R.id.imageView);
-        picture.setImageResource(getResources().getIdentifier(cursor_user.getString(6) + "_100", "drawable", getPackageName()));
-        */
+        picture.setImageResource(getResources().getIdentifier((cursor_user.getString(6) + "_100"), "drawable", getPackageName()));
+        cursor_user.close();
 
         dbmanager_user.close();
         main.updateVersion();

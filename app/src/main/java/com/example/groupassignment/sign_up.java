@@ -46,7 +46,7 @@ public class sign_up extends AppCompatActivity {
             dbmanager_login_history.insert(user_id, "logged in", "null");
             dbmanager_login_history.close();
             Toast.makeText(this, dbhelper_login_history.DB_VERSION+""+dbhelper_user.DB_VERSION, Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent (this, profile.class);
+            Intent intent = new Intent (this, set_picture.class);
             startActivity(intent);
         }
         else {
