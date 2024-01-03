@@ -21,7 +21,6 @@ public class notification extends AppCompatActivity {
         TextView text3 = findViewById(R.id.text_3);
         TextView text4 = findViewById(R.id.text_4);
 
-        dbhelper_notification.DB_VERSION = main.dbversion++;
         dbmanager_notification = new dbmanager_notification(this);
         dbmanager_notification.open();
         Cursor cursor = dbmanager_notification.fetch();

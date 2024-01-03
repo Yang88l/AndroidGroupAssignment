@@ -23,7 +23,6 @@ public class plan_history extends AppCompatActivity {
         TextView plan_date = findViewById(R.id.text_date1);
         TextView plan_status = findViewById(R.id.text_status1);
 
-        dbhelper_plan_history.DB_VERSION = main.dbversion++;
         dbmanager_plan_history = new dbmanager_plan_history(this);
         dbmanager_plan_history.open();
         Cursor cursor = dbmanager_plan_history.fetch();

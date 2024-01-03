@@ -32,23 +32,20 @@ public class sign_up extends AppCompatActivity {
             Toast.makeText(this, "Please fill in all the blank!", Toast.LENGTH_LONG).show();
         }
         else if (password.equals(password2)) {
-            dbhelper_user.DB_VERSION = main.dbversion++;
             dbmanager_user = new dbmanager_user(this);
             dbmanager_user.open();
             dbmanager_user.insert(name, email, phone, birthday, password, "null");
             Cursor cursor = dbmanager_user.fetchByName(name);
-            cursor.moveToLast();
             int user_id=Integer.parseInt(cursor.getString(0));
-            Toast.makeText(this, user_id+"", Toast.LENGTH_SHORT).show();
             cursor.close();
             dbmanager_user.close();
-
-            dbhelper_login_history.DB_VERSION=main.dbversion++;
+            main.updateVersion();
+            Toast.makeText(this, dbhelper_login_history.DB_VERSION+""+dbhelper_user.DB_VERSION, Toast.LENGTH_SHORT).show();
             dbmanager_login_history = new dbmanager_login_history(this);
             dbmanager_login_history.open();
-            dbmanager_login_history.insert(3, "logged in", "null");
+            dbmanager_login_history.insert(user_id, "logged in", "null");
             dbmanager_login_history.close();
-
+            Toast.makeText(this, dbhelper_login_history.DB_VERSION+""+dbhelper_user.DB_VERSION, Toast.LENGTH_SHORT).show();
             Intent intent = new Intent (this, profile.class);
             startActivity(intent);
         }

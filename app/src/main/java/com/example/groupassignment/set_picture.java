@@ -13,8 +13,6 @@ public class set_picture extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.set_picture);
-        dbhelper_user.DB_VERSION = main.dbversion++;
-        dbmanager_user = new dbmanager_user(this);
     }
 
     public void camera(View view) {
@@ -22,55 +20,33 @@ public class set_picture extends AppCompatActivity {
     }
 
     public void profile1(View view) {
-        dbmanager_user.open();
-        Cursor cursor = dbmanager_user.fetch(1);
-        cursor.moveToLast();
-        int user_id=Integer.parseInt(cursor.getString(0));
-        dbmanager_user.update(user_id, null, null, null, null, null, "profile1");
-        dbmanager_user.close();
-        Intent intent = new Intent(this,edit_profile.class);
-        startActivity(intent);
+        setProfile("profile1");
     }
 
     public void profile2(View view) {
-        dbmanager_user.open();
-        Cursor cursor = dbmanager_user.fetch(1);
-        cursor.moveToLast();
-        int user_id=Integer.parseInt(cursor.getString(0));
-        dbmanager_user.update(user_id, null, null, null, null, null, "profile2");
-        dbmanager_user.close();
-        Intent intent = new Intent(this,edit_profile.class);
-        startActivity(intent);
+        setProfile("profile2");
     }
 
     public void profile3(View view) {
-        dbmanager_user.open();
-        Cursor cursor = dbmanager_user.fetch(1);
-        cursor.moveToLast();
-        int user_id=Integer.parseInt(cursor.getString(0));
-        dbmanager_user.update(user_id, null, null, null, null, null, "profile3");
-        dbmanager_user.close();
-        Intent intent = new Intent(this,edit_profile.class);
-        startActivity(intent);
+        setProfile("profile3");
     }
 
     public void profile4(View view) {
-        dbmanager_user.open();
-        Cursor cursor = dbmanager_user.fetch(1);
-        cursor.moveToLast();
-        int user_id=Integer.parseInt(cursor.getString(0));
-        dbmanager_user.update(user_id, null, null, null, null, null, "profile4");
-        dbmanager_user.close();
-        Intent intent = new Intent(this,edit_profile.class);
-        startActivity(intent);
+        setProfile("profile4");
     }
 
     public void profile5(View view) {
+        setProfile("profile5");
+    }
+
+    public void setProfile(String picture){
+        dbmanager_user = new dbmanager_user(this);
         dbmanager_user.open();
         Cursor cursor = dbmanager_user.fetch(1);
         cursor.moveToLast();
         int user_id=Integer.parseInt(cursor.getString(0));
-        dbmanager_user.update(user_id, null, null, null, null, null, "profile5");
+        cursor.close();
+        dbmanager_user.update(user_id, null, null, null, null, null, picture);
         dbmanager_user.close();
         Intent intent = new Intent(this,edit_profile.class);
         startActivity(intent);

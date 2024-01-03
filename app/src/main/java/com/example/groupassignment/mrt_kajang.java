@@ -31,7 +31,6 @@ public class mrt_kajang extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lrt_sripetaling);
 
-        dbhelper_train.DB_VERSION = main.dbversion++;
         dbmanager_train = new dbmanager_train(this);
         dbhelper_train = new dbhelper_train(this);
 

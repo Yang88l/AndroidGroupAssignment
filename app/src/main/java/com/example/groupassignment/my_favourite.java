@@ -8,10 +8,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class my_favourite extends AppCompatActivity {
+    private dbmanager_favourite dbmanager_favourite;
+    private dbmanager_login_history dbmanager_login_history;
 
-    private dbmanager_favourite dbmanager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,10 +24,9 @@ public class my_favourite extends AppCompatActivity {
         TextView text3 = findViewById(R.id.textView2);
         TextView text4 = findViewById(R.id.textView3);
 
-        dbhelper_favourite.DB_VERSION = main.dbversion++;
-        dbmanager = new com.example.groupassignment.dbmanager_favourite(this);
-        dbmanager.open();
-        Cursor cursor = dbmanager.fetch();
+        dbmanager_favourite = new dbmanager_favourite(this);
+        dbmanager_favourite.open();
+        Cursor cursor = dbmanager_favourite.fetch();
 
         String name = "";
         String reviews = "";
@@ -44,20 +45,34 @@ public class my_favourite extends AppCompatActivity {
         text3.setText(ticket_sold + "Ticket Sold");
         text4.setText(String.format("RM%.2f", price));
 
-        dbmanager.close();
+        dbmanager_favourite.close();
     }
-            public void home(View v) {
-            startActivity(new Intent(my_favourite.this, main.class));
-            }
-            public void heart(View v) {
-            startActivity(new Intent(my_favourite.this, my_favourite.class));
+    public void profile(View view) {
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor = dbmanager_login_history.fetch();
+        cursor.moveToLast();
+        String status=cursor.getString(3);
+        cursor.close();
+        dbmanager_login_history.close();
+        Toast.makeText(this, status, Toast.LENGTH_SHORT).show();
+        if (status.equals("logged out")) {
+            Intent intent = new Intent(this, log_in.class);
+            startActivity(intent);
         }
-            public void history(View v) {
-            startActivity(new Intent(my_favourite.this, plan_history.class));
+        else if (status.equals("logged in")) {
+            Intent intent = new Intent(this, profile.class);
+            startActivity(intent);
         }
-            public void profile(View v) {
-            startActivity(new Intent(my_favourite.this, profile.class));
-
-        }
+    }
+    public void notification(View view) {
+        startActivity(new Intent(this, notification.class));
+    }
+    public void heart(View view) {
+        startActivity(new Intent(this, my_favourite.class));
+    }
+    public void history(View view) {
+        startActivity(new Intent(this, book_history.class));
+    }
 
 }

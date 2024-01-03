@@ -10,47 +10,33 @@ import android.widget.Button;
 public class train_type extends AppCompatActivity {
     private dbmanager_train dbmanager_train;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.train_type);
-        dbhelper_train.DB_VERSION = main.dbversion++;
-        dbmanager_train = new dbmanager_train(this);
     }
 
-            public void kajang(View v){
-            String location_name = "kajang";
-            dbmanager_train.open();
-            dbmanager_train.insert(location_name);
-            dbmanager_train.close();
-            startActivity(new Intent(train_type.this, mrt_kajang.class));
-            }
+    public void kajang(View v){
+        selectTrain("kajang");
+    }
 
+    public void ampang(View v) {
+        selectTrain("ampang");
+    }
 
-            public void ampang(View v) {
-                String location_name = "ampang";
-                dbmanager_train.open();
-                dbmanager_train.insert(location_name);
-                dbmanager_train.close();
-        startActivity(new Intent(train_type.this, lrt_ampang.class));
-            }
+    public void sri_petaling(View v) {
+        selectTrain("sri petaling");
+    }
 
-            public void sri_petaling(View v) {
-                String location_name = "sri petaling";
-                dbmanager_train.open();
-                dbmanager_train.insert(location_name);
-                dbmanager_train.close();
-                startActivity(new Intent(train_type.this, mrt_putrajaya.class));
-            }
+    public void putrajaya(View v) {
+        selectTrain("putrajaya");
+    }
 
-
-            public void putrajaya(View v) {
-                String location_name = "putrajaya";
-                dbmanager_train.open();
-                dbmanager_train.insert(location_name);
-                dbmanager_train.close();
-                startActivity(new Intent(train_type.this, lrt_sripetaling.class));
-            }
-
+    public void selectTrain(String train){
+        dbmanager_train = new dbmanager_train(this);
+        dbmanager_train.open();
+        dbmanager_train.insert(train);
+        dbmanager_train.close();
+        startActivity(new Intent(train_type.this, lrt_sripetaling.class));
+    }
 }

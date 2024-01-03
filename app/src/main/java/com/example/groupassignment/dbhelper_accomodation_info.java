@@ -13,8 +13,10 @@ public class dbhelper_accomodation_info extends SQLiteOpenHelper {
     public static final String PICTURE = "picture";
     // Database Information
     static final String DB_NAME = "JOURNALDEV_TRAVEL_BOOKING.DB";
+
     // database version
-    public static int DB_VERSION = main.dbversion++;
+    public static int DB_VERSION = 1;
+
     // Creating table query
 
     private static final String CREATE_TABLE = "create table "

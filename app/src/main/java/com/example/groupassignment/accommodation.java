@@ -1,25 +1,16 @@
 package com.example.groupassignment;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 
 public class accommodation extends AppCompatActivity {
-    private dbmanager_choose_accomodation dbmanager_choose_accomodation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.accommodation);
-
-        //database
-        dbhelper_choose_accomodation.DB_VERSION = main.dbversion++;
-        dbmanager_choose_accomodation = new dbmanager_choose_accomodation(this);
     }
 
     public void notification(View view) {

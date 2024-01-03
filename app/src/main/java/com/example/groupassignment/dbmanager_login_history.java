@@ -25,6 +25,7 @@ public class dbmanager_login_history {
     }
 
     public void close() {
+        main.saveVersion(context);
         dbHelper.close();
     }
 

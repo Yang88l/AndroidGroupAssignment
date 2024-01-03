@@ -23,9 +23,6 @@ public class transport extends AppCompatActivity {
     public void flight(View view) {
         startActivity(new Intent(this, state_flight.class));
     }
-    public void car(View view) {
-        startActivity(new Intent(this, train_type.class));
-    }
 
     //Common directory buttons
     public void home(View view) {

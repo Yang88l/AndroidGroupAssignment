@@ -8,17 +8,11 @@ import android.view.View;
 import android.widget.Button;
 
 public class food extends AppCompatActivity {
-    private com.example.groupassignment.dbmanager_choose_food dbmanager_choose_food;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.food);
-
-        dbhelper_choose_food.DB_VERSION = main.dbversion++;
-
-        dbmanager_choose_food = new dbmanager_choose_food(this);
-
     }
 
     public void notification(View view) {
@@ -47,11 +41,6 @@ public class food extends AppCompatActivity {
 
     public void profile(View view) {
         Intent intent = new Intent (this, profile.class);
-        startActivity(intent);
-    }
-
-    public void filter(View view) {
-        Intent intent = new Intent (this, filter.class);
         startActivity(intent);
     }
 

@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/parent_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".select_location">
@@ -57,7 +56,6 @@
         android:layout_height="56dp"
         android:layout_marginTop="12dp"
         android:text="Perak"
-        android:onClick="perak"
         app:layout_constraintEnd_toEndOf="@+id/button14"
         app:layout_constraintStart_toStartOf="@+id/button14"
         app:layout_constraintTop_toBottomOf="@+id/button5" />
@@ -67,7 +65,6 @@
         android:layout_width="125dp"
         android:layout_height="56dp"
         android:text="Pahang"
-        android:onClick="pahang"
         app:layout_constraintBottom_toBottomOf="@+id/button10"
         app:layout_constraintEnd_toEndOf="@+id/button6"
         app:layout_constraintStart_toStartOf="@+id/button6"
@@ -77,11 +74,12 @@
         android:id="@+id/button15"
         android:layout_width="125dp"
         android:layout_height="56dp"
+        android:layout_marginTop="64dp"
         android:onClick="toChoose"
         android:text="Back"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="657dp" />
+        app:layout_constraintTop_toBottomOf="@+id/button16" />
 
     <Button
         android:id="@+id/button8"
@@ -89,7 +87,6 @@
         android:layout_height="56dp"
         android:layout_marginTop="12dp"
         android:text="Kelantan"
-        android:onClick="kelantan"
         app:layout_constraintEnd_toEndOf="@+id/button7"
         app:layout_constraintStart_toStartOf="@+id/button7"
         app:layout_constraintTop_toBottomOf="@+id/button9" />
@@ -100,7 +97,6 @@
         android:layout_height="56dp"
         android:layout_marginTop="12dp"
         android:text="Negeri Sembilan"
-        android:onClick="negeri sembilan"
         app:layout_constraintEnd_toEndOf="@+id/button3"
         app:layout_constraintStart_toStartOf="@+id/button3"
         app:layout_constraintTop_toBottomOf="@+id/button4" />
@@ -111,7 +107,6 @@
         android:layout_height="56dp"
         android:layout_marginTop="12dp"
         android:text="Penang"
-        android:onClick="penang"
         app:layout_constraintEnd_toEndOf="@+id/button8"
         app:layout_constraintStart_toStartOf="@+id/button8"
         app:layout_constraintTop_toBottomOf="@+id/button12" />
@@ -122,7 +117,6 @@
         android:layout_height="56dp"
         android:layout_marginTop="12dp"
         android:text="Terengganu"
-        android:onClick="terengganu"
         app:layout_constraintEnd_toEndOf="@+id/button13"
         app:layout_constraintStart_toStartOf="@+id/button13"
         app:layout_constraintTop_toBottomOf="@+id/button8" />
@@ -134,9 +128,18 @@
         android:layout_marginStart="58dp"
         android:layout_marginTop="12dp"
         android:text="Selangor"
-        android:onClick="selangor"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button7" />
+
+    <Button
+        android:id="@+id/button16"
+        android:layout_width="125dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="12dp"
+        android:text="Sarawak"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button13" />
 
     <Button
         android:id="@+id/button14"
@@ -144,7 +147,6 @@
         android:layout_height="56dp"
         android:layout_marginTop="12dp"
         android:text="Sabah"
-        android:onClick="sabah"
         app:layout_constraintEnd_toEndOf="@+id/button4"
         app:layout_constraintStart_toStartOf="@+id/button4"
         app:layout_constraintTop_toBottomOf="@+id/button3" />
@@ -155,7 +157,6 @@
         android:layout_height="56dp"
         android:layout_marginTop="12dp"
         android:text="Johor"
-        android:onClick="johor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.456"
         app:layout_constraintStart_toEndOf="@+id/button12"
@@ -167,7 +168,6 @@
         android:layout_height="56dp"
         android:layout_marginTop="12dp"
         android:text="Kedah"
-        android:onClick="kedah"
         app:layout_constraintEnd_toEndOf="@+id/button9"
         app:layout_constraintStart_toStartOf="@+id/button9"
         app:layout_constraintTop_toBottomOf="@+id/button10" />
@@ -178,7 +178,6 @@
         android:layout_height="56dp"
         android:layout_marginTop="12dp"
         android:text="Melaka"
-        android:onClick="melaka"
         app:layout_constraintEnd_toEndOf="@+id/button6"
         app:layout_constraintStart_toStartOf="@+id/button6"
         app:layout_constraintTop_toBottomOf="@+id/button6" />
@@ -189,7 +188,6 @@
         android:layout_height="56dp"
         android:layout_marginTop="128dp"
         android:text="Perlis"
-        android:onClick="perlis"
         app:layout_constraintEnd_toStartOf="@+id/button11"
         app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toStartOf="parent"

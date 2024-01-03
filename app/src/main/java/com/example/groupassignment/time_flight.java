@@ -12,20 +12,14 @@ import android.widget.EditText;
 public class time_flight extends AppCompatActivity {
 
     private dbmanager_flight dbmanager_flight;
-    private String date;
-    public int user_id=1; // Replace with the actual user ID
+    private dbmanager_login_history dbmanager_login_history;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.time_flight);
-
-        dbhelper_flight.DB_VERSION = main.dbversion++;
+        /*
         dbmanager_flight = new dbmanager_flight(this);
-
-
-
-        //Specify Specific Data you want to get
         dbmanager_flight.open();
 
         String[] columnsToSelect = new String[]{
@@ -46,7 +40,7 @@ public class time_flight extends AppCompatActivity {
 
         cursor.close();
         dbmanager_flight.close();
-
+*/
     }
 
     public void profile(View view) {
@@ -72,12 +66,25 @@ public class time_flight extends AppCompatActivity {
     public void next(View view) {
         EditText time = findViewById(R.id.time);
 
+        dbmanager_flight = new dbmanager_flight(this);
         dbmanager_flight.open();
         Cursor cursor = dbmanager_flight.fetch(1);
         cursor.moveToLast();
         dbmanager_flight.update(Integer.parseInt(cursor.getString(0)), String.valueOf(time), null,null, null, Integer.parseInt(cursor.getString(5)));
+        cursor.close();
         dbmanager_flight.close();
         Intent intent = new Intent(this, pax_flight.class);
         startActivity(intent);
+    }
+
+    public int getUserID(){
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor_login = dbmanager_login_history.fetch();
+        cursor_login.moveToLast();
+        int user_id=Integer.parseInt(cursor_login.getString(1));
+        cursor_login.close();
+        dbmanager_login_history.close();
+        return user_id;
     }
 }

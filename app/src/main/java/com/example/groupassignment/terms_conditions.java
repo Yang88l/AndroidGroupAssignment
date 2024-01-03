@@ -12,8 +12,6 @@ import android.widget.TextView;
 
 public class terms_conditions extends AppCompatActivity {
 
-    private com.example.groupassignment.dbmanager_terms_conditions dbmanager;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,19 +25,19 @@ public class terms_conditions extends AppCompatActivity {
         TextView Terms_description3 = findViewById(R.id.textView6);
         TextView Terms_description4 = findViewById(R.id.textView8);
 
-        dbhelper_terms_conditions.DB_VERSION = main.dbversion++;
+        /*
         dbmanager = new dbmanager_terms_conditions(this);
         dbmanager.open();
-        Cursor cursor = dbmanager.fetch();
+        Cursor cursor = dbmanager.fetch();*/
 
         String title = "";
         String description = "";
-
+/*
         cursor.moveToLast();
         title = cursor.getString(2);
         description = cursor.getString(3);
         cursor.close();
-
+*/
         Terms_title1.setText(title);
         Terms_title2.setText(title);
         Terms_title3.setText(title);
@@ -48,7 +46,7 @@ public class terms_conditions extends AppCompatActivity {
         Terms_description3.setText(description);
         Terms_description4.setText(description);
 
-        dbmanager.close();
+        //dbmanager.close();
     }
 
     public void OK(View view) {
