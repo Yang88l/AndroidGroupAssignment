@@ -1,6 +1,7 @@
 package com.example.groupassignment;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -36,7 +37,10 @@ public class dbhelper_bus extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE);
-        db.execSQL("INSERT INTO bus (BUS_ID, SEAT, BUS) VALUES (1, 30, 'Soutern'), (2, 30, 'Mayang Sari'), (3, 30, 'City Express');");
+        Cursor cursor = db.rawQuery("SELECT COUNT(*) FROM sqlite_master", null );
+        if (cursor != null) {
+            db.execSQL("INSERT INTO bus (BUS_ID, SEAT, BUS) VALUES (1, 30, 'Soutern'), (2, 30, 'Mayang Sari'), (3, 30, 'City Express');");
+        }
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.example.groupassignment;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 public class dbhelper_airline_info extends SQLiteOpenHelper {
@@ -34,7 +35,10 @@ public class dbhelper_airline_info extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE);
+        Cursor cursor = db.rawQuery("SELECT COUNT(*) FROM sqlite_master", null );
+        if (cursor != null) {
         db.execSQL("INSERT INTO airline_info (AIRLINE, PRICE) VALUES ('Air Asia', 100), ('Firefly', 100), ('Berjaya Air', 100);");
+        }
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.example.groupassignment;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 public class dbhelper_accomodation_info extends SQLiteOpenHelper {
@@ -34,10 +35,13 @@ public class dbhelper_accomodation_info extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE);
-        db.execSQL("INSERT INTO accomodation_info (hotel_id, hotel_name, price)"+
-            "VALUES (1, 'Bevelord Hotel', 300, bevelord_hotel),"+
-            "(2, 'Crystal Hotel', 350, crystal_hotel),"+
-            "(3, 'Ocean Hotel', 250, ocean_hotel);");
+        Cursor cursor = db.rawQuery("SELECT COUNT(*) FROM sqlite_master", null );
+        if (cursor != null) {
+            db.execSQL("INSERT INTO accomodation_info (hotel_id, hotel_name, price)" +
+                    "VALUES (1, 'Bevelord Hotel', 300, bevelord_hotel)," +
+                    "(2, 'Crystal Hotel', 350, crystal_hotel)," +
+                    "(3, 'Ocean Hotel', 250, ocean_hotel);");
+        }
     }
 
     @Override

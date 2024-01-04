@@ -46,8 +46,11 @@ public class dbhelper_book_history extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE);
+        Cursor cursor = db.rawQuery("SELECT COUNT(*) FROM sqlite_master", null );
+        if (cursor != null) {
         db.execSQL("INSERT INTO book_history (COST)"+
                 "VALUES (1);");
+        }
     }
 
     @Override
