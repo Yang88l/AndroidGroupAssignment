@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="104dp"
         android:layout_marginTop="36dp"
-        android:labelFor="@id/go"
+        android:labelFor="@id/imageView3"
         android:text="Cost: "
         android:textSize="24dp"
         app:layout_constraintStart_toStartOf="parent"

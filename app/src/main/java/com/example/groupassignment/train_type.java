@@ -17,27 +17,18 @@ public class train_type extends AppCompatActivity {
     }
 
     public void kajang(View v){
-        selectTrain("kajang");
+        startActivity(new Intent(train_type.this, mrt_kajang.class));
     }
 
     public void ampang(View v) {
-        selectTrain("ampang");
+        startActivity(new Intent(train_type.this, lrt_ampang.class));
     }
 
     public void sri_petaling(View v) {
-        selectTrain("sri petaling");
+        startActivity(new Intent(train_type.this, lrt_sripetaling.class));
     }
 
     public void putrajaya(View v) {
-        selectTrain("putrajaya");
-    }
-
-    public void selectTrain(String train){
-        dbmanager_train = new dbmanager_train(this);
-        dbmanager_train.open();
-        dbmanager_train.insert(train);
-        dbmanager_train.close();
-        main.updateVersion();
-        startActivity(new Intent(train_type.this, lrt_sripetaling.class));
+        startActivity(new Intent(train_type.this, mrt_putrajaya.class));
     }
 }
