@@ -4,186 +4,98 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".lrt_ampang"
-    android:background="@drawable/gradient_bg">
+    android:background="@drawable/gradient_bg"
+    android:backgroundTint="@color/white"
+    tools:context=".lrt_ampang">
 
 
     <TextView
         android:id="@+id/text3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="36dp"
         android:labelFor="@id/go"
-        android:text="Cost"
-        android:textSize="24sp"
+        android:text="Cost: "
+        android:textSize="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/from" />
-
+        app:layout_constraintTop_toBottomOf="@+id/text5" />
 
     <TextView
         android:id="@+id/text5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="472dp"
-        android:labelFor="@id/go_return"
-        android:text="Arrival Time"
-        android:textSize="24sp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="12dp"
+        android:labelFor="@id/cost"
+        android:text="Arrival Time: "
+        android:textSize="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/button20" />
 
     <ImageView
         android:id="@+id/line3"
         android:layout_width="302dp"
         android:layout_height="52dp"
-        android:layout_marginTop="200dp"
         android:scaleX="8"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
         app:srcCompat="@drawable/straight" />
 
+
     <TextView
-        android:id="@+id/go"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="144dp"
+        android:id="@+id/time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="28dp"
+        android:background="@drawable/border"
         android:ems="10"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.851"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.83" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/text5"
+        app:layout_constraintTop_toBottomOf="@+id/button20" />
 
     <TextView
-        android:id="@+id/go_return"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:id="@+id/cost"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="28dp"
+        android:background="@drawable/border"
         android:ems="10"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.851"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.563" />
-
-    <Button
-        android:id="@+id/ampang"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:onClick="ampang"
-        android:text="Ampang"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.174"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.124" />
-
-
-    <Button
-        android:id="@+id/button_to"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginTop="292dp"
-        android:layout_marginEnd="80dp"
-        android:labelFor="@id/to"
-        android:onClick="to"
-        android:text="To"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/button_from"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="292dp"
-        android:labelFor="@id/from"
-        android:onClick="from"
-        android:text="From"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/cahaya"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:onClick="cahaya"
-        android:text="Cahaya"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.52"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.124" />
-
-    <Button
-        android:id="@+id/cempaka"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:onClick="cempaka"
-        android:text="Cempaka"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.881"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.124" />
-
-    <Button
-        android:id="@+id/pandan_jaya"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:onClick="pandan_jaya"
-        android:text="Pandan Jaya"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.764"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.194" />
-
-    <Button
-        android:id="@+id/pandan_indah"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:onClick="pandan_indah"
-        android:text="Pandan Indah"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.194" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/text3"
+        app:layout_constraintTop_toBottomOf="@+id/time" />
 
     <TextView
+        android:background="@drawable/border"
         android:id="@+id/from"
         android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="29dp"
-        android:layout_marginEnd="232dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
         android:ems="10"
         android:text=""
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        android:textAlignment="center"
+        android:textSize="24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_from" />
 
     <TextView
+        android:background="@drawable/border"
         android:id="@+id/to"
         android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="46dp"
-        android:layout_marginEnd="36dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
         android:ems="10"
         android:text=""
+        android:textAlignment="center"
+        android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/from"
         app:layout_constraintTop_toBottomOf="@+id/button_to" />
 
     <TextView
@@ -218,6 +130,106 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line"
+        app:srcCompat="@drawable/ampang" />
+
+    <Button
+        android:id="@+id/ampang"
+        android:layout_width="55dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="120dp"
+        android:onClick="ampang"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line" />
+
+    <Button
+        android:id="@+id/button_to"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="64dp"
+        android:labelFor="@id/to"
+        android:onClick="to"
+        android:text="To"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line3" />
+
+    <Button
+        android:id="@+id/button_from"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="36dp"
+        android:labelFor="@id/from"
+        android:onClick="from"
+        android:text="From"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line3" />
+
+    <Button
+        android:id="@+id/cahaya"
+        android:layout_width="55dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="120dp"
+        android:onClick="cahaya"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ampang" />
+
+    <Button
+        android:id="@+id/cempaka"
+        android:layout_width="55dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="120dp"
+        android:onClick="cempaka"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cahaya" />
+
+    <Button
+        android:id="@+id/pandan_jaya"
+        android:layout_width="55dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="120dp"
+        android:onClick="pandan_jaya"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pandan_indah" />
+
+    <Button
+        android:id="@+id/pandan_indah"
+        android:layout_width="55dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="120dp"
+        android:onClick="pandan_indah"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cempaka"
+        tools:visibility="invisible" />
+
+    <Button
+        android:id="@+id/button20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:onClick="calculate"
+        android:text="Calculate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/from" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
