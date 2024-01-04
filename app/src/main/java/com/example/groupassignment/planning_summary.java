@@ -72,9 +72,10 @@ public class planning_summary extends AppCompatActivity {
                 else if (type.equals("flight")) {
                     dbmanager_flight = new dbmanager_flight(this);
                     dbmanager_flight.open();
-                   // Cursor cursor = dbmanager_flight.fetch(activity_id);
-                  //  displayText1.append(cursor.getString(1));
-                  //  displayText2.append("RM"+cursor.getString(2));
+                    Cursor cursor = dbmanager_flight.fetch();
+                    cursor.moveToLast();
+                    displayText1.append(cursor.getString(1));
+                    displayText2.append("RM"+cursor.getString(2));
                     dbmanager_flight.close();
                     main.updateVersion();
                 }

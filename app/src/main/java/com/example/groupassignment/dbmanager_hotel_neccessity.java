@@ -50,9 +50,9 @@ public class dbmanager_hotel_neccessity {
 
     public int update(long _id, String wifi, String air_condition, int user_id) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(dbhelper_hotel_neccessity.WIFI, wifi);
-        contentValues.put(dbhelper_hotel_neccessity.AIR_CONDITION, air_condition);
-        contentValues.put(dbhelper_hotel_neccessity.USER_ID, user_id);
+        if(wifi!=null)contentValues.put(dbhelper_hotel_neccessity.WIFI, wifi);
+        else if(air_condition!=null)contentValues.put(dbhelper_hotel_neccessity.AIR_CONDITION, air_condition);
+        else if(user_id!=-1)contentValues.put(dbhelper_hotel_neccessity.USER_ID, user_id);
         int i = database.update(dbhelper_hotel_neccessity.TABLE_NAME, contentValues, dbhelper_hotel_neccessity.HOTEL_NECCESSITY_ID + " = " + _id, null);
         return i;
     }

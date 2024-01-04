@@ -55,10 +55,10 @@ public class dbmanager_filter_range {
 
     public int update(long _id, double price, double distance, int rating, String availability) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(dbhelper_filter_range.PRICE, price);
-        contentValues.put(dbhelper_filter_range.DISTANCE, distance);
-        contentValues.put(dbhelper_filter_range.RATING, rating);
-        contentValues.put(dbhelper_filter_range.AVAILABILITY, availability);
+        if(price!=-1)contentValues.put(dbhelper_filter_range.PRICE, price);
+        else if(distance!=-1)contentValues.put(dbhelper_filter_range.DISTANCE, distance);
+        else if(rating!=-1)contentValues.put(dbhelper_filter_range.RATING, rating);
+        else if(availability!=null)contentValues.put(dbhelper_filter_range.AVAILABILITY, availability);
         int i = database.update(dbhelper_filter_range.TABLE_NAME, contentValues, dbhelper_filter_range.FILTER_ID + " = " + _id, null);
         return i;
     }

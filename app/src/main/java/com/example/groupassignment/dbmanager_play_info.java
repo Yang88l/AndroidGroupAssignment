@@ -71,8 +71,8 @@ public class dbmanager_play_info {
     //UPDATE play_name, price FROM table WHERE play_id = _id
     public int update(int _id, String play_name, double price) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(dbhelper_play_info.PLAY, play_name);
-        contentValues.put(dbhelper_play_info.PRICE, price);
+        if(play_name!=null)contentValues.put(dbhelper_play_info.PLAY, play_name);
+        else if(price!=-1)contentValues.put(dbhelper_play_info.PRICE, price);
         int i = database.update(dbhelper_play_info.TABLE_NAME, contentValues, dbhelper_play_info.PLAY_ID + " = " + _id, null);
         return i;
     }

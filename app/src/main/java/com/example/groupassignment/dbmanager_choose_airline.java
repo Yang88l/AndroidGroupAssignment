@@ -50,8 +50,8 @@ public class dbmanager_choose_airline {
     //UPDATE airline_id, user_id FROM table WHERE choose_airline_id = _id
     public int update(int _id, int airline_id, int user_id) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(dbhelper_choose_airline.AIRLINE_ID, airline_id);
-        contentValues.put(dbhelper_choose_airline.USER_ID, user_id);
+        if(airline_id!=-1)contentValues.put(dbhelper_choose_airline.AIRLINE_ID, airline_id);
+        else if(user_id!=-1)contentValues.put(dbhelper_choose_airline.USER_ID, user_id);
         int i = database.update(dbhelper_choose_airline.TABLE_NAME, contentValues, dbhelper_choose_airline.CHOOSE_AIRLINE_ID + " = " + _id, null);
         return i;
     }

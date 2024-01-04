@@ -24,14 +24,14 @@ public class info_flight extends AppCompatActivity {
         //get date
         dbmanager_flight = new dbmanager_flight(this);
         dbmanager_flight.open();
-       // Cursor cursor = dbmanager_flight.fetch(getUserID());
-     //   String date = cursor.getString(3);
-     //   cursor.close();
+        Cursor cursor = dbmanager_flight.fetch();
+        String date = cursor.getString(3);
+        cursor.close();
         dbmanager_flight.close();
         main.updateVersion();
 
         TextView text = findViewById(R.id.flight_information_text);
-      //  text.setText("You have made a flight booking on " + date);
+        text.setText("You have made a flight booking on " + date);
     }
 
     public void finish(View view) {

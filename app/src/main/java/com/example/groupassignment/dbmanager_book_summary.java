@@ -67,13 +67,13 @@ public class dbmanager_book_summary {
     //UPDATE * FROM table WHERE book_summary_id = _id
     public int update(int _id, int hotel_id, int user_id, String airline, int transport_id, int food_id, double total_price, String location) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(dbhelper_book_summary.HOTEL_ID, hotel_id);
-        contentValues.put(dbhelper_book_summary.USER_ID, user_id);
-        contentValues.put(dbhelper_book_summary.AIRLINE_ID, airline);
-        contentValues.put(dbhelper_book_summary.TRANSPORT_ID, transport_id);
-        contentValues.put(dbhelper_book_summary.FOOD_ID, food_id);
-        contentValues.put(dbhelper_book_summary.TOTAL_PRICE, total_price);
-        contentValues.put(dbhelper_book_summary.LOCATION, location);
+        if(hotel_id!=null)contentValues.put(dbhelper_book_summary.HOTEL_ID, hotel_id);
+        else if(user_id!=null)contentValues.put(dbhelper_book_summary.USER_ID, user_id);
+        else if(airline!=null)contentValues.put(dbhelper_book_summary.AIRLINE_ID, airline);
+        else if(transport_id!=null)contentValues.put(dbhelper_book_summary.TRANSPORT_ID, transport_id);
+        else if(food_id!=null)contentValues.put(dbhelper_book_summary.FOOD_ID, food_id);
+        else if(total_price!=-1)contentValues.put(dbhelper_book_summary.TOTAL_PRICE, total_price);
+        else if(location!=null)contentValues.put(dbhelper_book_summary.LOCATION, location);
         int i = database.update(dbhelper_book_summary.TABLE_NAME, contentValues, dbhelper_book_summary.BOOK_SUMMARY_ID + " = " + _id, null);
         return i;
     }

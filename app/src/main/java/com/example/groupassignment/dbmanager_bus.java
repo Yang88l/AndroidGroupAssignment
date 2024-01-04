@@ -49,8 +49,8 @@ public class dbmanager_bus {
 
     public int update(int _id, int seat, String bus) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(dbhelper_bus.SEAT, seat);
-        contentValues.put(dbhelper_bus.BUS, bus);
+        if(seat!=-1)contentValues.put(dbhelper_bus.SEAT, seat);
+        else if(bus!=null)contentValues.put(dbhelper_bus.BUS, bus);
         int i = database.update(dbhelper_bus.TABLE_NAME, contentValues, dbhelper_bus.BUS_ID + " = " + _id, null);
         return i;
     }

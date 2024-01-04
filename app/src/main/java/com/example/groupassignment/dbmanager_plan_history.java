@@ -53,9 +53,9 @@ public class dbmanager_plan_history {
     //UPDATE * FROM table WHERE plan_history_id = _id
     public int update(int _id, int user_id, String activity, double cost) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(dbhelper_plan_history.USER_ID, user_id);
-        contentValues.put(dbhelper_plan_history.ACTIVITY, activity);
-        contentValues.put(dbhelper_plan_history.COST, cost);
+        if(user_id!=-1)contentValues.put(dbhelper_plan_history.USER_ID, user_id);
+        else if(activity!=null)contentValues.put(dbhelper_plan_history.ACTIVITY, activity);
+        else if(cost!=-1)contentValues.put(dbhelper_plan_history.COST, cost);
         int i = database.update(dbhelper_plan_history.TABLE_NAME, contentValues, dbhelper_plan_history.PLAN_HISTORY_ID + " = " + _id, null);
         return i;
     }

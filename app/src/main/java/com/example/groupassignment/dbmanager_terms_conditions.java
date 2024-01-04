@@ -51,8 +51,8 @@ public class dbmanager_terms_conditions {
 
     public int update(long _id, String title, String description) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(dbhelper_terms_conditions.TITLE, title);
-        contentValues.put(dbhelper_terms_conditions.DESCRIPTION, description);
+        if(title!=null)contentValues.put(dbhelper_terms_conditions.TITLE, title);
+        else if(description!=null)contentValues.put(dbhelper_terms_conditions.DESCRIPTION, description);
         int i = database.update(dbhelper_terms_conditions.TABLE_NAME, contentValues, dbhelper_terms_conditions.TERMS_CONDITIONS_ID + " = " + _id, null);
         return i;
     }

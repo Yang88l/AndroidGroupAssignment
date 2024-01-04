@@ -62,11 +62,11 @@ public class dbmanager_flight {
 
     public int update(int _id, String time, String flight_number, String date, String state, int user_id) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(dbhelper_flight.TIME, time);
-        contentValues.put(dbhelper_flight.FLIGHT_NUMBER, flight_number);
-        contentValues.put(dbhelper_flight.DATE, date);
-        contentValues.put(dbhelper_flight.STATE, state);
-        contentValues.put(dbhelper_flight.USER_ID, user_id);
+        if(time!=null)contentValues.put(dbhelper_flight.TIME, time);
+        else if(flight_number!=null)contentValues.put(dbhelper_flight.FLIGHT_NUMBER, flight_number);
+        else if(date!=null)contentValues.put(dbhelper_flight.DATE, date);
+        else if(state!=null)contentValues.put(dbhelper_flight.STATE, state);
+        else if(user_id!=-1)contentValues.put(dbhelper_flight.USER_ID, user_id);
         int i = database.update(dbhelper_flight.TABLE_NAME, contentValues, dbhelper_flight.FLIGHT_ID + " = " + _id, null);
         return i;
     }

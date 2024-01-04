@@ -68,8 +68,8 @@ public class dbmanager_choose_accomodation {
     //UPDATE hotel_id, user_id FROM table WHERE choose_accomodation_id = _id
     public int update(int _id, int hotel_id, int user_id) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(dbhelper_choose_accomodation.HOTEL_ID, hotel_id);
-        contentValues.put(dbhelper_choose_accomodation.USER_ID, user_id);
+        if(hotel_id!=-1)contentValues.put(dbhelper_choose_accomodation.HOTEL_ID, hotel_id);
+        else if(user_id!=-1)contentValues.put(dbhelper_choose_accomodation.USER_ID, user_id);
         int i = database.update(dbhelper_choose_accomodation.TABLE_NAME, contentValues, dbhelper_choose_accomodation.CHOOSE_ACCOMODATION_ID + " = " + _id, null);
         return i;
     }

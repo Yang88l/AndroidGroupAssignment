@@ -50,10 +50,10 @@ public class dbmanager_transport_info {
         return cursor;
     }
 
-    public int update(long _id, double price, String food) {
+    public int update(long _id, double price, String transport) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(dbhelper_transport_info.PRICE, price);
-        contentValues.put(dbhelper_transport_info.TRANSPORT, food);
+        if(price!=-1)contentValues.put(dbhelper_transport_info.PRICE, price);
+        else if(transport!=null)contentValues.put(dbhelper_transport_info.TRANSPORT, transport);
         int i = database.update(dbhelper_transport_info.TABLE_NAME, contentValues, dbhelper_transport_info.TRANSPORT_ID + " = " + _id, null);
         return i;
     }

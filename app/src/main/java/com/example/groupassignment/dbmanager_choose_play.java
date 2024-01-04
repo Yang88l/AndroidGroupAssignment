@@ -51,8 +51,8 @@ public class dbmanager_choose_play {
     //UPDATE hotel_id, user_id FROM table WHERE choose_food_id = _id
     public int update(int _id, int play_id, int user_id) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(dbhelper_choose_play.PLAY_ID, play_id);
-        contentValues.put(dbhelper_choose_play.USER_ID, user_id);
+        if(user_id!=-1)contentValues.put(dbhelper_choose_play.PLAY_ID, play_id);
+        else if(user_id!=-1)contentValues.put(dbhelper_choose_play.USER_ID, user_id);
         int i = database.update(dbhelper_choose_play.TABLE_NAME, contentValues, dbhelper_choose_play.CHOOSE_PLAY_ID + " = " + _id, null);
         return i;
     }

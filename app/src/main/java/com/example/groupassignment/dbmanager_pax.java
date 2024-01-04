@@ -52,10 +52,10 @@ public class dbmanager_pax {
 
     public int update(long _id, int user_id, int amount, int adult, int kid) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(dbhelper_pax.USER_ID, user_id);
-        contentValues.put(dbhelper_pax.AMOUNT, amount);
-        contentValues.put(dbhelper_pax.ADULT, adult);
-        contentValues.put(dbhelper_pax.KID, kid);
+        if(user_id!=-1)contentValues.put(dbhelper_pax.USER_ID, user_id);
+        else if(amount!=-1)contentValues.put(dbhelper_pax.AMOUNT, amount);
+        else if(adult!=-1)contentValues.put(dbhelper_pax.ADULT, adult);
+        else if(kid!=-1)contentValues.put(dbhelper_pax.KID, kid);
         int i = database.update(dbhelper_pax.TABLE_NAME, contentValues, dbhelper_pax.PAX_ID + " = " + _id, null);
         return i;
     }
