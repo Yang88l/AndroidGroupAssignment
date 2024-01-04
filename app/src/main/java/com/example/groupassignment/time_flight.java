@@ -30,9 +30,10 @@ public class time_flight extends AppCompatActivity {
 
         dbmanager_flight = new dbmanager_flight(this);
         dbmanager_flight.open();
-        Cursor cursor = dbmanager_flight.fetch(1);
+        Cursor cursor = dbmanager_flight.fetch();
         cursor.moveToLast();
-        dbmanager_flight.update(Integer.parseInt(cursor.getString(0)), String.valueOf(time), null,null, null, Integer.parseInt(cursor.getString(5)));
+        int flight_id=Integer.parseInt(cursor.getString(0));
+        dbmanager_flight.update(flight_id, String.valueOf(time), null,null, null,Integer.parseInt(cursor.getString(5)));
         cursor.close();
         dbmanager_flight.close();
         main.updateVersion();
