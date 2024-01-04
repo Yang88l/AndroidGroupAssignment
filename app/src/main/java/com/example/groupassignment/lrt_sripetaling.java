@@ -68,26 +68,7 @@ public class lrt_sripetaling extends AppCompatActivity {
     }
 
 
-    //BOTTOM BUTTONS DIRECTORY
-    public void home(View view) {
-        Intent intent = new Intent(lrt_sripetaling.this, main.class);
-        startActivity(intent);
-    }
 
-    public void heart(View view) {
-        Intent intent = new Intent(lrt_sripetaling.this, my_favourite.class);
-        startActivity(intent);
-    }
-
-    public void history(View view) {
-        Intent intent = new Intent(lrt_sripetaling.this, book_history.class);
-        startActivity(intent);
-    }
-
-    public void profile(View view) {
-        Intent intent = new Intent(lrt_sripetaling.this, profile.class);
-        startActivity(intent);
-    }
     //Functions
     public void sri_petaling(View view) {
         if (user_input.equals("from")) {

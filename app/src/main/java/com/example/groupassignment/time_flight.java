@@ -25,26 +25,6 @@ public class time_flight extends AppCompatActivity {
 
     }
 
-    public void profile(View view) {
-        Intent intent = new Intent(this, profile.class);
-        startActivity(intent);
-    }
-
-    public void history(View view) {
-        Intent intent = new Intent(this, book_history.class);
-        startActivity(intent);
-    }
-
-    public void main(View view) {
-        Intent intent = new Intent(this, main.class);
-        startActivity(intent);
-    }
-
-    public void heart(View view) {
-        Intent intent = new Intent(this, my_favourite.class);
-        startActivity(intent);
-    }
-
     public void next(View view) {
         EditText time = findViewById(R.id.time);
 

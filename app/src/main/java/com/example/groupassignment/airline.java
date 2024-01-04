@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class airline extends AppCompatActivity {
     private dbmanager_choose_airline dbmanager_choose_airline;
-    private com.example.groupassignment.dbmanager_login_history dbmanager_login_history;
+    private dbmanager_login_history dbmanager_login_history;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

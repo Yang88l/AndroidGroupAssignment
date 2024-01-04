@@ -114,40 +114,12 @@ public class planning_summary extends AppCompatActivity {
         dbmanager_plan_history.close();
         main.updateVersion();
     }
-
-    public void main(View view) {
-        Intent intent = new Intent(this,main.class);
-        startActivity(intent);
-    }
-
-    public void favourite(View view) {
-        Intent intent = new Intent(this,my_favourite.class);
-        startActivity(intent);
-    }
-
-    public void history(View view) {
-        Intent intent = new Intent(this,book_history.class);
-        startActivity(intent);
-    }
-
-    public void profile(View view) {
-        Intent intent = new Intent(this,profile.class);
-        startActivity(intent);
-    }
-
     public void choose(View view) {
         Intent intent = new Intent(this,choose.class);
         startActivity(intent);
     }
-
     public void book(View view) {
         Intent intent = new Intent(this,payment_method.class);
         startActivity(intent);
     }
-
-    public void notification(View view) {
-        Intent intent = new Intent(this,notification.class);
-        startActivity(intent);
-    }
-
 }

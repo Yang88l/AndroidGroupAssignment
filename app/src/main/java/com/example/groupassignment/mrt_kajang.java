@@ -67,23 +67,6 @@ public class mrt_kajang extends AppCompatActivity {
     }
 
 
-    //BOTTOM BUTTONS DIRECTORY
-    public void home(View view) {
-        startActivity(new Intent(this, main.class));
-    }
-
-    public void heart(View view) {
-        startActivity(new Intent(this, my_favourite.class));
-
-    }
-
-    public void history(View view) {
-        startActivity(new Intent(this, book_history.class));
-    }
-
-    public void profile(View view) {
-        startActivity(new Intent(this, profile.class));
-    }
     //Functions
     public void kajang(View view) {
         if (user_input.equals("from")) {

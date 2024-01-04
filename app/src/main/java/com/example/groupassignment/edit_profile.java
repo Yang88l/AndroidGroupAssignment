@@ -13,7 +13,6 @@ import android.widget.TextView;
 public class edit_profile extends AppCompatActivity {
     private dbmanager_user dbmanager_user;
     private dbmanager_login_history dbmanager_login_history;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

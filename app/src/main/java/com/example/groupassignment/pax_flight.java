@@ -48,25 +48,5 @@ public class pax_flight extends AppCompatActivity {
         startActivity(intent);
     }
 
-    //BOTTOM BUTTONS DIRECTORY
-    public void home(View view) {
-        Intent intent = new Intent(pax_flight.this, main.class);
-        startActivity(intent);
-    }
-    public void heart(View view) {
-        Intent intent = new Intent(pax_flight.this, my_favourite.class);
-        startActivity(intent);
-    }
-    public void history(View view) {
-        Intent intent = new Intent(pax_flight.this, book_history.class);
-        startActivity(intent);
-    }
-    public void profile(View view) {
-        Intent intent = new Intent(pax_flight.this, profile.class);
-        startActivity(intent);
-    }
-    public void notification(View view) {
-        Intent intent = new Intent(pax_flight.this, notification.class);
-        startActivity(intent);
-    }
+
 }

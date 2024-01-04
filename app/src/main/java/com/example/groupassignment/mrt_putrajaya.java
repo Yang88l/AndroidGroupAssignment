@@ -66,25 +66,7 @@ public class mrt_putrajaya extends AppCompatActivity {
         main.updateVersion();
     }
 
-
-    //BOTTOM BUTTONS DIRECTORY
-    public void home(View view) {
-        startActivity(new Intent(this, main.class));
-    }
-
-    public void heart(View view) {
-        startActivity(new Intent(this, my_favourite.class));
-
-    }
-
-    public void history(View view) {
-        startActivity(new Intent(this, book_history.class));
-    }
-
-    public void profile(View view) {
-        startActivity(new Intent(this, profile.class));
-    }
-    //Functions
+//Functions
     public void putrajaya_sentral(View view) {
         if (user_input.equals("from")) {
             from.setText("Putrajaya Sentral");

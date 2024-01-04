@@ -68,26 +68,7 @@ public class lrt_ampang extends AppCompatActivity {
     }
 
 
-    //BOTTOM BUTTONS DIRECTORY
-    public void home(View view) {
-        Intent intent = new Intent(lrt_ampang.this, main.class);
-        startActivity(intent);
-    }
 
-    public void heart(View view) {
-        Intent intent = new Intent(lrt_ampang.this, my_favourite.class);
-        startActivity(intent);
-    }
-
-    public void history(View view) {
-        Intent intent = new Intent(lrt_ampang.this, book_history.class);
-        startActivity(intent);
-    }
-
-    public void profile(View view) {
-        Intent intent = new Intent(lrt_ampang.this, profile.class);
-        startActivity(intent);
-    }
     //Functions
     public void ampang(View view) {
         if (user_input.equals("from")) {

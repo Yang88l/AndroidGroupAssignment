@@ -12,8 +12,8 @@ import android.widget.TextView;
 
 public class profile extends AppCompatActivity {
 
-    private com.example.groupassignment.dbmanager_user dbmanager_user;
-    private com.example.groupassignment.dbmanager_login_history dbmanager_login_history;
+    private dbmanager_user dbmanager_user;
+    private dbmanager_login_history dbmanager_login_history;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,32 +64,6 @@ public class profile extends AppCompatActivity {
         Intent intent = new Intent (this, main.class);
         startActivity(intent);
     }
-
-    public void profile(View view) {
-        Intent intent = new Intent (this, profile.class);
-        startActivity(intent);
-    }
-
-    public void history(View view) {
-        Intent intent = new Intent (this, plan_history.class);
-        startActivity(intent);
-    }
-
-    public void heart(View view) {
-        Intent intent = new Intent (this, my_favourite.class);
-        startActivity(intent);
-    }
-
-    public void home(View view) {
-        Intent intent = new Intent (this, main.class);
-        startActivity(intent);
-    }
-
-    public void notif(View view) {
-        Intent intent = new Intent (this, notification.class);
-        startActivity(intent);
-    }
-
     public int getUserID(){
         dbmanager_login_history = new dbmanager_login_history(this);
         dbmanager_login_history.open();
