@@ -47,7 +47,7 @@ public class dbmanager_notification {
 
     public int update(long _id, String content) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(dbhelper_notification.CONTENT, content);
+        if(content!=null)contentValues.put(dbhelper_notification.CONTENT, content);
         int i = database.update(dbhelper_notification.TABLE_NAME, contentValues, dbhelper_notification.NOTIFICATION_ID + " = " + _id, null);
         return i;
     }

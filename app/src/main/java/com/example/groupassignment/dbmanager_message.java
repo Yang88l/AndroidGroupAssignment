@@ -53,9 +53,9 @@ public class dbmanager_message {
 
     public int update(long _id, String name, String message, int user_id) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(dbhelper_message.NAME, name);
-        contentValues.put(dbhelper_message.MESSAGE, message);
-        contentValues.put(dbhelper_message.USER_ID, user_id);
+        if(name!=null)contentValues.put(dbhelper_message.NAME, name);
+        else if(message!=null)contentValues.put(dbhelper_message.MESSAGE, message);
+        else if(user_id!=-1)contentValues.put(dbhelper_message.USER_ID, user_id);
         int i = database.update(dbhelper_message.TABLE_NAME, contentValues, dbhelper_message.MESSAGE_ID + " = " + _id, null);
         return i;
     }

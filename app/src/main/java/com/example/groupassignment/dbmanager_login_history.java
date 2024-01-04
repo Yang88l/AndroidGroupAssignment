@@ -49,8 +49,8 @@ public class dbmanager_login_history {
     //UPDATE * FROM table WHERE user_id = _id
     public int update(int _id, String activity, String status) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(dbhelper_login_history.ACTIVITY, activity);
-        contentValues.put(dbhelper_login_history.STATUS, status);
+        if(activity!=null)contentValues.put(dbhelper_login_history.ACTIVITY, activity);
+        else if(status!=null)contentValues.put(dbhelper_login_history.STATUS, status);
         int i = database.update(dbhelper_login_history.TABLE_NAME, contentValues, dbhelper_login_history.LOGIN_ID + " = " + _id, null);
         return i;
     }

@@ -72,8 +72,8 @@ public class dbmanager_accomodation_info {
     //UPDATE hotel_name, price FROM table WHERE hotel_id = _id
     public int update(int _id, String hotel_name, double price) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(dbhelper_accomodation_info.HOTEL_NAME, hotel_name);
-        contentValues.put(dbhelper_accomodation_info.PRICE, price);
+        if(hotel_name!=null) contentValues.put(dbhelper_accomodation_info.HOTEL_NAME, hotel_name);
+        else if(price!=-1) contentValues.put(dbhelper_accomodation_info.PRICE, price);
         int i = database.update(dbhelper_accomodation_info.TABLE_NAME, contentValues, dbhelper_accomodation_info.HOTEL_ID + " = " + _id, null);
         return i;
     }

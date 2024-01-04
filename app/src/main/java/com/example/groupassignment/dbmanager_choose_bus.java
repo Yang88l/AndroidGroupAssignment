@@ -52,7 +52,7 @@ public class dbmanager_choose_bus {
     //UPDATE hotel_id, user_id FROM table WHERE choose_bus_id = _id
     public int update(int _id, int bus_id) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(dbhelper_choose_bus.BUS_ID, bus_id);
+        if(bus_id!=-1)contentValues.put(dbhelper_choose_bus.BUS_ID, bus_id);
         int i = database.update(dbhelper_choose_bus.TABLE_NAME, contentValues, dbhelper_choose_bus.CHOOSE_BUS_ID + " = " + _id, null);
         return i;
     }

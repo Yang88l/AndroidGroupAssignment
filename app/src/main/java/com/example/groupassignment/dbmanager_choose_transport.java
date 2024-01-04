@@ -29,8 +29,8 @@ public class dbmanager_choose_transport {
     }
     public void insert(int transport_id, int user_id) {
         ContentValues contentValue = new ContentValues();
-        contentValue.put(dbhelper_choose_transport.TRANSPORT_ID, transport_id);
-        contentValue.put(dbhelper_choose_transport.USER_ID, user_id);
+        if(transport_id!=-1)contentValue.put(dbhelper_choose_transport.TRANSPORT_ID, transport_id);
+        else if(user_id!=-1)contentValue.put(dbhelper_choose_transport.USER_ID, user_id);
         database.insert(dbhelper_choose_transport.TABLE_NAME, null, contentValue);
     }
 

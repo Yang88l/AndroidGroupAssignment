@@ -52,8 +52,8 @@ public class dbmanager_airline_info {
     //UPDATE airline, price FROM table WHERE airline_info_id = _id
     public int update(int _id, String airline, double price) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(dbhelper_airline_info.AIRLINE, airline);
-        contentValues.put(dbhelper_airline_info.PRICE, price);
+        if(airline!=null)contentValues.put(dbhelper_airline_info.AIRLINE, airline);
+        else if(price!=-1)contentValues.put(dbhelper_airline_info.PRICE, price);
         int i = database.update(dbhelper_airline_info.TABLE_NAME, contentValues, dbhelper_airline_info.AIRLINE_ID + " = " + _id, null);
         return i;
     }

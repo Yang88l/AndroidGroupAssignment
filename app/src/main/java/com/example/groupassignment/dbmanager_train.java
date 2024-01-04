@@ -54,7 +54,7 @@ public class dbmanager_train {
 
     public int update(long _id, String location_name) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(dbhelper_train.LOCATION_NAME, location_name);
+        if(location_name!=null)contentValues.put(dbhelper_train.LOCATION_NAME, location_name);
         int i = database.update(dbhelper_train.TABLE_NAME, contentValues, dbhelper_train.TRAIN_ID + " = " + _id, null);
         return i;
     }

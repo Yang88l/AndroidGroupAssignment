@@ -53,8 +53,8 @@ public class dbmanager_food_info {
 
     public int update(long _id, double price, String food) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(dbhelper_food_info.PRICE, price);
-        contentValues.put(dbhelper_food_info.FOOD, food);
+        if(price!=-1)contentValues.put(dbhelper_food_info.PRICE, price);
+        else if(food!=null)contentValues.put(dbhelper_food_info.FOOD, food);
         int i = database.update(dbhelper_food_info.TABLE_NAME, contentValues, dbhelper_food_info.FOOD_ID + " = " + _id, null);
         return i;
     }

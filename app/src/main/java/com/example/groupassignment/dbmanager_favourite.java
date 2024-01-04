@@ -52,10 +52,10 @@ public class dbmanager_favourite {
 
     public int update(long _id, String name, String reviews, int ticket_sold, double price) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(dbhelper_favourite.NAME, name);
-        contentValues.put(dbhelper_favourite.REVIEWS, reviews);
-        contentValues.put(dbhelper_favourite.TICKET_SOLD, ticket_sold);
-        contentValues.put(dbhelper_favourite.PRICE, price);
+        if(name!=null)contentValues.put(dbhelper_favourite.NAME, name);
+        else if(reviews!=null)contentValues.put(dbhelper_favourite.REVIEWS, reviews);
+        else if(ticket_sold!=-1)contentValues.put(dbhelper_favourite.TICKET_SOLD, ticket_sold);
+        else if(price!=-1)contentValues.put(dbhelper_favourite.PRICE, price);
         int i = database.update(dbhelper_favourite.TABLE_NAME, contentValues, dbhelper_favourite.FAVOURITE_ID + " = " + _id, null);
         return i;
     }

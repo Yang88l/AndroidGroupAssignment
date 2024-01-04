@@ -53,13 +53,13 @@ public class dbmanager_plan_summary {
     //UPDATE * FROM table WHERE plan_summary_id = _id
     public int update(int _id, int hotel_id, int user_id, String airline, int transport_id, int food_id, double total_price, String location) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(dbhelper_plan_summary.HOTEL_ID, hotel_id);
-        contentValues.put(dbhelper_plan_summary.USER_ID, user_id);
-        contentValues.put(dbhelper_plan_summary.AIRLINE, airline);
-        contentValues.put(dbhelper_plan_summary.TRANSPORT_ID, transport_id);
-        contentValues.put(dbhelper_plan_summary.FOOD_ID, food_id);
-        contentValues.put(dbhelper_plan_summary.TOTAL_PRICE, total_price);
-        contentValues.put(dbhelper_plan_summary.LOCATION, location);
+        if(hotel_id!=-1)contentValues.put(dbhelper_plan_summary.HOTEL_ID, hotel_id);
+        else if(user_id!=-1)contentValues.put(dbhelper_plan_summary.USER_ID, user_id);
+        else if(airline!=null)contentValues.put(dbhelper_plan_summary.AIRLINE, airline);
+        else if(transport_id!=-1)contentValues.put(dbhelper_plan_summary.TRANSPORT_ID, transport_id);
+        else if(food_id!=-1)contentValues.put(dbhelper_plan_summary.FOOD_ID, food_id);
+        else if(total_price!=-1)contentValues.put(dbhelper_plan_summary.TOTAL_PRICE, total_price);
+        else if(location!=null)contentValues.put(dbhelper_plan_summary.LOCATION, location);
         int i = database.update(dbhelper_plan_summary.TABLE_NAME, contentValues, dbhelper_plan_summary.PLAN_SUMMARY_ID + " = " + _id, null);
         return i;
     }
