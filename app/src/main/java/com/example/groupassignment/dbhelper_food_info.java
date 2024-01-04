@@ -22,7 +22,7 @@ public class dbhelper_food_info extends SQLiteOpenHelper {
     public static int DB_VERSION = 1;
 
     // Creating table query
-    private static final String CREATE_TABLE = "create table "
+    private static final String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS "
             + TABLE_NAME + "("
             + FOOD_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + FOOD + " TEXT NOT NULL, "
@@ -45,7 +45,6 @@ public class dbhelper_food_info extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
     }
 }
