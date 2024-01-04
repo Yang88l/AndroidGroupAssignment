@@ -24,7 +24,7 @@ public class info_flight extends AppCompatActivity {
         //get date
         dbmanager_flight = new dbmanager_flight(this);
         dbmanager_flight.open();
-        Cursor cursor = dbmanager_flight.fetch(getUserID());
+        Cursor cursor = dbmanager_flight.fetch();
         String date = cursor.getString(3);
         cursor.close();
         dbmanager_flight.close();
