@@ -13,6 +13,12 @@
         android:theme="@style/Theme.GroupAssignment"
         tools:targetApi="31">
         <activity
+            android:name=".testingggg"
+            android:exported="false" />
+        <activity
+            android:name=".test"
+            android:exported="false" />
+        <activity
             android:name=".sign_up_login"
             android:exported="false" />
         <activity
@@ -23,9 +29,6 @@
             android:exported="false" />
         <activity
             android:name=".information"
-            android:exported="false" />
-        <activity
-            android:name=".test"
             android:exported="false" />
         <activity
             android:name=".transport"

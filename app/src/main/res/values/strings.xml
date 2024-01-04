@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">GroupAssignment</string>
+
+    <string name="general_term_1">
+        By accessing and placing an order with Go Travel,
+        you confirm that you are in agreement with and bound by the terms of service contained in the Terms and Conditions outlined below.
+        These terms apply to the entire app and any email or other type of communication between you and Go Travel.
+    </string>
+
+    <string name="general_term_2">
+        Under no circumstances shall Go Travel team be liable for any direct, indirect, special, incidental or consequential damages,
+        including, but not limited to, loss of data or profit, arising out of the use,
+        or the inability to use, the materials on this site, even if Go Travel team
+        or an authorized representative has been advised of the possibility of such damages.
+        If your use of materials from  the site results in the need for servicing, repair or correction of equipment or data,
+        you assume any costs thereof.
+    </string>
+
+    <string name="general_term_3">
+        Go Travel will not be responsible for any outcome that may occur during th course of usage of our resources.
+        We reserve the rights to change prices and revise the resources usage of policy in any moment.
+    </string>
+
+    <string name="license">
+        Go Travel grants you a revocable, non-exclusive, non-transferable, limited license to download,
+        install and use the app strictly in accordance with the terms of this Agreement.
+        These Terms and Conditions are a contract between you and Go Travel.
+
+    </string>
+
 </resources>
