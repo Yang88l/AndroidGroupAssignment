@@ -25,7 +25,7 @@ public class calendar_flight extends AppCompatActivity {
 
         dbmanager_flight = new dbmanager_flight(this);
         dbmanager_flight.open();
-        Cursor cursor = dbmanager_flight.fetch(1);
+        Cursor cursor = dbmanager_flight.fetch();
         cursor.moveToLast();
         dbmanager_flight.update(Integer.parseInt(cursor.getString(0)),null,null, String.valueOf(date),null,getUserID());
         dbmanager_flight.close();
