@@ -34,10 +34,10 @@ public class dbhelper_accomodation_info extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE);
-        db.execSQL("INSERT INTO accomodation_info (hotel_id, hotel_name, price)"+
-            "VALUES (1, 'Bevelord Hotel', 300, bevelord_hotel),"+
-            "(2, 'Crystal Hotel', 350, crystal_hotel),"+
-            "(3, 'Ocean Hotel', 250, ocean_hotel);");
+        db.execSQL("INSERT INTO accomodation_info (hotel_name, price, picture)"+
+            "VALUES ('Bevelord Hotel', 300, 'bevelord_hotel'),"+
+            "('Crystal Hotel', 350, 'crystal_hotel'),"+
+            "('Ocean Hotel', 250, 'ocean_hotel');");
     }
 
     @Override

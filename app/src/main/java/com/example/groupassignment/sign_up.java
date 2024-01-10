@@ -14,6 +14,7 @@ public class sign_up extends AppCompatActivity {
     private com.example.groupassignment.dbmanager_user dbmanager_user;
     private com.example.groupassignment.dbmanager_login_history dbmanager_login_history;
     public static boolean isChecked=false;
+    private com.example.groupassignment.dbmanager_favourite dbmanager_favourite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,6 +89,20 @@ public class sign_up extends AppCompatActivity {
                 dbmanager_login_history.close();
                 main.updateVersion();
                 Toast.makeText(this, dbhelper_login_history.DB_VERSION + "" + dbhelper_user.DB_VERSION, Toast.LENGTH_SHORT).show();
+
+                dbmanager_favourite = new dbmanager_favourite(this);
+                dbmanager_favourite.open();
+                dbmanager_favourite.insert(user_id, "hotel", 1, 0);
+                dbmanager_favourite.insert(user_id, "hotel", 2, 0);
+                dbmanager_favourite.insert(user_id, "hotel", 3, 0);
+                dbmanager_favourite.insert(user_id, "play", 1, 0);
+                dbmanager_favourite.insert(user_id, "play", 2, 0);
+                dbmanager_favourite.insert(user_id, "play", 3, 0);
+                dbmanager_favourite.insert(user_id, "food", 1, 0);
+                dbmanager_favourite.insert(user_id, "food", 2, 0);
+                dbmanager_favourite.insert(user_id, "food", 3, 0);
+                dbmanager_favourite.close();
+
                 Intent intent = new Intent(this, set_picture.class);
                 startActivity(intent);
             }
