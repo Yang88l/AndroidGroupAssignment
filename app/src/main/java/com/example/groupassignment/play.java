@@ -53,39 +53,67 @@ public class play extends AppCompatActivity {
     }
     public void sunway_favourite(View view) {
         ImageView picture = findViewById(R.id.imageButton12);
-        picture.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
         dbmanager_favourite = new dbmanager_favourite(this);
         dbmanager_favourite.open();
-        dbmanager_favourite.insert(getUserID(), "hotel", 1);
+        Cursor cursor = dbmanager_favourite.fetch(getUserID());
+        if (cursor.getString(4).equals("0")) {
+            picture.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
+            dbmanager_favourite.insert(getUserID(), "play", 1, 1);
+        }
+        else if (cursor.getString(4).equals("1")) {
+            picture.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
+            dbmanager_favourite.insert(getUserID(), "play", 1, 0);
+        }
         dbmanager_favourite.close();
         main.updateVersion();
     }
 
     public void genting_favourite(View view) {
         ImageView picture = findViewById(R.id.imageButton22);
-        picture.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
         dbmanager_favourite = new dbmanager_favourite(this);
         dbmanager_favourite.open();
-        dbmanager_favourite.insert(getUserID(), "hotel", 2);
+        Cursor cursor = dbmanager_favourite.fetch(getUserID());
+        if (cursor.getString(4).equals("0")) {
+            picture.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
+            dbmanager_favourite.insert(getUserID(), "play", 2, 1);
+        }
+        else if (cursor.getString(4).equals("1")) {
+            picture.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
+            dbmanager_favourite.insert(getUserID(), "play", 2, 0);
+        }
         dbmanager_favourite.close();
         main.updateVersion();
     }
 
     public void sky_favourite(View view) {
         ImageView picture = findViewById(R.id.imageButton7);
-        picture.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
         dbmanager_favourite = new dbmanager_favourite(this);
         dbmanager_favourite.open();
-        dbmanager_favourite.insert(getUserID(), "hotel", 3);
+        Cursor cursor = dbmanager_favourite.fetch(getUserID());
+        if (cursor.getString(4).equals("0")) {
+            picture.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
+            dbmanager_favourite.insert(getUserID(), "play", 3, 1);
+        }
+        else if (cursor.getString(4).equals("1")) {
+            picture.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
+            dbmanager_favourite.insert(getUserID(), "play", 3, 0);
+        }
         dbmanager_favourite.close();
         main.updateVersion();
     }
     public void zoo_favourite(View view) {
         ImageView picture = findViewById(R.id.imageButton7);
-        picture.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
         dbmanager_favourite = new dbmanager_favourite(this);
         dbmanager_favourite.open();
-        dbmanager_favourite.insert(getUserID(), "hotel", 3);
+        Cursor cursor = dbmanager_favourite.fetch(getUserID());
+        if (cursor.getString(4).equals("0")) {
+            picture.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
+            dbmanager_favourite.insert(getUserID(), "play", 4, 1);
+        }
+        else if (cursor.getString(4).equals("1")) {
+            picture.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
+            dbmanager_favourite.insert(getUserID(), "play", 4, 0);
+        }
         dbmanager_favourite.close();
         main.updateVersion();
     }
