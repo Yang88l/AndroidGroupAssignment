@@ -10,7 +10,7 @@ import android.view.View;
 public class state_bus extends AppCompatActivity {
 
     private dbmanager_choose_bus dbmanager_choose_bus;
-    private dbmanager_user dbmanager_login_history;
+    private com.example.groupassignment.dbmanager_login_history dbmanager_login_history;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,21 +34,24 @@ public class state_bus extends AppCompatActivity {
     }
 
     public void chooseState (String state) {
-        dbmanager_login_history = new dbmanager_user(this);
-        dbmanager_login_history.open();
-        Cursor cursor = dbmanager_login_history.fetch(1);
-        cursor.moveToLast();
-        int user_id=Integer.parseInt(cursor.getString(1));
-        cursor.close();
-        dbmanager_login_history.close();
-        main.updateVersion();
-
         dbmanager_choose_bus = new dbmanager_choose_bus(this);
         dbmanager_choose_bus.open();
-        dbmanager_choose_bus.insert(user_id, state);
+        dbmanager_choose_bus.insert(getUserID(), state);
         dbmanager_choose_bus.close();
         main.updateVersion();
         startActivity(new Intent(this, bus.class));
+    }
+
+    public int getUserID(){
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor_login = dbmanager_login_history.fetch();
+        cursor_login.moveToLast();
+        int user_id=Integer.parseInt(cursor_login.getString(1));
+        cursor_login.close();
+        dbmanager_login_history.close();
+        main.updateVersion();
+        return user_id;
     }
 
 }
