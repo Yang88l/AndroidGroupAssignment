@@ -14,6 +14,7 @@ public class dbhelper_favourite extends SQLiteOpenHelper {
     public static final String USER_ID = "user_id";
     public static final String FROM_WHERE = "from_where";
     public static final String FROM_ID = "from_id";
+    public static final String LIKE = "like";
 
     // Database Information
     static final String DB_NAME = "JOURNALDEV_TRAVEL_BOOKING.DB";
@@ -27,7 +28,8 @@ public class dbhelper_favourite extends SQLiteOpenHelper {
             + FAVOURITE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + USER_ID + " INT NOT NULL, "
             + FROM_WHERE + " TEXT NOT NULL, "
-            + FROM_ID + " INTEGER NOT NULL "
+            + FROM_ID + " INTEGER NOT NULL, "
+            + LIKE + " INTEGER NOT NULL"
             + ")";
 
     public dbhelper_favourite(Context context) {
