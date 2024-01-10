@@ -167,8 +167,6 @@ public class information extends AppCompatActivity {
         }
     }
 
-
-
     public int getUserID(){
         dbmanager_login_history = new dbmanager_login_history(this);
         dbmanager_login_history.open();
