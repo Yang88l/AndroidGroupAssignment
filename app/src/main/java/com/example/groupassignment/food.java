@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class food extends AppCompatActivity {
     private com.example.groupassignment.dbmanager_favourite dbmanager_favourite;
@@ -47,54 +48,57 @@ public class food extends AppCompatActivity {
         startActivity(intent);
     }
     public void cielo_kl_favourite(View view) {
-        ImageView picture = findViewById(R.id.imageButton12);
-        dbmanager_favourite = new dbmanager_favourite(this);
-        dbmanager_favourite.open();
-        Cursor cursor = dbmanager_favourite.fetch(getUserID());
-        if (cursor.getString(4).equals("0")) {
-            picture.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
-            dbmanager_favourite.insert(getUserID(), "food", 1, 1);
+        if (login_status()) {
+            ImageView picture = findViewById(R.id.imageButton12);
+            dbmanager_favourite = new dbmanager_favourite(this);
+            dbmanager_favourite.open();
+            Cursor cursor = dbmanager_favourite.fetch(getUserID(), "food", 1);
+            if (cursor.getString(4).equals("0")) {
+                picture.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
+                dbmanager_favourite.insert(getUserID(), "food", 1, 1);
+            } else if (cursor.getString(4).equals("1")) {
+                picture.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
+                dbmanager_favourite.insert(getUserID(), "food", 1, 0);
+            }
+            dbmanager_favourite.close();
+            main.updateVersion();
         }
-        else if (cursor.getString(4).equals("1")) {
-            picture.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
-            dbmanager_favourite.insert(getUserID(), "food", 1, 0);
-        }
-        dbmanager_favourite.close();
-        main.updateVersion();
     }
 
     public void horizon_grill_favourite(View view) {
-        ImageView picture = findViewById(R.id.imageButton22);
-        dbmanager_favourite = new dbmanager_favourite(this);
-        dbmanager_favourite.open();
-        Cursor cursor = dbmanager_favourite.fetch(getUserID());
-        if (cursor.getString(4).equals("0")) {
-            picture.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
-            dbmanager_favourite.insert(getUserID(), "food", 2, 1);
+        if (login_status()) {
+            ImageView picture = findViewById(R.id.imageButton22);
+            dbmanager_favourite = new dbmanager_favourite(this);
+            dbmanager_favourite.open();
+            Cursor cursor = dbmanager_favourite.fetch(getUserID(), "food", 2);
+            if (cursor.getString(4).equals("0")) {
+                picture.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
+                dbmanager_favourite.insert(getUserID(), "food", 2, 1);
+            } else if (cursor.getString(4).equals("1")) {
+                picture.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
+                dbmanager_favourite.insert(getUserID(), "food", 2, 0);
+            }
+            dbmanager_favourite.close();
+            main.updateVersion();
         }
-        else if (cursor.getString(4).equals("1")) {
-            picture.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
-            dbmanager_favourite.insert(getUserID(), "food", 2, 0);
-        }
-        dbmanager_favourite.close();
-        main.updateVersion();
     }
 
     public void sky_bar_favourite(View view) {
-        ImageView picture = findViewById(R.id.imageButton7);
-        dbmanager_favourite = new dbmanager_favourite(this);
-        dbmanager_favourite.open();
-        Cursor cursor = dbmanager_favourite.fetch(getUserID());
-        if (cursor.getString(4).equals("0")) {
-            picture.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
-            dbmanager_favourite.insert(getUserID(), "food", 3, 1);
+        if (login_status()) {
+            ImageView picture = findViewById(R.id.imageButton7);
+            dbmanager_favourite = new dbmanager_favourite(this);
+            dbmanager_favourite.open();
+            Cursor cursor = dbmanager_favourite.fetch(getUserID(), "food", 3);
+            if (cursor.getString(4).equals("0")) {
+                picture.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
+                dbmanager_favourite.insert(getUserID(), "food", 3, 1);
+            } else if (cursor.getString(4).equals("1")) {
+                picture.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
+                dbmanager_favourite.insert(getUserID(), "food", 3, 0);
+            }
+            dbmanager_favourite.close();
+            main.updateVersion();
         }
-        else if (cursor.getString(4).equals("1")) {
-            picture.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
-            dbmanager_favourite.insert(getUserID(), "food", 3, 0);
-        }
-        dbmanager_favourite.close();
-        main.updateVersion();
     }
 
     public int getUserID(){
@@ -107,5 +111,24 @@ public class food extends AppCompatActivity {
         dbmanager_login_history.close();
         main.updateVersion();
         return user_id;
+    }
+
+    public boolean login_status(){
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor = dbmanager_login_history.fetch();
+        cursor.moveToLast();
+        String status=cursor.getString(3);
+        cursor.close();
+        dbmanager_login_history.close();
+        main.updateVersion();
+
+        if (status.equals("logged in")) {
+            return true;
+        }
+        else {
+            Toast.makeText(this, "You are not logged in.", Toast.LENGTH_SHORT).show();
+            return false;
+        }
     }
 }
