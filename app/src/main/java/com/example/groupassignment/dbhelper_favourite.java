@@ -11,10 +11,9 @@ public class dbhelper_favourite extends SQLiteOpenHelper {
 
     // Table columns
     public static final String FAVOURITE_ID = "favouite_id";
-    public static final String NAME = "name";
-    public static final String REVIEWS = "reviews";
-    public static final String TICKET_SOLD = "ticket_sold";
-    public static final String PRICE = "price";
+    public static final String USER_ID = "user_id";
+    public static final String FROM_WHERE = "from_where";
+    public static final String FROM_ID = "from_id";
 
     // Database Information
     static final String DB_NAME = "JOURNALDEV_TRAVEL_BOOKING.DB";
@@ -26,10 +25,9 @@ public class dbhelper_favourite extends SQLiteOpenHelper {
     private static final String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS "
             + TABLE_NAME + "("
             + FAVOURITE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-            + NAME + " TEXT NOT NULL, "
-            + REVIEWS + " TEXT NOT NULL, "
-            + TICKET_SOLD + " INTEGER NOT NULL, "
-            + PRICE + " DOUBLE NOT NULL "
+            + USER_ID + " INT NOT NULL, "
+            + FROM_WHERE + " TEXT NOT NULL, "
+            + FROM_ID + " INTEGER NOT NULL "
             + ")";
 
     public dbhelper_favourite(Context context) {

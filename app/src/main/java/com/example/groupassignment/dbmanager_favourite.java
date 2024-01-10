@@ -27,29 +27,27 @@ public class dbmanager_favourite {
         main.saveVersion(context);
         dbHelper.close();
     }
-    public void insert(String name, String reviews, int ticket_sold, double price) {
+    public void insert(int user_id, String from_where, int from_id) {
         ContentValues contentValue = new ContentValues();
-        contentValue.put(dbhelper_favourite.NAME, name);
-        contentValue.put(dbhelper_favourite.REVIEWS, reviews);
-        contentValue.put(dbhelper_favourite.TICKET_SOLD, ticket_sold);
-        contentValue.put(dbhelper_favourite.PRICE, price);
+        contentValue.put(dbhelper_favourite.USER_ID, user_id);
+        contentValue.put(dbhelper_favourite.FROM_WHERE, from_where);
+        contentValue.put(dbhelper_favourite.FROM_ID, from_id);
         database.insert(dbhelper_favourite.TABLE_NAME, null, contentValue);
     }
 
     public Cursor fetch() {
         String[] columns = new String[] {
                 dbhelper_favourite.FAVOURITE_ID,
-                dbhelper_favourite.NAME,
-                dbhelper_favourite.REVIEWS,
-                dbhelper_favourite.TICKET_SOLD,
-                dbhelper_favourite.PRICE,};
+                dbhelper_favourite.USER_ID,
+                dbhelper_favourite.FROM_WHERE,
+                dbhelper_favourite.FROM_ID};
         Cursor cursor = database.query(dbhelper_favourite.TABLE_NAME, columns, null, null, null, null, null);
         if (cursor != null) {
             cursor.moveToFirst();
         }
         return cursor;
     }
-
+/*
     public int update(long _id, String name, String reviews, int ticket_sold, double price) {
         ContentValues contentValues = new ContentValues();
         if(name!=null)contentValues.put(dbhelper_favourite.NAME, name);
@@ -59,7 +57,7 @@ public class dbmanager_favourite {
         int i = database.update(dbhelper_favourite.TABLE_NAME, contentValues, dbhelper_favourite.FAVOURITE_ID + " = " + _id, null);
         return i;
     }
-
+*/
     public void delete(long _id) {
         database.delete(dbhelper_favourite.TABLE_NAME, dbhelper_favourite.FAVOURITE_ID + "=" + _id, null);
     }

@@ -21,30 +21,51 @@ public class log_in extends AppCompatActivity {
     }
 
     public void log_in(View view) {
+        int user_id;
+        String passwd;
+
         String name = ((EditText) findViewById(R.id.input_username)).getText().toString();
         String password = ((EditText) findViewById(R.id.input_password)).getText().toString();
 
         dbmanager_user = new dbmanager_user(this);
         dbmanager_user.open();
         Cursor cursor = dbmanager_user.fetchByName(name);
-        int user_id=Integer.parseInt(cursor.getString(0));
-        String passwd=cursor.getString(5);
-        cursor.close();
-        dbmanager_user.close();
-        main.updateVersion();
-
-        if (password.equals(passwd)) {
-            dbmanager_login_history = new dbmanager_login_history(this);
-            dbmanager_login_history.open();
-            dbmanager_login_history.insert(user_id, "logged in", "null");
-            dbmanager_login_history.close();
+        if (name.equals("")||password.equals("")) {
+            Toast.makeText(this, "Please fill in all the blanks", Toast.LENGTH_SHORT).show();
+            cursor.close();
+            dbmanager_user.close();
             main.updateVersion();
-            Intent intent = new Intent(this, profile.class);
-            startActivity(intent);
+        }
+        else if (cursor.getCount() == 0) {
+            Toast.makeText(this, "Name not registered.", Toast.LENGTH_SHORT).show();
+            cursor.close();
+            dbmanager_user.close();
+            main.updateVersion();
         }
         else {
-            Toast.makeText(this, "Login failed!", Toast.LENGTH_SHORT).show();
+            user_id=Integer.parseInt(cursor.getString(0));
+            passwd=cursor.getString(5);
+            cursor.close();
+            dbmanager_user.close();
+            main.updateVersion();
+            if (password.equals(passwd)) {
+                Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show();
+                dbmanager_login_history = new dbmanager_login_history(this);
+                dbmanager_login_history.open();
+                dbmanager_login_history.insert(user_id, "logged in", "null");
+                dbmanager_login_history.close();
+                main.updateVersion();
+                Intent intent = new Intent(this, profile.class);
+                startActivity(intent);
+            }
+            else {
+                Toast.makeText(this, "Login failed!", Toast.LENGTH_SHORT).show();
+            }
         }
+
+
+
+
     }
 
     public void sign_up_here(View view) {

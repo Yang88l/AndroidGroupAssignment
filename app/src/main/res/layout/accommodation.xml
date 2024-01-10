@@ -14,6 +14,7 @@
         android:layout_height="45dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="344dp"
+        android:onClick="crystal_favourite"
         app:layout_constraintStart_toEndOf="@id/crystal_hotel"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/love" />
@@ -58,6 +59,7 @@
         android:layout_height="45dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="216dp"
+        android:onClick="bevelord_favourite"
         app:layout_constraintStart_toEndOf="@id/bovelord_hotel2"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/love" />
@@ -116,18 +118,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/notification" />
 
-    <Button
-        android:id="@+id/button25"
-        android:layout_width="129dp"
-        android:layout_height="59dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="589dp"
-        android:text="Filter"
-        android:textSize="22dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/line" />
-
 
     <Button
         android:id="@+id/ocean_hotel"
@@ -157,6 +147,7 @@
         android:layout_height="45dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="462dp"
+        android:onClick="ocean_favourite"
         app:layout_constraintStart_toEndOf="@+id/ocean_hotel"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/love" />

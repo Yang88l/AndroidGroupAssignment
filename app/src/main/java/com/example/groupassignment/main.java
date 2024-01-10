@@ -66,7 +66,6 @@ public class main extends AppCompatActivity {
     }
 
     public void profile(View view) {
-        Toast.makeText(this, dbhelper_login_history.DB_VERSION+""+dbhelper_user.DB_VERSION, Toast.LENGTH_SHORT).show();
         dbmanager_login_history = new dbmanager_login_history(this);
         dbmanager_login_history.open();
         Cursor cursor = dbmanager_login_history.fetch();
@@ -75,7 +74,6 @@ public class main extends AppCompatActivity {
         cursor.close();
         dbmanager_login_history.close();
         main.updateVersion();
-        Toast.makeText(this, dbhelper_login_history.DB_VERSION+""+dbhelper_user.DB_VERSION, Toast.LENGTH_SHORT).show();
         if (status.equals("logged out")) {
             Intent intent = new Intent(this, log_in.class);
             startActivity(intent);
