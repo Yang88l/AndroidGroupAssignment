@@ -12,7 +12,7 @@
         android:layout_height="45dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="336dp"
-        android:onClick="like"
+        android:onClick="horizon_grill_favourite"
         app:layout_constraintStart_toEndOf="@id/horizon_grill"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/love" />
@@ -67,7 +67,7 @@
         android:layout_height="45dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="208dp"
-        android:onClick="like"
+        android:onClick="cielo_kl_favourite"
         app:layout_constraintStart_toEndOf="@id/cielo_kl"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/love" />
@@ -116,18 +116,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/notification" />
 
-    <Button
-        android:id="@+id/button21"
-        android:layout_width="129dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="104dp"
-        android:layout_marginEnd="8dp"
-        android:onClick="filter"
-        android:text="Filter"
-        android:textSize="22dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageButton
         android:id="@+id/image_food3"
         android:layout_width="77dp"
@@ -156,7 +144,7 @@
         android:layout_height="45dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="468dp"
-        android:onClick="like"
+        android:onClick="sky_bar_favourite"
         app:layout_constraintStart_toEndOf="@+id/sky_bar"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/love" />

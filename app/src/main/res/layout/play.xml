@@ -145,7 +145,7 @@
         android:layout_height="45dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="180dp"
-        android:onClick="add"
+        android:onClick="sunway_favourite"
         app:layout_constraintStart_toEndOf="@+id/sunway_lagoon_button"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/love" />
@@ -156,7 +156,7 @@
         android:layout_height="45dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="52dp"
-        android:onClick="add"
+        android:onClick="genting_favourite"
         app:layout_constraintStart_toEndOf="@+id/genting_highland_button"
         app:layout_constraintTop_toBottomOf="@+id/heart1"
         app:srcCompat="@drawable/love" />
@@ -167,7 +167,7 @@
         android:layout_height="45dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="60dp"
-        android:onClick="add"
+        android:onClick="sky_favourite"
         app:layout_constraintStart_toEndOf="@+id/sky_mirror_button"
         app:layout_constraintTop_toBottomOf="@+id/heart2"
         app:srcCompat="@drawable/love" />
@@ -178,7 +178,7 @@
         android:layout_height="45dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="60dp"
-        android:onClick="add"
+        android:onClick="zoo_favourite"
         app:layout_constraintStart_toEndOf="@+id/zoo_negara_button"
         app:layout_constraintTop_toBottomOf="@+id/heart3"
         app:srcCompat="@drawable/love" />
