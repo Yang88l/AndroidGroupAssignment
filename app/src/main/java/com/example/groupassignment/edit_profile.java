@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class edit_profile extends AppCompatActivity {
     private dbmanager_user dbmanager_user;
@@ -51,6 +52,8 @@ public class edit_profile extends AppCompatActivity {
         String email = ((EditText) findViewById(R.id.email_text)).getText().toString();
         String phone = ((EditText) findViewById(R.id.phone_text)).getText().toString();
         String birthday = ((EditText) findViewById(R.id.birthday_text)).getText().toString();
+
+        Toast.makeText(this, phone, Toast.LENGTH_SHORT).show();
 
         dbmanager_user = new dbmanager_user(this);
         dbmanager_user.open();
