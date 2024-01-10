@@ -31,7 +31,7 @@ public class pax_flight extends AppCompatActivity {
 
         dbmanager_user = new dbmanager_user(this);
         dbmanager_user.open();
-        Cursor cursor = dbmanager_user.fetch(1);
+        Cursor cursor = dbmanager_user.fetchALL();
         cursor.moveToLast();
         int user_id=Integer.parseInt(cursor.getString(0));
         cursor.close();
