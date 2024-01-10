@@ -50,8 +50,26 @@ public class sign_up extends AppCompatActivity {
         String password = ((EditText) findViewById(R.id.editTextTextPassword)).getText().toString();
         String password2 = ((EditText) findViewById(R.id.editTextTextPassword2)).getText().toString();
 
+        dbmanager_user = new dbmanager_user(this);
+        dbmanager_user.open();
+        Cursor cursor_all = dbmanager_user.fetchALL();
+        boolean same_name = false;
+        if (cursor_all != null && cursor_all.moveToFirst()) {
+            do {
+                if (name.equals(cursor_all.getString(1))) {
+                    same_name = true;
+                }
+            } while (cursor_all.moveToNext());
+        }
+        cursor_all.close();
+        dbmanager_user.close();
+        main.updateVersion();
+
         if (name.equals("")||email.equals("")||phone.equals("")||birthday.equals("")||password.equals("")||password2.equals("")) {
             Toast.makeText(this, "Please fill in all the blank!", Toast.LENGTH_LONG).show();
+        }
+        else if (same_name) {
+            Toast.makeText(this, "The name is used. Try another name.", Toast.LENGTH_SHORT).show();
         }
         else if (password.equals(password2)) {
             if (isChecked) {
@@ -68,6 +86,7 @@ public class sign_up extends AppCompatActivity {
                 dbmanager_login_history.open();
                 dbmanager_login_history.insert(user_id, "logged in", "null");
                 dbmanager_login_history.close();
+                main.updateVersion();
                 Toast.makeText(this, dbhelper_login_history.DB_VERSION + "" + dbhelper_user.DB_VERSION, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(this, set_picture.class);
                 startActivity(intent);
@@ -107,5 +126,4 @@ public class sign_up extends AppCompatActivity {
 
         startActivity(intent);
     }
-
 }

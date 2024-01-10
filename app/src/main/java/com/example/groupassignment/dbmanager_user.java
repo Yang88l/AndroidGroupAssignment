@@ -53,12 +53,12 @@ public class dbmanager_user {
                 dbhelper_user.PICTURE
         };
         // WHERE
-        String selection = dbhelper_user.NAME + " = ? AND" + dbhelper_user.PASSWORD + " = ?";
+        //String selection = dbhelper_user.NAME + " = ? AND" + dbhelper_user.PASSWORD + " = ?";
         // Contains the values for name and password
-        String[] selectionArgs = { dbhelper_user.NAME, dbhelper_user.PASSWORD };
+        //String[] selectionArgs = { dbhelper_user.NAME, dbhelper_user.PASSWORD };
 
         // Retrieve the data
-        Cursor cursor = database.query(dbhelper_user.TABLE_NAME, columns, selection, selectionArgs, null, null, null);
+        Cursor cursor = database.query(dbhelper_user.TABLE_NAME, columns, null, null, null, null, null);
         if (cursor != null) {
             cursor.moveToFirst();
         }
@@ -92,7 +92,7 @@ public class dbmanager_user {
                 dbhelper_user.PASSWORD,
                 dbhelper_user.PICTURE
         };
-        Cursor cursor = database.query(dbhelper_user.TABLE_NAME, columns, dbhelper_user.NAME+"="+name, null, null, null, null);
+        Cursor cursor = database.query(dbhelper_user.TABLE_NAME, columns, dbhelper_user.NAME+"= '"+name+"'", null, null, null, null);
         if (cursor != null) {
             cursor.moveToFirst();
         }
