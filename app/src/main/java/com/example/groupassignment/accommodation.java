@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 
 public class accommodation extends AppCompatActivity {
 
@@ -43,6 +44,8 @@ public class accommodation extends AppCompatActivity {
     }
 
     public void bevelord_favourite(View view) {
+        ImageView picture = findViewById(R.id.imageButton12);
+        picture.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
         dbmanager_favourite = new dbmanager_favourite(this);
         dbmanager_favourite.open();
         dbmanager_favourite.insert(getUserID(), "hotel", 1);
@@ -51,6 +54,8 @@ public class accommodation extends AppCompatActivity {
     }
 
     public void crystal_favourite(View view) {
+        ImageView picture = findViewById(R.id.imageButton22);
+        picture.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
         dbmanager_favourite = new dbmanager_favourite(this);
         dbmanager_favourite.open();
         dbmanager_favourite.insert(getUserID(), "hotel", 2);
@@ -59,6 +64,8 @@ public class accommodation extends AppCompatActivity {
     }
 
     public void ocean_favourite(View view) {
+        ImageView picture = findViewById(R.id.imageButton7);
+        picture.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
         dbmanager_favourite = new dbmanager_favourite(this);
         dbmanager_favourite.open();
         dbmanager_favourite.insert(getUserID(), "hotel", 3);
