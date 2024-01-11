@@ -39,9 +39,8 @@ public class dbhelper_play_info extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE);
         db.execSQL("INSERT INTO play_info (PLAY, PRICE, PICTURE) VALUES " +
                 "('Sunway Lagoo', 100, 'sunway_lagoon'), " +
-                "('Genting Highland', 100, 'genting_highland_77'), " +
-                "('Sky Mirror', 100, 'sky_mirror_77') , " +
-                "('Zoo Negara', 100, 'zoo_negara_77');");
+                "('Genting Highland', 100, 'genting_highland'), " +
+                "('Sky Mirror', 100, 'sky_mirror');");
     }
 
     @Override

@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.groupassignment.dbmanagers.dbmanager_accomodation_info;
 import com.example.groupassignment.dbmanagers.dbmanager_book_summary;
@@ -37,6 +38,12 @@ public class information extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.information);
 
+        Intent intent = getIntent();
+        int _id = intent.getIntExtra("_id", 0);
+        String from = intent.getStringExtra("from");
+
+        Toast.makeText(this, _id+from, Toast.LENGTH_SHORT).show();
+
         Button button = findViewById(R.id.button19);
 
         dbmanager_login_history = new dbmanager_login_history(this);
@@ -53,10 +60,6 @@ public class information extends AppCompatActivity {
         dbmanager_login_history.close();
         main.updateVersion();
 
-        Intent intent = getIntent();
-        //get id
-        int _id = Integer.parseInt(intent.getStringExtra("_id"));
-        String from = intent.getStringExtra("from");
 
         if (from.equals("hotel")) {
             dbmanager_accomodation_info = new dbmanager_accomodation_info(this);
@@ -69,7 +72,7 @@ public class information extends AppCompatActivity {
 
             //display price
             TextView price = findViewById(R.id.textView29);
-            price.setText(cursor.getString(2));
+            price.setText("RM"+cursor.getString(2));
 
             //display image
             ImageView img = findViewById(R.id.output_user_choose);
@@ -89,7 +92,7 @@ public class information extends AppCompatActivity {
 
             //display price
             TextView price = findViewById(R.id.textView29);
-            price.setText(cursor.getString(2));
+            price.setText("RM"+cursor.getString(2));
 
             //display image
             ImageView img = findViewById(R.id.output_user_choose);
@@ -109,7 +112,7 @@ public class information extends AppCompatActivity {
 
             //display price
             TextView price = findViewById(R.id.textView29);
-            price.setText(cursor.getString(2));
+            price.setText("RM"+cursor.getString(2));
 
             //display image
             ImageView img = findViewById(R.id.output_user_choose);
@@ -122,8 +125,7 @@ public class information extends AppCompatActivity {
 
     public void book(View view) {
         Intent intent = getIntent();
-        //get id
-        int _id = Integer.parseInt(intent.getStringExtra("_id"));
+        int _id = intent.getIntExtra("_id", 0);
         String from = intent.getStringExtra("from");
 
         dbmanager_login_history = new dbmanager_login_history(this);
@@ -134,7 +136,7 @@ public class information extends AppCompatActivity {
         cursor_login.close();
         dbmanager_login_history.close();
         main.updateVersion();
-
+/*
         if (from.equals("hotel")) {
             dbmanager_choose_accomodation = new dbmanager_choose_accomodation(this);
             dbmanager_choose_accomodation.open();
@@ -156,7 +158,7 @@ public class information extends AppCompatActivity {
             dbmanager_choose_play.close();
             main.updateVersion();
         }
-
+*/
         if (activity.equals("plan")) {
             dbmanager_plan_summary = new dbmanager_plan_summary(this);
             dbmanager_plan_summary.open();

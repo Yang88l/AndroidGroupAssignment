@@ -40,13 +40,14 @@ public class dbmanager_plan_summary {
     }
 
     // SELECT * FROM table
-    public Cursor fetch() {
+    public Cursor fetch(int user_id) {
         String[] columns = new String[] {
+                dbhelper_plan_summary.USER_ID,
                 dbhelper_plan_summary.TYPE,
                 dbhelper_plan_summary.ACTIVITY_ID,
                 dbhelper_plan_summary.USER_ID
         };
-        Cursor cursor = database.query(dbhelper_plan_summary.TABLE_NAME, columns, null, null, null, null, null);
+        Cursor cursor = database.query(dbhelper_plan_summary.TABLE_NAME, columns, dbhelper_plan_summary.USER_ID+"="+user_id, null, null, null, null);
         if (cursor != null) {
             cursor.moveToFirst();
         }
