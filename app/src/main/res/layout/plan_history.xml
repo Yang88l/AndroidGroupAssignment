@@ -18,7 +18,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/line"
         android:layout_width="302dp"
         android:layout_height="52dp"
         android:layout_marginTop="36dp"
@@ -94,17 +93,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/profile" />
 
-    <ImageView
-        android:id="@+id/line"
-        android:layout_width="302dp"
-        android:layout_height="52dp"
-        android:layout_marginBottom="72dp"
-        android:scaleX="8"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/straight" />
+        <ImageView
+            android:layout_width="302dp"
+            android:layout_height="52dp"
+            android:layout_marginBottom="72dp"
+            android:scaleX="8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/straight" />
 
     <LinearLayout
         android:id="@+id/linearLayout4"
