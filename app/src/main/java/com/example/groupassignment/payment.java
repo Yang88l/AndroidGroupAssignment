@@ -10,15 +10,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.textfield.TextInputLayout;
-
-import java.util.ArrayList;
+import com.example.groupassignment.dbmanagers.dbmanager_book_history;
+import com.example.groupassignment.dbmanagers.dbmanager_login_history;
+import com.example.groupassignment.dbmanagers.dbmanager_user;
 
 public class payment extends AppCompatActivity {
     private TextView price_text;
-    private dbmanager_book_history dbmanager_book_history;
-    private dbmanager_login_history dbmanager_login_history;
-    private dbmanager_user dbmanager_user;
+    private com.example.groupassignment.dbmanagers.dbmanager_book_history dbmanager_book_history;
+    private com.example.groupassignment.dbmanagers.dbmanager_login_history dbmanager_login_history;
+    private com.example.groupassignment.dbmanagers.dbmanager_user dbmanager_user;
     private Intent intent;
     private EditText password;
     public int user_id;
@@ -85,5 +85,21 @@ public class payment extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Error!", Toast.LENGTH_SHORT).show();
         }
+    }
+    public void notification(View view) { startActivity(new Intent(this, notification.class));}
+    public void home(View view) {
+        startActivity(new Intent(this, main.class));
+    }
+
+    public void heart(View view) {
+        startActivity(new Intent(this, my_favourite.class));
+    }
+
+    public void history(View view) {
+        startActivity(new Intent(this, book_history.class));
+    }
+
+    public void profile(View view) {
+        startActivity(new Intent(this, profile.class));
     }
 }

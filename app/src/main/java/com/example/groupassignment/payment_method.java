@@ -20,5 +20,20 @@ public class payment_method extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void notification(View view) { startActivity(new Intent(this, notification.class));}
+    public void home(View view) {
+        startActivity(new Intent(this, main.class));
+    }
 
+    public void heart(View view) {
+        startActivity(new Intent(this, my_favourite.class));
+    }
+
+    public void history(View view) {
+        startActivity(new Intent(this, book_history.class));
+    }
+
+    public void profile(View view) {
+        startActivity(new Intent(this, profile.class));
+    }
 }

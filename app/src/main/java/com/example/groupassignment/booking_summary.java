@@ -3,16 +3,14 @@ package com.example.groupassignment;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
 public class booking_summary extends AppCompatActivity {
 
-    private dbmanager_book_summary dbmanager_book_summary;
-    private dbhelper_book_summary dbhelper_book_summary;
+    private com.example.groupassignment.dbmanagers.dbmanager_book_summary dbmanager_book_summary;
+    private com.example.groupassignment.dbhelpers.dbhelper_book_summary dbhelper_book_summary;
     private int user_id=1;
     private TextView booking_summary_text;
 
@@ -88,5 +86,22 @@ public class booking_summary extends AppCompatActivity {
     public void ok(View view) {
         Intent intent = new Intent(this, main.class);
         startActivity(intent);
+    }
+
+    public void notification(View view) { startActivity(new Intent(this, notification.class));}
+    public void home(View view) {
+        startActivity(new Intent(this, main.class));
+    }
+
+    public void heart(View view) {
+        startActivity(new Intent(this, my_favourite.class));
+    }
+
+    public void history(View view) {
+        startActivity(new Intent(this, book_history.class));
+    }
+
+    public void profile(View view) {
+        startActivity(new Intent(this, profile.class));
     }
 }

@@ -4,16 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.database.Cursor;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.groupassignment.dbmanagers.dbmanager_login_history;
+import com.example.groupassignment.dbmanagers.dbmanager_user;
+
 public class profile extends AppCompatActivity {
 
-    private dbmanager_user dbmanager_user;
-    private dbmanager_login_history dbmanager_login_history;
+    private com.example.groupassignment.dbmanagers.dbmanager_user dbmanager_user;
+    private com.example.groupassignment.dbmanagers.dbmanager_login_history dbmanager_login_history;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,17 +78,20 @@ public class profile extends AppCompatActivity {
         return user_id;
     }
 
+    public void notification(View view) { startActivity(new Intent(this, notification.class));}
     public void home(View view) {
-        Intent intent = new Intent (this, main.class);
-        startActivity(intent);
+        startActivity(new Intent(this, main.class));
     }
 
     public void heart(View view) {
+        startActivity(new Intent(this, my_favourite.class));
     }
 
     public void history(View view) {
+        startActivity(new Intent(this, book_history.class));
     }
 
     public void profile(View view) {
+        startActivity(new Intent(this, profile.class));
     }
 }

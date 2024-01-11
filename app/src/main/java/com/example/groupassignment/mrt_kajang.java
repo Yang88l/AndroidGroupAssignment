@@ -7,13 +7,15 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.groupassignment.dbmanagers.dbmanager_login_history;
+import com.example.groupassignment.dbmanagers.dbmanager_train;
+
 public class mrt_kajang extends AppCompatActivity {
-    private dbmanager_train dbmanager_train;
-    private com.example.groupassignment.dbmanager_login_history dbmanager_login_history;
+    private com.example.groupassignment.dbmanagers.dbmanager_train dbmanager_train;
+    private com.example.groupassignment.dbmanagers.dbmanager_login_history dbmanager_login_history;
     private String location, from_where, to_where;
     public int pos, from_pos, to_pos;
 
@@ -120,5 +122,21 @@ public class mrt_kajang extends AppCompatActivity {
         }
         else if (from_pos == to_pos) Toast.makeText(this, "Invalid location. Select different location.", Toast.LENGTH_SHORT).show();
         else Toast.makeText(this, "Please select a location", Toast.LENGTH_SHORT).show();
+    }
+    public void notification(View view) { startActivity(new Intent(this, notification.class));}
+    public void home(View view) {
+        startActivity(new Intent(this, main.class));
+    }
+
+    public void heart(View view) {
+        startActivity(new Intent(this, my_favourite.class));
+    }
+
+    public void history(View view) {
+        startActivity(new Intent(this, book_history.class));
+    }
+
+    public void profile(View view) {
+        startActivity(new Intent(this, profile.class));
     }
 }

@@ -10,17 +10,27 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.groupassignment.dbmanagers.dbmanager_accomodation_info;
+import com.example.groupassignment.dbmanagers.dbmanager_book_summary;
+import com.example.groupassignment.dbmanagers.dbmanager_choose_accomodation;
+import com.example.groupassignment.dbmanagers.dbmanager_choose_food;
+import com.example.groupassignment.dbmanagers.dbmanager_choose_play;
+import com.example.groupassignment.dbmanagers.dbmanager_food_info;
+import com.example.groupassignment.dbmanagers.dbmanager_login_history;
+import com.example.groupassignment.dbmanagers.dbmanager_plan_summary;
+import com.example.groupassignment.dbmanagers.dbmanager_play_info;
+
 public class information extends AppCompatActivity {
 
-    private dbmanager_choose_accomodation dbmanager_choose_accomodation;
-    private dbmanager_choose_food dbmanager_choose_food;
-    private dbmanager_choose_play dbmanager_choose_play;
-    private dbmanager_accomodation_info dbmanager_accomodation_info;
-    private dbmanager_food_info dbmanager_food_info;
-    private dbmanager_play_info dbmanager_play_info;
-    private dbmanager_login_history dbmanager_login_history;
-    private dbmanager_plan_summary dbmanager_plan_summary;
-    private com.example.groupassignment.dbmanager_book_summary dbmanager_book_summary;
+    private com.example.groupassignment.dbmanagers.dbmanager_choose_accomodation dbmanager_choose_accomodation;
+    private com.example.groupassignment.dbmanagers.dbmanager_choose_food dbmanager_choose_food;
+    private com.example.groupassignment.dbmanagers.dbmanager_choose_play dbmanager_choose_play;
+    private com.example.groupassignment.dbmanagers.dbmanager_accomodation_info dbmanager_accomodation_info;
+    private com.example.groupassignment.dbmanagers.dbmanager_food_info dbmanager_food_info;
+    private com.example.groupassignment.dbmanagers.dbmanager_play_info dbmanager_play_info;
+    private com.example.groupassignment.dbmanagers.dbmanager_login_history dbmanager_login_history;
+    private com.example.groupassignment.dbmanagers.dbmanager_plan_summary dbmanager_plan_summary;
+    private com.example.groupassignment.dbmanagers.dbmanager_book_summary dbmanager_book_summary;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -177,5 +187,21 @@ public class information extends AppCompatActivity {
         dbmanager_login_history.close();
         main.updateVersion();
         return user_id;
+    }
+    public void notification(View view) { startActivity(new Intent(this, notification.class));}
+    public void home(View view) {
+        startActivity(new Intent(this, main.class));
+    }
+
+    public void heart(View view) {
+        startActivity(new Intent(this, my_favourite.class));
+    }
+
+    public void history(View view) {
+        startActivity(new Intent(this, book_history.class));
+    }
+
+    public void profile(View view) {
+        startActivity(new Intent(this, profile.class));
     }
 }

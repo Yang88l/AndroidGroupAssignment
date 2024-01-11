@@ -6,16 +6,21 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.groupassignment.dbmanagers.dbmanager_book_summary;
+import com.example.groupassignment.dbmanagers.dbmanager_bus;
+import com.example.groupassignment.dbmanagers.dbmanager_choose_bus;
+import com.example.groupassignment.dbmanagers.dbmanager_login_history;
+import com.example.groupassignment.dbmanagers.dbmanager_plan_summary;
+
 public class seat_bus extends AppCompatActivity {
-    private dbmanager_bus dbmanager_bus;
-    private com.example.groupassignment.dbmanager_login_history dbmanager_login_history;
-    private com.example.groupassignment.dbmanager_plan_summary dbmanager_plan_summary;
-    private com.example.groupassignment.dbmanager_book_summary dbmanager_book_summary;
-    private com.example.groupassignment.dbmanager_choose_bus dbmanager_choose_bus;
+    private com.example.groupassignment.dbmanagers.dbmanager_bus dbmanager_bus;
+    private com.example.groupassignment.dbmanagers.dbmanager_login_history dbmanager_login_history;
+    private com.example.groupassignment.dbmanagers.dbmanager_plan_summary dbmanager_plan_summary;
+    private com.example.groupassignment.dbmanagers.dbmanager_book_summary dbmanager_book_summary;
+    private com.example.groupassignment.dbmanagers.dbmanager_choose_bus dbmanager_choose_bus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,5 +93,22 @@ public class seat_bus extends AppCompatActivity {
         dbmanager_choose_bus.close();
         main.updateVersion();
         return bus_id;
+    }
+
+    public void notification(View view) { startActivity(new Intent(this, notification.class));}
+    public void home(View view) {
+        startActivity(new Intent(this, main.class));
+    }
+
+    public void heart(View view) {
+        startActivity(new Intent(this, my_favourite.class));
+    }
+
+    public void history(View view) {
+        startActivity(new Intent(this, book_history.class));
+    }
+
+    public void profile(View view) {
+        startActivity(new Intent(this, profile.class));
     }
 }

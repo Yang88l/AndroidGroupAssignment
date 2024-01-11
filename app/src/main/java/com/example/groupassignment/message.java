@@ -6,14 +6,13 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.groupassignment.dbmanagers.dbmanager_message;
 
 public class message extends AppCompatActivity {
 
-    private dbmanager_message dbmanager_message;
+    private com.example.groupassignment.dbmanagers.dbmanager_message dbmanager_message;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,28 +41,21 @@ public class message extends AppCompatActivity {
         dbmanager_message.close();
         main.updateVersion();
     }
+    public void notification(View view) { startActivity(new Intent(this, notification.class));}
     public void home(View view) {
-        Intent intent = new Intent(this,main.class);
-        startActivity(intent);
+        startActivity(new Intent(this, main.class));
     }
 
     public void heart(View view) {
-        Intent intent = new Intent(this,my_favourite.class);
-        startActivity(intent);
+        startActivity(new Intent(this, my_favourite.class));
     }
 
     public void history(View view) {
-        Intent intent = new Intent(this,book_history.class);
-        startActivity(intent);
+        startActivity(new Intent(this, book_history.class));
     }
 
     public void profile(View view) {
-        Intent intent = new Intent(this,profile.class);
-        startActivity(intent);
+        startActivity(new Intent(this, profile.class));
     }
 
-    public void notification(View view) {
-        Intent intent = new Intent(this,notification.class);
-        startActivity(intent);
-    }
 }

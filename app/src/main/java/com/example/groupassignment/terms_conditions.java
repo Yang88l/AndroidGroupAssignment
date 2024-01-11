@@ -35,3 +35,4 @@ public class terms_conditions extends AppCompatActivity {
         sign_up.isChecked = ((CheckBox) view).isChecked();
     }
 }
+

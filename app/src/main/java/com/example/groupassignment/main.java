@@ -11,8 +11,37 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.groupassignment.dbhelpers.dbhelper_accomodation_info;
+import com.example.groupassignment.dbhelpers.dbhelper_airline_info;
+import com.example.groupassignment.dbhelpers.dbhelper_book_history;
+import com.example.groupassignment.dbhelpers.dbhelper_book_summary;
+import com.example.groupassignment.dbhelpers.dbhelper_bus;
+import com.example.groupassignment.dbhelpers.dbhelper_choose_accomodation;
+import com.example.groupassignment.dbhelpers.dbhelper_choose_airline;
+import com.example.groupassignment.dbhelpers.dbhelper_choose_bus;
+import com.example.groupassignment.dbhelpers.dbhelper_choose_food;
+import com.example.groupassignment.dbhelpers.dbhelper_choose_play;
+import com.example.groupassignment.dbhelpers.dbhelper_choose_transport;
+import com.example.groupassignment.dbhelpers.dbhelper_favourite;
+import com.example.groupassignment.dbhelpers.dbhelper_filter_range;
+import com.example.groupassignment.dbhelpers.dbhelper_flight;
+import com.example.groupassignment.dbhelpers.dbhelper_food_info;
+import com.example.groupassignment.dbhelpers.dbhelper_hotel_neccessity;
+import com.example.groupassignment.dbhelpers.dbhelper_login_history;
+import com.example.groupassignment.dbhelpers.dbhelper_message;
+import com.example.groupassignment.dbhelpers.dbhelper_notification;
+import com.example.groupassignment.dbhelpers.dbhelper_pax;
+import com.example.groupassignment.dbhelpers.dbhelper_plan_history;
+import com.example.groupassignment.dbhelpers.dbhelper_plan_summary;
+import com.example.groupassignment.dbhelpers.dbhelper_play_info;
+import com.example.groupassignment.dbhelpers.dbhelper_terms_conditions;
+import com.example.groupassignment.dbhelpers.dbhelper_train;
+import com.example.groupassignment.dbhelpers.dbhelper_transport_info;
+import com.example.groupassignment.dbhelpers.dbhelper_user;
+import com.example.groupassignment.dbmanagers.dbmanager_login_history;
+
 public class main extends AppCompatActivity {
-    private com.example.groupassignment.dbmanager_login_history dbmanager_login_history;
+    private com.example.groupassignment.dbmanagers.dbmanager_login_history dbmanager_login_history;
     private SQLiteDatabase database;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -6,12 +6,13 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example.groupassignment.dbmanagers.dbmanager_plan_history;
 
 public class plan_history extends AppCompatActivity {
 
-    private dbmanager_plan_history dbmanager_plan_history;
+    private com.example.groupassignment.dbmanagers.dbmanager_plan_history dbmanager_plan_history;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,25 +76,20 @@ public class plan_history extends AppCompatActivity {
         main.updateVersion();
     }
 
-    public void main(View view) {
-        Intent intent = new Intent(this,main.class);
-        startActivity(intent);
+    public void notification(View view) { startActivity(new Intent(this, notification.class));}
+    public void home(View view) {
+        startActivity(new Intent(this, main.class));
     }
 
-    public void profile(View view) {
-        Intent intent = new Intent(this,profile.class);
-        startActivity(intent);
+    public void heart(View view) {
+        startActivity(new Intent(this, my_favourite.class));
     }
 
     public void history(View view) {
-        Intent intent = new Intent(this,book_history.class);
-        startActivity(intent);    }
+        startActivity(new Intent(this, book_history.class));
+    }
 
-    public void heart(View view) {
-        Intent intent = new Intent(this, my_favourite.class);
-        startActivity(intent);    }
-
-    public void book_history(View view) {
-        Intent intent = new Intent(this,book_history.class);
-        startActivity(intent);    }
+    public void profile(View view) {
+        startActivity(new Intent(this, profile.class));
+    }
 }

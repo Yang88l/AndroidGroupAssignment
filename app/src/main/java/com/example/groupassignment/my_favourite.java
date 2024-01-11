@@ -6,18 +6,23 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.groupassignment.dbmanagers.dbmanager_accomodation_info;
+import com.example.groupassignment.dbmanagers.dbmanager_favourite;
+import com.example.groupassignment.dbmanagers.dbmanager_food_info;
+import com.example.groupassignment.dbmanagers.dbmanager_login_history;
+import com.example.groupassignment.dbmanagers.dbmanager_play_info;
+
 public class my_favourite extends AppCompatActivity {
-    private dbmanager_favourite dbmanager_favourite;
-    private dbmanager_login_history dbmanager_login_history;
-    private com.example.groupassignment.dbmanager_accomodation_info dbmanager_accomodation_info;
-    private com.example.groupassignment.dbmanager_food_info dbmanager_food_info;
-    private com.example.groupassignment.dbmanager_play_info dbmanager_play_info;
+    private com.example.groupassignment.dbmanagers.dbmanager_favourite dbmanager_favourite;
+    private com.example.groupassignment.dbmanagers.dbmanager_login_history dbmanager_login_history;
+    private com.example.groupassignment.dbmanagers.dbmanager_accomodation_info dbmanager_accomodation_info;
+    private com.example.groupassignment.dbmanagers.dbmanager_food_info dbmanager_food_info;
+    private com.example.groupassignment.dbmanagers.dbmanager_play_info dbmanager_play_info;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -141,6 +146,9 @@ public class my_favourite extends AppCompatActivity {
     }
     public void notification(View view) {
         startActivity(new Intent(this, notification.class));
+    }
+    public void home(View view) {
+        startActivity(new Intent(this, main.class));
     }
     public void heart(View view) {
         startActivity(new Intent(this, my_favourite.class));
