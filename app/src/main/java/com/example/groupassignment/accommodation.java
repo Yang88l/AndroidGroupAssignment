@@ -17,6 +17,21 @@ public class accommodation extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.accommodation);
+
+        if (login_status()) {
+            ImageView picture = findViewById(R.id.imageButton12);
+            dbmanager_favourite = new dbmanager_favourite(this);
+            dbmanager_favourite.open();
+            Cursor cursor = dbmanager_favourite.fetch(getUserID(), "hotel", 1);
+            if (cursor.getString(4).equals("1")) {
+                picture.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
+            }
+            else if (cursor.getString(4).equals("0")) {
+                picture.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
+            }
+            dbmanager_favourite.close();
+            main.updateVersion();
+        }
     }
 
     public void like(View view) {
@@ -52,11 +67,11 @@ public class accommodation extends AppCompatActivity {
             Cursor cursor = dbmanager_favourite.fetch(getUserID(), "hotel", 1);
             if (cursor.getString(4).equals("0")) {
                 picture.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
-                dbmanager_favourite.insert(getUserID(), "hotel", 1, 1);
+                dbmanager_favourite.update(getUserID(), "hotel", 1, 1);
             }
             else if (cursor.getString(4).equals("1")) {
                 picture.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
-                dbmanager_favourite.insert(getUserID(), "hotel", 1, 0);
+                dbmanager_favourite.update(getUserID(), "hotel", 1, 0);
             }
             dbmanager_favourite.close();
             main.updateVersion();
@@ -71,10 +86,10 @@ public class accommodation extends AppCompatActivity {
             Cursor cursor = dbmanager_favourite.fetch(getUserID(), "hotel", 2);
             if (cursor.getString(4).equals("0")) {
                 picture.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
-                dbmanager_favourite.insert(getUserID(), "hotel", 2, 1);
+                dbmanager_favourite.update(getUserID(), "hotel", 2, 1);
             } else if (cursor.getString(4).equals("1")) {
                 picture.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
-                dbmanager_favourite.insert(getUserID(), "hotel", 2, 0);
+                dbmanager_favourite.update(getUserID(), "hotel", 2, 0);
             }
             dbmanager_favourite.close();
             main.updateVersion();
@@ -89,10 +104,10 @@ public class accommodation extends AppCompatActivity {
             Cursor cursor = dbmanager_favourite.fetch(getUserID(), "hotel", 3);
             if (cursor.getString(4).equals("0")) {
                 picture.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
-                dbmanager_favourite.insert(getUserID(), "hotel", 3, 1);
+                dbmanager_favourite.update(getUserID(), "hotel", 3, 1);
             } else if (cursor.getString(4).equals("1")) {
                 picture.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
-                dbmanager_favourite.insert(getUserID(), "hotel", 3, 0);
+                dbmanager_favourite.update(getUserID(), "hotel", 3, 0);
             }
             dbmanager_favourite.close();
             main.updateVersion();

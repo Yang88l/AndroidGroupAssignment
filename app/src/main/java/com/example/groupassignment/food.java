@@ -18,6 +18,21 @@ public class food extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.food);
+
+        if (login_status()) {
+            ImageView picture = findViewById(R.id.imageButton12);
+            dbmanager_favourite = new dbmanager_favourite(this);
+            dbmanager_favourite.open();
+            Cursor cursor = dbmanager_favourite.fetch(getUserID(), "food", 1);
+            if (cursor.getString(4).equals("1")) {
+                picture.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
+            }
+            else if (cursor.getString(4).equals("0")) {
+                picture.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
+            }
+            dbmanager_favourite.close();
+            main.updateVersion();
+        }
     }
 
 
@@ -55,10 +70,10 @@ public class food extends AppCompatActivity {
             Cursor cursor = dbmanager_favourite.fetch(getUserID(), "food", 1);
             if (cursor.getString(4).equals("0")) {
                 picture.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
-                dbmanager_favourite.insert(getUserID(), "food", 1, 1);
+                dbmanager_favourite.update(getUserID(), "food", 1, 1);
             } else if (cursor.getString(4).equals("1")) {
                 picture.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
-                dbmanager_favourite.insert(getUserID(), "food", 1, 0);
+                dbmanager_favourite.update(getUserID(), "food", 1, 0);
             }
             dbmanager_favourite.close();
             main.updateVersion();
@@ -73,10 +88,10 @@ public class food extends AppCompatActivity {
             Cursor cursor = dbmanager_favourite.fetch(getUserID(), "food", 2);
             if (cursor.getString(4).equals("0")) {
                 picture.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
-                dbmanager_favourite.insert(getUserID(), "food", 2, 1);
+                dbmanager_favourite.update(getUserID(), "food", 2, 1);
             } else if (cursor.getString(4).equals("1")) {
                 picture.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
-                dbmanager_favourite.insert(getUserID(), "food", 2, 0);
+                dbmanager_favourite.update(getUserID(), "food", 2, 0);
             }
             dbmanager_favourite.close();
             main.updateVersion();
@@ -91,10 +106,10 @@ public class food extends AppCompatActivity {
             Cursor cursor = dbmanager_favourite.fetch(getUserID(), "food", 3);
             if (cursor.getString(4).equals("0")) {
                 picture.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
-                dbmanager_favourite.insert(getUserID(), "food", 3, 1);
+                dbmanager_favourite.update(getUserID(), "food", 3, 1);
             } else if (cursor.getString(4).equals("1")) {
                 picture.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
-                dbmanager_favourite.insert(getUserID(), "food", 3, 0);
+                dbmanager_favourite.update(getUserID(), "food", 3, 0);
             }
             dbmanager_favourite.close();
             main.updateVersion();

@@ -16,6 +16,21 @@ public class play extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.play);
+
+        if (login_status()) {
+            ImageView picture = findViewById(R.id.imageButton12);
+            dbmanager_favourite = new dbmanager_favourite(this);
+            dbmanager_favourite.open();
+            Cursor cursor = dbmanager_favourite.fetch(getUserID(), "play", 1);
+            if (cursor.getString(4).equals("1")) {
+                picture.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
+            }
+            else if (cursor.getString(4).equals("0")) {
+                picture.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
+            }
+            dbmanager_favourite.close();
+            main.updateVersion();
+        }
     }
     public void add(View view) {
     }
@@ -60,10 +75,10 @@ public class play extends AppCompatActivity {
             Cursor cursor = dbmanager_favourite.fetch(getUserID(), "play", 1);
             if (cursor.getString(4).equals("0")) {
                 picture.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
-                dbmanager_favourite.insert(getUserID(), "play", 1, 1);
+                dbmanager_favourite.update(getUserID(), "play", 1, 1);
             } else if (cursor.getString(4).equals("1")) {
                 picture.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
-                dbmanager_favourite.insert(getUserID(), "play", 1, 0);
+                dbmanager_favourite.update(getUserID(), "play", 1, 0);
             }
             dbmanager_favourite.close();
             main.updateVersion();
@@ -78,10 +93,10 @@ public class play extends AppCompatActivity {
             Cursor cursor = dbmanager_favourite.fetch(getUserID(), "play", 2);
             if (cursor.getString(4).equals("0")) {
                 picture.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
-                dbmanager_favourite.insert(getUserID(), "play", 2, 1);
+                dbmanager_favourite.update(getUserID(), "play", 2, 1);
             } else if (cursor.getString(4).equals("1")) {
                 picture.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
-                dbmanager_favourite.insert(getUserID(), "play", 2, 0);
+                dbmanager_favourite.update(getUserID(), "play", 2, 0);
             }
             dbmanager_favourite.close();
             main.updateVersion();
@@ -96,10 +111,10 @@ public class play extends AppCompatActivity {
             Cursor cursor = dbmanager_favourite.fetch(getUserID(), "play", 3);
             if (cursor.getString(4).equals("0")) {
                 picture.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
-                dbmanager_favourite.insert(getUserID(), "play", 3, 1);
+                dbmanager_favourite.update(getUserID(), "play", 3, 1);
             } else if (cursor.getString(4).equals("1")) {
                 picture.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
-                dbmanager_favourite.insert(getUserID(), "play", 3, 0);
+                dbmanager_favourite.update(getUserID(), "play", 3, 0);
             }
             dbmanager_favourite.close();
             main.updateVersion();
