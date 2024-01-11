@@ -727,7 +727,7 @@
                 android:id="@+id/checkBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="I agree"
+                android:text="I have read and agreed to the Terms and Conditions"
                 android:onClick="onCheckboxClicked"/>
 
             <Button
