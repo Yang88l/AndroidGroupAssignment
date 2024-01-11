@@ -48,6 +48,8 @@ public class main extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
+
+
         //get latest version
         SharedPreferences preferences = getSharedPreferences("DatabasePrefs", Context.MODE_PRIVATE);
         for (int i=0; i<preferences.getInt("LatestDBVersion", 0); i++){
