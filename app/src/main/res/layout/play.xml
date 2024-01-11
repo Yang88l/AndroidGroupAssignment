@@ -80,16 +80,6 @@
         app:layout_constraintTop_toBottomOf="@+id/genting_highland_picture"
         app:srcCompat="@drawable/sky_mirror_77" />
 
-    <ImageButton
-        android:id="@+id/zoo_negara_picture"
-        android:layout_width="77dp"
-        android:layout_height="77dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sky_mirror_picture"
-        app:srcCompat="@drawable/zoo_negara_77" />
-
 
     <Button
         android:id="@+id/sunway_lagoon_button"
@@ -127,18 +117,6 @@
         app:layout_constraintStart_toEndOf="@+id/sky_mirror_picture"
         app:layout_constraintTop_toBottomOf="@+id/genting_highland_button" />
 
-    <Button
-        android:id="@+id/zoo_negara_button"
-        android:layout_width="167dp"
-        android:layout_height="83dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
-        android:onClick="zoo"
-        android:text="Zoo Negara"
-        android:textSize="25dp"
-        app:layout_constraintStart_toEndOf="@+id/zoo_negara_picture"
-        app:layout_constraintTop_toBottomOf="@+id/sky_mirror_button" />
-
     <ImageButton
         android:id="@+id/heart1"
         android:layout_width="45dp"
@@ -170,17 +148,6 @@
         android:onClick="sky_favourite"
         app:layout_constraintStart_toEndOf="@+id/sky_mirror_button"
         app:layout_constraintTop_toBottomOf="@+id/heart2"
-        app:srcCompat="@drawable/love" />
-
-    <ImageButton
-        android:id="@+id/heart4"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="60dp"
-        android:onClick="zoo_favourite"
-        app:layout_constraintStart_toEndOf="@+id/zoo_negara_button"
-        app:layout_constraintTop_toBottomOf="@+id/heart3"
         app:srcCompat="@drawable/love" />
 
 

@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class accommodation extends AppCompatActivity {
 
@@ -16,6 +17,21 @@ public class accommodation extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.accommodation);
+
+        if (login_status()) {
+            ImageView picture = findViewById(R.id.imageButton12);
+            dbmanager_favourite = new dbmanager_favourite(this);
+            dbmanager_favourite.open();
+            Cursor cursor = dbmanager_favourite.fetch(getUserID(), "hotel", 1);
+            if (cursor.getString(4).equals("1")) {
+                picture.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
+            }
+            else if (cursor.getString(4).equals("0")) {
+                picture.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
+            }
+            dbmanager_favourite.close();
+            main.updateVersion();
+        }
     }
 
     public void like(View view) {
@@ -44,54 +60,58 @@ public class accommodation extends AppCompatActivity {
     }
 
     public void bevelord_favourite(View view) {
-        ImageView picture = findViewById(R.id.imageButton12);
-        dbmanager_favourite = new dbmanager_favourite(this);
-        dbmanager_favourite.open();
-        Cursor cursor = dbmanager_favourite.fetch(getUserID());
-        if (cursor.getString(4).equals("0")) {
-            picture.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
-            dbmanager_favourite.insert(getUserID(), "hotel", 1, 1);
+        if (login_status()) {
+            ImageView picture = findViewById(R.id.imageButton12);
+            dbmanager_favourite = new dbmanager_favourite(this);
+            dbmanager_favourite.open();
+            Cursor cursor = dbmanager_favourite.fetch(getUserID(), "hotel", 1);
+            if (cursor.getString(4).equals("0")) {
+                picture.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
+                dbmanager_favourite.update(getUserID(), "hotel", 1, 1);
+            }
+            else if (cursor.getString(4).equals("1")) {
+                picture.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
+                dbmanager_favourite.update(getUserID(), "hotel", 1, 0);
+            }
+            dbmanager_favourite.close();
+            main.updateVersion();
         }
-        else if (cursor.getString(4).equals("1")) {
-            picture.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
-            dbmanager_favourite.insert(getUserID(), "hotel", 1, 0);
-        }
-        dbmanager_favourite.close();
-        main.updateVersion();
     }
 
     public void crystal_favourite(View view) {
-        ImageView picture = findViewById(R.id.imageButton22);
-        dbmanager_favourite = new dbmanager_favourite(this);
-        dbmanager_favourite.open();
-        Cursor cursor = dbmanager_favourite.fetch(getUserID());
-        if (cursor.getString(4).equals("0")) {
-            picture.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
-            dbmanager_favourite.insert(getUserID(), "hotel", 2, 1);
+        if (login_status()) {
+            ImageView picture = findViewById(R.id.imageButton22);
+            dbmanager_favourite = new dbmanager_favourite(this);
+            dbmanager_favourite.open();
+            Cursor cursor = dbmanager_favourite.fetch(getUserID(), "hotel", 2);
+            if (cursor.getString(4).equals("0")) {
+                picture.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
+                dbmanager_favourite.update(getUserID(), "hotel", 2, 1);
+            } else if (cursor.getString(4).equals("1")) {
+                picture.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
+                dbmanager_favourite.update(getUserID(), "hotel", 2, 0);
+            }
+            dbmanager_favourite.close();
+            main.updateVersion();
         }
-        else if (cursor.getString(4).equals("1")) {
-            picture.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
-            dbmanager_favourite.insert(getUserID(), "hotel", 2, 0);
-        }
-        dbmanager_favourite.close();
-        main.updateVersion();
     }
 
     public void ocean_favourite(View view) {
-        ImageView picture = findViewById(R.id.imageButton7);
-        dbmanager_favourite = new dbmanager_favourite(this);
-        dbmanager_favourite.open();
-        Cursor cursor = dbmanager_favourite.fetch(getUserID());
-        if (cursor.getString(4).equals("0")) {
-            picture.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
-            dbmanager_favourite.insert(getUserID(), "hotel", 3, 1);
+        if (login_status()) {
+            ImageView picture = findViewById(R.id.imageButton7);
+            dbmanager_favourite = new dbmanager_favourite(this);
+            dbmanager_favourite.open();
+            Cursor cursor = dbmanager_favourite.fetch(getUserID(), "hotel", 3);
+            if (cursor.getString(4).equals("0")) {
+                picture.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
+                dbmanager_favourite.update(getUserID(), "hotel", 3, 1);
+            } else if (cursor.getString(4).equals("1")) {
+                picture.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
+                dbmanager_favourite.update(getUserID(), "hotel", 3, 0);
+            }
+            dbmanager_favourite.close();
+            main.updateVersion();
         }
-        else if (cursor.getString(4).equals("1")) {
-            picture.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
-            dbmanager_favourite.insert(getUserID(), "hotel", 3, 0);
-        }
-        dbmanager_favourite.close();
-        main.updateVersion();
     }
 
     public int getUserID(){
@@ -104,5 +124,24 @@ public class accommodation extends AppCompatActivity {
         dbmanager_login_history.close();
         main.updateVersion();
         return user_id;
+    }
+
+    public boolean login_status(){
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor = dbmanager_login_history.fetch();
+        cursor.moveToLast();
+        String status=cursor.getString(3);
+        cursor.close();
+        dbmanager_login_history.close();
+        main.updateVersion();
+
+        if (status.equals("logged in")) {
+            return true;
+        }
+        else {
+            Toast.makeText(this, "You are not logged in.", Toast.LENGTH_SHORT).show();
+            return false;
+        }
     }
 }

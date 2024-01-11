@@ -6,12 +6,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
 public class main extends AppCompatActivity {
     private com.example.groupassignment.dbmanager_login_history dbmanager_login_history;
+    private SQLiteDatabase database;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +24,14 @@ public class main extends AppCompatActivity {
         for (int i=0; i<preferences.getInt("LatestDBVersion", 0); i++){
             updateVersion();
         }
+
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        if (dbhelper_login_history.DB_VERSION == 1) {
+            dbmanager_login_history.insert(1, "logged out", "null");
+        }
+        dbmanager_login_history.close();
+        main.updateVersion();
     }
 
     public void plan(View view) {
@@ -34,13 +44,14 @@ public class main extends AppCompatActivity {
         cursor.close();
         if (status.equals("logged out")) {
             dbmanager_login_history.update(login_id, "plan", "logged out");
-            dbmanager_login_history.close();
-            main.updateVersion();
-            Intent intent = new Intent(this,select_location.class);
-            startActivity(intent);
+        }
+        else {
+            dbmanager_login_history.update(login_id, "plan", "logged in");
         }
         dbmanager_login_history.close();
         main.updateVersion();
+        Intent intent = new Intent(this,select_location.class);
+        startActivity(intent);
     }
 
     public void Book(View view) {
