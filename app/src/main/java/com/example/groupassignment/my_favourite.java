@@ -39,36 +39,36 @@ public class my_favourite extends AppCompatActivity {
         dbmanager_favourite.open();
         Cursor cursor1 = dbmanager_favourite.fetch(getUserID(), "hotel", 1);
         if (cursor1.getString(4).equals("1")) hotel_1 = true;
+        cursor1.close();
         Cursor cursor2 = dbmanager_favourite.fetch(getUserID(), "hotel", 2);
         if (cursor2.getString(4).equals("1")) hotel_2 = true;
+        cursor2.close();
         Cursor cursor3 = dbmanager_favourite.fetch(getUserID(), "hotel", 3);
         if (cursor3.getString(4).equals("1")) hotel_3 = true;
-        cursor1.close();
-        cursor2.close();
         cursor3.close();
         dbmanager_favourite.close();
         main.updateVersion();
 
         dbmanager_accomodation_info = new dbmanager_accomodation_info(this);
-
+        dbmanager_accomodation_info.open();
         if (hotel_1||hotel_2||hotel_3) {
             if (hotel_1) {
-                dbmanager_accomodation_info.open();
                 Cursor cursor_hotel = dbmanager_accomodation_info.fetch(1);
                 name1.setText(cursor_hotel.getString(1));
                 picture1.setImageResource(getResources().getIdentifier(cursor_hotel.getString(3) + "_77", "drawable", getPackageName()));
+                cursor_hotel.close();
             }
             if (hotel_2) {
-                dbmanager_accomodation_info.open();
                 Cursor cursor_hotel = dbmanager_accomodation_info.fetch(2);
                 name1.setText(cursor_hotel.getString(1));
                 picture1.setImageResource(getResources().getIdentifier(cursor_hotel.getString(3) + "_77", "drawable", getPackageName()));
+                cursor_hotel.close();
             }
             if (hotel_3) {
-                dbmanager_accomodation_info.open();
                 Cursor cursor_hotel = dbmanager_accomodation_info.fetch(3);
                 name1.setText(cursor_hotel.getString(1));
                 picture1.setImageResource(getResources().getIdentifier(cursor_hotel.getString(3) + "_77", "drawable", getPackageName()));
+                cursor_hotel.close();
             }
         }
         else {
@@ -78,24 +78,24 @@ public class my_favourite extends AppCompatActivity {
 
         if (hotel_3) {
             if (hotel_1) {
-                dbmanager_accomodation_info.open();
                 Cursor cursor_hotel = dbmanager_accomodation_info.fetch(1);
                 name2.setText(cursor_hotel.getString(1));
                 picture2.setImageResource(getResources().getIdentifier(cursor_hotel.getString(3) + "_77", "drawable", getPackageName()));
+                cursor_hotel.close();
             }
             if (hotel_2) {
-                dbmanager_accomodation_info.open();
                 Cursor cursor_hotel = dbmanager_accomodation_info.fetch(2);
                 name2.setText(cursor_hotel.getString(1));
                 picture2.setImageResource(getResources().getIdentifier(cursor_hotel.getString(3) + "_77", "drawable", getPackageName()));
+                cursor_hotel.close();
             }
         }
         else if (hotel_2) {
             if (hotel_1) {
-                dbmanager_accomodation_info.open();
                 Cursor cursor_hotel = dbmanager_accomodation_info.fetch(1);
                 name2.setText(cursor_hotel.getString(1));
                 picture2.setImageResource(getResources().getIdentifier(cursor_hotel.getString(3) + "_77", "drawable", getPackageName()));
+                cursor_hotel.close();
             }
         }
         else {
@@ -105,10 +105,10 @@ public class my_favourite extends AppCompatActivity {
 
         if (hotel_1&&hotel_2&&hotel_3) {
             if (hotel_1) {
-                dbmanager_accomodation_info.open();
                 Cursor cursor_hotel = dbmanager_accomodation_info.fetch(1);
                 name3.setText(cursor_hotel.getString(1));
                 picture3.setImageResource(getResources().getIdentifier(cursor_hotel.getString(3) + "_77", "drawable", getPackageName()));
+                cursor_hotel.close();
             }
         }
         else {
@@ -188,25 +188,26 @@ public class my_favourite extends AppCompatActivity {
         main.updateVersion();
 
         dbmanager_accomodation_info = new dbmanager_accomodation_info(this);
+        dbmanager_accomodation_info.open();
 
         if (hotel_1||hotel_2||hotel_3) {
             if (hotel_1) {
-                dbmanager_accomodation_info.open();
                 Cursor cursor_hotel = dbmanager_accomodation_info.fetch(1);
                 name1.setText(cursor_hotel.getString(1));
                 picture1.setImageResource(getResources().getIdentifier(cursor_hotel.getString(3) + "_77", "drawable", getPackageName()));
+                cursor_hotel.close();
             }
             if (hotel_2) {
-                dbmanager_accomodation_info.open();
                 Cursor cursor_hotel = dbmanager_accomodation_info.fetch(2);
                 name1.setText(cursor_hotel.getString(1));
                 picture1.setImageResource(getResources().getIdentifier(cursor_hotel.getString(3) + "_77", "drawable", getPackageName()));
+                cursor_hotel.close();
             }
             if (hotel_3) {
-                dbmanager_accomodation_info.open();
                 Cursor cursor_hotel = dbmanager_accomodation_info.fetch(3);
                 name1.setText(cursor_hotel.getString(1));
                 picture1.setImageResource(getResources().getIdentifier(cursor_hotel.getString(3) + "_77", "drawable", getPackageName()));
+                cursor_hotel.close();
             }
         }
         else {
@@ -216,24 +217,24 @@ public class my_favourite extends AppCompatActivity {
 
         if (hotel_3) {
             if (hotel_1) {
-                dbmanager_accomodation_info.open();
                 Cursor cursor_hotel = dbmanager_accomodation_info.fetch(1);
                 name2.setText(cursor_hotel.getString(1));
                 picture2.setImageResource(getResources().getIdentifier(cursor_hotel.getString(3) + "_77", "drawable", getPackageName()));
+                cursor_hotel.close();
             }
             if (hotel_2) {
-                dbmanager_accomodation_info.open();
                 Cursor cursor_hotel = dbmanager_accomodation_info.fetch(2);
                 name2.setText(cursor_hotel.getString(1));
                 picture2.setImageResource(getResources().getIdentifier(cursor_hotel.getString(3) + "_77", "drawable", getPackageName()));
+                cursor_hotel.close();
             }
         }
         else if (hotel_2) {
             if (hotel_1) {
-                dbmanager_accomodation_info.open();
                 Cursor cursor_hotel = dbmanager_accomodation_info.fetch(1);
                 name2.setText(cursor_hotel.getString(1));
                 picture2.setImageResource(getResources().getIdentifier(cursor_hotel.getString(3) + "_77", "drawable", getPackageName()));
+                cursor_hotel.close();
             }
         }
         else {
@@ -243,10 +244,10 @@ public class my_favourite extends AppCompatActivity {
 
         if (hotel_1&&hotel_2&&hotel_3) {
             if (hotel_1) {
-                dbmanager_accomodation_info.open();
                 Cursor cursor_hotel = dbmanager_accomodation_info.fetch(1);
                 name3.setText(cursor_hotel.getString(1));
                 picture3.setImageResource(getResources().getIdentifier(cursor_hotel.getString(3) + "_77", "drawable", getPackageName()));
+                cursor_hotel.close();
             }
         }
         else {
@@ -285,25 +286,26 @@ public class my_favourite extends AppCompatActivity {
         main.updateVersion();
 
         dbmanager_food_info = new dbmanager_food_info(this);
+        dbmanager_food_info.open();
 
         if (food_1||food_2||food_3) {
             if (food_1) {
-                dbmanager_food_info.open();
                 Cursor cursor_food = dbmanager_food_info.fetch(1);
                 name1.setText(cursor_food.getString(1));
                 picture1.setImageResource(getResources().getIdentifier(cursor_food.getString(3) + "_77", "drawable", getPackageName()));
+                cursor_food.close();
             }
             if (food_2) {
-                dbmanager_food_info.open();
                 Cursor cursor_food = dbmanager_food_info.fetch(2);
                 name1.setText(cursor_food.getString(1));
                 picture1.setImageResource(getResources().getIdentifier(cursor_food.getString(3) + "_77", "drawable", getPackageName()));
+                cursor_food.close();
             }
             if (food_3) {
-                dbmanager_food_info.open();
                 Cursor cursor_food = dbmanager_food_info.fetch(3);
                 name1.setText(cursor_food.getString(1));
                 picture1.setImageResource(getResources().getIdentifier(cursor_food.getString(3) + "_77", "drawable", getPackageName()));
+                cursor_food.close();
             }
         }
         else {
@@ -313,24 +315,25 @@ public class my_favourite extends AppCompatActivity {
 
         if (food_3) {
             if (food_1) {
-                dbmanager_food_info.open();
                 Cursor cursor_food = dbmanager_food_info.fetch(1);
                 name2.setText(cursor_food.getString(1));
                 picture2.setImageResource(getResources().getIdentifier(cursor_food.getString(3) + "_77", "drawable", getPackageName()));
+                cursor_food.close();
             }
             if (food_2) {
-                dbmanager_food_info.open();
                 Cursor cursor_food = dbmanager_food_info.fetch(2);
                 name2.setText(cursor_food.getString(1));
                 picture2.setImageResource(getResources().getIdentifier(cursor_food.getString(3) + "_77", "drawable", getPackageName()));
+                cursor_food.close();
             }
         }
         else if (food_2) {
             if (food_1) {
-                dbmanager_food_info.open();
                 Cursor cursor_food = dbmanager_food_info.fetch(1);
                 name2.setText(cursor_food.getString(1));
                 picture2.setImageResource(getResources().getIdentifier(cursor_food.getString(3) + "_77", "drawable", getPackageName()));
+                cursor_food.close();
+
             }
         }
         else {
@@ -340,10 +343,10 @@ public class my_favourite extends AppCompatActivity {
 
         if (food_1&&food_2&&food_3) {
             if (food_1) {
-                dbmanager_food_info.open();
                 Cursor cursor_food = dbmanager_food_info.fetch(1);
                 name3.setText(cursor_food.getString(1));
                 picture3.setImageResource(getResources().getIdentifier(cursor_food.getString(3) + "_77", "drawable", getPackageName()));
+                cursor_food.close();
             }
         }
         else {
@@ -382,25 +385,26 @@ public class my_favourite extends AppCompatActivity {
         main.updateVersion();
 
         dbmanager_play_info = new dbmanager_play_info(this);
+        dbmanager_play_info.open();
 
         if (play_1||play_2||play_3) {
             if (play_1) {
-                dbmanager_play_info.open();
                 Cursor cursor_play = dbmanager_play_info.fetch(1);
                 name1.setText(cursor_play.getString(1));
                 picture1.setImageResource(getResources().getIdentifier(cursor_play.getString(3) + "_77", "drawable", getPackageName()));
+                cursor_play.close();
             }
             if (play_2) {
-                dbmanager_play_info.open();
                 Cursor cursor_play = dbmanager_play_info.fetch(2);
                 name1.setText(cursor_play.getString(1));
                 picture1.setImageResource(getResources().getIdentifier(cursor_play.getString(3) + "_77", "drawable", getPackageName()));
+                cursor_play.close();
             }
             if (play_3) {
-                dbmanager_play_info.open();
                 Cursor cursor_play = dbmanager_play_info.fetch(3);
                 name1.setText(cursor_play.getString(1));
                 picture1.setImageResource(getResources().getIdentifier(cursor_play.getString(3) + "_77", "drawable", getPackageName()));
+                cursor_play.close();
             }
         }
         else {
@@ -410,24 +414,24 @@ public class my_favourite extends AppCompatActivity {
 
         if (play_3) {
             if (play_1) {
-                dbmanager_play_info.open();
                 Cursor cursor_play = dbmanager_play_info.fetch(1);
                 name2.setText(cursor_play.getString(1));
                 picture2.setImageResource(getResources().getIdentifier(cursor_play.getString(3) + "_77", "drawable", getPackageName()));
+                cursor_play.close();
             }
             if (play_2) {
-                dbmanager_play_info.open();
                 Cursor cursor_play = dbmanager_play_info.fetch(2);
                 name2.setText(cursor_play.getString(1));
                 picture2.setImageResource(getResources().getIdentifier(cursor_play.getString(3) + "_77", "drawable", getPackageName()));
+                cursor_play.close();
             }
         }
         else if (play_2) {
             if (play_1) {
-                dbmanager_play_info.open();
                 Cursor cursor_play = dbmanager_play_info.fetch(1);
                 name2.setText(cursor_play.getString(1));
                 picture2.setImageResource(getResources().getIdentifier(cursor_play.getString(3) + "_77", "drawable", getPackageName()));
+                cursor_play.close();
             }
         }
         else {
@@ -437,10 +441,10 @@ public class my_favourite extends AppCompatActivity {
 
         if (play_1&&play_2&&play_3) {
             if (play_1) {
-                dbmanager_play_info.open();
                 Cursor cursor_play = dbmanager_play_info.fetch(1);
                 name3.setText(cursor_play.getString(1));
                 picture3.setImageResource(getResources().getIdentifier(cursor_play.getString(3) + "_77", "drawable", getPackageName()));
+                cursor_play.close();
             }
         }
         else {

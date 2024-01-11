@@ -75,4 +75,18 @@ public class profile extends AppCompatActivity {
         main.updateVersion();
         return user_id;
     }
+
+    public void home(View view) {
+        Intent intent = new Intent (this, main.class);
+        startActivity(intent);
+    }
+
+    public void heart(View view) {
+    }
+
+    public void history(View view) {
+    }
+
+    public void profile(View view) {
+    }
 }
