@@ -1,6 +1,7 @@
 package com.example.groupassignment;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,6 +11,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.example.groupassignment.dbhelpers.dbhelper_accomodation_info;
 import com.example.groupassignment.dbhelpers.dbhelper_airline_info;
@@ -43,10 +45,20 @@ import com.example.groupassignment.dbmanagers.dbmanager_login_history;
 public class main extends AppCompatActivity {
     private com.example.groupassignment.dbmanagers.dbmanager_login_history dbmanager_login_history;
     private SQLiteDatabase database;
+    private Toolbar topnavi;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+
+        androidx.appcompat.widget.Toolbar topnavi = findViewById(R.id.topnavi);
+
+        setSupportActionBar(topnavi);
+
+        getSupportActionBar().setTitle("BookSwift");
+        getSupportActionBar().setIcon(getDrawable(R.drawable.logo));
+
 
 
 

@@ -7,16 +7,23 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import com.example.groupassignment.dbmanagers.dbmanager_message;
 
 public class message extends AppCompatActivity {
+    private Toolbar topnavi;
 
     private com.example.groupassignment.dbmanagers.dbmanager_message dbmanager_message;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.message);
+
+        androidx.appcompat.widget.Toolbar topnavi = findViewById(R.id.topnavi);
+
+        setSupportActionBar(topnavi);
+
 
         TextView text1 = findViewById(R.id.text_1);
         TextView text2 = findViewById(R.id.text_2);

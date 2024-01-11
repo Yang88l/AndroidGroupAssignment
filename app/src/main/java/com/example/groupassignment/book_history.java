@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 public class book_history extends AppCompatActivity {
     private com.example.groupassignment.dbmanagers.dbmanager_book_history dbmanager_book_history;
@@ -15,11 +16,18 @@ public class book_history extends AppCompatActivity {
     private String location, cost, date, status;
     public int user_id = 1; // Replace with the actual user ID
 
+    private Toolbar topnavi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.book_history);
+
+        androidx.appcompat.widget.Toolbar topnavi = findViewById(R.id.topnavi);
+        setSupportActionBar(topnavi);
+
+        getSupportActionBar().setTitle("BookSwift");
+        getSupportActionBar().setIcon(getDrawable(R.drawable.logo));
 
 /*
         dbmanager_book_history = new dbmanager_book_history(this);
