@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
 public class book_history extends AppCompatActivity {
     private com.example.groupassignment.dbmanagers.dbmanager_book_history dbmanager_book_history;

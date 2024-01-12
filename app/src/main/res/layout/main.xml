@@ -10,7 +10,6 @@
         android:id="@+id/topnavi"
         layout="@layout/topnavi"/>
 
-
     <Button
         android:id="@+id/button"
         android:layout_width="170dp"

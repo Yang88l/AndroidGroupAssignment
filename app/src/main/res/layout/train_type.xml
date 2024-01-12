@@ -11,57 +11,24 @@
         android:id="@+id/topnavi"
         layout="@layout/topnavi"/>
 
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="15dp"
-        android:text="Booking App"
-        android:textSize="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/line"
-        android:layout_width="302dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="36dp"
-        android:scaleX="8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/straight" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
 
     <Button
-        android:id="@+id/sripetalling"
+        android:id="@+id/ampang"
         android:layout_width="150dp"
         android:layout_height="70dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="36dp"
-        android:onClick="sri_petaling"
-        android:text="LRT Sri Petalling"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="212dp"
+        android:onClick="ampang"
+        android:text="LRT Ampang"
         app:layout_constraintStart_toEndOf="@+id/kajang"
-        app:layout_constraintTop_toBottomOf="@+id/ampang" />
-
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/putrajaya"
         android:layout_width="150dp"
         android:layout_height="70dp"
         android:layout_marginStart="52dp"
-        android:layout_marginBottom="192dp"
+        android:layout_marginBottom="228dp"
         android:onClick="putrajaya"
         android:text="MRT Putrajaya"
         app:layout_constraintBottom_toTopOf="@+id/imageView4"
@@ -70,26 +37,29 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
+        android:id="@+id/sripetalling"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:onClick="sri_petaling"
+        android:text="LRT Sri Petalling"
+        app:layout_constraintStart_toEndOf="@+id/kajang"
+        app:layout_constraintTop_toBottomOf="@+id/ampang" />
+
+    <Button
         android:id="@+id/kajang"
         android:layout_width="150dp"
         android:layout_height="70dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="192dp"
+        android:layout_marginStart="16dp"
         android:onClick="kajang"
         android:text="MRT Kajang"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.114"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
-
-    <Button
-        android:id="@+id/ampang"
-        android:layout_width="150dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="148dp"
-        android:onClick="ampang"
-        android:text="LRT Ampang"
-        app:layout_constraintStart_toEndOf="@+id/kajang"
-        app:layout_constraintTop_toBottomOf="@+id/line" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.323" />
 
     <ImageView
         android:id="@+id/imageView8"
