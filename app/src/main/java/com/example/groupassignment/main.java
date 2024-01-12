@@ -127,6 +127,9 @@ public class main extends AppCompatActivity {
             startActivity(intent);
         }
     }
+    public void home(View view) {
+        startActivity(new Intent(this, book_history.class));
+    }
     public void notification(View view) {
         startActivity(new Intent(this, notification.class));
     }
