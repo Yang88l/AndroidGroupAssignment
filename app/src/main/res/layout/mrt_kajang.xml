@@ -100,46 +100,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_to" />
 
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="15dp"
-        android:text="Booking App"
-        android:textSize="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/line"
-        android:layout_width="302dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="36dp"
-        android:scaleX="8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/straight" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
-
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/line"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/kajang" />
 
     <Button
@@ -171,55 +139,50 @@
         android:layout_width="28dp"
         android:layout_height="30dp"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="4dp"
         android:onClick="kajang"
         android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/line" />
+        tools:layout_editor_absoluteY="93dp" />
 
     <Button
         android:id="@+id/stadium_kajang"
         android:layout_width="28dp"
         android:layout_height="30dp"
         android:layout_marginStart="47dp"
-        android:layout_marginTop="4dp"
         android:onClick="stadium_kajang"
         android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/kajang"
-        app:layout_constraintTop_toBottomOf="@+id/line" />
+        tools:layout_editor_absoluteY="93dp" />
 
     <Button
         android:id="@+id/sungai_jernih"
         android:layout_width="28dp"
         android:layout_height="30dp"
         android:layout_marginStart="55dp"
-        android:layout_marginTop="4dp"
         android:onClick="sungai_jernih"
         android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/stadium_kajang"
-        app:layout_constraintTop_toBottomOf="@+id/line" />
+        tools:layout_editor_absoluteY="93dp" />
 
     <Button
         android:id="@+id/batu_11_cheras"
         android:layout_width="28dp"
         android:layout_height="30dp"
         android:layout_marginStart="56dp"
-        android:layout_marginTop="4dp"
         android:onClick="batu_11_cheras"
         android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/bukit_dokong"
-        app:layout_constraintTop_toBottomOf="@+id/line" />
+        tools:layout_editor_absoluteY="93dp" />
 
     <Button
         android:id="@+id/bukit_dokong"
         android:layout_width="28dp"
         android:layout_height="30dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="4dp"
         android:onClick="bukit_dokong"
         android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/sungai_jernih"
-        app:layout_constraintTop_toBottomOf="@+id/line" />
+        tools:layout_editor_absoluteY="93dp" />
 
     <Button
         android:id="@+id/button23"
@@ -231,17 +194,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/from" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        android:onClick="notification"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/notification" />
 
 
     <ImageView
