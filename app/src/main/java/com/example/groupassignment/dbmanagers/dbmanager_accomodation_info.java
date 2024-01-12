@@ -31,10 +31,11 @@ public class dbmanager_accomodation_info {
         main.saveVersion(context);
         dbHelper.close();
     }
-    public void insert(String hotel_name, double price) {
+    public void insert(String hotel_name, double price, String picture) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(dbhelper_accomodation_info.HOTEL_NAME, hotel_name);
         contentValue.put(dbhelper_accomodation_info.PRICE, price);
+        contentValue.put(dbhelper_accomodation_info.PICTURE, picture);
         database.insert(dbhelper_accomodation_info.TABLE_NAME, null, contentValue);
     }
 

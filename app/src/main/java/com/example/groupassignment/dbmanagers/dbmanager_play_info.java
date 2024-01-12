@@ -30,10 +30,11 @@ public class dbmanager_play_info {
         main.saveVersion(context);
         dbHelper.close();
     }
-    public void insert(String play_name, double price) {
+    public void insert(String play_name, double price, String picture) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(dbhelper_play_info.PLAY, play_name);
         contentValue.put(dbhelper_play_info.PRICE, price);
+        contentValue.put(dbhelper_play_info.PICTURE, picture);
         database.insert(dbhelper_play_info.TABLE_NAME, null, contentValue);
     }
 
