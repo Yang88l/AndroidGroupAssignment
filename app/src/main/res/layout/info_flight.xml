@@ -7,6 +7,10 @@
     tools:context=".info_flight"
     android:background="@drawable/gradient_bg">
 
+    <include
+        android:id="@+id/topnavi"
+        layout="@layout/topnavi"/>
+
     <TextView
         android:id="@+id/flight_information_text"
         android:layout_width="wrap_content"

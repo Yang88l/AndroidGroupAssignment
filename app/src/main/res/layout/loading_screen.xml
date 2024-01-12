@@ -7,6 +7,7 @@
     android:background="@drawable/loading_screen"
     tools:context=".loading_screen">
 
+
     <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

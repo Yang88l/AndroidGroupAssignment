@@ -7,6 +7,9 @@
     android:layout_height="match_parent"
     tools:context=".accommodation">
 
+    <include
+        android:id="@+id/topnavi"
+        layout="@layout/topnavi"/>
 
     <ImageButton
         android:id="@+id/imageButton22"

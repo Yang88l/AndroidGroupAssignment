@@ -7,6 +7,10 @@
     tools:context=".lrt_sripetalling"
     android:background="@drawable/gradient_bg">
 
+    <include
+        android:id="@+id/topnavi"
+        layout="@layout/topnavi"/>
+
     <ImageView
         android:id="@+id/line3"
         android:layout_width="302dp"

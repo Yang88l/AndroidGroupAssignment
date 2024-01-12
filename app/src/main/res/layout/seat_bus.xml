@@ -7,6 +7,10 @@
     tools:context=".seat_bus"
     android:background="@drawable/gradient_bg">
 
+    <include
+        android:id="@+id/topnavi"
+        layout="@layout/topnavi"/>
+
     <TextView
         android:id="@+id/textView12"
         android:layout_width="wrap_content"

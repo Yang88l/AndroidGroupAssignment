@@ -17,6 +17,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <include
+        android:id="@+id/topnavi"
+        layout="@layout/topnavi"/>
+
     <ImageView
         android:id="@+id/line"
         android:layout_width="302dp"

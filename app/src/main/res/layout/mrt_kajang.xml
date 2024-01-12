@@ -7,6 +7,10 @@
     tools:context=".mrt_kajang"
     android:background="@drawable/gradient_bg">
 
+    <include
+        android:id="@+id/topnavi"
+        layout="@layout/topnavi"/>
+
     <TextView
         android:id="@+id/text3"
         android:layout_width="wrap_content"

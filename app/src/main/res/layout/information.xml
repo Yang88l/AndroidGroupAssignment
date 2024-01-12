@@ -6,6 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".information">
 
+    <include
+        android:id="@+id/topnavi"
+        layout="@layout/topnavi"/>
+
     <ImageView
         android:id="@+id/output_user_choose"
         android:layout_width="182dp"

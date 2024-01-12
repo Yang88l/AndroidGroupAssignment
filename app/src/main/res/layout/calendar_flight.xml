@@ -7,6 +7,10 @@
     tools:context=".calendar_flight"
     android:background="@drawable/gradient_bg">
 
+    <include
+        android:id="@+id/topnavi"
+        layout="@layout/topnavi"/>
+
     <Button
         android:id="@+id/confirm"
         android:layout_width="100dp"

@@ -9,6 +9,10 @@
     tools:context=".lrt_ampang">
 
 
+    <include
+        android:id="@+id/topnavi"
+        layout="@layout/topnavi"/>
+
     <ImageView
         android:id="@+id/line3"
         android:layout_width="302dp"
