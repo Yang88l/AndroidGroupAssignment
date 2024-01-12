@@ -30,6 +30,9 @@ public class payment extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.payment);
 
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
+
         //ASSIGN ID
         price_text = findViewById(R.id.price_text);
         password = findViewById(R.id.password);

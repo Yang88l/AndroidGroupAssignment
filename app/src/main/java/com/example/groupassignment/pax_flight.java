@@ -19,6 +19,9 @@ public class pax_flight extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pax_flight);
+
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
     }
 
     public void buy(View view) {

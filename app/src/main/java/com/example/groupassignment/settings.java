@@ -19,6 +19,9 @@ public class settings extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings);
+
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
     }
 
     public void reset_password(View view) {

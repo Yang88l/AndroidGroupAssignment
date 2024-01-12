@@ -19,6 +19,10 @@ public class state_bus extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.state_bus);
+
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
+
     }
     public void selangor(View view) {
         chooseState("Selangor");

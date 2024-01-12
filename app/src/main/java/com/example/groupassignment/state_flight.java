@@ -18,6 +18,9 @@ public class state_flight extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.state_flight);
+
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
     }
 
     public void sabah(View view) {

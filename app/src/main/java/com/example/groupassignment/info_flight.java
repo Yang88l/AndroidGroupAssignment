@@ -26,6 +26,9 @@ public class info_flight extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.info_flight);
 
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
+
         //get date
         dbmanager_flight = new dbmanager_flight(this);
         dbmanager_flight.open();

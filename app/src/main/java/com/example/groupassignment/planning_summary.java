@@ -19,7 +19,6 @@ import com.example.groupassignment.dbmanagers.dbmanager_plan_summary;
 import com.example.groupassignment.dbmanagers.dbmanager_play_info;
 
 public class planning_summary extends AppCompatActivity {
-
     private dbmanager_plan_summary dbmanager_plan_summary;
     private dbmanager_login_history dbmanager_login_history;
     private dbmanager_accomodation_info dbmanager_accomodation_info;
@@ -33,6 +32,9 @@ public class planning_summary extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.planning_summary);
+
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
 
         TextView contentLeft = findViewById(R.id.textView18);
         TextView contentRight = findViewById(R.id.textView19);

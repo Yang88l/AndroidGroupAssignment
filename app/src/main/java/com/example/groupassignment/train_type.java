@@ -13,6 +13,9 @@ public class train_type extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.train_type);
+
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
     }
 
     public void kajang(View v){

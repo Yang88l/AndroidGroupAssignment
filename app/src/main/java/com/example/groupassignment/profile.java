@@ -22,6 +22,9 @@ public class profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile);
 
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
+
         dbmanager_user = new dbmanager_user(this);
         dbmanager_user.open();
         Cursor cursor_user = dbmanager_user.fetch(getUserID());

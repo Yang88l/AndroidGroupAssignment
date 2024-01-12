@@ -38,6 +38,9 @@ public class information extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.information);
 
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
+
         Intent intent = getIntent();
         int _id = intent.getIntExtra("_id", 0);
         String from = intent.getStringExtra("from");

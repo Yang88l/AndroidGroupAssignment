@@ -19,6 +19,9 @@ public class plan_history extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.plan_history);
 
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
+
         TextView a = findViewById(R.id.a);
         TextView b = findViewById(R.id.b);
         TextView c = findViewById(R.id.c);

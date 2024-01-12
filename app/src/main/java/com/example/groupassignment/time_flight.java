@@ -21,6 +21,9 @@ public class time_flight extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.time_flight);
 
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
+
         dbmanager_flight = new dbmanager_flight(this);
         dbmanager_flight.open();
         dbmanager_flight.close();

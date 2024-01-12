@@ -18,6 +18,9 @@ public class airline extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.airline);
+
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
     }
 
     public void airasia(View view) {

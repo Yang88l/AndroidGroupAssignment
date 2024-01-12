@@ -24,6 +24,9 @@ public class lrt_ampang extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lrt_ampang);
+
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
     }
 
     //Functions

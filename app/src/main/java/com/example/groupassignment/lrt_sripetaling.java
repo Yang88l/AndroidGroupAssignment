@@ -24,6 +24,9 @@ public class lrt_sripetaling extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lrt_sripetaling);
+
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
     }
 
     //Functions

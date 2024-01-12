@@ -12,6 +12,9 @@ public class payment_method extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.payment_method);
+
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
     }
 
     //TOUCH N GO

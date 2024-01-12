@@ -18,6 +18,9 @@ public class booking_summary extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.booking_summary);
+
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
 /*
         dbhelper_book_summary.DB_VERSION = main.dbversion++;
 

@@ -29,6 +29,9 @@ public class my_favourite extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.my_favourite);
 
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
+
         boolean hotel_1 = false;
         boolean hotel_2 = false;
         boolean hotel_3 = false;

@@ -26,6 +26,9 @@ public class sign_up extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_up);
 
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
+
         EditText editTextName = findViewById(R.id.editTextText);
         EditText editTextEmail = findViewById(R.id.editTextText2);
         EditText editTextPhone = findViewById(R.id.editTextPhone);

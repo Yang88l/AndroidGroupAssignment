@@ -18,6 +18,9 @@ public class notification extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.notification);
 
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
+
         TextView text1 = findViewById(R.id.text_1);
         TextView text2 = findViewById(R.id.text_2);
         TextView text3 = findViewById(R.id.text_3);

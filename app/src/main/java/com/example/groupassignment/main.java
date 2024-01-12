@@ -45,21 +45,13 @@ import com.example.groupassignment.dbmanagers.dbmanager_login_history;
 public class main extends AppCompatActivity {
     private com.example.groupassignment.dbmanagers.dbmanager_login_history dbmanager_login_history;
     private SQLiteDatabase database;
-    private Toolbar topnavi;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        androidx.appcompat.widget.Toolbar topnavi = findViewById(R.id.topnavi);
-
-        setSupportActionBar(topnavi);
-
-        getSupportActionBar().setTitle("BookSwift");
-        getSupportActionBar().setIcon(getDrawable(R.drawable.logo));
-
-
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
 
 
         //get latest version

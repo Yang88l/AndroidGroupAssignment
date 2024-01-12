@@ -20,6 +20,9 @@ public class play extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.play);
 
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
+
         if (login_status()) {
             ImageView picture = findViewById(R.id.imageButton12);
             dbmanager_favourite = new dbmanager_favourite(this);

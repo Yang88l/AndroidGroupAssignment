@@ -26,6 +26,9 @@ public class seat_bus extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.seat_bus);
+
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
     }
 
     public void pick_up(View view) {

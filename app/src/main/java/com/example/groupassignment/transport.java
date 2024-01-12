@@ -13,6 +13,9 @@ public class transport extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.transport);
+
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
     }
     public void train(View view) {
         startActivity(new Intent(this, train_type.class));

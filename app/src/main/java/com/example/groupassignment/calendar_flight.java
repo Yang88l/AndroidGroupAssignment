@@ -19,6 +19,9 @@ public class calendar_flight extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calendar_flight);
+
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
     }
 
     public void confirm(View view) {

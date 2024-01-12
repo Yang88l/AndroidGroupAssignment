@@ -15,6 +15,9 @@ public class set_picture extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.set_picture);
+
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
     }
 
     public void camera(View view) {

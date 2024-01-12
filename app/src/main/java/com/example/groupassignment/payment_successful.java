@@ -19,6 +19,9 @@ public class payment_successful extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.payment_successful);
 
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
+
         //ASSIGN ID
         price_text = findViewById(R.id.price_text);
 

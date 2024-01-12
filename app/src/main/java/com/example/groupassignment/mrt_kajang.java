@@ -24,6 +24,9 @@ public class mrt_kajang extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mrt_kajang);
+
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
     }
 
     //Functions

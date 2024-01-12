@@ -20,6 +20,9 @@ public class log_in extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.log_in);
+
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
     }
 
     public void log_in(View view) {

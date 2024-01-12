@@ -12,14 +12,15 @@ import com.example.groupassignment.dbmanagers.dbmanager_favourite;
 import com.example.groupassignment.dbmanagers.dbmanager_login_history;
 
 public class accommodation extends AppCompatActivity {
-
     private com.example.groupassignment.dbmanagers.dbmanager_favourite dbmanager_favourite;
     private com.example.groupassignment.dbmanagers.dbmanager_login_history dbmanager_login_history;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.accommodation);
+
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
 
         if (login_status()) {
             ImageView picture = findViewById(R.id.imageButton12);

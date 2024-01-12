@@ -15,6 +15,9 @@ public class choose extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.choose);
+
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
     }
 
     public void play(View view) {

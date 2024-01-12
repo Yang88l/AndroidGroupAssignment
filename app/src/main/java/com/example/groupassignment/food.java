@@ -21,6 +21,9 @@ public class food extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.food);
 
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
+
         if (login_status()) {
             ImageView picture = findViewById(R.id.imageButton12);
             dbmanager_favourite = new dbmanager_favourite(this);

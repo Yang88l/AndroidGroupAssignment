@@ -13,6 +13,9 @@ public class loading_screen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.loading_screen);
 
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
+
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
