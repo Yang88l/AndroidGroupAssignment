@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".message">
 
-
-
     <include
         android:id="@+id/topnavi"
         layout="@layout/topnavi"/>
@@ -219,5 +217,7 @@
             android:textSize="24sp" />
 
     </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
