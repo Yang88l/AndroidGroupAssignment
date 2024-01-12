@@ -24,8 +24,8 @@ public class BaseActivity extends AppCompatActivity  {
         activity.setSupportActionBar(topnavi);
 
         //customize top navigation
-    //   Context context = activity.getApplicationContext();
-      //  activity.getSupportActionBar().setTitle("BookSwift");
-     //   activity.getSupportActionBar().setIcon(ContextCompat.getDrawable(context, R.drawable.logo));
+       Context context = activity.getApplicationContext();
+       activity.getSupportActionBar().setTitle("BookSwift");
+       activity.getSupportActionBar().setIcon(ContextCompat.getDrawable(context, R.drawable.logo));
     }
 }
