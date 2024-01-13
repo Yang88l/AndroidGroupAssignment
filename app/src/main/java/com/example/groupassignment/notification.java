@@ -26,20 +26,20 @@ public class notification extends AppCompatActivity {
         TextView text3 = findViewById(R.id.text_3);
         TextView text4 = findViewById(R.id.text_4);
 
-        dbmanager_notification = new dbmanager_notification(this);
-        dbmanager_notification.open();
-        Cursor cursor = dbmanager_notification.fetch();
+//        dbmanager_notification = new dbmanager_notification(this);
+//        dbmanager_notification.open();
+//        Cursor cursor = dbmanager_notification.fetch();
+//
+//        String notification = "";
+//
+//        cursor.moveToLast();
+//        notification = cursor.getString(2);
+//        cursor.close();
 
-        String notification = "";
-
-        cursor.moveToLast();
-        notification = cursor.getString(2);
-        cursor.close();
-
-        text1.setText(notification);
-        text2.setText(notification);
-        text3.setText(notification);
-        text4.setText(notification);
+        text1.setText("notification");
+        text2.setText("notification");
+        text3.setText("notification");
+        text4.setText("notification");
 
         dbmanager_notification.close();
         main.updateVersion();

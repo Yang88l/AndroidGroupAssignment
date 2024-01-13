@@ -81,14 +81,14 @@
             android:id="@+id/button1"
             android:layout_width="206dp"
             android:layout_height="match_parent"
-            android:background="#000000"
+            android:background="#27caf2"
             android:text="Plan History" />
 
         <Button
             android:id="@+id/button2"
             android:layout_width="205dp"
             android:layout_height="match_parent"
-            android:background="#000000"
+            android:background="#27caf2"
             android:onClick="book_history"
             android:text="Book History" />
     </LinearLayout>

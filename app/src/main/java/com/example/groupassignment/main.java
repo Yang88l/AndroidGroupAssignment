@@ -7,9 +7,12 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
+import android.net.Uri;
+import android.widget.VideoView;
 
 import com.example.groupassignment.dbhelpers.dbhelper_accomodation_info;
 import com.example.groupassignment.dbhelpers.dbhelper_airline_info;
@@ -50,6 +53,14 @@ public class main extends AppCompatActivity {
 
         //Top Navigation
         BaseActivity.setupToolbar(this);
+
+        //Background / video
+
+        // Get the AspectRatioVideoView from the layout
+        background.video(this);
+
+
+
 
 
         //get latest version

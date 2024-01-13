@@ -81,7 +81,7 @@
             android:id="@+id/notification"
             android:layout_width="206dp"
             android:layout_height="match_parent"
-            android:background="#000000"
+            android:background="#27caf2"
             android:onClick="notification"
             android:text="Notification" />
 
@@ -89,7 +89,7 @@
             android:id="@+id/message"
             android:layout_width="206dp"
             android:layout_height="match_parent"
-            android:background="#000000"
+            android:background="#27caf2"
             android:text="Message"
             android:textSize="18sp" />
     </LinearLayout>
