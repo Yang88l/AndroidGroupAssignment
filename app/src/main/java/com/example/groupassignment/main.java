@@ -42,10 +42,21 @@ import com.example.groupassignment.dbhelpers.dbhelper_train;
 import com.example.groupassignment.dbhelpers.dbhelper_transport_info;
 import com.example.groupassignment.dbhelpers.dbhelper_user;
 import com.example.groupassignment.dbmanagers.dbmanager_login_history;
+import com.example.groupassignment.dbmanagers.dbmanager_airline_info;
+import com.example.groupassignment.dbmanagers.dbmanager_bus;
+import com.example.groupassignment.dbmanagers.dbmanager_food_info;
+import com.example.groupassignment.dbmanagers.dbmanager_play_info;
+import com.example.groupassignment.dbmanagers.dbmanager_accomodation_info;
 
 public class main extends AppCompatActivity {
     private com.example.groupassignment.dbmanagers.dbmanager_login_history dbmanager_login_history;
     private SQLiteDatabase database;
+    private com.example.groupassignment.dbmanagers.dbmanager_airline_info dbmanager_airline_info;
+    private com.example.groupassignment.dbmanagers.dbmanager_bus dbmanager_bus;
+    private com.example.groupassignment.dbmanagers.dbmanager_food_info dbmanager_food_info;
+    private com.example.groupassignment.dbmanagers.dbmanager_play_info dbmanager_play_info;
+    private com.example.groupassignment.dbmanagers.dbmanager_accomodation_info dbmanager_accomodation_info;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,13 +80,17 @@ public class main extends AppCompatActivity {
             updateVersion();
         }
 
+        int version=0;
+
         dbmanager_login_history = new dbmanager_login_history(this);
         dbmanager_login_history.open();
-        if (dbhelper_login_history.DB_VERSION == 1) {
-            dbmanager_login_history.insert(1, "logged out", "null");
-        }
+        version=dbhelper_login_history.DB_VERSION;
         dbmanager_login_history.close();
         main.updateVersion();
+
+        if (version == 1) {
+            initializeData();
+        }
     }
 
     public void plan(View view) {
@@ -187,5 +202,53 @@ public class main extends AppCompatActivity {
         SharedPreferences.Editor editor = preferences.edit();
         editor.putInt("LatestDBVersion", dbhelper_user.DB_VERSION);
         editor.apply();
+    }
+
+    public void initializeData(){
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        dbmanager_login_history.insert(1, "logged out", "null");
+        dbmanager_login_history.close();
+        main.updateVersion();
+
+        dbmanager_airline_info = new dbmanager_airline_info(this);
+        dbmanager_airline_info.open();
+        dbmanager_airline_info.insert("Air Asia", 100);
+        dbmanager_airline_info.insert("Firefly", 100);
+        dbmanager_airline_info.insert("Berjaya Air", 100);
+        dbmanager_airline_info.close();
+        main.updateVersion();
+
+        dbmanager_bus = new dbmanager_bus(this);
+        dbmanager_bus.open();
+        dbmanager_bus.insert(30, "Soutern");
+        dbmanager_bus.insert( 30, "Mayang Sari");
+        dbmanager_bus.insert(30, "City Express");
+        dbmanager_bus.close();
+        main.updateVersion();
+
+        dbmanager_food_info = new dbmanager_food_info(this);
+        dbmanager_food_info.open();
+        dbmanager_food_info.insert("Cielo KL", 150, "cielo_kl");
+        dbmanager_food_info.insert("Horizon Grill", 130, "horizon_grill");
+        dbmanager_food_info.insert("Sky Bar", 180, "sky_bar");
+        dbmanager_food_info.close();
+        main.updateVersion();
+
+        dbmanager_play_info = new dbmanager_play_info(this);
+        dbmanager_play_info.open();
+        dbmanager_play_info.insert("Sunway Lagoo", 100, "sunway_lagoon");
+        dbmanager_play_info.insert("Genting Highland", 100, "genting_highland");
+        dbmanager_play_info.insert("Sky Mirror", 100, "sky_mirror");
+        dbmanager_play_info.close();
+        main.updateVersion();
+
+        dbmanager_accomodation_info = new dbmanager_accomodation_info(this);
+        dbmanager_accomodation_info.open();
+        dbmanager_accomodation_info.insert("Bevelord Hotel", 300, "bevelord_hotel");
+        dbmanager_accomodation_info.insert("Crystal Hotel", 350, "crystal_hotel");
+        dbmanager_accomodation_info.insert("Ocean Hotel", 250, "ocean_hotel");
+        dbmanager_accomodation_info.close();
+        main.updateVersion();
     }
 }

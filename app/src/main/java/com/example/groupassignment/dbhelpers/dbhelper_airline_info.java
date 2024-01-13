@@ -34,7 +34,6 @@ public class dbhelper_airline_info extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE);
-        db.execSQL("INSERT INTO airline_info (AIRLINE, PRICE) VALUES ('Air Asia', 100), ('Firefly', 100), ('Berjaya Air', 100);");
     }
 
     @Override

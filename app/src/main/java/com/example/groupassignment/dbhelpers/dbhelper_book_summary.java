@@ -36,7 +36,6 @@ public class dbhelper_book_summary extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE);
-       // db.execSQL("INSERT INTO booking_summary (USER_ID, AIRLINE_ID, TRANSPORT_ID, FOOD_ID, TOTAL_PRICE, LOCATION) VALUES (1,1,1,1,10,'KAJANG');");
     }
 
 

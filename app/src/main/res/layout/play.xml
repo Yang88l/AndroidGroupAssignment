@@ -11,14 +11,14 @@
         layout="@layout/topnavi"/>
 
     <ImageButton
-        android:id="@+id/sunway_lagoon_picture"
+        android:id="@+id/zoo_negara_picture"
         android:layout_width="77dp"
         android:layout_height="77dp"
         android:layout_marginStart="44dp"
         android:layout_marginTop="164dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/sunway_lagoon" />
+        app:srcCompat="@drawable/zoo_negara_77" />
 
     <ImageButton
         android:id="@+id/genting_highland_picture"
@@ -27,7 +27,7 @@
         android:layout_marginStart="44dp"
         android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sunway_lagoon_picture"
+        app:layout_constraintTop_toBottomOf="@+id/zoo_negara_picture"
         app:srcCompat="@drawable/genting_highland_77" />
 
     <ImageButton
@@ -42,15 +42,15 @@
 
 
     <Button
-        android:id="@+id/sunway_lagoon_button"
+        android:id="@+id/zoo_negara_button"
         android:layout_width="167dp"
         android:layout_height="83dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="160dp"
         android:onClick="sunway"
-        android:text="Sunway Lagoon"
+        android:text="Zoo Negera"
         android:textSize="25dp"
-        app:layout_constraintStart_toEndOf="@+id/sunway_lagoon_picture"
+        app:layout_constraintStart_toEndOf="@+id/zoo_negara_picture"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
@@ -63,7 +63,7 @@
         android:text="Genting Highland"
         android:textSize="25dp"
         app:layout_constraintStart_toEndOf="@+id/genting_highland_picture"
-        app:layout_constraintTop_toBottomOf="@+id/sunway_lagoon_button" />
+        app:layout_constraintTop_toBottomOf="@+id/zoo_negara_button" />
 
     <Button
         android:id="@+id/sky_mirror_button"
@@ -84,7 +84,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="180dp"
         android:onClick="sunway_favourite"
-        app:layout_constraintStart_toEndOf="@+id/sunway_lagoon_button"
+        app:layout_constraintStart_toEndOf="@+id/zoo_negara_button"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/love" />
 

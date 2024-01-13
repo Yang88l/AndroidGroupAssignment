@@ -104,7 +104,7 @@ public class planning_summary extends AppCompatActivity {
         startActivity(intent);
     }
     public void book(View view) {
-        Intent intent = new Intent(this,payment_method.class);
+        Intent intent = new Intent(this,main.class);
         startActivity(intent);
     }
     public void notification(View view) { startActivity(new Intent(this, notification.class));}
