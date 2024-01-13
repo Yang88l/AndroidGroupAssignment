@@ -8,7 +8,7 @@
 
     <include
         android:id="@+id/topnavi"
-        layout="@layout/topnavi"/>
+        layout="@layout/topnavi" />
 
     <ImageButton
         android:id="@+id/zoo_negara_picture"
@@ -47,8 +47,10 @@
         android:layout_height="83dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="160dp"
+        android:background="@drawable/button_design_3"
         android:onClick="sunway"
         android:text="Zoo Negera"
+        android:textColor="#0096FF"
         android:textSize="25dp"
         app:layout_constraintStart_toEndOf="@+id/zoo_negara_picture"
         app:layout_constraintTop_toTopOf="parent" />
@@ -59,8 +61,10 @@
         android:layout_height="83dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
+        android:background="@drawable/button_design_3"
         android:onClick="genting"
         android:text="Genting Highland"
+        android:textColor="#0096FF"
         android:textSize="25dp"
         app:layout_constraintStart_toEndOf="@+id/genting_highland_picture"
         app:layout_constraintTop_toBottomOf="@+id/zoo_negara_button" />
@@ -71,8 +75,10 @@
         android:layout_height="83dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
+        android:background="@drawable/button_design_3"
         android:onClick="sky"
         android:text="Sky Mirror"
+        android:textColor="#0096FF"
         android:textSize="25dp"
         app:layout_constraintStart_toEndOf="@+id/sky_mirror_picture"
         app:layout_constraintTop_toBottomOf="@+id/genting_highland_button" />
@@ -176,5 +182,33 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/straight" />
+
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="384dp"
+        android:layout_height="333dp"
+        android:layout_marginBottom="428dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.185"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/textbox" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lemon"
+        android:text="Theme Park"
+        android:textColor="@color/black"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView15"
+        app:layout_constraintEnd_toEndOf="@+id/imageView15"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="@+id/imageView15"
+        app:layout_constraintTop_toTopOf="@+id/imageView15"
+        app:layout_constraintVertical_bias="0.391" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

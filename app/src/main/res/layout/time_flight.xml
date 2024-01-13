@@ -21,6 +21,8 @@
         android:layout_marginBottom="52dp"
         android:onClick="next"
         android:text="Next"
+        android:background="@drawable/button_design"
+        android:textColor="#0096FF"
         app:layout_constraintBottom_toTopOf="@+id/imageView5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

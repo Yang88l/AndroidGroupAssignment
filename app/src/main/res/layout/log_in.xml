@@ -78,6 +78,7 @@
             android:onClick="log_in"
             android:text="Log in"
             android:textSize="24dp"
+            android:background="@drawable/button_design"
             app:layout_constraintBottom_toTopOf="@+id/textView14"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

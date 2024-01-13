@@ -62,6 +62,8 @@
         android:layout_marginTop="22dp"
         android:onClick="sabah"
         android:text="Sabah"
+        android:background="@drawable/button_design"
+        android:textColor="#0096FF"
         app:layout_constraintBottom_toTopOf="@+id/sarawakbut"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,6 +76,8 @@
         android:layout_marginTop="20dp"
         android:onClick="sarawak"
         android:text="Sarawak"
+        android:background="@drawable/button_design"
+        android:textColor="#0096FF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sabahbut" />
@@ -85,6 +89,8 @@
         android:layout_marginTop="20dp"
         android:onClick="penang"
         android:text="Penang"
+        android:background="@drawable/button_design"
+        android:textColor="#0096FF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/johorbut" />
@@ -96,6 +102,8 @@
         android:layout_marginTop="20dp"
         android:onClick="johor"
         android:text="Johor"
+        android:background="@drawable/button_design"
+        android:textColor="#0096FF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sarawakbut" />

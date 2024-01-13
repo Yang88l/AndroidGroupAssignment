@@ -40,6 +40,8 @@
         android:onClick="horizon_grill"
         android:text="Horizon Grill"
         android:textSize="25dp"
+        android:textColor="#0096FF"
+        android:background="@drawable/button_design_2"
         app:layout_constraintStart_toEndOf="@id/image_food2"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -52,6 +54,8 @@
         android:onClick="cielo_kl"
         android:text="Cielo KL"
         android:textSize="25dp"
+        android:textColor="#0096FF"
+        android:background="@drawable/button_design_2"
         app:layout_constraintStart_toEndOf="@id/image_food"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -95,6 +99,8 @@
         android:onClick="sky_bar"
         android:text="Sky Bar"
         android:textSize="25dp"
+        android:textColor="#0096FF"
+        android:background="@drawable/button_design_2"
         app:layout_constraintStart_toEndOf="@+id/image_food3"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -163,5 +169,33 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/profile" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="384dp"
+        android:layout_height="333dp"
+        android:layout_marginBottom="428dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.185"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/textbox" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lemon"
+        android:text="Restaurant"
+        android:textColor="@color/black"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView15"
+        app:layout_constraintEnd_toEndOf="@+id/imageView15"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="@+id/imageView15"
+        app:layout_constraintTop_toTopOf="@+id/imageView15"
+        app:layout_constraintVertical_bias="0.391" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

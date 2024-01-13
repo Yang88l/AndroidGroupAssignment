@@ -207,6 +207,8 @@
                 android:onClick="sign_up"
                 android:text="Sign up"
                 android:textSize="24dp"
+                android:background="@drawable/button_design"
+                android:textColor="#0096FF"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.47"
                 app:layout_constraintStart_toStartOf="parent"

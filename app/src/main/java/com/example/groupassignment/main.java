@@ -10,6 +10,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 import android.net.Uri;
 import android.widget.VideoView;
@@ -56,7 +57,6 @@ public class main extends AppCompatActivity {
     private com.example.groupassignment.dbmanagers.dbmanager_food_info dbmanager_food_info;
     private com.example.groupassignment.dbmanagers.dbmanager_play_info dbmanager_play_info;
     private com.example.groupassignment.dbmanagers.dbmanager_accomodation_info dbmanager_accomodation_info;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,10 +66,7 @@ public class main extends AppCompatActivity {
         BaseActivity.setupToolbar(this);
 
         //Background / video
-
-        // Get the AspectRatioVideoView from the layout
         background.video(this);
-
 
 
 

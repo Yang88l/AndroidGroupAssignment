@@ -13,7 +13,6 @@
     <include
         layout="@layout/background"/>
 
-
     <Button
         android:id="@+id/button"
         android:layout_width="170dp"
@@ -22,6 +21,8 @@
         android:onClick="plan"
         android:text="Plan Your Trip"
         android:textSize="22dp"
+        android:background="@drawable/button_design"
+        android:textColor="#0096FF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,7 +34,9 @@
         android:layout_height="80dp"
         android:layout_marginTop="60dp"
         android:onClick="Book"
-        android:text="Book Now!"
+        android:text="Book Now"
+        android:background="@drawable/button_design"
+        android:textColor="#0096FF"
         android:textSize="23dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -84,6 +87,7 @@
         app:srcCompat="@drawable/profile" />
 
     <ImageView
+        android:id="@+id/imageView14"
         android:layout_width="302dp"
         android:layout_height="52dp"
         android:layout_marginBottom="72dp"
@@ -93,5 +97,7 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/straight" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

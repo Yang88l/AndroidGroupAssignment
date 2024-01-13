@@ -6,6 +6,7 @@
     tools:context=".plan_history"
     android:layout_height="match_parent">
 
+
     <include
         android:id="@+id/topnavi"
         layout="@layout/topnavi"/>
