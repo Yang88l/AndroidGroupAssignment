@@ -1,30 +1,30 @@
 <resources>
-    <string name="app_name">GroupAssignment</string>
+    <string name="app_name">BookSwift</string>
 
     <string name="general_term_1">
-        By accessing and placing an order with Go Travel,
+        By accessing and placing an order with BookSwift,
         you confirm that you are in agreement with and bound by the terms of service contained in the Terms and Conditions outlined below.
-        These terms apply to the entire app and any email or other type of communication between you and Go Travel.
+        These terms apply to the entire app and any email or other type of communication between you and BookSwift.
     </string>
 
     <string name="general_term_2">
-        Under no circumstances shall Go Travel team be liable for any direct, indirect, special, incidental or consequential damages,
+        Under no circumstances shall BookSwift team be liable for any direct, indirect, special, incidental or consequential damages,
         including, but not limited to, loss of data or profit, arising out of the use,
-        or the inability to use, the materials on this site, even if Go Travel team
+        or the inability to use, the materials on this site, even if BookSwift team
         or an authorized representative has been advised of the possibility of such damages.
         If your use of materials from  the site results in the need for servicing, repair or correction of equipment or data,
         you assume any costs thereof.
     </string>
 
     <string name="general_term_3">
-        Go Travel will not be responsible for any outcome that may occur during th course of usage of our resources.
+        BookSwift will not be responsible for any outcome that may occur during th course of usage of our resources.
         We reserve the rights to change prices and revise the resources usage of policy in any moment.
     </string>
 
     <string name="license">
-        Go Travel grants you a revocable, non-exclusive, non-transferable, limited license to download,
+        BookSwift grants you a revocable, non-exclusive, non-transferable, limited license to download,
         install and use the app strictly in accordance with the terms of this Agreement.
-        These Terms and Conditions are a contract between you and Go Travel.
+        These Terms and Conditions are a contract between you and BookSwift.
     </string>
 
     <string name="terms_conditions">
@@ -33,38 +33,38 @@
         you, such as your language preference or login information.
 \n\n
         Company: When this policy mentions "Company," "we," "us," or "our," it refers to the
-        Booking App, the entity responsible for your information under this Privacy Policy.
+        BookSwift, the entity responsible for your information under this Privacy Policy.
 \n\n
-        Country: The location where the Booking App or its owners/founders are based; in this
+        Country: The location where the BookSwift or its owners/founders are based; in this
         case, Malaysia.
 \n\n
         Customer: Refers to the company, organization, or person that signs up to use the
-        Booking App Service to manage relationships with consumers or service users.
+        BookSwift Service to manage relationships with consumers or service users.
 \n\n
         Device: Any internet-connected device such as a phone, tablet, computer, or any other
-        device that can be used to visit the Booking App and use its services.
+        device that can be used to visit the BookSwift and use its services.
 \n\n
         IP address: Every device connected to the Internet is assigned a number known as an
         Internet Protocol (IP) address. These numbers are usually assigned in geographic
         blocks. An IP address can often be used to identify the location from which a device
         is connecting to the Internet.
 \n\n
-        Personnel: Refers to individuals employed by the Booking App or under contract to
+        Personnel: Refers to individuals employed by the BookSwift or under contract to
         perform a service on behalf of one of the parties.
 \n\n
         Personal Data: Any information that directly, indirectly, or in connection with other
         information, including a personal identification number, allows for the identification
         or identifiability of a natural person.
 \n\n
-        Service: Refers to the service provided by the Booking App as described in the
+        Service: Refers to the service provided by the BookSwift as described in the
         respective forms (if available) and on this platform.
 \n\n
         Third-party service: Refers to advertisers, contest sponsors, promotional and
         marketing partners, and others who provide content or products/services that may
         interest you.
 \n\n
-        Website: The Booking App\'s site, which can be accessed via this URL.
-        You: A person or entity that is registered with the Booking App to use the Services.
+        Website: The BookSwift\'s site, which can be accessed via this URL.
+        You: A person or entity that is registered with the BookSwift to use the Services.
 
     </string>
 
@@ -78,7 +78,7 @@
 \n\n
         Modify, create derivative works of, disassemble, decrypt, reverse compile, or reverse
         engineer any part of the service. Remove, alter, or obscure any proprietary notice
-        (including any notice of copyright or trademark) of the Booking App, its affiliates,
+        (including any notice of copyright or trademark) of the BookSwift, its affiliates,
         partners, suppliers, or licensors of the service.
     </string>
 
@@ -193,7 +193,7 @@ Our platforms and their entire contents, features, and functionality (including 
     </string>
 
     <string name="Agreement_to_Arbitrate">
-This section applies to any dispute except those relating to claims for injunctive or equitable relief regarding the enforcement or validity of your or Go Travel intellectual property rights. The term "dispute" means any disagreement between you and us concerning the Services or this agreement, in any legal or equitable manner. Notice of Dispute:
+This section applies to any dispute except those relating to claims for injunctive or equitable relief regarding the enforcement or validity of your or BookSwift intellectual property rights. The term "dispute" means any disagreement between you and us concerning the Services or this agreement, in any legal or equitable manner. Notice of Dispute:
         \n\n
 In the event of a dispute, you or us must give the other a Notice of Dispute. This written statement must include the name, address, contact information of the party giving it, the facts giving rise to the dispute, and the relief requested. Any Notice of Dispute should be sent via email to hongyanglim00@gmail.com. We will send any Notice of Dispute to your address if available, or to your email address. Both parties will attempt to resolve the dispute through informal negotiation within sixty (60) days from the date the Notice of Dispute is sent. After this period, arbitration may commence.
     </string>

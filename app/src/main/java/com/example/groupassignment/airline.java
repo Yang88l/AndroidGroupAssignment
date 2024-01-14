@@ -6,17 +6,24 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
+
+import com.example.groupassignment.dbmanagers.dbmanager_choose_airline;
+import com.example.groupassignment.dbmanagers.dbmanager_login_history;
 
 public class airline extends AppCompatActivity {
-    private dbmanager_choose_airline dbmanager_choose_airline;
-    private dbmanager_login_history dbmanager_login_history;
+    private com.example.groupassignment.dbmanagers.dbmanager_choose_airline dbmanager_choose_airline;
+    private com.example.groupassignment.dbmanagers.dbmanager_login_history dbmanager_login_history;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.airline);
+
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
+
+        //Background
+        background.video(this);
     }
 
     public void airasia(View view) {
@@ -47,5 +54,21 @@ public class airline extends AppCompatActivity {
         dbmanager_choose_airline.insert(airline_id, getUserID());
         dbmanager_choose_airline.close();
         main.updateVersion();
+    }
+    public void notification(View view) { startActivity(new Intent(this, notification.class));}
+    public void home(View view) {
+        startActivity(new Intent(this, main.class));
+    }
+
+    public void heart(View view) {
+        startActivity(new Intent(this, my_favourite.class));
+    }
+
+    public void history(View view) {
+        startActivity(new Intent(this, book_history.class));
+    }
+
+    public void profile(View view) {
+        startActivity(new Intent(this, profile.class));
     }
 }

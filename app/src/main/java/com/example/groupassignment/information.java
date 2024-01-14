@@ -9,23 +9,46 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.groupassignment.dbmanagers.dbmanager_accomodation_info;
+import com.example.groupassignment.dbmanagers.dbmanager_book_summary;
+import com.example.groupassignment.dbmanagers.dbmanager_choose_accomodation;
+import com.example.groupassignment.dbmanagers.dbmanager_choose_food;
+import com.example.groupassignment.dbmanagers.dbmanager_choose_play;
+import com.example.groupassignment.dbmanagers.dbmanager_food_info;
+import com.example.groupassignment.dbmanagers.dbmanager_login_history;
+import com.example.groupassignment.dbmanagers.dbmanager_plan_summary;
+import com.example.groupassignment.dbmanagers.dbmanager_play_info;
 
 public class information extends AppCompatActivity {
 
-    private dbmanager_choose_accomodation dbmanager_choose_accomodation;
-    private dbmanager_choose_food dbmanager_choose_food;
-    private dbmanager_choose_play dbmanager_choose_play;
-    private dbmanager_accomodation_info dbmanager_accomodation_info;
-    private dbmanager_food_info dbmanager_food_info;
-    private dbmanager_play_info dbmanager_play_info;
-    private dbmanager_login_history dbmanager_login_history;
-    private dbmanager_plan_summary dbmanager_plan_summary;
-    private com.example.groupassignment.dbmanager_book_summary dbmanager_book_summary;
+    private com.example.groupassignment.dbmanagers.dbmanager_choose_accomodation dbmanager_choose_accomodation;
+    private com.example.groupassignment.dbmanagers.dbmanager_choose_food dbmanager_choose_food;
+    private com.example.groupassignment.dbmanagers.dbmanager_choose_play dbmanager_choose_play;
+    private com.example.groupassignment.dbmanagers.dbmanager_accomodation_info dbmanager_accomodation_info;
+    private com.example.groupassignment.dbmanagers.dbmanager_food_info dbmanager_food_info;
+    private com.example.groupassignment.dbmanagers.dbmanager_play_info dbmanager_play_info;
+    private com.example.groupassignment.dbmanagers.dbmanager_login_history dbmanager_login_history;
+    private com.example.groupassignment.dbmanagers.dbmanager_plan_summary dbmanager_plan_summary;
+    private com.example.groupassignment.dbmanagers.dbmanager_book_summary dbmanager_book_summary;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.information);
+
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
+
+        //Background
+        background.video(this);
+
+        Intent intent = getIntent();
+        int _id = intent.getIntExtra("_id", 0);
+        String from = intent.getStringExtra("from");
+
+        Toast.makeText(this, _id+from, Toast.LENGTH_SHORT).show();
 
         Button button = findViewById(R.id.button19);
 
@@ -43,10 +66,6 @@ public class information extends AppCompatActivity {
         dbmanager_login_history.close();
         main.updateVersion();
 
-        Intent intent = getIntent();
-        //get id
-        int _id = Integer.parseInt(intent.getStringExtra("_id"));
-        String from = intent.getStringExtra("from");
 
         if (from.equals("hotel")) {
             dbmanager_accomodation_info = new dbmanager_accomodation_info(this);
@@ -59,7 +78,7 @@ public class information extends AppCompatActivity {
 
             //display price
             TextView price = findViewById(R.id.textView29);
-            price.setText(cursor.getString(2));
+            price.setText("RM"+cursor.getString(2));
 
             //display image
             ImageView img = findViewById(R.id.output_user_choose);
@@ -79,7 +98,7 @@ public class information extends AppCompatActivity {
 
             //display price
             TextView price = findViewById(R.id.textView29);
-            price.setText(cursor.getString(2));
+            price.setText("RM"+cursor.getString(2));
 
             //display image
             ImageView img = findViewById(R.id.output_user_choose);
@@ -99,7 +118,7 @@ public class information extends AppCompatActivity {
 
             //display price
             TextView price = findViewById(R.id.textView29);
-            price.setText(cursor.getString(2));
+            price.setText("RM"+cursor.getString(2));
 
             //display image
             ImageView img = findViewById(R.id.output_user_choose);
@@ -112,8 +131,7 @@ public class information extends AppCompatActivity {
 
     public void book(View view) {
         Intent intent = getIntent();
-        //get id
-        int _id = Integer.parseInt(intent.getStringExtra("_id"));
+        int _id = intent.getIntExtra("_id", 0);
         String from = intent.getStringExtra("from");
 
         dbmanager_login_history = new dbmanager_login_history(this);
@@ -121,10 +139,11 @@ public class information extends AppCompatActivity {
         Cursor cursor_login = dbmanager_login_history.fetch();
         cursor_login.moveToLast();
         String activity = cursor_login.getString(2);
+        int login_id = cursor_login.getInt(0);
         cursor_login.close();
         dbmanager_login_history.close();
         main.updateVersion();
-
+/*
         if (from.equals("hotel")) {
             dbmanager_choose_accomodation = new dbmanager_choose_accomodation(this);
             dbmanager_choose_accomodation.open();
@@ -146,20 +165,21 @@ public class information extends AppCompatActivity {
             dbmanager_choose_play.close();
             main.updateVersion();
         }
-
+*/
         if (activity.equals("plan")) {
             dbmanager_plan_summary = new dbmanager_plan_summary(this);
             dbmanager_plan_summary.open();
-            dbmanager_plan_summary.insert(from, _id, getUserID());
+            dbmanager_plan_summary.insert(from, _id, getUserID(), login_id);
             dbmanager_plan_summary.close();
             main.updateVersion();
+
             intent = new Intent(this,planning_summary.class);
             startActivity(intent);
         }
         else if (activity.equals("book")) {
             dbmanager_book_summary = new dbmanager_book_summary(this);
             dbmanager_book_summary.open();
-            dbmanager_book_summary.insert(from, _id, getUserID());
+            dbmanager_book_summary.insert(from, _id, getUserID()); //add login_id
             dbmanager_book_summary.close();
             main.updateVersion();
             intent = new Intent(this,booking_summary.class);
@@ -177,5 +197,21 @@ public class information extends AppCompatActivity {
         dbmanager_login_history.close();
         main.updateVersion();
         return user_id;
+    }
+    public void notification(View view) { startActivity(new Intent(this, notification.class));}
+    public void home(View view) {
+        startActivity(new Intent(this, main.class));
+    }
+
+    public void heart(View view) {
+        startActivity(new Intent(this, my_favourite.class));
+    }
+
+    public void history(View view) {
+        startActivity(new Intent(this, book_history.class));
+    }
+
+    public void profile(View view) {
+        startActivity(new Intent(this, profile.class));
     }
 }

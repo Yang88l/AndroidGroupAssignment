@@ -3,16 +3,13 @@ package com.example.groupassignment;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
 public class book_history extends AppCompatActivity {
-    private dbmanager_book_history dbmanager_book_history;
-    private dbhelper_book_history dbhelper_book_history;
+    private com.example.groupassignment.dbmanagers.dbmanager_book_history dbmanager_book_history;
+    private com.example.groupassignment.dbhelpers.dbhelper_book_history dbhelper_book_history;
 
     private TextView location_text, cost_text, date_text, status_text;
     private String location, cost, date, status;
@@ -23,6 +20,12 @@ public class book_history extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.book_history);
+
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
+
+        //Background
+        background.video(this);
 
 /*
         dbmanager_book_history = new dbmanager_book_history(this);
@@ -78,31 +81,25 @@ public class book_history extends AppCompatActivity {
     }
 
     public void notification(View view) {
-        Intent intent = new Intent (this, notification.class);
-        startActivity(intent);
+        startActivity(new Intent(this, notification.class));
     }
     public void home(View view) {
-        Intent intent = new Intent(this, main.class);
-        startActivity(intent);
+        startActivity(new Intent(this, main.class));
     }
 
     public void heart(View view) {
-        Intent intent = new Intent(this, my_favourite.class);
-        startActivity(intent);
+        startActivity(new Intent(this, my_favourite.class));
     }
 
     public void history(View view) {
-        Intent intent = new Intent(this, book_history.class);
-        startActivity(intent);
+        startActivity(new Intent(this, book_history.class));
     }
 
     public void profile(View view) {
-        Intent intent = new Intent(this, profile.class);
-        startActivity(intent);
+        startActivity(new Intent(this, profile.class));
     }
 
-    public void planhistory(View view) {
-        Intent intent = new Intent(this, plan_history.class);
-        startActivity(intent);
+    public void plan_history(View view) {
+        startActivity(new Intent(this, plan_history.class));
     }
 }

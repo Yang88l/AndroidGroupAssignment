@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,19 +17,23 @@
         android:theme="@style/Theme.GroupAssignment"
         tools:targetApi="31">
         <activity
-            android:name=".testingggg"
+            android:name=".background"
             android:exported="false" />
+        <activity android:name=".main" />
         <activity
-            android:name=".test"
-            android:exported="false" />
-        <activity
-            android:name=".sign_up_login"
-            android:exported="false" />
+            android:name=".loading_screen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".bus"
             android:exported="false" />
         <activity
-            android:name=".time"
+            android:name=".time_flight"
             android:exported="false" />
         <activity
             android:name=".information"
@@ -76,9 +84,6 @@
             android:name=".info_flight"
             android:exported="false" />
         <activity
-            android:name=".time_flight"
-            android:exported="false" />
-        <activity
             android:name=".calendar_flight"
             android:exported="false" />
         <activity
@@ -93,23 +98,11 @@
         <activity
             android:name=".accommodation"
             android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".main" />
         <activity android:name=".booking_summary" />
         <activity android:name=".choose" />
         <activity android:name=".edit_profile" />
-        <activity android:name=".filter" />
         <activity android:name=".food" />
         <activity android:name=".log_in" />
-        <activity android:name=".other_filter_options" />
         <activity android:name=".payment" />
         <activity android:name=".payment_method" />
         <activity android:name=".payment_successful" />

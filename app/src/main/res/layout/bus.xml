@@ -6,65 +6,30 @@
     android:layout_height="match_parent"
     tools:context=".bus">
 
+    <include
+        android:id="@+id/topnavi"
+        layout="@layout/topnavi"/>
+
+    <include
+        android:id="@+id/include2"
+        layout="@layout/background"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="-10dp" />
+
     <TextView
         android:id="@+id/transport3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
         android:layout_marginTop="148dp"
         android:layout_marginBottom="18dp"
         android:text="Select Bus Company"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/soutern"
-        app:layout_constraintEnd_toStartOf="@+id/imageView8"
-        app:layout_constraintHorizontal_bias="0.433"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.065" />
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="15dp"
-        android:text="Booking App"
-        android:textSize="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/line"
-        android:layout_width="302dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="36dp"
-        android:scaleX="8"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/straight" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        android:onClick="notification"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/notification" />
+        app:layout_constraintVertical_bias="0.07" />
 
     <ImageView
         android:id="@+id/imageView10"
@@ -121,38 +86,47 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/straight" />
+
     <Button
         android:id="@+id/city_express"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="96dp"
+        android:layout_marginBottom="204dp"
+        android:background="@drawable/button_design"
         android:onClick="city_express"
         android:text="City Express"
+        android:textColor="#0096FF"
         app:layout_constraintBottom_toTopOf="@+id/line2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/mayang_sari"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/mayang_sari" />
 
     <Button
         android:id="@+id/soutern"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="56dp"
+        android:layout_marginTop="208dp"
+        android:background="@drawable/button_design"
         android:onClick="soutern"
         android:text="Soutern"
-        app:layout_constraintBottom_toTopOf="@+id/mayang_sari"
+        android:textColor="#0096FF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/topnavi" />
 
     <Button
         android:id="@+id/mayang_sari"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="200dp"
+        android:layout_marginBottom="276dp"
+        android:background="@drawable/button_design"
         android:onClick="mayang_sari"
         android:text="Mayang Sari"
+        android:textColor="#0096FF"
         app:layout_constraintBottom_toTopOf="@+id/line2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/soutern"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/soutern" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

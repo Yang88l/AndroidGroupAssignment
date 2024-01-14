@@ -19,6 +19,12 @@ public class payment_successful extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.payment_successful);
 
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
+
+        //Background
+        background.video(this);
+
         //ASSIGN ID
         price_text = findViewById(R.id.price_text);
 
@@ -35,6 +41,21 @@ public class payment_successful extends AppCompatActivity {
         Intent intent = new Intent(payment_successful.this, main.class);
         startActivity(intent);
     }
+    public void notification(View view) { startActivity(new Intent(this, notification.class));}
+    public void home(View view) {
+        startActivity(new Intent(this, main.class));
+    }
 
+    public void heart(View view) {
+        startActivity(new Intent(this, my_favourite.class));
+    }
+
+    public void history(View view) {
+        startActivity(new Intent(this, book_history.class));
+    }
+
+    public void profile(View view) {
+        startActivity(new Intent(this, profile.class));
+    }
   
 }

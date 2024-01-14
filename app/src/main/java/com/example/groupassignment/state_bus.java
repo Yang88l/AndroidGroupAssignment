@@ -7,15 +7,25 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.groupassignment.dbmanagers.dbmanager_choose_bus;
+import com.example.groupassignment.dbmanagers.dbmanager_login_history;
+
 public class state_bus extends AppCompatActivity {
 
-    private dbmanager_choose_bus dbmanager_choose_bus;
-    private com.example.groupassignment.dbmanager_login_history dbmanager_login_history;
+    private com.example.groupassignment.dbmanagers.dbmanager_choose_bus dbmanager_choose_bus;
+    private com.example.groupassignment.dbmanagers.dbmanager_login_history dbmanager_login_history;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.state_bus);
+
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
+
+        //Background
+        background.video(this);
+
     }
     public void selangor(View view) {
         chooseState("Selangor");
@@ -53,5 +63,20 @@ public class state_bus extends AppCompatActivity {
         main.updateVersion();
         return user_id;
     }
+    public void notification(View view) { startActivity(new Intent(this, notification.class));}
+    public void home(View view) {
+        startActivity(new Intent(this, main.class));
+    }
 
+    public void heart(View view) {
+        startActivity(new Intent(this, my_favourite.class));
+    }
+
+    public void history(View view) {
+        startActivity(new Intent(this, book_history.class));
+    }
+
+    public void profile(View view) {
+        startActivity(new Intent(this, profile.class));
+    }
 }

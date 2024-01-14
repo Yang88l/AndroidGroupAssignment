@@ -7,12 +7,20 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.groupassignment.dbmanagers.dbmanager_user;
+
 public class set_picture extends AppCompatActivity {
-    private dbmanager_user dbmanager_user;
+    private com.example.groupassignment.dbmanagers.dbmanager_user dbmanager_user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.set_picture);
+
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
+
+        //Background
+        background.video(this);
     }
 
     public void camera(View view) {

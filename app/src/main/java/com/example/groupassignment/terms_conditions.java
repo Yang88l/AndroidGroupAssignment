@@ -17,6 +17,9 @@ public class terms_conditions extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.terms_conditions);
+
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
     }
 
     public void OK(View view) {
@@ -35,3 +38,4 @@ public class terms_conditions extends AppCompatActivity {
         sign_up.isChecked = ((CheckBox) view).isChecked();
     }
 }
+

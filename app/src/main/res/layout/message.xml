@@ -6,49 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".message">
 
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="15dp"
-        android:text="Booking App"
-        android:textSize="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <include
+        android:id="@+id/topnavi"
+        layout="@layout/topnavi"/>
 
-    <ImageView
-        android:id="@+id/line"
-        android:layout_width="302dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="36dp"
-        android:scaleX="8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/straight" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        android:onClick="notif"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/notification" />
+    <include
+        layout="@layout/background"/>
 
     <ImageView
         android:id="@+id/imageView10"
@@ -95,7 +58,6 @@
         app:srcCompat="@drawable/profile" />
 
     <ImageView
-        android:id="@+id/line"
         android:layout_width="302dp"
         android:layout_height="52dp"
         android:layout_marginBottom="72dp"
@@ -122,17 +84,18 @@
             android:id="@+id/notification"
             android:layout_width="206dp"
             android:layout_height="match_parent"
-            android:background="#000000"
+            android:background="#27caf2"
             android:onClick="notification"
+            android:layout_margin="1dp"
             android:text="Notification" />
 
         <Button
             android:id="@+id/message"
             android:layout_width="206dp"
             android:layout_height="match_parent"
-            android:background="#000000"
-            android:text="Message"
-            android:textSize="18sp" />
+            android:layout_margin="1dp"
+            android:background="#27caf2"
+            android:text="Message" />
     </LinearLayout>
 
     <LinearLayout
@@ -258,5 +221,7 @@
             android:textSize="24sp" />
 
     </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,6 @@
 package com.example.groupassignment;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -10,16 +9,30 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.groupassignment.dbhelpers.dbhelper_login_history;
+import com.example.groupassignment.dbhelpers.dbhelper_user;
+import com.example.groupassignment.dbmanagers.dbmanager_favourite;
+import com.example.groupassignment.dbmanagers.dbmanager_login_history;
+import com.example.groupassignment.dbmanagers.dbmanager_plan_history;
+import com.example.groupassignment.dbmanagers.dbmanager_user;
+
 public class sign_up extends AppCompatActivity {
-    private com.example.groupassignment.dbmanager_user dbmanager_user;
-    private com.example.groupassignment.dbmanager_login_history dbmanager_login_history;
+    private com.example.groupassignment.dbmanagers.dbmanager_user dbmanager_user;
+    private com.example.groupassignment.dbmanagers.dbmanager_login_history dbmanager_login_history;
     public static boolean isChecked=false;
-    private com.example.groupassignment.dbmanager_favourite dbmanager_favourite;
+    private com.example.groupassignment.dbmanagers.dbmanager_favourite dbmanager_favourite;
+    private com.example.groupassignment.dbmanagers.dbmanager_plan_history dbmanager_plan_history;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_up);
+
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
+
+        //Background
+        background.video(this);
 
         EditText editTextName = findViewById(R.id.editTextText);
         EditText editTextEmail = findViewById(R.id.editTextText2);
@@ -88,6 +101,13 @@ public class sign_up extends AppCompatActivity {
                 dbmanager_login_history.insert(user_id, "logged in", "null");
                 dbmanager_login_history.close();
                 main.updateVersion();
+
+                dbmanager_plan_history = new dbmanager_plan_history(this);
+                dbmanager_plan_history.open();
+                dbmanager_plan_history.insert(getUserID(), getLoginID(), "", "");
+                dbmanager_plan_history.close();
+                main.updateVersion();
+
                 Toast.makeText(this, dbhelper_login_history.DB_VERSION + "" + dbhelper_user.DB_VERSION, Toast.LENGTH_SHORT).show();
 
                 dbmanager_favourite = new dbmanager_favourite(this);
@@ -102,6 +122,7 @@ public class sign_up extends AppCompatActivity {
                 dbmanager_favourite.insert(user_id, "food", 2, 0);
                 dbmanager_favourite.insert(user_id, "food", 3, 0);
                 dbmanager_favourite.close();
+                main.updateVersion();
 
                 Intent intent = new Intent(this, set_picture.class);
                 startActivity(intent);
@@ -140,5 +161,45 @@ public class sign_up extends AppCompatActivity {
         intent.putExtra("password2", password2);
 
         startActivity(intent);
+    }
+    public void notification(View view) { startActivity(new Intent(this, notification.class));}
+    public void home(View view) {
+        startActivity(new Intent(this, main.class));
+    }
+
+    public void heart(View view) {
+        startActivity(new Intent(this, my_favourite.class));
+    }
+
+    public void history(View view) {
+        startActivity(new Intent(this, book_history.class));
+    }
+
+    public void profile(View view) {
+        startActivity(new Intent(this, profile.class));
+    }
+
+    public int getUserID(){
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor_login = dbmanager_login_history.fetch();
+        cursor_login.moveToLast();
+        int user_id=Integer.parseInt(cursor_login.getString(1));
+        cursor_login.close();
+        dbmanager_login_history.close();
+        main.updateVersion();
+        return user_id;
+    }
+
+    public int getLoginID(){
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor_login = dbmanager_login_history.fetch();
+        cursor_login.moveToLast();
+        int login_id=Integer.parseInt(cursor_login.getString(0));
+        cursor_login.close();
+        dbmanager_login_history.close();
+        main.updateVersion();
+        return login_id;
     }
 }

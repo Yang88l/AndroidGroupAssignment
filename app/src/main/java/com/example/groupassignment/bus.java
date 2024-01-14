@@ -7,13 +7,21 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.groupassignment.dbmanagers.dbmanager_choose_bus;
+
 public class bus extends AppCompatActivity {
-    private com.example.groupassignment.dbmanager_choose_bus dbmanager_choose_bus;
+    private com.example.groupassignment.dbmanagers.dbmanager_choose_bus dbmanager_choose_bus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bus);
+
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
+
+        //Background
+        background.video(this);
     }
 
     public void soutern(View view) {
@@ -28,28 +36,21 @@ public class bus extends AppCompatActivity {
         chooseBus(3);
     }
 
-    public void notification(View view) {
-        Intent intent = new Intent (this, notification.class);
-        startActivity(intent);
-    }
-    public void main(View view) {
-        Intent intent = new Intent(this,main.class);
-        startActivity(intent);
-    }
-
-    public void profile(View view) {
-        Intent intent = new Intent(this,profile.class);
-        startActivity(intent);
-    }
-
-    public void history(View view) {
-        Intent intent = new Intent(this,book_history.class);
-        startActivity(intent);
+    public void notification(View view) { startActivity(new Intent(this, notification.class));}
+    public void home(View view) {
+        startActivity(new Intent(this, main.class));
     }
 
     public void heart(View view) {
-        Intent intent = new Intent(this, my_favourite.class);
-        startActivity(intent);
+        startActivity(new Intent(this, my_favourite.class));
+    }
+
+    public void history(View view) {
+        startActivity(new Intent(this, book_history.class));
+    }
+
+    public void profile(View view) {
+        startActivity(new Intent(this, profile.class));
     }
 
     public void chooseBus(int bus_id) {

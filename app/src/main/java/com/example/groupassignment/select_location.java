@@ -17,6 +17,12 @@ public class select_location extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.select_location);
 
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
+
+        //Background
+        background.video(this);
+
         ConstraintLayout parentLayout = findViewById(R.id.parent_layout);
 
         for (int i = 0; i < parentLayout.getChildCount(); i++) {
