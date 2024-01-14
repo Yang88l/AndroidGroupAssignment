@@ -56,7 +56,7 @@ public class seat_bus extends AppCompatActivity {
         if (activity.equals("plan")) {
             dbmanager_plan_summary = new dbmanager_plan_summary(this);
             dbmanager_plan_summary.open();
-            dbmanager_plan_summary.insert("bus", getBusID(), getUserID());
+            dbmanager_plan_summary.insert("bus", getBusID(), getUserID(), 1); //change login id later
             dbmanager_plan_summary.close();
             main.updateVersion();
             Intent intent = new Intent(this,planning_summary.class);

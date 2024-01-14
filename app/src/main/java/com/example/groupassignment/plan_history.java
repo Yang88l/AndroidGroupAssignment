@@ -6,74 +6,54 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
 
+import com.example.groupassignment.dbmanagers.dbmanager_login_history;
 import com.example.groupassignment.dbmanagers.dbmanager_plan_history;
+
+import java.util.ArrayList;
 
 public class plan_history extends AppCompatActivity {
 
     private com.example.groupassignment.dbmanagers.dbmanager_plan_history dbmanager_plan_history;
+    private com.example.groupassignment.dbmanagers.dbmanager_login_history dbmanager_login_history;
+    //private ListView simpleList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.plan_history);
 
-        //Top Navigation
-        BaseActivity.setupToolbar(this);
-
-        TextView a = findViewById(R.id.a);
-        TextView b = findViewById(R.id.b);
-        TextView c = findViewById(R.id.c);
-        TextView a2 = findViewById(R.id.a2);
-        TextView b2 = findViewById(R.id.b2);
-        TextView c2 = findViewById(R.id.c2);
-        TextView a3 = findViewById(R.id.a3);
-        TextView b3 = findViewById(R.id.b3);
-        TextView c3 = findViewById(R.id.c3);
-        TextView a4 = findViewById(R.id.a4);
-        TextView b4 = findViewById(R.id.b4);
-        TextView c4 = findViewById(R.id.c4);
-        TextView price = findViewById(R.id.price_text1);
-        TextView price2 = findViewById(R.id.price_text2);
-        TextView price3 = findViewById(R.id.price_text3);
-        TextView price4 = findViewById(R.id.price_text4);
+        ArrayList<String> namesList = new ArrayList<>();
+        ArrayList<String> pricesList = new ArrayList<>();
+        //ArrayList<String> imagesList = new ArrayList<>();
 
         dbmanager_plan_history = new dbmanager_plan_history(this);
         dbmanager_plan_history.open();
-        Cursor cursor = dbmanager_plan_history.fetch();
+        Cursor cursor = dbmanager_plan_history.fetch(getUserID());
 
-        String location ="";
-        double cost = 0;
-        String date = "";
-        String status = "";
+        if (cursor != null && cursor.moveToFirst()) {
+            do {
+                String itemName = cursor.getString(2);
+                String itemPrice = cursor.getString(3);
 
-        cursor.moveToLast();
-        location = cursor.getString(2); 
-        cost = Double.parseDouble(cursor.getString(3));
-        date = cursor.getString(4);
-        status = cursor.getString(5);
-        cursor.close();
+                namesList.add(itemName);
+                pricesList.add(itemPrice);
+            } while (cursor.moveToNext());
+        }
 
-        a.setText(location);
-        c.setText(date);
-        b.setText(status);
-        price.setText(String.format("RM%.2f",cost));
+        String[] names = namesList.toArray(new String[0]);
+        String[] prices = pricesList.toArray(new String[0]);
+        //String[] images = imagesList.toArray(new String[0]);
 
-        a2.setText(location);
-        c2.setText(date);
-        b2.setText(status);
-        price2.setText(String.format("RM%.2f",cost));
+        ListView simpleList = findViewById(R.id.simpleListView);
+        CustomAdapter customAdapter = new CustomAdapter(this, names, prices);
+        simpleList.setAdapter(customAdapter);
 
-        a3.setText(location);
-        c3.setText(date);
-        b3.setText(status);
-        price3.setText(String.format("RM%.2f",cost));
-
-        a4.setText(location);
-        c4.setText(date);
-        b4.setText(status);
-        price4.setText(String.format("RM%.2f",cost));
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
 
         dbmanager_plan_history.close();
         main.updateVersion();
@@ -94,5 +74,17 @@ public class plan_history extends AppCompatActivity {
 
     public void profile(View view) {
         startActivity(new Intent(this, profile.class));
+    }
+
+    public int getUserID(){
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor_login = dbmanager_login_history.fetch();
+        cursor_login.moveToLast();
+        int user_id=Integer.parseInt(cursor_login.getString(1));
+        cursor_login.close();
+        dbmanager_login_history.close();
+        main.updateVersion();
+        return user_id;
     }
 }

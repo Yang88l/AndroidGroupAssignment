@@ -15,11 +15,8 @@ public class dbhelper_book_history extends SQLiteOpenHelper {
     // Table columns
     public static final String BOOK_HISTORY_ID = "book_history_id";
     public static final String USER_ID = "user_id";
-    public static final String LOCATION = "location";
+    public static final String ACTIVITY = "activity";
     public static final String COST = "cost";
-    public static final String DATE = "date";
-    public static final String STATUS = "status";
-    public static final String BOOK_SUMMARY_ID = "book_summary_id";
 
     // Database Information
     static final String DB_NAME = "JOURNALDEV_TRAVEL_BOOKING.DB";
@@ -32,11 +29,8 @@ public class dbhelper_book_history extends SQLiteOpenHelper {
             + TABLE_NAME + "("
             + BOOK_HISTORY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + USER_ID + " INTEGER NOT NULL, "
-            + LOCATION + " TEXT NOT NULL, "
-            + COST + " DOUBLE NOT NULL, "
-            + DATE + " DATE NOT NULL, "
-            + STATUS + " TEXT NOT NULL, "
-            + BOOK_SUMMARY_ID + " INTEGER NOT NULL "
+            + ACTIVITY + " TEXT NOT NULL, "
+            + COST + " TEXT NOT NULL "
             + ")";
 
     public dbhelper_book_history(Context context) {

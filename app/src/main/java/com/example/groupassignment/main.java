@@ -7,6 +7,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -46,8 +49,12 @@ import com.example.groupassignment.dbmanagers.dbmanager_login_history;
 import com.example.groupassignment.dbmanagers.dbmanager_airline_info;
 import com.example.groupassignment.dbmanagers.dbmanager_bus;
 import com.example.groupassignment.dbmanagers.dbmanager_food_info;
+import com.example.groupassignment.dbmanagers.dbmanager_plan_history;
+import com.example.groupassignment.dbmanagers.dbmanager_plan_summary;
 import com.example.groupassignment.dbmanagers.dbmanager_play_info;
 import com.example.groupassignment.dbmanagers.dbmanager_accomodation_info;
+
+
 
 public class main extends AppCompatActivity {
     private com.example.groupassignment.dbmanagers.dbmanager_login_history dbmanager_login_history;
@@ -57,6 +64,9 @@ public class main extends AppCompatActivity {
     private com.example.groupassignment.dbmanagers.dbmanager_food_info dbmanager_food_info;
     private com.example.groupassignment.dbmanagers.dbmanager_play_info dbmanager_play_info;
     private com.example.groupassignment.dbmanagers.dbmanager_accomodation_info dbmanager_accomodation_info;
+    private com.example.groupassignment.dbmanagers.dbmanager_plan_summary dbmanager_plan_summary;
+    private com.example.groupassignment.dbmanagers.dbmanager_plan_history dbmanager_plan_history;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,10 +75,7 @@ public class main extends AppCompatActivity {
         //Top Navigation
         BaseActivity.setupToolbar(this);
 
-        //Background / video
         background.video(this);
-
-
 
 
         //get latest version
@@ -106,6 +113,7 @@ public class main extends AppCompatActivity {
         }
         dbmanager_login_history.close();
         main.updateVersion();
+
         Intent intent = new Intent(this,select_location.class);
         startActivity(intent);
     }
@@ -151,7 +159,7 @@ public class main extends AppCompatActivity {
         }
     }
     public void home(View view) {
-        startActivity(new Intent(this, book_history.class));
+        startActivity(new Intent(this, main.class));
     }
     public void notification(View view) {
         startActivity(new Intent(this, notification.class));
@@ -160,7 +168,7 @@ public class main extends AppCompatActivity {
         startActivity(new Intent(this, my_favourite.class));
     }
     public void history(View view) {
-        startActivity(new Intent(this, book_history.class));
+        startActivity(new Intent(this, plan_history.class));
     }
 
     public static void updateVersion(){
@@ -208,6 +216,12 @@ public class main extends AppCompatActivity {
         dbmanager_login_history.close();
         main.updateVersion();
 
+        dbmanager_plan_history = new dbmanager_plan_history(this);
+        dbmanager_plan_history.open();
+        dbmanager_plan_history.insert(getUserID(), getLoginID(), "", "");
+        dbmanager_plan_history.close();
+        main.updateVersion();
+
         dbmanager_airline_info = new dbmanager_airline_info(this);
         dbmanager_airline_info.open();
         dbmanager_airline_info.insert("Air Asia", 100);
@@ -247,5 +261,29 @@ public class main extends AppCompatActivity {
         dbmanager_accomodation_info.insert("Ocean Hotel", 250, "ocean_hotel");
         dbmanager_accomodation_info.close();
         main.updateVersion();
+    }
+
+    public int getUserID(){
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor_login = dbmanager_login_history.fetch();
+        cursor_login.moveToLast();
+        int user_id=Integer.parseInt(cursor_login.getString(1));
+        cursor_login.close();
+        dbmanager_login_history.close();
+        main.updateVersion();
+        return user_id;
+    }
+
+    public int getLoginID(){
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor_login = dbmanager_login_history.fetch();
+        cursor_login.moveToLast();
+        int login_id=Integer.parseInt(cursor_login.getString(0));
+        cursor_login.close();
+        dbmanager_login_history.close();
+        main.updateVersion();
+        return login_id;
     }
 }
