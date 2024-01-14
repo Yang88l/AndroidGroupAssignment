@@ -27,6 +27,9 @@ public class mrt_putrajaya extends AppCompatActivity {
 
         //Top Navigation
         BaseActivity.setupToolbar(this);
+
+        //Background
+        background.video(this);
     }
 
     //Functions

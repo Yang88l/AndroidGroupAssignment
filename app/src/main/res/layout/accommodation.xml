@@ -190,7 +190,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/lemon"
         android:text="Hotel"
-        android:textColor="@color/black"
+        android:textColor="#FFA500"
         android:textSize="40dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imageView15"

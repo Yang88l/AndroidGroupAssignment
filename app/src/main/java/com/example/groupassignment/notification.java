@@ -21,6 +21,9 @@ public class notification extends AppCompatActivity {
         //Top Navigation
         BaseActivity.setupToolbar(this);
 
+        //Background
+        background.video(this);
+
         TextView text1 = findViewById(R.id.text_1);
         TextView text2 = findViewById(R.id.text_2);
         TextView text3 = findViewById(R.id.text_3);

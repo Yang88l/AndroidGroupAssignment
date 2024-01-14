@@ -32,6 +32,9 @@ public class my_favourite extends AppCompatActivity {
         //Top Navigation
         BaseActivity.setupToolbar(this);
 
+        //Background
+        background.video(this);
+
         boolean hotel_1 = false;
         boolean hotel_2 = false;
         boolean hotel_3 = false;

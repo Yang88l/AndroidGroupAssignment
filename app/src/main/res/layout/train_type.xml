@@ -11,6 +11,9 @@
         android:id="@+id/topnavi"
         layout="@layout/topnavi"/>
 
+    <include
+        layout="@layout/background"/>
+
 
     <Button
         android:id="@+id/ampang"

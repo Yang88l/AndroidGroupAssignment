@@ -41,6 +41,9 @@ public class information extends AppCompatActivity {
         //Top Navigation
         BaseActivity.setupToolbar(this);
 
+        //Background
+        background.video(this);
+
         Intent intent = getIntent();
         int _id = intent.getIntExtra("_id", 0);
         String from = intent.getStringExtra("from");

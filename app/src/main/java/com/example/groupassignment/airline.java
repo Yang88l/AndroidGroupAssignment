@@ -21,6 +21,9 @@ public class airline extends AppCompatActivity {
 
         //Top Navigation
         BaseActivity.setupToolbar(this);
+
+        //Background
+        background.video(this);
     }
 
     public void airasia(View view) {

@@ -24,6 +24,9 @@ public class book_history extends AppCompatActivity {
         //Top Navigation
         BaseActivity.setupToolbar(this);
 
+        //Background
+        background.video(this);
+
 /*
         dbmanager_book_history = new dbmanager_book_history(this);
         dbhelper_book_history = new dbhelper_book_history(this);

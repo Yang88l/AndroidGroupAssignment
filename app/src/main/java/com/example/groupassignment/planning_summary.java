@@ -36,6 +36,9 @@ public class planning_summary extends AppCompatActivity {
         //Top Navigation
         BaseActivity.setupToolbar(this);
 
+        //Background
+        background.video(this);
+
         TextView contentLeft = findViewById(R.id.textView18);
         TextView contentRight = findViewById(R.id.textView19);
 

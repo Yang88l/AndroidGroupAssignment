@@ -65,7 +65,7 @@ public class main extends AppCompatActivity {
         //Top Navigation
         BaseActivity.setupToolbar(this);
 
-        //Background / video
+        //Background
         background.video(this);
 
 

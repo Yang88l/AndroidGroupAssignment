@@ -22,6 +22,9 @@ public class pax_flight extends AppCompatActivity {
 
         //Top Navigation
         BaseActivity.setupToolbar(this);
+
+        //Background
+        background.video(this);
     }
 
     public void buy(View view) {

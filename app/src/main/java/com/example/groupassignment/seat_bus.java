@@ -29,6 +29,9 @@ public class seat_bus extends AppCompatActivity {
 
         //Top Navigation
         BaseActivity.setupToolbar(this);
+
+        //Background
+        background.video(this);
     }
 
     public void pick_up(View view) {

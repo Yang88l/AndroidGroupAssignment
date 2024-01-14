@@ -33,6 +33,9 @@ public class payment extends AppCompatActivity {
         //Top Navigation
         BaseActivity.setupToolbar(this);
 
+        //Background
+        background.video(this);
+
         //ASSIGN ID
         price_text = findViewById(R.id.price_text);
         password = findViewById(R.id.password);

@@ -23,6 +23,9 @@ public class reset_password extends AppCompatActivity {
 
         //Top Navigation
         BaseActivity.setupToolbar(this);
+
+        //Background
+        background.video(this);
     }
 
     public void reset(View view) {

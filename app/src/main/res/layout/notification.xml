@@ -10,6 +10,9 @@
         android:id="@+id/topnavi"
         layout="@layout/topnavi"/>
 
+    <include
+        layout="@layout/background"/>
+
     <ImageView
         android:id="@+id/imageView10"
         android:layout_width="wrap_content"
@@ -80,8 +83,8 @@
             android:id="@+id/button1"
             android:layout_width="206dp"
             android:layout_height="match_parent"
-            android:textSize="18sp"
             android:background="#27caf2"
+            android:layout_margin="1dp"
             android:text="Notification" />
 
         <Button
@@ -90,6 +93,7 @@
             android:layout_height="match_parent"
             android:background="#27caf2"
             android:onClick="message"
+            android:layout_margin="1dp"
             android:text="Message" />
     </LinearLayout>
 

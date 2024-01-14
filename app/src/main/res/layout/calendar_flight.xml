@@ -11,6 +11,9 @@
         android:id="@+id/topnavi"
         layout="@layout/topnavi"/>
 
+    <include
+        layout="@layout/background"/>
+
     <Button
         android:id="@+id/confirm"
         android:layout_width="100dp"
@@ -20,6 +23,8 @@
         android:layout_marginBottom="220dp"
         android:onClick="confirm"
         android:text="Confirm"
+        android:background="@drawable/button_design"
+        android:textColor="#0096FF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

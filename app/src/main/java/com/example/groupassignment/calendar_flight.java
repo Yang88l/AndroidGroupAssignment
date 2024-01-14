@@ -22,6 +22,9 @@ public class calendar_flight extends AppCompatActivity {
 
         //Top Navigation
         BaseActivity.setupToolbar(this);
+
+        //Background
+        background.video(this);
     }
 
     public void confirm(View view) {

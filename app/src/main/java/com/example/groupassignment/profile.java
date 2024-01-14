@@ -25,6 +25,9 @@ public class profile extends AppCompatActivity {
         //Top Navigation
         BaseActivity.setupToolbar(this);
 
+        //Background
+        background.video(this);
+
         dbmanager_user = new dbmanager_user(this);
         dbmanager_user.open();
         Cursor cursor_user = dbmanager_user.fetch(getUserID());

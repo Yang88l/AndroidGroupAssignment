@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".background">
 
+
     <VideoView
         android:id="@+id/background"
         android:layout_width="0dp"

@@ -29,6 +29,9 @@ public class info_flight extends AppCompatActivity {
         //Top Navigation
         BaseActivity.setupToolbar(this);
 
+        //Background
+        background.video(this);
+
         //get date
         dbmanager_flight = new dbmanager_flight(this);
         dbmanager_flight.open();

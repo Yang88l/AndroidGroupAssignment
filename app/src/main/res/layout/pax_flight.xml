@@ -13,6 +13,9 @@
         android:id="@+id/topnavi"
         layout="@layout/topnavi"/>
 
+    <include
+        layout="@layout/background"/>
+
     <TextView
         android:id="@+id/text2"
         android:layout_width="wrap_content"
@@ -61,6 +64,8 @@
         android:layout_marginBottom="56dp"
         android:onClick="buy"
         android:text="Buy Ticket"
+        android:background="@drawable/button_design"
+        android:textColor="#0096FF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.489"

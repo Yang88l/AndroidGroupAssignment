@@ -16,6 +16,9 @@ public class transport extends AppCompatActivity {
 
         //Top Navigation
         BaseActivity.setupToolbar(this);
+
+        //Background
+        background.video(this);
     }
     public void train(View view) {
         startActivity(new Intent(this, train_type.class));

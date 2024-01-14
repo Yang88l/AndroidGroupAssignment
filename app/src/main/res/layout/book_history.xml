@@ -8,6 +8,9 @@
 
 
     <include
+        layout="@layout/background"/>
+
+    <include
         android:id="@+id/topnavi"
         layout="@layout/topnavi"/>
 
@@ -83,6 +86,7 @@
             android:layout_width="206dp"
             android:layout_height="match_parent"
             android:background="#27caf2"
+            android:layout_margin="1dp"
             android:onClick="plan_history"
             android:text="Plan History" />
 
@@ -91,6 +95,7 @@
             android:layout_width="205dp"
             android:layout_height="match_parent"
             android:background="#27caf2"
+            android:layout_margin="1dp"
             android:onClick="book_history"
             android:text="Book History" />
     </LinearLayout>

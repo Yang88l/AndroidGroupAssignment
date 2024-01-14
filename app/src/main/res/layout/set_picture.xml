@@ -10,6 +10,9 @@
         android:id="@+id/topnavi"
         layout="@layout/topnavi"/>
 
+    <include
+        layout="@layout/background"/>
+
     <ImageButton
         android:id="@+id/imageButton"
         android:layout_width="100dp"

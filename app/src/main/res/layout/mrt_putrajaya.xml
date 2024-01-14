@@ -11,13 +11,83 @@
         android:id="@+id/topnavi"
         layout="@layout/topnavi"/>
 
+    <include
+        layout="@layout/background"/>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        app:layout_constraintBottom_toTopOf="@+id/divider3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/topnavi"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/putrajaya" />
+
+    <Button
+        android:id="@+id/button_to"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="52dp"
+        android:labelFor="@id/to"
+        android:onClick="to"
+        android:background="@drawable/button_design"
+        android:textColor="#0096FF"
+        android:text="To"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider3" />
+
+    <TextView
+        android:id="@+id/from"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:background="@drawable/border"
+        android:ems="10"
+        android:text=""
+        android:textAlignment="center"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_from" />
+
+    <Button
+        android:id="@+id/button_from"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="8dp"
+        android:labelFor="@id/from"
+        android:onClick="from"
+        android:background="@drawable/button_design"
+        android:textColor="#0096FF"
+        android:text="From"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider3" />
+
+    <Button
+        android:id="@+id/button22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:onClick="calculate"
+        android:text="Calculate"
+        android:background="@drawable/button_design"
+        android:textColor="#0096FF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/from" />
+
     <TextView
         android:id="@+id/text3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="36dp"
-        android:labelFor="@id/text3"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="12dp"
+        android:labelFor="@id/imageView3"
         android:text="Cost: "
         android:textSize="24dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,24 +97,13 @@
         android:id="@+id/text5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="12dp"
         android:labelFor="@id/cost"
         android:text="Arrival Time: "
         android:textSize="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button24" />
-
-    <ImageView
-        android:id="@+id/line3"
-        android:layout_width="302dp"
-        android:layout_height="52dp"
-        android:scaleX="8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:srcCompat="@drawable/straight" />
-
+        app:layout_constraintTop_toBottomOf="@+id/button22" />
 
     <TextView
         android:id="@+id/time"
@@ -56,43 +115,29 @@
         android:ems="10"
         android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/text5"
-        app:layout_constraintTop_toBottomOf="@+id/button24" />
+        app:layout_constraintTop_toBottomOf="@+id/button22" />
 
     <TextView
-        android:background="@drawable/border"
         android:id="@+id/cost"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="28dp"
+        android:background="@drawable/border"
         android:ems="10"
         android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/text3"
         app:layout_constraintTop_toBottomOf="@+id/time" />
 
     <TextView
-        android:background="@drawable/border"
-        android:id="@+id/from"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:ems="10"
-        android:text=""
-        android:textAlignment="center"
-        android:textSize="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_from" />
-
-    <TextView
-        android:background="@drawable/border"
         android:id="@+id/to"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="28dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/border"
         android:ems="10"
         android:text=""
         android:textAlignment="center"
@@ -100,99 +145,63 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_to" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/putrajaya"
-        tools:layout_editor_absoluteY="88dp" />
-
-    <Button
-        android:id="@+id/button_to"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="64dp"
-        android:labelFor="@id/to"
-        android:onClick="to"
-        android:text="To"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/line3" />
-
-    <Button
-        android:id="@+id/button_from"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="48dp"
-        android:labelFor="@id/from"
-        android:onClick="from"
-        android:text="From"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/line3" />
 
     <Button
         android:id="@+id/putrajaya_sentral"
         android:layout_width="28dp"
         android:layout_height="30dp"
-        android:layout_marginStart="21dp"
+        android:layout_marginStart="28dp"
         android:onClick="putrajaya_sentral"
+        app:layout_constraintTop_toBottomOf="match_parent"
         android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="99dp" />
-
-    <Button
-        android:id="@+id/cyberjaya_city_centre"
-        android:layout_width="28dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="61dp"
-        android:onClick="cyberjaya_city_centre"
-        android:visibility="invisible"
-        app:layout_constraintStart_toEndOf="@+id/putrajaya_sentral"
-        tools:layout_editor_absoluteY="99dp" />
+        tools:layout_editor_absoluteY="140dp" />
 
     <Button
         android:id="@+id/cyberjaya_utara"
         android:layout_width="28dp"
         android:layout_height="30dp"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="52dp"
         android:onClick="cyberjaya_utara"
+        app:layout_constraintTop_toBottomOf="match_parent"
         android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/cyberjaya_city_centre"
-        tools:layout_editor_absoluteY="99dp" />
-
-    <Button
-        android:id="@+id/putra_permai"
-        android:layout_width="28dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="39dp"
-        android:onClick="putra_permai"
-        android:visibility="invisible"
-        app:layout_constraintStart_toEndOf="@+id/sierra"
-        tools:layout_editor_absoluteY="99dp" />
+        tools:layout_editor_absoluteY="140dp" />
 
     <Button
         android:id="@+id/sierra"
         android:layout_width="28dp"
         android:layout_height="30dp"
-        android:layout_marginStart="49dp"
+        android:layout_marginStart="56dp"
         android:onClick="sierra"
+        app:layout_constraintTop_toBottomOf="match_parent"
+
         android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/cyberjaya_utara"
-        tools:layout_editor_absoluteY="99dp" />
+        tools:layout_editor_absoluteY="140dp" />
 
     <Button
-        android:id="@+id/button24"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:onClick="calculate"
-        android:text="Calculate"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/from" />
+        android:id="@+id/putra_permai"
+        android:layout_width="28dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="40dp"
+        android:onClick="putra_permai"
+        app:layout_constraintTop_toBottomOf="match_parent"
+
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/sierra"
+        tools:layout_editor_absoluteY="140dp" />
+
+    <Button
+        android:id="@+id/cyberjaya_city_centre"
+        android:layout_width="28dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="60dp"
+        android:onClick="cyberjaya_city_centre"
+        app:layout_constraintTop_toBottomOf="match_parent"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/putrajaya_sentral"
+        tools:layout_editor_absoluteY="140dp" />
 
 
     <ImageView
@@ -260,5 +269,18 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/straight" />
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="409dp"
+        android:layout_height="5dp"
+        android:layout_marginTop="300dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintBottom_toTopOf="@+id/button_to"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/topnavi"
+        app:layout_constraintVertical_bias="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

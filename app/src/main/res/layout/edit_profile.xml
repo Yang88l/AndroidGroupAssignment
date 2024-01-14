@@ -10,6 +10,11 @@
         android:id="@+id/topnavi"
         layout="@layout/topnavi"/>
 
+    <include
+        layout="@layout/background"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="5dp" />
+
     <TextView
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
@@ -76,8 +81,8 @@
         android:id="@+id/textView21"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="32dp"
         android:text="Phone number: "
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -87,7 +92,7 @@
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="44dp"
         android:layout_marginTop="176dp"
         android:text="Username: "
         android:textSize="20dp"
@@ -113,8 +118,8 @@
         android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="32dp"
         android:text="Email address:"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -139,8 +144,8 @@
         android:id="@+id/textView23"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="28dp"
         android:text="Birth Date: "
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -160,26 +165,32 @@
         app:srcCompat="@drawable/bird" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="104dp"
-        android:layout_marginBottom="116dp"
-        android:onClick="save_edit"
-        android:text="Save"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
         android:id="@+id/button6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="96dp"
-        android:layout_marginBottom="120dp"
+        android:layout_marginBottom="192dp"
         android:onClick="cancel_edit"
         android:text="Cancel"
+        android:background="@drawable/button_design"
+        android:textColor="#0096FF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="192dp"
+        android:onClick="save_edit"
+        android:text="Save"
+        android:background="@drawable/button_design"
+        android:textColor="#0096FF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.72"
+        app:layout_constraintStart_toEndOf="@+id/button6" />
 
     <ImageView
         android:id="@+id/imageView8"

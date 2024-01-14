@@ -7,6 +7,9 @@
     tools:context=".booking_summary">
 
     <include
+        layout="@layout/background"/>
+
+    <include
         android:id="@+id/topnavi"
         layout="@layout/topnavi"/>
 
@@ -17,6 +20,8 @@
         android:layout_marginTop="60dp"
         android:onClick="ok"
         android:text="OK"
+        android:background="@drawable/button_design"
+        android:textColor="#0096FF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/booking_summary_text" />
@@ -26,7 +31,6 @@
         android:layout_width="351dp"
         android:layout_height="163dp"
         android:layout_marginTop="60dp"
-        android:background="@drawable/search_view_bg"
         android:text="Hotel 2 day 3 night               RM123
   Bus round trip 	                      RM123
   Restaurant A 	                	 RM12/person

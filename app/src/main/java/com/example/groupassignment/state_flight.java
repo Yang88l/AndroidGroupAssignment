@@ -21,6 +21,9 @@ public class state_flight extends AppCompatActivity {
 
         //Top Navigation
         BaseActivity.setupToolbar(this);
+
+        //Background
+        background.video(this);
     }
 
     public void sabah(View view) {

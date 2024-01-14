@@ -24,6 +24,9 @@ public class food extends AppCompatActivity {
         //Top Navigation
         BaseActivity.setupToolbar(this);
 
+        //Background
+        background.video(this);
+
         if (login_status()) {
             ImageView picture = findViewById(R.id.imageButton12);
             dbmanager_favourite = new dbmanager_favourite(this);

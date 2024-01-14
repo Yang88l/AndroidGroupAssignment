@@ -11,6 +11,9 @@
         android:id="@+id/topnavi"
         layout="@layout/topnavi"/>
 
+    <include
+        layout="@layout/background"/>
+
     <View
         android:id="@+id/divider2"
         android:layout_width="403dp"

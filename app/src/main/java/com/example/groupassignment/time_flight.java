@@ -24,6 +24,9 @@ public class time_flight extends AppCompatActivity {
         //Top Navigation
         BaseActivity.setupToolbar(this);
 
+        //Background
+        background.video(this);
+
         dbmanager_flight = new dbmanager_flight(this);
         dbmanager_flight.open();
         dbmanager_flight.close();

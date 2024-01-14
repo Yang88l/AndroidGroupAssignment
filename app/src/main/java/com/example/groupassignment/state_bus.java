@@ -23,6 +23,9 @@ public class state_bus extends AppCompatActivity {
         //Top Navigation
         BaseActivity.setupToolbar(this);
 
+        //Background
+        background.video(this);
+
     }
     public void selangor(View view) {
         chooseState("Selangor");

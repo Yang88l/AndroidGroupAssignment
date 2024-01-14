@@ -23,6 +23,9 @@ public class log_in extends AppCompatActivity {
 
         //Top Navigation
         BaseActivity.setupToolbar(this);
+
+        //Background
+        background.video(this);
     }
 
     public void log_in(View view) {

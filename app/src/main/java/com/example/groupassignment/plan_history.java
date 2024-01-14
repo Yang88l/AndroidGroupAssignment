@@ -22,6 +22,9 @@ public class plan_history extends AppCompatActivity {
         //Top Navigation
         BaseActivity.setupToolbar(this);
 
+        //Background
+        background.video(this);
+
         TextView a = findViewById(R.id.a);
         TextView b = findViewById(R.id.b);
         TextView c = findViewById(R.id.c);

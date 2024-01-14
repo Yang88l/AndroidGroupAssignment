@@ -19,6 +19,9 @@ public class bus extends AppCompatActivity {
 
         //Top Navigation
         BaseActivity.setupToolbar(this);
+
+        //Background
+        background.video(this);
     }
 
     public void soutern(View view) {

@@ -24,6 +24,9 @@ public class edit_profile extends AppCompatActivity {
         //Top Navigation
         BaseActivity.setupToolbar(this);
 
+        //Background
+        background.video(this);
+
         EditText name = findViewById(R.id.name_text);
         EditText phone = findViewById(R.id.phone_text);
         EditText email = findViewById(R.id.email_text);

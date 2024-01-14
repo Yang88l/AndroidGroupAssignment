@@ -22,6 +22,9 @@ public class payment_successful extends AppCompatActivity {
         //Top Navigation
         BaseActivity.setupToolbar(this);
 
+        //Background
+        background.video(this);
+
         //ASSIGN ID
         price_text = findViewById(R.id.price_text);
 

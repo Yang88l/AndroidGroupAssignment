@@ -22,6 +22,9 @@ public class settings extends AppCompatActivity {
 
         //Top Navigation
         BaseActivity.setupToolbar(this);
+
+        //Background
+        background.video(this);
     }
 
     public void reset_password(View view) {

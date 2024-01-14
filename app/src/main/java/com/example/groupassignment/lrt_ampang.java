@@ -27,6 +27,9 @@ public class lrt_ampang extends AppCompatActivity {
 
         //Top Navigation
         BaseActivity.setupToolbar(this);
+
+        //Background
+        background.video(this);
     }
 
     //Functions

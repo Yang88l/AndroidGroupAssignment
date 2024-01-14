@@ -21,6 +21,9 @@ public class booking_summary extends AppCompatActivity {
 
         //Top Navigation
         BaseActivity.setupToolbar(this);
+
+        //Background
+        background.video(this);
 /*
         dbhelper_book_summary.DB_VERSION = main.dbversion++;
 

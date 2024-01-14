@@ -10,6 +10,9 @@
         android:id="@+id/topnavi"
         layout="@layout/topnavi"/>
 
+    <include
+        layout="@layout/background"/>
+
     <ImageView
         android:id="@+id/output_user_choose"
         android:layout_width="182dp"
@@ -37,10 +40,10 @@
         android:id="@+id/textView29"
         android:layout_width="139dp"
         android:layout_height="53dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="8dp"
         android:text="price/pax"
-        android:textSize="24dp"
         android:textAlignment="center"
+        android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView28" />
@@ -51,6 +54,8 @@
         android:layout_height="54dp"
         android:onClick="book"
         android:text="Book"
+        android:background="@drawable/button_design"
+        android:textColor="#0096FF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
