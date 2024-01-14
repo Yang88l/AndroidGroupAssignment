@@ -55,6 +55,9 @@ public class plan_history extends AppCompatActivity {
         //Top Navigation
         BaseActivity.setupToolbar(this);
 
+        //Background
+        background.video(this);
+
         dbmanager_plan_history.close();
         main.updateVersion();
     }
