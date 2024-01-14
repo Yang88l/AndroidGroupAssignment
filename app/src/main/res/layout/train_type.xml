@@ -24,7 +24,7 @@
         android:onClick="ampang"
         android:text="LRT Ampang"
         android:background="@drawable/button_design"
-        android:textColor="#0096FF"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/kajang"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -37,7 +37,7 @@
         android:onClick="putrajaya"
         android:text="MRT Putrajaya"
         android:background="@drawable/button_design"
-        android:textColor="#0096FF"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="@+id/kajang"
         app:layout_constraintHorizontal_bias="1.0"
@@ -52,7 +52,7 @@
         android:onClick="sri_petaling"
         android:text="LRT Sri Petalling"
         android:background="@drawable/button_design"
-        android:textColor="#0096FF"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/kajang"
         app:layout_constraintTop_toBottomOf="@+id/ampang" />
 
@@ -64,7 +64,7 @@
         android:onClick="kajang"
         android:text="MRT Kajang"
         android:background="@drawable/button_design"
-        android:textColor="#0096FF"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.114"

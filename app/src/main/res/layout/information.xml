@@ -55,7 +55,7 @@
         android:onClick="book"
         android:text="Book"
         android:background="@drawable/button_design"
-        android:textColor="#0096FF"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"

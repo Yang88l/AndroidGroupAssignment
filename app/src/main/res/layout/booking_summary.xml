@@ -21,7 +21,7 @@
         android:onClick="ok"
         android:text="OK"
         android:background="@drawable/button_design"
-        android:textColor="#0096FF"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/booking_summary_text" />

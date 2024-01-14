@@ -7,7 +7,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.groupassignment.dbhelpers.dbhelper_book_summary;
-import com.example.groupassignment.dbhelpers.dbhelper_plan_summary;
+import com.example.groupassignment.dbhelpers.dbhelper_book_summary;
 import com.example.groupassignment.main;
 
 public class dbmanager_book_summary {
@@ -32,23 +32,24 @@ public class dbmanager_book_summary {
         main.saveVersion(context);
         dbHelper.close();
     }
-    public void insert(String type, int activity_id, int user_id) {
+    public void insert(String type, int activity_id, int user_id, int login_id ) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(dbhelper_book_summary.TYPE, type);
-        contentValue.put(dbhelper_book_summary.ACTIVITY_ID, activity_id);
         contentValue.put(dbhelper_book_summary.USER_ID, user_id);
+        contentValue.put(dbhelper_book_summary.LOGIN_ID, login_id);
         database.insert(dbhelper_book_summary.TABLE_NAME, null, contentValue);
     }
 
     // SELECT * FROM table
     public Cursor fetch(int user_id, int login_id) {
         String[] columns = new String[] {
-                dbhelper_plan_summary.USER_ID,
-                dbhelper_plan_summary.TYPE,
-                dbhelper_plan_summary.ACTIVITY_ID,
-                dbhelper_plan_summary.USER_ID
+                dbhelper_book_summary.USER_ID,
+                dbhelper_book_summary.TYPE,
+                dbhelper_book_summary.ACTIVITY_ID,
+                dbhelper_book_summary.USER_ID,
+                dbhelper_book_summary.LOGIN_ID
         };
-        Cursor cursor = database.query(dbhelper_plan_summary.TABLE_NAME, columns, dbhelper_plan_summary.USER_ID+"="+user_id+" AND "+dbhelper_plan_summary.LOGIN_ID+"="+login_id, null, null, null, null);
+        Cursor cursor = database.query(dbhelper_book_summary.TABLE_NAME, columns, dbhelper_book_summary.USER_ID+"="+user_id+" AND "+dbhelper_book_summary.LOGIN_ID+"="+login_id, null, null, null, null);
         if (cursor != null) {
             cursor.moveToFirst();
         }

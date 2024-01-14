@@ -66,7 +66,7 @@
         android:onClick="selangor"
         android:text="Selangor"
         android:background="@drawable/button_design"
-        android:textColor="#0096FF"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/transport3" />
@@ -79,7 +79,7 @@
         android:onClick="perak"
         android:text="Perak"
         android:background="@drawable/button_design"
-        android:textColor="#0096FF"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/selangorbut" />
@@ -92,7 +92,7 @@
         android:onClick="penang"
         android:text="Penang"
         android:background="@drawable/button_design"
-        android:textColor="#0096FF"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/johorbut" />
@@ -105,7 +105,7 @@
         android:onClick="johor"
         android:text="Johor"
         android:background="@drawable/button_design"
-        android:textColor="#0096FF"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/perakbut" />
