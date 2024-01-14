@@ -10,6 +10,9 @@
         android:id="@+id/topnavi"
         layout="@layout/topnavi" />
 
+    <include layout="@layout/background"/>
+
+
     <ImageButton
         android:id="@+id/zoo_negara_picture"
         android:layout_width="77dp"
@@ -50,7 +53,7 @@
         android:background="@drawable/button_design_3"
         android:onClick="sunway"
         android:text="Zoo Negera"
-        android:textColor="#0096FF"
+        android:textColor="@color/black"
         android:textSize="25dp"
         app:layout_constraintStart_toEndOf="@+id/zoo_negara_picture"
         app:layout_constraintTop_toTopOf="parent" />
@@ -64,7 +67,7 @@
         android:background="@drawable/button_design_3"
         android:onClick="genting"
         android:text="Genting Highland"
-        android:textColor="#0096FF"
+        android:textColor="@color/black"
         android:textSize="25dp"
         app:layout_constraintStart_toEndOf="@+id/genting_highland_picture"
         app:layout_constraintTop_toBottomOf="@+id/zoo_negara_button" />
@@ -78,7 +81,7 @@
         android:background="@drawable/button_design_3"
         android:onClick="sky"
         android:text="Sky Mirror"
-        android:textColor="#0096FF"
+        android:textColor="@color/black"
         android:textSize="25dp"
         app:layout_constraintStart_toEndOf="@+id/sky_mirror_picture"
         app:layout_constraintTop_toBottomOf="@+id/genting_highland_button" />

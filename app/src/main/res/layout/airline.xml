@@ -33,7 +33,7 @@
         android:background="@drawable/button_design"
         android:onClick="airasia"
         android:text="AirAsia"
-        android:textColor="#0096FF"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/transport3" />
 
@@ -46,7 +46,7 @@
         android:background="@drawable/button_design"
         android:onClick="firefly"
         android:text="FireFly"
-        android:textColor="#0096FF"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/airasia"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/airasia" />
@@ -60,7 +60,7 @@
         android:background="@drawable/button_design"
         android:onClick="berjaya_air"
         android:text="Berjaya Air"
-        android:textColor="#0096FF"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/firefly"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/firefly" />

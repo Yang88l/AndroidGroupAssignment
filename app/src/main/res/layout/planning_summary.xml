@@ -23,7 +23,7 @@
         android:onClick="choose"
         android:text="Edit Plan"
         android:background="@drawable/button_design"
-        android:textColor="#0096FF"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/imageView7"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -36,7 +36,7 @@
         android:onClick="book"
         android:text="Book"
         android:background="@drawable/button_design"
-        android:textColor="#0096FF"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/imageView7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button17" />

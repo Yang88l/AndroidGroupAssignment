@@ -43,7 +43,7 @@
         android:onClick="horizon_grill"
         android:text="Horizon Grill"
         android:textSize="25dp"
-        android:textColor="#0096FF"
+        android:textColor="@color/black"
         android:background="@drawable/button_design_2"
         app:layout_constraintStart_toEndOf="@id/image_food2"
         app:layout_constraintTop_toTopOf="parent" />
@@ -57,7 +57,7 @@
         android:onClick="cielo_kl"
         android:text="Cielo KL"
         android:textSize="25dp"
-        android:textColor="#0096FF"
+        android:textColor="@color/black"
         android:background="@drawable/button_design_2"
         app:layout_constraintStart_toEndOf="@id/image_food"
         app:layout_constraintTop_toTopOf="parent" />
@@ -102,7 +102,7 @@
         android:onClick="sky_bar"
         android:text="Sky Bar"
         android:textSize="25dp"
-        android:textColor="#0096FF"
+        android:textColor="@color/black"
         android:background="@drawable/button_design_2"
         app:layout_constraintStart_toEndOf="@+id/image_food3"
         app:layout_constraintTop_toTopOf="parent" />

@@ -716,7 +716,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="70dp"
                 android:background="@drawable/button_design"
-                android:textColor="#0096FF"
+                android:textColor="@color/black"
                 android:onClick="OK"
                 android:text="OK" />
 
