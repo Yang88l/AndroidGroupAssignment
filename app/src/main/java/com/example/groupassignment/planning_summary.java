@@ -47,7 +47,7 @@ public class planning_summary extends AppCompatActivity {
 
         dbmanager_plan_summary = new dbmanager_plan_summary(this);
         dbmanager_plan_summary.open();
-        Cursor cursor_summary = dbmanager_plan_summary.fetch(getUserID());
+        Cursor cursor_summary = dbmanager_plan_summary.fetch(getUserID(), getLoginID());
         Toast.makeText(this, cursor_summary.getString(1), Toast.LENGTH_SHORT).show();
         if (cursor_summary != null && cursor_summary.moveToFirst()) {
             do {
@@ -89,6 +89,8 @@ public class planning_summary extends AppCompatActivity {
             } while (cursor_summary.moveToNext());
         }
 
+        int login_id = getLoginID();
+
         cursor_summary.close();
         dbmanager_plan_summary.close();
         main.updateVersion();
@@ -98,7 +100,7 @@ public class planning_summary extends AppCompatActivity {
 
         dbmanager_plan_history = new dbmanager_plan_history(this);
         dbmanager_plan_history.open();
-        dbmanager_plan_history.insert(getUserID(), displayText1.toString(), displayText2.toString());
+        dbmanager_plan_history.update(getUserID(), getLoginID(), displayText1.toString(), displayText2.toString());
         dbmanager_plan_history.close();
         main.updateVersion();
     }
@@ -137,5 +139,17 @@ public class planning_summary extends AppCompatActivity {
         dbmanager_login_history.close();
         main.updateVersion();
         return user_id;
+    }
+
+    public int getLoginID(){
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor_login = dbmanager_login_history.fetch();
+        cursor_login.moveToLast();
+        int login_id=Integer.parseInt(cursor_login.getString(0));
+        cursor_login.close();
+        dbmanager_login_history.close();
+        main.updateVersion();
+        return login_id;
     }
 }

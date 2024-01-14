@@ -139,6 +139,7 @@ public class information extends AppCompatActivity {
         Cursor cursor_login = dbmanager_login_history.fetch();
         cursor_login.moveToLast();
         String activity = cursor_login.getString(2);
+        int login_id = cursor_login.getInt(0);
         cursor_login.close();
         dbmanager_login_history.close();
         main.updateVersion();
@@ -168,16 +169,17 @@ public class information extends AppCompatActivity {
         if (activity.equals("plan")) {
             dbmanager_plan_summary = new dbmanager_plan_summary(this);
             dbmanager_plan_summary.open();
-            dbmanager_plan_summary.insert(from, _id, getUserID());
+            dbmanager_plan_summary.insert(from, _id, getUserID(), login_id);
             dbmanager_plan_summary.close();
             main.updateVersion();
+
             intent = new Intent(this,planning_summary.class);
             startActivity(intent);
         }
         else if (activity.equals("book")) {
             dbmanager_book_summary = new dbmanager_book_summary(this);
             dbmanager_book_summary.open();
-            dbmanager_book_summary.insert(from, _id, getUserID());
+            dbmanager_book_summary.insert(from, _id, getUserID()); //add login_id
             dbmanager_book_summary.close();
             main.updateVersion();
             intent = new Intent(this,booking_summary.class);

@@ -13,6 +13,7 @@ public class dbhelper_plan_summary extends SQLiteOpenHelper {
     public static final String TYPE = "type";
     public static final String ACTIVITY_ID = "activity_id";
     public static final String USER_ID = "user_id";
+    public static final String LOGIN_ID = "login_id";
 
     // Database Information
     static final String DB_NAME = "JOURNALDEV_TRAVEL_BOOKING.DB";
@@ -26,7 +27,8 @@ public class dbhelper_plan_summary extends SQLiteOpenHelper {
             + PLAN_SUMMARY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + TYPE + " TEXT NOT NULL, "
             + ACTIVITY_ID + " INTEGER NOT NULL, "
-            + USER_ID + " INTEGER NOT NULL "
+            + USER_ID + " INTEGER NOT NULL, "
+            + LOGIN_ID + " INTEGER NOT NULL "
             + ")";
 
     public dbhelper_plan_summary(Context context) {

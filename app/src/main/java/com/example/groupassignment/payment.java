@@ -58,7 +58,7 @@ public class payment extends AppCompatActivity {
 
          //get price of user order
         dbmanager_book_history.open();
-        Cursor cursor2 = dbmanager_book_history.fetch(user_id);
+        Cursor cursor2 = dbmanager_book_history.fetch();
         price = cursor.getDouble(3);
 
          //assuming price stores multiple value
