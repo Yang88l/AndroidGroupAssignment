@@ -81,20 +81,12 @@
 
         <Button
             android:id="@+id/button1"
-            android:layout_width="206dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#27caf2"
+            android:background="@drawable/title_design"
             android:layout_margin="1dp"
             android:text="Notification" />
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="206dp"
-            android:layout_height="match_parent"
-            android:background="#27caf2"
-            android:onClick="message"
-            android:layout_margin="1dp"
-            android:text="Message" />
     </LinearLayout>
 
     <LinearLayout
@@ -109,20 +101,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.17">
 
-        <ImageView
-            android:id="@+id/image_1"
-            android:layout_width="180dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/sunway_lagoon" />
-
         <TextView
             android:id="@+id/text_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Get 50% Off in Sunway Lagoon right now!"
             android:textAlignment="center"
             android:textSize="24sp" />
 
@@ -140,20 +123,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.26999998">
 
-        <ImageView
-            android:id="@+id/image_2"
-            android:layout_width="180dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/genting_highland_180" />
-
         <TextView
             android:id="@+id/text_2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="We have a new app user promotion now !!!"
             android:textAlignment="center"
             android:textSize="24sp" />
 
@@ -171,20 +145,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.37">
 
-        <ImageView
-            android:id="@+id/image_3"
-            android:layout_width="180dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/sky_mirror_180" />
-
         <TextView
             android:id="@+id/text_3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Do you want a wondeful trip with your family?"
             android:textAlignment="center"
             android:textSize="24sp" />
 
@@ -202,20 +167,76 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.47">
 
-        <ImageView
-            android:id="@+id/image_4"
-            android:layout_width="180dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/zoo_negara_180" />
-
         <TextView
-            android:id="@+id/text_4"
+            android:id="@+id/text_102"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="The next holiday we have a surprise with you !"
+            android:textAlignment="center"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="60dp"
+        android:background="#DDF5FF"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.57">
+
+        <TextView
+            android:id="@+id/text_101"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="60dp"
+        android:background="#DDF5FF"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.67">
+
+        <TextView
+            android:id="@+id/text_120"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="60dp"
+        android:background="#DDF5FF"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.77">
+
+        <TextView
+            android:id="@+id/text_110"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:textAlignment="center"
             android:textSize="24sp" />
 
