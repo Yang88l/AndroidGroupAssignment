@@ -68,7 +68,7 @@ public class seat_bus extends AppCompatActivity {
         else if (activity.equals("book")) {
             dbmanager_book_summary = new dbmanager_book_summary(this);
             dbmanager_book_summary.open();
-            dbmanager_book_summary.insert("bus", getBusID(), getUserID());
+            dbmanager_book_summary.insert("bus", getBusID(), getUserID(), getLoginID());
             dbmanager_book_summary.close();
             main.updateVersion();
             Intent intent = new Intent(this,booking_summary.class);
@@ -116,5 +116,17 @@ public class seat_bus extends AppCompatActivity {
 
     public void profile(View view) {
         startActivity(new Intent(this, profile.class));
+    }
+
+    public int getLoginID(){
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor_login = dbmanager_login_history.fetch();
+        cursor_login.moveToLast();
+        int login_id=Integer.parseInt(cursor_login.getString(0));
+        cursor_login.close();
+        dbmanager_login_history.close();
+        main.updateVersion();
+        return login_id;
     }
 }

@@ -59,7 +59,7 @@ public class info_flight extends AppCompatActivity {
         if (activity.equals("plan")) {
             dbmanager_plan_summary = new dbmanager_plan_summary(this);
             dbmanager_plan_summary.open();
-            dbmanager_plan_summary.insert("flight", getAirlineID(), getUserID(), 1);//change login id later
+            dbmanager_plan_summary.insert("flight", getAirlineID(), getUserID(), getLoginID());//change login id later
             dbmanager_plan_summary.close();
             main.updateVersion();
             Intent intent = new Intent(this,planning_summary.class);
@@ -68,7 +68,7 @@ public class info_flight extends AppCompatActivity {
         else if (activity.equals("book")) {
             dbmanager_book_summary = new dbmanager_book_summary(this);
             dbmanager_book_summary.open();
-            dbmanager_book_summary.insert("flight", getAirlineID(), getUserID());
+            dbmanager_book_summary.insert("flight", getAirlineID(), getUserID(), getLoginID());
             dbmanager_book_summary.close();
             main.updateVersion();
             Intent intent = new Intent(this,booking_summary.class);
@@ -114,5 +114,17 @@ public class info_flight extends AppCompatActivity {
 
     public void profile(View view) {
         startActivity(new Intent(this, profile.class));
+    }
+
+    public int getLoginID(){
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor_login = dbmanager_login_history.fetch();
+        cursor_login.moveToLast();
+        int login_id=Integer.parseInt(cursor_login.getString(0));
+        cursor_login.close();
+        dbmanager_login_history.close();
+        main.updateVersion();
+        return login_id;
     }
 }

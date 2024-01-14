@@ -95,7 +95,7 @@ public class booking_summary extends AppCompatActivity {
 
         dbmanager_book_history = new dbmanager_book_history(this);
         dbmanager_book_history.open();
-        dbmanager_book_history.insert(getUserID(), displayText1.toString(), displayText2.toString());
+        dbmanager_book_history.insert(getUserID(), getLoginID(), displayText1.toString(), displayText2.toString());
         dbmanager_book_history.close();
         main.updateVersion();
     }
