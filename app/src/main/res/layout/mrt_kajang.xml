@@ -150,10 +150,10 @@
         android:id="@+id/kajang"
         android:layout_width="28dp"
         android:layout_height="30dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="144dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="145dp"
         android:onClick="kajang"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -161,10 +161,10 @@
         android:id="@+id/sungai_jernih"
         android:layout_width="28dp"
         android:layout_height="30dp"
-        android:layout_marginStart="132dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="145dp"
         android:onClick="sungai_jernih"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintStart_toEndOf="@+id/kajang"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -172,10 +172,10 @@
         android:id="@+id/bukit_dokong"
         android:layout_width="28dp"
         android:layout_height="30dp"
-        android:layout_marginStart="216dp"
-        android:layout_marginTop="144dp"
+        android:layout_marginStart="210dp"
+        android:layout_marginTop="145dp"
         android:onClick="bukit_dokong"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintStart_toEndOf="@+id/kajang"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -184,10 +184,10 @@
         android:id="@+id/batu_11_cheras"
         android:layout_width="28dp"
         android:layout_height="30dp"
-        android:layout_marginStart="304dp"
-        android:layout_marginTop="144dp"
+        android:layout_marginStart="296dp"
+        android:layout_marginTop="145dp"
         android:onClick="batu_11_cheras"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintStart_toEndOf="@+id/kajang"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -195,10 +195,10 @@
         android:id="@+id/stadium_kajang"
         android:layout_width="28dp"
         android:layout_height="30dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="145dp"
         android:onClick="stadium_kajang"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintStart_toEndOf="@+id/kajang"
         app:layout_constraintTop_toTopOf="parent" />
 

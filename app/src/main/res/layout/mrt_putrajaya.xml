@@ -149,10 +149,10 @@
         android:id="@+id/putrajaya_sentral"
         android:layout_width="28dp"
         android:layout_height="30dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="148dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="150dp"
         android:onClick="putrajaya_sentral"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -161,10 +161,10 @@
         android:id="@+id/cyberjaya_utara"
         android:layout_width="28dp"
         android:layout_height="30dp"
-        android:layout_marginStart="208dp"
-        android:layout_marginTop="156dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="150dp"
         android:onClick="cyberjaya_utara"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -172,10 +172,10 @@
         android:id="@+id/sierra"
         android:layout_width="28dp"
         android:layout_height="30dp"
-        android:layout_marginStart="292dp"
-        android:layout_marginTop="156dp"
+        android:layout_marginStart="278dp"
+        android:layout_marginTop="150dp"
         android:onClick="sierra"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -183,10 +183,10 @@
         android:id="@+id/putra_permai"
         android:layout_width="28dp"
         android:layout_height="30dp"
-        android:layout_marginStart="356dp"
-        android:layout_marginTop="156dp"
+        android:layout_marginStart="346dp"
+        android:layout_marginTop="150dp"
         android:onClick="putra_permai"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -194,10 +194,10 @@
         android:id="@+id/cyberjaya_city_centre"
         android:layout_width="28dp"
         android:layout_height="30dp"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="148dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="150dp"
         android:onClick="cyberjaya_city_centre"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
