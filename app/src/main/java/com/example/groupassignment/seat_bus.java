@@ -4,13 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.database.Cursor;
-import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.VideoView;
 
 import com.example.groupassignment.dbmanagers.dbmanager_book_summary;
 import com.example.groupassignment.dbmanagers.dbmanager_bus;
@@ -24,8 +22,7 @@ public class seat_bus extends AppCompatActivity {
     private com.example.groupassignment.dbmanagers.dbmanager_plan_summary dbmanager_plan_summary;
     private com.example.groupassignment.dbmanagers.dbmanager_book_summary dbmanager_book_summary;
     private com.example.groupassignment.dbmanagers.dbmanager_choose_bus dbmanager_choose_bus;
- private VideoView bg;
-    private int currentPosition;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,21 +30,18 @@ public class seat_bus extends AppCompatActivity {
 
         //Top Navigation
         BaseActivity.setupToolbar(this);
-//background.video(this);
-        bg = findViewById(R.id.background);
 
-        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.background;
-        Uri videoUri = Uri.parse(videoPath);
-        bg.setVideoURI(videoUri);
+        //Background
+        background.video(this);
 
-        bg.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-            @Override
-            public void onPrepared(MediaPlayer mp) {
-                mp.setLooping(true);
-                bg.start();
-            }
-        });
+        TextView seatLeft = findViewById(R.id.textView26);
 
+        dbmanager_bus = new dbmanager_bus(this);
+        dbmanager_bus.open();
+        Cursor cursor_bus = dbmanager_bus.fetch(getBusID());
+        seatLeft.setText(Integer.parseInt(cursor_bus.getString(1))+" seat left");
+        dbmanager_bus.close();
+        main.updateVersion();
     }
 
     public void pick_up(View view) {
@@ -64,18 +58,29 @@ public class seat_bus extends AppCompatActivity {
         dbmanager_bus = new dbmanager_bus(this);
         dbmanager_bus.open();
         Cursor cursor_bus = dbmanager_bus.fetch(getBusID());
-        if (Integer.parseInt(cursor_bus.getString(0))<seat) {
+        if (Integer.parseInt(cursor_bus.getString(1))<seat) {
             Toast.makeText(this, "Not Enough Seat", Toast.LENGTH_SHORT).show();
         }
         else {
-            dbmanager_bus.update(getBusID(), Integer.parseInt(cursor_bus.getString(0)) - seat, null);
+            if (activity.equals("book"))
+                dbmanager_bus.update(getBusID(), (Integer.parseInt(cursor_bus.getString(1)) - seat));
         }
         dbmanager_bus.close();
+        main.updateVersion();
+
+        dbmanager_choose_bus = new dbmanager_choose_bus(this);
+        dbmanager_choose_bus.open();
+        Cursor cursor_choose = dbmanager_choose_bus.fetch();
+        cursor_choose.moveToLast();
+        int _id=Integer.parseInt(cursor_choose.getString(0));
+        dbmanager_choose_bus.update(_id, -1, seat);
+        dbmanager_choose_bus.close();
+        main.updateVersion();
 
         if (activity.equals("plan")) {
             dbmanager_plan_summary = new dbmanager_plan_summary(this);
             dbmanager_plan_summary.open();
-            dbmanager_plan_summary.insert("bus", getBusID(), getUserID(), 1); //change login id later
+            dbmanager_plan_summary.insert("bus", _id, getUserID(), getLoginID());
             dbmanager_plan_summary.close();
             main.updateVersion();
             Intent intent = new Intent(this,planning_summary.class);
@@ -84,7 +89,7 @@ public class seat_bus extends AppCompatActivity {
         else if (activity.equals("book")) {
             dbmanager_book_summary = new dbmanager_book_summary(this);
             dbmanager_book_summary.open();
-            dbmanager_book_summary.insert("bus", getBusID(), getUserID(), getLoginID());
+            dbmanager_book_summary.insert("bus", _id, getUserID(), getLoginID());
             dbmanager_book_summary.close();
             main.updateVersion();
             Intent intent = new Intent(this,booking_summary.class);
@@ -160,37 +165,5 @@ public class seat_bus extends AppCompatActivity {
         dbmanager_login_history.close();
         main.updateVersion();
         return login_id;
-    }
-    @Override
-    protected void onResume() {
-        // Resume the video playback from the saved position
-        bg.seekTo(currentPosition);
-        bg.start();
-        super.onResume();
-    }
-    @Override
-    protected void onRestart() {
-        bg.start();
-        super.onRestart();
-    }
-    @Override
-    protected void onPause() {
-        // Save the current playback position
-        currentPosition = bg.getCurrentPosition();
-        // Pause the video playback
-        bg.pause();
-        super.onPause();
-    }
-    @Override
-    protected void onDestroy() {
-        bg.stopPlayback();
-        super.onDestroy();
-    }
-
-    @Override
-    public void onBackPressed() {
-        currentPosition = bg.getCurrentPosition();
-        bg.pause();
-        super.onBackPressed();
     }
 }

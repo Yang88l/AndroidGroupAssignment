@@ -13,6 +13,7 @@ public class dbhelper_choose_bus extends SQLiteOpenHelper {
     public static final String BUS_ID = "bus_id";
     public static final String USER_ID = "user_id";
     public static final String STATE = "state";
+    public static final String SEAT = "seat";
 
     // Database Information
     static final String DB_NAME = "JOURNALDEV_TRAVEL_BOOKING.DB";
@@ -26,7 +27,8 @@ public class dbhelper_choose_bus extends SQLiteOpenHelper {
             + CHOOSE_BUS_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + BUS_ID + " INTEGER NOT NULL, "
             + USER_ID + " INTEGER NOT NULL, "
-            + STATE + " INTEGER NOT NULL "
+            + STATE + " TEXT NOT NULL, "
+            + SEAT + " INTEGER NOT NULL "
             + ")";
 
     public dbhelper_choose_bus(Context context) {

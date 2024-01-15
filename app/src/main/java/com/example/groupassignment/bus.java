@@ -97,7 +97,7 @@ public class bus extends AppCompatActivity {
         cursor_choose.moveToLast();
         int _id=Integer.parseInt(cursor_choose.getString(0));
 
-        dbmanager_choose_bus.update(_id, bus_id);
+        dbmanager_choose_bus.update(_id, bus_id, -1);
         dbmanager_choose_bus.close();
         main.updateVersion();
 
