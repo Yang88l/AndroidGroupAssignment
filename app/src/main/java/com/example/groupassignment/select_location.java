@@ -23,7 +23,7 @@ public class select_location extends AppCompatActivity implements View.OnClickLi
 
         //Top Navigation
         BaseActivity.setupToolbar(this);
-//background.video(this);
+
         bg = findViewById(R.id.background);
 
         String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.background;

@@ -29,7 +29,6 @@ public class settings extends AppCompatActivity {
         BaseActivity.setupToolbar(this);
 
         //Background
-         //background.video(this);
         bg = findViewById(R.id.background);
 
         String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.background;
@@ -100,5 +99,37 @@ public class settings extends AppCompatActivity {
             Intent intent = new Intent(this, profile.class);
             startActivity(intent);
         }
+    }
+    @Override
+    protected void onResume() {
+        // Resume the video playback from the saved position
+        bg.seekTo(currentPosition);
+        bg.start();
+        super.onResume();
+    }
+    @Override
+    protected void onRestart() {
+        bg.start();
+        super.onRestart();
+    }
+    @Override
+    protected void onPause() {
+        // Save the current playback position
+        currentPosition = bg.getCurrentPosition();
+        // Pause the video playback
+        bg.pause();
+        super.onPause();
+    }
+    @Override
+    protected void onDestroy() {
+        bg.stopPlayback();
+        super.onDestroy();
+    }
+
+    @Override
+    public void onBackPressed() {
+        currentPosition = bg.getCurrentPosition();
+        bg.pause();
+        super.onBackPressed();
     }
 }
