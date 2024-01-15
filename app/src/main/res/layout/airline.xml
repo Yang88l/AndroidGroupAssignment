@@ -12,20 +12,37 @@
         layout="@layout/topnavi" />
 
     <include
-        android:id="@+id/include4"
         layout="@layout/background" />
 
+    <ImageView
+    android:id="@+id/imageView15"
+    android:layout_width="306dp"
+    android:layout_height="308dp"
+    android:layout_marginBottom="444dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.514"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.0"
+    app:srcCompat="@drawable/textbox" />
+
     <TextView
-        android:id="@+id/transport3"
+        android:id="@+id/textView25"
         android:layout_width="wrap_content"
-        android:layout_height="32dp"
-        android:layout_marginTop="140dp"
-        android:text="Select Airline"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lemon"
+        android:text="Select Your Airline"
+        android:textColor="#FFA500"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView15"
+        app:layout_constraintEnd_toEndOf="@+id/imageView15"
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toStartOf="@+id/imageView15"
+        app:layout_constraintTop_toTopOf="@+id/imageView15"
+        app:layout_constraintVertical_bias="0.389" />
+
 
     <Button
         android:id="@+id/airasia"
@@ -35,38 +52,40 @@
         android:onClick="airasia"
         android:text="AirAsia"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="@+id/include4"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.295" />
-
-    <Button
-        android:id="@+id/firefly"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:background="@drawable/button_design"
-        android:onClick="firefly"
-        android:text="FireFly"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/airasia" />
+        app:layout_constraintVertical_bias="0.355" />
 
     <Button
         android:id="@+id/berjaya_air"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/button_design"
         android:onClick="berjaya_air"
         android:text="Berjaya Air"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/firefly" />
+
+    <Button
+        android:id="@+id/firefly"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/button_design"
+        android:onClick="firefly"
+        android:text="FireFly"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/airasia" />
 
     <ImageView
         android:id="@+id/imageView8"
