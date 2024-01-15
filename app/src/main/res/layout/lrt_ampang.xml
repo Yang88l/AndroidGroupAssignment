@@ -4,35 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_bg"
-    android:backgroundTint="@color/white"
     tools:context=".lrt_ampang">
 
     <include
         android:id="@+id/topnavi"
-        layout="@layout/topnavi"/>
+        layout="@layout/topnavi" />
 
     <include
         layout="@layout/background"/>
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="234dp"
+        android:layout_height="244dp"
         android:layout_marginTop="68dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/topnavi"
-        app:srcCompat="@drawable/sripetalling" />
+        app:srcCompat="@drawable/ampang" />
 
     <Button
-        android:id="@+id/sri_petaling"
+        android:id="@+id/ampang"
         android:layout_width="58dp"
         android:layout_height="33dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="268dp"
-        android:onClick="sri_petaling"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="116dp"
+        android:onClick="ampang"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -45,9 +43,9 @@
         android:layout_marginEnd="52dp"
         android:labelFor="@id/to"
         android:onClick="to"
+        android:text="To"
         android:background="@drawable/button_design"
         android:textColor="@color/black"
-        android:text="To"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider3" />
 
@@ -71,10 +69,10 @@
         android:layout_marginStart="68dp"
         android:layout_marginTop="8dp"
         android:labelFor="@id/from"
-        android:background="@drawable/button_design"
-        android:textColor="@color/black"
         android:onClick="from"
         android:text="From"
+        android:background="@drawable/button_design"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider3" />
 
@@ -156,50 +154,50 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_to" />
 
+
     <Button
-        android:id="@+id/bukit_jalil"
+        android:id="@+id/cahaya"
         android:layout_width="58dp"
         android:layout_height="33dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="264dp"
-        android:onClick="bukit_jalil"
+        android:layout_marginEnd="116dp"
+        android:onClick="cahaya"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sri_petaling" />
-
-
-    <Button
-        android:id="@+id/sungai_besi"
-        android:layout_width="58dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="268dp"
-        android:onClick="sungai_besi"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bukit_jalil" />
+        app:layout_constraintTop_toBottomOf="@+id/ampang" />
 
     <Button
-        android:id="@+id/tasik_selatan"
+        android:id="@+id/pandah_indah"
         android:layout_width="58dp"
         android:layout_height="33dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="264dp"
-        android:onClick="tasik_selatan"
+        android:layout_marginEnd="116dp"
+        android:onClick="pandan_indah"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sungai_besi" />
+        app:layout_constraintTop_toBottomOf="@+id/cempaka" />
 
     <Button
-        android:id="@+id/bandar_tun_razak"
+        android:id="@+id/pandah_jaya"
         android:layout_width="58dp"
         android:layout_height="33dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="268dp"
-        android:onClick="bandar_tun_razak"
+        android:layout_marginEnd="124dp"
+        android:onClick="pandan_jaya"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tasik_selatan"
-        tools:visibility="invisible" />
+        app:layout_constraintTop_toBottomOf="@+id/pandah_indah"/>
+
+    <Button
+        android:id="@+id/cempaka"
+        android:layout_width="58dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="124dp"
+        android:onClick="cempaka"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cahaya" />
 
     <ImageView
         android:layout_width="302dp"
@@ -276,7 +274,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bandar_tun_razak"
+        app:layout_constraintTop_toBottomOf="@+id/pandah_jaya"
         app:layout_constraintVertical_bias="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
