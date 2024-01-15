@@ -50,6 +50,18 @@ public class dbmanager_bus {
         return cursor;
     }
 
+    public Cursor fetchALL() {
+        String[] columns = new String[] {
+                dbhelper_bus.BUS_ID,
+                dbhelper_bus.SEAT,
+                dbhelper_bus.BUS };
+        Cursor cursor = database.query(dbhelper_bus.TABLE_NAME, columns, null, null, null, null, null);
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
+        return cursor;
+    }
+
     public int update(int _id, int seat) {
         ContentValues contentValues = new ContentValues();
         if(seat!=-1)contentValues.put(dbhelper_bus.SEAT, seat);
