@@ -88,7 +88,20 @@ public class plan_history extends AppCompatActivity {
     }
 
     public void history(View view) {
-        startActivity(new Intent(this, book_history.class));
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor = dbmanager_login_history.fetch();
+        cursor.moveToLast();
+        String status=cursor.getString(3);
+        cursor.close();
+        dbmanager_login_history.close();
+        main.updateVersion();
+        Toast.makeText(this, status, Toast.LENGTH_SHORT).show();
+        if (status.equals("logged in")) {
+            Intent intent = new Intent(this, book_history.class);
+            startActivity(intent);
+        }
+        else Toast.makeText(this, "You are not logged in", Toast.LENGTH_SHORT).show();
     }
 
     public void profile(View view) {

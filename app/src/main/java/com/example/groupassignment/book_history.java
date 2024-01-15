@@ -88,7 +88,7 @@ public class book_history extends AppCompatActivity {
     }
 
     public void history(View view) {
-        startActivity(new Intent(this, book_history.class));
+        startActivity(new Intent(this, plan_history.class));
     }
 
     public void profile(View view) {
