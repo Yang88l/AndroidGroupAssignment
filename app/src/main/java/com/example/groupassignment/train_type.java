@@ -14,6 +14,9 @@ public class train_type extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.train_type);
 
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
+
         //Background
         background.video(this);
     }

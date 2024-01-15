@@ -11,10 +11,7 @@
         layout="@layout/topnavi"/>
 
     <include
-        android:id="@+id/include2"
-        layout="@layout/background"
-        tools:layout_editor_absoluteX="45dp"
-        tools:layout_editor_absoluteY="-10dp" />
+        layout="@layout/background" />
 
     <TextView
         android:id="@+id/transport3"
