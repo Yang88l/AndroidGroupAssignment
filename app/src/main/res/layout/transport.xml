@@ -17,64 +17,96 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="-26dp" />
 
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="384dp"
+        android:layout_height="333dp"
+        android:layout_marginBottom="396dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.185"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/textbox" />
+
     <TextView
-        android:id="@+id/transport"
+        android:id="@+id/textView25"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
+        android:fontFamily="@font/lemon"
         android:text="Select Your Transport"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColor="#FFA500"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView15"
+        app:layout_constraintEnd_toEndOf="@+id/imageView15"
+        app:layout_constraintHorizontal_bias="0.528"
+        app:layout_constraintStart_toStartOf="@+id/imageView15"
+        app:layout_constraintTop_toTopOf="@+id/imageView15"
+        app:layout_constraintVertical_bias="0.401" />
 
-
-    <ImageButton
-        android:id="@+id/train"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:background="@drawable/button_design"
-        android:clickable="true"
-        android:contentDescription="train"
-        android:onClick="train"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.101"
-        app:layout_constraintStart_toEndOf="@+id/bus"
-        app:layout_constraintTop_toBottomOf="@+id/transport"
-        app:srcCompat="@drawable/train" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.387">
 
-    <ImageButton
-        android:id="@+id/bus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:background="@drawable/button_design"
-        android:clickable="true"
-        android:contentDescription="bus"
-        android:onClick="bus"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.073"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/transport"
-        app:srcCompat="@drawable/bus" />
+        <ImageButton
+            android:id="@+id/train"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_design"
+            android:clickable="true"
+            android:contentDescription="train"
+            android:onClick="train"
+            android:layout_marginStart="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.073"
+            app:layout_constraintStart_toEndOf="@+id/bus"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.307"
+            app:srcCompat="@drawable/train" />
 
-    <ImageButton
-        android:id="@+id/plane"
-        android:layout_width="114dp"
-        android:layout_height="110dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/button_design"
-        android:clickable="true"
-        android:contentDescription="plane"
-        android:onClick="flight"
-        android:textColor="#0096FF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.714"
-        app:layout_constraintStart_toEndOf="@+id/train"
-        app:layout_constraintTop_toBottomOf="@+id/transport"
-        app:srcCompat="@drawable/plane" />
+        <ImageButton
+            android:id="@+id/plane"
+            android:layout_width="114dp"
+            android:layout_height="110dp"
+            android:background="@drawable/button_design"
+            android:clickable="true"
+            android:contentDescription="plane"
+            android:onClick="flight"
+            android:textColor="#0096FF"
+            android:layout_marginStart="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.283"
+            app:layout_constraintStart_toEndOf="@+id/train"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.307"
+            app:srcCompat="@drawable/plane" />
+
+        <ImageButton
+            android:id="@+id/bus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_design"
+            android:clickable="true"
+            android:contentDescription="bus"
+            android:onClick="bus"
+            android:layout_marginStart="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.09"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.306"
+            app:srcCompat="@drawable/bus" />
+    </LinearLayout>
 
     <ImageView
         android:layout_width="302dp"

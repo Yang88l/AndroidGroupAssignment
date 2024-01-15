@@ -72,7 +72,7 @@ public class payment extends AppCompatActivity {
         main.updateVersion();
         cursor2.close();
 
-        //get user pin
+        //get user password
         dbmanager_user.open();
         Cursor cursor3 = dbmanager_user.fetch(user_id);
         user_password = cursor.getString(4);
@@ -81,7 +81,7 @@ public class payment extends AppCompatActivity {
         main.updateVersion();
 
         //SET TEXT
-        price_text.setText(Double.toString(totalPriceSum));
+        price_text.setText("RM " + Double.toString(totalPriceSum));
     }
     public void pay(View view) {
         input_password = password.getText().toString();

@@ -27,15 +27,41 @@ public class play extends AppCompatActivity {
         background.video(this);
 
         if (login_status()) {
-            ImageView picture = findViewById(R.id.imageButton12);
+            ImageView picture1 = findViewById(R.id.imageButton12);
             dbmanager_favourite = new dbmanager_favourite(this);
             dbmanager_favourite.open();
-            Cursor cursor = dbmanager_favourite.fetch(getUserID(), "play", 1);
-            if (cursor.getString(4).equals("1")) {
-                picture.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
+            Cursor cursor1 = dbmanager_favourite.fetch(getUserID(), "play", 1);
+            if (cursor1.getString(4).equals("1")) {
+                picture1.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
             }
-            else if (cursor.getString(4).equals("0")) {
-                picture.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
+            else if (cursor1.getString(4).equals("0")) {
+                picture1.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
+            }
+            dbmanager_favourite.close();
+            main.updateVersion();
+
+            ImageView picture2 = findViewById(R.id.imageButton12);
+            dbmanager_favourite = new dbmanager_favourite(this);
+            dbmanager_favourite.open();
+            Cursor cursor2 = dbmanager_favourite.fetch(getUserID(), "play", 1);
+            if (cursor2.getString(4).equals("1")) {
+                picture2.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
+            }
+            else if (cursor2.getString(4).equals("0")) {
+                picture2.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
+            }
+            dbmanager_favourite.close();
+            main.updateVersion();
+
+            ImageView picture3 = findViewById(R.id.imageButton12);
+            dbmanager_favourite = new dbmanager_favourite(this);
+            dbmanager_favourite.open();
+            Cursor cursor3 = dbmanager_favourite.fetch(getUserID(), "play", 1);
+            if (cursor3.getString(4).equals("1")) {
+                picture3.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
+            }
+            else if (cursor3.getString(4).equals("0")) {
+                picture3.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
             }
             dbmanager_favourite.close();
             main.updateVersion();

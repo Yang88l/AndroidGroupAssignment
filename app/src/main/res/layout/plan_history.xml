@@ -103,8 +103,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout7"
-        android:layout_width="380dp"
-        android:layout_height="28dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
