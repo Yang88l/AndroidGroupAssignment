@@ -3,15 +3,20 @@ package com.example.groupassignment;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import java.util.Random;
 
 public class notification extends AppCompatActivity {
+     private VideoView bg;
+    private int currentPosition;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,10 +24,20 @@ public class notification extends AppCompatActivity {
 
         //Top Navigation
         BaseActivity.setupToolbar(this);
+//background.video(this);
+        bg = findViewById(R.id.background);
 
-        //Background
-        background.video(this);
+        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.background;
+        Uri videoUri = Uri.parse(videoPath);
+        bg.setVideoURI(videoUri);
 
+        bg.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                mp.setLooping(true);
+                bg.start();
+            }
+        });
         TextView text1 = findViewById(R.id.text_1);
         TextView text2 = findViewById(R.id.text_2);
         TextView text3 = findViewById(R.id.text_3);
@@ -81,5 +96,36 @@ public class notification extends AppCompatActivity {
         Intent intent = new Intent(this,message.class);
         startActivity(intent);
     }
+    @Override
+    protected void onResume() {
+        // Resume the video playback from the saved position
+        bg.seekTo(currentPosition);
+        bg.start();
+        super.onResume();
+    }
+    @Override
+    protected void onRestart() {
+        bg.start();
+        super.onRestart();
+    }
+    @Override
+    protected void onPause() {
+        // Save the current playback position
+        currentPosition = bg.getCurrentPosition();
+        // Pause the video playback
+        bg.pause();
+        super.onPause();
+    }
+    @Override
+    protected void onDestroy() {
+        bg.stopPlayback();
+        super.onDestroy();
+    }
 
+    @Override
+    public void onBackPressed() {
+        currentPosition = bg.getCurrentPosition();
+        bg.pause();
+        super.onBackPressed();
+    }
 }

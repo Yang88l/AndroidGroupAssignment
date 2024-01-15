@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import com.example.groupassignment.dbmanagers.dbmanager_login_history;
 import com.example.groupassignment.dbmanagers.dbmanager_user;
@@ -15,7 +18,8 @@ import com.example.groupassignment.dbmanagers.dbmanager_user;
 public class reset_password extends AppCompatActivity {
     private com.example.groupassignment.dbmanagers.dbmanager_user dbmanager_user;
     private com.example.groupassignment.dbmanagers.dbmanager_login_history dbmanager_login_history;
-
+ private VideoView bg;
+    private int currentPosition;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,9 +27,21 @@ public class reset_password extends AppCompatActivity {
 
         //Top Navigation
         BaseActivity.setupToolbar(this);
+//background.video(this);
+        bg = findViewById(R.id.background);
 
-        //Background
-        background.video(this);
+        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.background;
+        Uri videoUri = Uri.parse(videoPath);
+        bg.setVideoURI(videoUri);
+
+        bg.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                mp.setLooping(true);
+                bg.start();
+            }
+        });
+
     }
 
     public void reset(View view) {
@@ -75,5 +91,37 @@ public class reset_password extends AppCompatActivity {
 
     public void profile(View view) {
         startActivity(new Intent(this, profile.class));
+    }
+    @Override
+    protected void onResume() {
+        // Resume the video playback from the saved position
+        bg.seekTo(currentPosition);
+        bg.start();
+        super.onResume();
+    }
+    @Override
+    protected void onRestart() {
+        bg.start();
+        super.onRestart();
+    }
+    @Override
+    protected void onPause() {
+        // Save the current playback position
+        currentPosition = bg.getCurrentPosition();
+        // Pause the video playback
+        bg.pause();
+        super.onPause();
+    }
+    @Override
+    protected void onDestroy() {
+        bg.stopPlayback();
+        super.onDestroy();
+    }
+
+    @Override
+    public void onBackPressed() {
+        currentPosition = bg.getCurrentPosition();
+        bg.pause();
+        super.onBackPressed();
     }
 }

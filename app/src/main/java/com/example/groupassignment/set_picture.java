@@ -19,8 +19,7 @@ public class set_picture extends AppCompatActivity {
         //Top Navigation
         BaseActivity.setupToolbar(this);
 
-        //Background
-        background.video(this);
+
     }
 
     public void camera(View view) {
