@@ -4,11 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import com.example.groupassignment.dbmanagers.dbmanager_login_history;
 
@@ -18,7 +21,8 @@ public class payment_successful extends AppCompatActivity {
     private String price;
     private payment payment;
     private com.example.groupassignment.dbmanagers.dbmanager_login_history dbmanager_login_history;
-
+private VideoView bg;
+    private int currentPosition;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +32,19 @@ public class payment_successful extends AppCompatActivity {
         BaseActivity.setupToolbar(this);
 
         //Background
-        background.video(this);
+       bg = findViewById(R.id.background);
+
+        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.background;
+        Uri videoUri = Uri.parse(videoPath);
+        bg.setVideoURI(videoUri);
+
+        bg.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                mp.setLooping(true);
+                bg.start();
+            }
+        });
 
         //ASSIGN ID
         price_text = findViewById(R.id.price_text);
@@ -78,5 +94,36 @@ public class payment_successful extends AppCompatActivity {
             startActivity(intent);
         }
     }
-  
+    @Override
+    protected void onResume() {
+        // Resume the video playback from the saved position
+        bg.seekTo(currentPosition);
+        bg.start();
+        super.onResume();
+    }
+    @Override
+    protected void onRestart() {
+        bg.start();
+        super.onRestart();
+    }
+    @Override
+    protected void onPause() {
+        // Save the current playback position
+        currentPosition = bg.getCurrentPosition();
+        // Pause the video playback
+        bg.pause();
+        super.onPause();
+    }
+    @Override
+    protected void onDestroy() {
+        bg.stopPlayback();
+        super.onDestroy();
+    }
+
+    @Override
+    public void onBackPressed() {
+        currentPosition = bg.getCurrentPosition();
+        bg.pause();
+        super.onBackPressed();
+    }
 }

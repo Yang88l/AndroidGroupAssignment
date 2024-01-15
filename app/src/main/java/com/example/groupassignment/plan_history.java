@@ -31,7 +31,6 @@ public class plan_history extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.plan_history);
 
-        //background.video(this);
         bg = findViewById(R.id.background);
 
         String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.background;
