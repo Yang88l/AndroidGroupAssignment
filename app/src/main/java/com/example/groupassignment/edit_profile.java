@@ -29,7 +29,6 @@ public class edit_profile extends AppCompatActivity {
         //Top Navigation
         BaseActivity.setupToolbar(this);
 
-//background.video(this);
         bg = findViewById(R.id.background);
 
         String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.background;

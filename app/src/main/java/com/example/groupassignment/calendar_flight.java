@@ -29,8 +29,6 @@ public class calendar_flight extends AppCompatActivity {
         BaseActivity.setupToolbar(this);
 
         //Background
-          //Background
-
         bg = findViewById(R.id.background);
 
         String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.background;

@@ -28,8 +28,6 @@ public class choose extends AppCompatActivity {
         BaseActivity.setupToolbar(this);
 
         //Background
-   //Background
-
         bg = findViewById(R.id.background);
 
         String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.background;
@@ -42,7 +40,8 @@ public class choose extends AppCompatActivity {
                 mp.setLooping(true);
                 bg.start();
             }
-        });    }
+        });
+    }
 
     public void play(View view) {
         Intent intent = new Intent (this, play.class);
