@@ -12,6 +12,7 @@ import android.widget.Toast;
 import android.widget.VideoView;
 
 import com.example.groupassignment.dbmanagers.dbmanager_choose_airline;
+import com.example.groupassignment.dbmanagers.dbmanager_flight;
 import com.example.groupassignment.dbmanagers.dbmanager_login_history;
 
 public class airline extends AppCompatActivity {
@@ -19,6 +20,8 @@ public class airline extends AppCompatActivity {
     private com.example.groupassignment.dbmanagers.dbmanager_login_history dbmanager_login_history;
    private VideoView bg;
     private int currentPosition;
+    private com.example.groupassignment.dbmanagers.dbmanager_flight dbmanager_flight;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,11 +69,20 @@ public class airline extends AppCompatActivity {
     }
 
     public void insertChooseAirline(int airline_id){
-        dbmanager_choose_airline = new dbmanager_choose_airline(this);
-        dbmanager_choose_airline.open();
-        dbmanager_choose_airline.insert(airline_id, getUserID());
-        dbmanager_choose_airline.close();
+        dbmanager_flight = new dbmanager_flight(this);
+        dbmanager_flight.open();
+        Cursor cursor = dbmanager_flight.fetch();
+        cursor.moveToLast();
+        switch (airline_id){
+            case 1: dbmanager_flight.update(Integer.parseInt(cursor.getString(0)),null,"Air Asia", null,null,-1, -1);
+            case 2: dbmanager_flight.update(Integer.parseInt(cursor.getString(0)),null,"Fire Fly", null,null,-1, -1);
+            case 3: dbmanager_flight.update(Integer.parseInt(cursor.getString(0)),null,"Berjaya Air", null,null,-1, -1);
+        }
+        dbmanager_flight.close();
         main.updateVersion();
+
+        Intent intent = new Intent(this, calendar_flight.class);
+        startActivity(intent);
     }
     public void notification(View view) { startActivity(new Intent(this, notification.class));}
     public void home(View view) {

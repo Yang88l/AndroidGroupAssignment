@@ -43,10 +43,6 @@ public class time_flight extends AppCompatActivity {
                 bg.start();
             }
         });
-        dbmanager_flight = new dbmanager_flight(this);
-        dbmanager_flight.open();
-        dbmanager_flight.close();
-
     }
 
     public void next(View view) {
@@ -56,8 +52,7 @@ public class time_flight extends AppCompatActivity {
         dbmanager_flight.open();
         Cursor cursor = dbmanager_flight.fetch();
         cursor.moveToLast();
-        int flight_id=Integer.parseInt(cursor.getString(0));
-        dbmanager_flight.update(flight_id, String.valueOf(time), null,null, null,Integer.parseInt(cursor.getString(5)));
+        dbmanager_flight.update(Integer.parseInt(cursor.getString(0)), time.getText().toString(), null,null, null,-1, -1);
         cursor.close();
         dbmanager_flight.close();
         main.updateVersion();

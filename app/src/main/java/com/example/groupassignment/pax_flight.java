@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 import android.widget.VideoView;
 
+import com.example.groupassignment.dbmanagers.dbmanager_flight;
 import com.example.groupassignment.dbmanagers.dbmanager_login_history;
 import com.example.groupassignment.dbmanagers.dbmanager_pax;
 import com.example.groupassignment.dbmanagers.dbmanager_user;
@@ -22,6 +23,8 @@ public class pax_flight extends AppCompatActivity {
     private com.example.groupassignment.dbmanagers.dbmanager_login_history dbmanager_login_history;
  private VideoView bg;
     private int currentPosition;
+    private com.example.groupassignment.dbmanagers.dbmanager_flight dbmanager_flight;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,20 +55,29 @@ public class pax_flight extends AppCompatActivity {
         int adult = Integer.parseInt(adult_amount.getText().toString());
         EditText kid_amount = findViewById(R.id.ticket_amount);
         int kid = Integer.parseInt(kid_amount.getText().toString());
-
+/*
         dbmanager_user = new dbmanager_user(this);
         dbmanager_user.open();
-        Cursor cursor = dbmanager_user.fetchALL();
-        cursor.moveToLast();
-        int user_id=Integer.parseInt(cursor.getString(0));
-        cursor.close();
+        Cursor cursor_user = dbmanager_user.fetchALL();
+        cursor_user.moveToLast();
+        int user_id=Integer.parseInt(cursor_user.getString(0));
+        cursor_user.close();
         dbmanager_user.close();
         main.updateVersion();
-
+/*
         dbmanager_pax = new dbmanager_pax(this);
         dbmanager_pax.open();
         dbmanager_pax.insert(user_id, amount, adult, kid);
         dbmanager_pax.close();
+        main.updateVersion();
+*/
+        dbmanager_flight = new dbmanager_flight(this);
+        dbmanager_flight.open();
+        Cursor cursor = dbmanager_flight.fetch();
+        cursor.moveToLast();
+        dbmanager_flight.update(Integer.parseInt(cursor.getString(0)), null, null,null, null,-1, amount);
+        cursor.close();
+        dbmanager_flight.close();
         main.updateVersion();
 
         Intent intent = new Intent(pax_flight.this, info_flight.class);

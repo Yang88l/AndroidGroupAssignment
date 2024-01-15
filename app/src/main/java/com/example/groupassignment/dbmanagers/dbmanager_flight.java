@@ -31,13 +31,14 @@ public class dbmanager_flight {
         main.saveVersion(context);
         dbHelper.close();
     }
-    public void insert(String time, String flight_number, String date, String state, int user_id ) {
+    public void insert(String state, int user_id) {
         ContentValues contentValue = new ContentValues();
-        contentValue.put(dbhelper_flight.TIME, time);
-        contentValue.put(dbhelper_flight.FLIGHT_NUMBER, flight_number);
-        contentValue.put(dbhelper_flight.DATE, date);
+        contentValue.put(dbhelper_flight.TIME, "");
+        contentValue.put(dbhelper_flight.FLIGHT_NAME, "");
+        contentValue.put(dbhelper_flight.DATE, "");
         contentValue.put(dbhelper_flight.STATE, state);
         contentValue.put(dbhelper_flight.USER_ID, user_id);
+        contentValue.put(dbhelper_flight.PAX, 0);
         database.insert(dbhelper_flight.TABLE_NAME, null, contentValue);
     }
 
@@ -45,13 +46,14 @@ public class dbmanager_flight {
         String[] columns = new String[] {
                 dbhelper_flight.FLIGHT_ID,
                 dbhelper_flight.TIME,
-                dbhelper_flight.FLIGHT_NUMBER,
+                dbhelper_flight.FLIGHT_NAME,
                 dbhelper_flight.DATE,
                 dbhelper_flight.STATE,
-                dbhelper_flight.USER_ID
+                dbhelper_flight.USER_ID,
+                dbhelper_flight.PAX
         };
         // WHERE
-        //String selection = dbhelper_flight.FLIGHT_ID + " = " +_id;
+        //String selection = dbhelper_flight.FLIGHT_ID+"="+_id;
 
         // Retrieve the data
         Cursor cursor = database.query(dbhelper_flight.TABLE_NAME, columns, null, null, null, null, null);
@@ -61,13 +63,14 @@ public class dbmanager_flight {
         return cursor;
     }
 
-    public int update(int _id, String time, String flight_number, String date, String state, int user_id) {
+    public int update(int _id, String time, String flight_name, String date, String state, int user_id, int pax) {
         ContentValues contentValues = new ContentValues();
         if(time!=null)contentValues.put(dbhelper_flight.TIME, time);
-        else if(flight_number!=null)contentValues.put(dbhelper_flight.FLIGHT_NUMBER, flight_number);
-        else if(date!=null)contentValues.put(dbhelper_flight.DATE, date);
-        else if(state!=null)contentValues.put(dbhelper_flight.STATE, state);
-        else if(user_id!=-1)contentValues.put(dbhelper_flight.USER_ID, user_id);
+        if(flight_name!=null)contentValues.put(dbhelper_flight.FLIGHT_NAME, flight_name);
+        if(date!=null)contentValues.put(dbhelper_flight.DATE, date);
+        if(state!=null)contentValues.put(dbhelper_flight.STATE, state);
+        if(user_id!=-1)contentValues.put(dbhelper_flight.USER_ID, user_id);
+        if(pax!=-1)contentValues.put(dbhelper_flight.PAX, pax);
         int i = database.update(dbhelper_flight.TABLE_NAME, contentValues, dbhelper_flight.FLIGHT_ID + " = " + _id, null);
         return i;
     }

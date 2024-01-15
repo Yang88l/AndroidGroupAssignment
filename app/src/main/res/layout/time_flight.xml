@@ -62,7 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/lemon"
-        android:text="Select Your Transport"
+        android:text="Select Your Time"
         android:textColor="#FFA500"
         android:textSize="24dp"
         android:textStyle="bold"

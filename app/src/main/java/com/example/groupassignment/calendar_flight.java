@@ -51,7 +51,7 @@ public class calendar_flight extends AppCompatActivity {
         dbmanager_flight.open();
         Cursor cursor = dbmanager_flight.fetch();
         cursor.moveToLast();
-        dbmanager_flight.update(Integer.parseInt(cursor.getString(0)),null,null, String.valueOf(date),null,getUserID());
+        dbmanager_flight.update(Integer.parseInt(cursor.getString(0)),null,null, date.getText().toString(),null, -1, -1);
         dbmanager_flight.close();
         main.updateVersion();
         Intent intent = new Intent(calendar_flight.this, time_flight.class);

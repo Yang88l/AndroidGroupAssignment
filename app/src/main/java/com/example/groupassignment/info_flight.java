@@ -52,13 +52,43 @@ public class info_flight extends AppCompatActivity {
         dbmanager_flight = new dbmanager_flight(this);
         dbmanager_flight.open();
         Cursor cursor = dbmanager_flight.fetch();
+        cursor.moveToLast();
+        String time = cursor.getString(1);
+        String name = cursor.getString(2);
         String date = cursor.getString(3);
+        String state = cursor.getString(4);
+        String pax = cursor.getString(6);
+
+        Toast.makeText(this, date+"", Toast.LENGTH_SHORT).show();
+
         cursor.close();
         dbmanager_flight.close();
         main.updateVersion();
 
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor_login = dbmanager_login_history.fetch();
+        cursor_login.moveToLast();
+        String activity = cursor_login.getString(2);
+        cursor_login.close();
+        dbmanager_login_history.close();
+        main.updateVersion();
+
         TextView text = findViewById(R.id.flight_information_text);
-        text.setText("You have made a flight booking on " + date);
+        if (activity.equals("plan")) {
+            text.setText("You have made a flight planning from " + state
+                    + " on " + date + " at " + time + "."
+                    + "\nYour airline is " + name + "."
+                    + "\nThe price is RM" + (Integer.parseInt(pax) * 99) + " for " + pax + " person."
+            );
+        }
+        else if (activity.equals("book")) {
+            text.setText("You have made a flight booking from " + state
+                    + "\non " + date + " at " + time + "."
+                    + "\nYour airline is " + name + "."
+                    + "\nThe price is RM" + (Integer.parseInt(pax) * 99) + " for " + pax + " person."
+            );
+        }
     }
 
     public void finish(View view) {
@@ -75,7 +105,7 @@ public class info_flight extends AppCompatActivity {
         if (activity.equals("plan")) {
             dbmanager_plan_summary = new dbmanager_plan_summary(this);
             dbmanager_plan_summary.open();
-            dbmanager_plan_summary.insert("flight", getAirlineID(), getUserID(), getLoginID());//change login id later
+            dbmanager_plan_summary.insert("flight", getFlightID(), getUserID(), getLoginID());
             dbmanager_plan_summary.close();
             main.updateVersion();
             Intent intent = new Intent(this,planning_summary.class);
@@ -84,7 +114,7 @@ public class info_flight extends AppCompatActivity {
         else if (activity.equals("book")) {
             dbmanager_book_summary = new dbmanager_book_summary(this);
             dbmanager_book_summary.open();
-            dbmanager_book_summary.insert("flight", getAirlineID(), getUserID(), getLoginID());
+            dbmanager_book_summary.insert("flight", getFlightID(), getUserID(), getLoginID());
             dbmanager_book_summary.close();
             main.updateVersion();
             Intent intent = new Intent(this,booking_summary.class);
@@ -102,6 +132,17 @@ public class info_flight extends AppCompatActivity {
         dbmanager_login_history.close();
         main.updateVersion();
         return user_id;
+    }
+
+    public int getFlightID(){
+        dbmanager_flight = new dbmanager_flight(this);
+        dbmanager_flight.open();
+        Cursor cursor = dbmanager_flight.fetch();
+        int id = Integer.parseInt(cursor.getString(0));
+        cursor.close();
+        dbmanager_flight.close();
+        main.updateVersion();
+        return id;
     }
 
     public int getAirlineID(){

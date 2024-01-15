@@ -119,6 +119,20 @@ public class planning_summary extends AppCompatActivity {
                     if(seat==1) displayText2.append(": RM"+(seat*5)+" for "+seat+" seat");
                     else displayText2.append(": RM"+(seat*5)+" for "+seat+" seats");
                 }
+                else if (cursor_summary.getString(1).equals("flight")){
+                    dbmanager_flight = new dbmanager_flight(this);
+                    dbmanager_flight.open();
+                    Cursor cursor = dbmanager_flight.fetch();
+                    cursor.moveToLast();
+                    String flight_name = cursor.getString(2);
+                    int pax = Integer.parseInt(cursor.getString(6));
+                    cursor.close();
+                    dbmanager_flight.close();
+                    main.updateVersion();
+
+                    displayText1.append(flight_name);
+                    displayText2.append(": RM" + (pax * 99) + " for " + pax + " person.");
+                }
                 if (!cursor_summary.isLast()) {
                     displayText1.append("\n");
                     displayText2.append("\n");

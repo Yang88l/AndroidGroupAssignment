@@ -13,10 +13,10 @@ public class dbhelper_flight extends SQLiteOpenHelper {
     public static final String FLIGHT_ID = "flight_id";
     public static final String TIME = "time";
     public static final String DATE = "date";
-    public static final String FLIGHT_NUMBER  = "flight_number";
-    public static final String DEPARTURE_TIME = "departure_time";
+    public static final String FLIGHT_NAME  = "flight_name";
     public static final String STATE = "state";
     public static final String USER_ID = "user_id";
+    public static final String PAX = "pax";
 
     // Database Information
     static final String DB_NAME = "JOURNALDEV_TRAVEL_BOOKING.DB";
@@ -30,10 +30,10 @@ public class dbhelper_flight extends SQLiteOpenHelper {
             + FLIGHT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + TIME + " TEXT NOT NULL, "
             + DATE + " TEXT NOT NULL, "
-            + FLIGHT_NUMBER + " TEXT NOT NULL, "
-            + DEPARTURE_TIME + " TEXT NOT NULL, "
+            + FLIGHT_NAME + " TEXT NOT NULL, "
             + STATE + " TEXT NOT NULL, "
-            + USER_ID + " INTEGER NOT NULL"
+            + USER_ID + " INTEGER NOT NULL, "
+            + PAX + " INTEGER NOT NULL"
             + ")";
 
     public dbhelper_flight(Context context) {

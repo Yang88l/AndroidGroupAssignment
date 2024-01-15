@@ -261,7 +261,7 @@ public class main extends AppCompatActivity {
 
         dbmanager_play_info = new dbmanager_play_info(this);
         dbmanager_play_info.open();
-        dbmanager_play_info.insert("Sunway Lagoo", 100, "sunway_lagoon");
+        dbmanager_play_info.insert("Zoo Negara", 100, "zoo_negara");
         dbmanager_play_info.insert("Genting Highland", 100, "genting_highland");
         dbmanager_play_info.insert("Sky Mirror", 100, "sky_mirror");
         dbmanager_play_info.close();

@@ -62,7 +62,7 @@ public class state_flight extends AppCompatActivity {
     public void chooseState(String state) {
         dbmanager_flight = new dbmanager_flight(this);
         dbmanager_flight.open();
-        dbmanager_flight.insert(null,null,null, state, getUserID());
+        dbmanager_flight.insert(state, getUserID());
         dbmanager_flight.close();
         main.updateVersion();
         Intent intent = new Intent(state_flight.this, airline.class);
