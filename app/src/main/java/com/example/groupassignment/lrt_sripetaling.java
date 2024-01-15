@@ -123,7 +123,7 @@ public class lrt_sripetaling extends AppCompatActivity {
             time=(from_pos-to_pos)*5;
             cost=0.4+(double) (from_pos-to_pos)*0.4;
             arrival_time.setText(time+"minutes");
-            total_cost.setText("RM"+cost);
+            total_cost.setText(String.format("RM%.2f",cost));
             dbmanager_train = new dbmanager_train(this);
             dbmanager_train.open();
             dbmanager_train.insert(getUserID(), "lrt sripetaling", from_where, to_where, time+"minutes", cost);
