@@ -175,13 +175,15 @@
 
     <ImageView
         android:id="@+id/imageView15"
-        android:layout_width="384dp"
-        android:layout_height="333dp"
-        android:layout_marginBottom="428dp"
+        android:layout_width="306dp"
+        android:layout_height="258dp"
+        android:layout_marginBottom="444dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.185"
+        app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/textbox" />
 
     <TextView
@@ -191,7 +193,7 @@
         android:fontFamily="@font/lemon"
         android:text="Restaurant"
         android:textColor="#FFA500"
-        android:textSize="40dp"
+        android:textSize="36dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imageView15"
             app:layout_constraintEnd_toEndOf="@+id/imageView15"
