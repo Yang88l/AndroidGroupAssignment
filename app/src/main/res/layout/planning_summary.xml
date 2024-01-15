@@ -46,7 +46,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="1dp"
-        android:background="#276bf2"
+        android:background="#27caf2"
         android:gravity="center"
         android:text="Planning Summary"
         android:textSize="30dp"
