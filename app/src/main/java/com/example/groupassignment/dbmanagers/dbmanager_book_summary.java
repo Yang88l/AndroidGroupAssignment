@@ -7,7 +7,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.groupassignment.dbhelpers.dbhelper_book_summary;
-import com.example.groupassignment.dbhelpers.dbhelper_plan_summary;
+import com.example.groupassignment.dbhelpers.dbhelper_book_summary;
 import com.example.groupassignment.main;
 
 public class dbmanager_book_summary {
@@ -32,23 +32,24 @@ public class dbmanager_book_summary {
         main.saveVersion(context);
         dbHelper.close();
     }
-    public void insert(String type, int activity_id, int user_id) {
+    public void insert(String type, int activity_id, int user_id, int login_id ) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(dbhelper_book_summary.TYPE, type);
-        contentValue.put(dbhelper_book_summary.ACTIVITY_ID, activity_id);
         contentValue.put(dbhelper_book_summary.USER_ID, user_id);
+        contentValue.put(dbhelper_book_summary.LOGIN_ID, login_id);
         database.insert(dbhelper_book_summary.TABLE_NAME, null, contentValue);
     }
 
     // SELECT * FROM table
     public Cursor fetch(int user_id, int login_id) {
         String[] columns = new String[] {
-                dbhelper_plan_summary.USER_ID,
-                dbhelper_plan_summary.TYPE,
-                dbhelper_plan_summary.ACTIVITY_ID,
-                dbhelper_plan_summary.USER_ID
+                dbhelper_book_summary.USER_ID,
+                dbhelper_book_summary.TYPE,
+                dbhelper_book_summary.ACTIVITY_ID,
+                dbhelper_book_summary.USER_ID,
+                dbhelper_book_summary.LOGIN_ID
         };
-        Cursor cursor = database.query(dbhelper_plan_summary.TABLE_NAME, columns, dbhelper_plan_summary.USER_ID+"="+user_id+" AND "+dbhelper_plan_summary.LOGIN_ID+"="+login_id, null, null, null, null);
+        Cursor cursor = database.query(dbhelper_book_summary.TABLE_NAME, columns, dbhelper_book_summary.USER_ID+"="+user_id+" AND "+dbhelper_book_summary.LOGIN_ID+"="+login_id, null, null, null, null);
         if (cursor != null) {
             cursor.moveToFirst();
         }
@@ -78,12 +79,12 @@ public class dbmanager_book_summary {
     public int update(int _id, int hotel_id, int user_id, String airline, int transport_id, int food_id, double total_price, String location) {
         ContentValues contentValues = new ContentValues();
         if(hotel_id!=null)contentValues.put(dbhelper_book_summary.HOTEL_ID, hotel_id);
-        else if(user_id!=null)contentValues.put(dbhelper_book_summary.USER_ID, user_id);
-        else if(airline!=null)contentValues.put(dbhelper_book_summary.AIRLINE_ID, airline);
-        else if(transport_id!=null)contentValues.put(dbhelper_book_summary.TRANSPORT_ID, transport_id);
-        else if(food_id!=null)contentValues.put(dbhelper_book_summary.FOOD_ID, food_id);
-        else if(total_price!=-1)contentValues.put(dbhelper_book_summary.TOTAL_PRICE, total_price);
-        else if(location!=null)contentValues.put(dbhelper_book_summary.LOCATION, location);
+        if(user_id!=null)contentValues.put(dbhelper_book_summary.USER_ID, user_id);
+        if(airline!=null)contentValues.put(dbhelper_book_summary.AIRLINE_ID, airline);
+        if(transport_id!=null)contentValues.put(dbhelper_book_summary.TRANSPORT_ID, transport_id);
+        if(food_id!=null)contentValues.put(dbhelper_book_summary.FOOD_ID, food_id);
+        if(total_price!=-1)contentValues.put(dbhelper_book_summary.TOTAL_PRICE, total_price);
+        if(location!=null)contentValues.put(dbhelper_book_summary.LOCATION, location);
         int i = database.update(dbhelper_book_summary.TABLE_NAME, contentValues, dbhelper_book_summary.BOOK_SUMMARY_ID + " = " + _id, null);
         return i;
     }

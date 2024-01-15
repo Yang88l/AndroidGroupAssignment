@@ -73,6 +73,7 @@ public class dbmanager_accomodation_info {
         return database.rawQuery(query, selectionArgs);
     }
 */
+
     //UPDATE hotel_name, price FROM table WHERE hotel_id = _id
     public int update(int _id, String hotel_name, double price) {
         ContentValues contentValues = new ContentValues();

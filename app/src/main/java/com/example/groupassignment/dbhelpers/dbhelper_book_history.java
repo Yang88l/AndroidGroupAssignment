@@ -15,6 +15,7 @@ public class dbhelper_book_history extends SQLiteOpenHelper {
     // Table columns
     public static final String BOOK_HISTORY_ID = "book_history_id";
     public static final String USER_ID = "user_id";
+    public static final String LOGIN_ID = "login_id";
     public static final String ACTIVITY = "activity";
     public static final String COST = "cost";
 
@@ -29,6 +30,7 @@ public class dbhelper_book_history extends SQLiteOpenHelper {
             + TABLE_NAME + "("
             + BOOK_HISTORY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + USER_ID + " INTEGER NOT NULL, "
+            + LOGIN_ID + " INTEGER NOT NULL, "
             + ACTIVITY + " TEXT NOT NULL, "
             + COST + " TEXT NOT NULL "
             + ")";
