@@ -194,7 +194,7 @@
         android:onClick="settings"
         android:text="Settings"
         android:background="@drawable/button_design"
-        android:textColor="#0096FF"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
@@ -207,7 +207,7 @@
         android:onClick="edit_profile"
         android:text="Edit my profile"
         android:background="@drawable/button_design"
-        android:textColor="#0096FF"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button3" />
@@ -220,7 +220,7 @@
         android:onClick="log_out"
         android:text="Logout"
         android:background="@drawable/button_design"
-        android:textColor="#0096FF"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button4" />

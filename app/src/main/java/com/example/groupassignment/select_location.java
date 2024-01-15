@@ -54,6 +54,9 @@ public class select_location extends AppCompatActivity implements View.OnClickLi
             }
         }
     }
+    public void notification(View view) {
+        startActivity(new Intent(this, notification.class));
+    }
 
     @Override
     public void onClick(View v) {

@@ -54,35 +54,39 @@ public class notification extends AppCompatActivity {
         Random random = new Random();
         //Delay random message
         Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                int random_notif = random.nextInt(10);
+//        handler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                int random_notif = random.nextInt(10);
+//
+//                switch(random_notif) {
+//                    case 1: text1.setText("Enjoy our app? Go to BookSwift.com to give us a feedback!");
+//                        break;
+//                    case 2: text1.setText("Any issue or concern about our app? Go to BookSwift.com, Customer Support");
+//                        break;
+//                    case 3: text1.setText("Zoo Negara is trending now. Get it before it sold out!");
+//                        break;
+//                    case 4: text1.setText("Genting Highland is trending now. Get it before it sold out!");
+//                        break;
+//                    case 5: text1.setText("Sky Mirror is trending now. Get it before it sold out!");
+//                        break;
+//                    case 6: text1.setText("Sunway Lagoon is trending now. Get it before it sold out!");
+//                        break;
+//                    case 7: //do nothing
+//                        break;
+//                    case 8: //do nothing
+//                        break;
+//                    case 9: //do nothing
+//                        break;
+//                    case 10: //do nothing
+//                        break;
+//                }
+//            }
+//        }, 4000);
 
-                switch(random_notif) {
-                    case 1: text1.setText("Enjoy our app? Go to BookSwift.com to give us a feedback!");
-                        break;
-                    case 2: text1.setText("Any issue or concern about our app? Go to BookSwift.com, Customer Support");
-                        break;
-                    case 3: text1.setText("Zoo Negara is trending now. Get it before it sold out!");
-                        break;
-                    case 4: text1.setText("Genting Highland is trending now. Get it before it sold out!");
-                        break;
-                    case 5: text1.setText("Sky Mirror is trending now. Get it before it sold out!");
-                        break;
-                    case 6: text1.setText("Sunway Lagoon is trending now. Get it before it sold out!");
-                        break;
-                    case 7: //do nothing
-                        break;
-                    case 8: //do nothing
-                        break;
-                    case 9: //do nothing
-                        break;
-                    case 10: //do nothing
-                        break;
-                }
-            }
-        }, 4000);
+        text1.setText("Enjoy our app? Go to BookSwift.com to give us a feedback!");
+                text2.setText("Any issue or concern about our app? Go to BookSwift.com, Customer Support");
+                        text3.setText("Zoo Negara is trending now. Get it before it sold out!");
     }
     public void notification(View view) {
         Toast.makeText(this, "You are already inside!", Toast.LENGTH_SHORT).show();
