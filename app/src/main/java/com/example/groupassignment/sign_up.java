@@ -34,20 +34,20 @@ public class sign_up extends AppCompatActivity {
 
         //Top Navigation
         BaseActivity.setupToolbar(this);
-////background.video(this);
-//        bg = findViewById(R.id.background);
-//
-//        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.background;
-//        Uri videoUri = Uri.parse(videoPath);
-//        bg.setVideoURI(videoUri);
-//
-//        bg.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-//            @Override
-//            public void onPrepared(MediaPlayer mp) {
-//                mp.setLooping(true);
-//                bg.start();
-//            }
-//        });
+
+        bg = findViewById(R.id.background);
+
+        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.background;
+        Uri videoUri = Uri.parse(videoPath);
+        bg.setVideoURI(videoUri);
+
+        bg.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                mp.setLooping(true);
+                bg.start();
+            }
+        });
 
         EditText editTextName = findViewById(R.id.editTextText);
         EditText editTextEmail = findViewById(R.id.editTextText2);
@@ -233,36 +233,36 @@ public class sign_up extends AppCompatActivity {
         main.updateVersion();
         return login_id;
     }
-//    @Override
-//    protected void onResume() {
-//        // Resume the video playback from the saved position
-//        bg.seekTo(currentPosition);
-//        bg.start();
-//        super.onResume();
-//    }
-//    @Override
-//    protected void onRestart() {
-//        bg.start();
-//        super.onRestart();
-//    }
-//    @Override
-//    protected void onPause() {
-//        // Save the current playback position
-//        currentPosition = bg.getCurrentPosition();
-//        // Pause the video playback
-//        bg.pause();
-//        super.onPause();
-//    }
-//    @Override
-//    protected void onDestroy() {
-//        bg.stopPlayback();
-//        super.onDestroy();
-//    }
-//
-//    @Override
-//    public void onBackPressed() {
-//        currentPosition = bg.getCurrentPosition();
-//        bg.pause();
-//        super.onBackPressed();
-//    }
+    @Override
+    protected void onResume() {
+        // Resume the video playback from the saved position
+        bg.seekTo(currentPosition);
+        bg.start();
+        super.onResume();
+    }
+    @Override
+    protected void onRestart() {
+        bg.start();
+        super.onRestart();
+    }
+    @Override
+    protected void onPause() {
+        // Save the current playback position
+        currentPosition = bg.getCurrentPosition();
+        // Pause the video playback
+        bg.pause();
+        super.onPause();
+    }
+    @Override
+    protected void onDestroy() {
+        bg.stopPlayback();
+        super.onDestroy();
+    }
+
+    @Override
+    public void onBackPressed() {
+        currentPosition = bg.getCurrentPosition();
+        bg.pause();
+        super.onBackPressed();
+    }
 }
