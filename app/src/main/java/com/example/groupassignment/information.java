@@ -45,7 +45,6 @@ public class information extends AppCompatActivity {
         //Top Navigation
         BaseActivity.setupToolbar(this);
 
-        //background.video(this);
         bg = findViewById(R.id.background);
 
         String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.background;

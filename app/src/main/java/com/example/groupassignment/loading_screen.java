@@ -20,6 +20,6 @@ public class loading_screen extends AppCompatActivity {
                 startActivity(new Intent(loading_screen.this,main.class));
                 finish();
             }
-        }, 1000);
+        }, 800);
     }
 }
