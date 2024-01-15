@@ -17,6 +17,8 @@ import com.example.groupassignment.dbmanagers.dbmanager_login_history;
 import com.example.groupassignment.dbmanagers.dbmanager_plan_history;
 import com.example.groupassignment.dbmanagers.dbmanager_plan_summary;
 import com.example.groupassignment.dbmanagers.dbmanager_play_info;
+import com.example.groupassignment.dbmanagers.dbmanager_choose_bus;
+
 
 public class planning_summary extends AppCompatActivity {
     private dbmanager_plan_summary dbmanager_plan_summary;
@@ -27,6 +29,7 @@ public class planning_summary extends AppCompatActivity {
     private dbmanager_flight dbmanager_flight;
     private dbmanager_bus dbmanager_bus;
     private dbmanager_plan_history dbmanager_plan_history;
+    private dbmanager_choose_bus dbmanager_choose_bus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,6 +84,24 @@ public class planning_summary extends AppCompatActivity {
                     cursor.close();
                     dbmanager_play_info.close();
                     main.updateVersion();
+                }
+                else if (cursor_summary.getString(1).equals("bus")){
+                    dbmanager_choose_bus = new dbmanager_choose_bus(this);
+                    dbmanager_choose_bus.open();
+                    Cursor cursor = dbmanager_choose_bus.fetchID(Integer.parseInt(cursor_summary.getString(2)));
+                    int bus_id = Integer.parseInt(cursor.getString(1));
+                    int seat = Integer.parseInt(cursor.getString(4));
+                    cursor.close();
+                    dbmanager_choose_bus.close();
+                    main.updateVersion();
+
+                    dbmanager_bus = new dbmanager_bus(this);
+                    dbmanager_bus.open();
+                    Cursor cursor_bus = dbmanager_bus.fetch(bus_id);
+                    displayText1.append(cursor_bus.getString(2));
+
+                    if(seat==1) displayText2.append(": RM"+(seat*5)+" for "+seat+" seat");
+                    else displayText2.append(": RM"+(seat*5)+" for "+seat+" seats");
                 }
                 if (!cursor_summary.isLast()) {
                     displayText1.append("\n");

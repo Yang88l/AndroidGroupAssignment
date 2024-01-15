@@ -10,11 +10,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.groupassignment.dbmanagers.dbmanager_accomodation_info;
+import com.example.groupassignment.dbmanagers.dbmanager_bus;
 import com.example.groupassignment.dbmanagers.dbmanager_food_info;
 import com.example.groupassignment.dbmanagers.dbmanager_login_history;
 import com.example.groupassignment.dbmanagers.dbmanager_book_history;
 import com.example.groupassignment.dbmanagers.dbmanager_book_summary;
 import com.example.groupassignment.dbmanagers.dbmanager_play_info;
+import com.example.groupassignment.dbmanagers.dbmanager_choose_bus;
 
 public class booking_summary extends AppCompatActivity {
 
@@ -24,6 +26,8 @@ public class booking_summary extends AppCompatActivity {
     private com.example.groupassignment.dbmanagers.dbmanager_play_info dbmanager_play_info;
     private com.example.groupassignment.dbmanagers.dbmanager_book_history dbmanager_book_history;
     private com.example.groupassignment.dbmanagers.dbmanager_login_history dbmanager_login_history;
+    private com.example.groupassignment.dbmanagers.dbmanager_choose_bus dbmanager_choose_bus;
+    private com.example.groupassignment.dbmanagers.dbmanager_bus dbmanager_bus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +82,24 @@ public class booking_summary extends AppCompatActivity {
                     cursor.close();
                     dbmanager_play_info.close();
                     main.updateVersion();
+                }
+                else if (cursor_summary.getString(1).equals("bus")){
+                    dbmanager_choose_bus = new dbmanager_choose_bus(this);
+                    dbmanager_choose_bus.open();
+                    Cursor cursor = dbmanager_choose_bus.fetchID(Integer.parseInt(cursor_summary.getString(2)));
+                    int bus_id = Integer.parseInt(cursor.getString(1));
+                    int seat = Integer.parseInt(cursor.getString(4));
+                    cursor.close();
+                    dbmanager_choose_bus.close();
+                    main.updateVersion();
+
+                    dbmanager_bus = new dbmanager_bus(this);
+                    dbmanager_bus.open();
+                    Cursor cursor_bus = dbmanager_bus.fetch(bus_id);
+                    displayText1.append(cursor_bus.getString(2));
+
+                    if(seat==1) displayText2.append(": RM"+(seat*5)+" for "+seat+" seat");
+                    else displayText2.append(": RM"+(seat*5)+" for "+seat+" seats");
                 }
                 if (!cursor_summary.isLast()) {
                     displayText1.append("\n");
