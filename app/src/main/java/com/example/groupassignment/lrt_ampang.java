@@ -135,7 +135,7 @@ public class lrt_ampang extends AppCompatActivity {
             time=(to_pos-from_pos)*5;
             cost=0.4+(double) (to_pos-from_pos)*0.4;
             arrival_time.setText(time+"minutes");
-            total_cost.setText("RM"+cost);
+            total_cost.setText(String.format("RM%.2f",cost));
             dbmanager_train = new dbmanager_train(this);
             dbmanager_train.open();
             dbmanager_train.insert(getUserID(), "lrt ampang", from_where, to_where, time+"minutes", cost);
