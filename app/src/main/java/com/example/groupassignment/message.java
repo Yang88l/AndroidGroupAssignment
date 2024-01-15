@@ -7,12 +7,15 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.Toolbar;
 
+import com.example.groupassignment.dbmanagers.dbmanager_login_history;
 import com.example.groupassignment.dbmanagers.dbmanager_message;
 
 public class message extends AppCompatActivity {
     private com.example.groupassignment.dbmanagers.dbmanager_message dbmanager_message;
+    private com.example.groupassignment.dbmanagers.dbmanager_login_history dbmanager_login_history;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,7 +64,23 @@ public class message extends AppCompatActivity {
     }
 
     public void profile(View view) {
-        startActivity(new Intent(this, profile.class));
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor = dbmanager_login_history.fetch();
+        cursor.moveToLast();
+        String status=cursor.getString(3);
+        cursor.close();
+        dbmanager_login_history.close();
+        main.updateVersion();
+        Toast.makeText(this, status, Toast.LENGTH_SHORT).show();
+        if (status.equals("logged out")) {
+            Intent intent = new Intent(this, log_in.class);
+            startActivity(intent);
+        }
+        else if (status.equals("logged in")) {
+            Intent intent = new Intent(this, profile.class);
+            startActivity(intent);
+        }
     }
 
 }
