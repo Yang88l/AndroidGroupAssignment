@@ -4,13 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.database.Cursor;
-import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.VideoView;
+import android.widget.Toast;
 
 import com.example.groupassignment.dbmanagers.dbmanager_login_history;
 import com.example.groupassignment.dbmanagers.dbmanager_user;
@@ -19,8 +17,7 @@ public class profile extends AppCompatActivity {
 
     private com.example.groupassignment.dbmanagers.dbmanager_user dbmanager_user;
     private com.example.groupassignment.dbmanagers.dbmanager_login_history dbmanager_login_history;
- private VideoView bg;
-    private int currentPosition;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,20 +26,8 @@ public class profile extends AppCompatActivity {
         //Top Navigation
         BaseActivity.setupToolbar(this);
 
-//background.video(this);
-        bg = findViewById(R.id.background);
-
-        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.background;
-        Uri videoUri = Uri.parse(videoPath);
-        bg.setVideoURI(videoUri);
-
-        bg.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-            @Override
-            public void onPrepared(MediaPlayer mp) {
-                mp.setLooping(true);
-                bg.start();
-            }
-        });
+        //Background
+        background.video(this);
 
         dbmanager_user = new dbmanager_user(this);
         dbmanager_user.open();
@@ -114,38 +99,22 @@ public class profile extends AppCompatActivity {
     }
 
     public void profile(View view) {
-        startActivity(new Intent(this, profile.class));
-    }
-    @Override
-    protected void onResume() {
-        // Resume the video playback from the saved position
-        bg.seekTo(currentPosition);
-        bg.start();
-        super.onResume();
-    }
-    @Override
-    protected void onRestart() {
-        bg.start();
-        super.onRestart();
-    }
-    @Override
-    protected void onPause() {
-        // Save the current playback position
-        currentPosition = bg.getCurrentPosition();
-        // Pause the video playback
-        bg.pause();
-        super.onPause();
-    }
-    @Override
-    protected void onDestroy() {
-        bg.stopPlayback();
-        super.onDestroy();
-    }
-
-    @Override
-    public void onBackPressed() {
-        currentPosition = bg.getCurrentPosition();
-        bg.pause();
-        super.onBackPressed();
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor = dbmanager_login_history.fetch();
+        cursor.moveToLast();
+        String status=cursor.getString(3);
+        cursor.close();
+        dbmanager_login_history.close();
+        main.updateVersion();
+        Toast.makeText(this, status, Toast.LENGTH_SHORT).show();
+        if (status.equals("logged out")) {
+            Intent intent = new Intent(this, log_in.class);
+            startActivity(intent);
+        }
+        else if (status.equals("logged in")) {
+            Intent intent = new Intent(this, profile.class);
+            startActivity(intent);
+        }
     }
 }

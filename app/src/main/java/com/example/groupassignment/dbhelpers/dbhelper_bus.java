@@ -36,6 +36,7 @@ public class dbhelper_bus extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE);
+        db.execSQL("INSERT INTO bus (BUS_ID, SEAT, BUS) VALUES (1, 30, 'Soutern'), (2, 30, 'Mayang Sari'), (3, 30, 'City Express');");
     }
 
     @Override

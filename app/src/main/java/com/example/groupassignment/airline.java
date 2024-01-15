@@ -8,6 +8,7 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 import android.widget.VideoView;
 
 import com.example.groupassignment.dbmanagers.dbmanager_choose_airline;
@@ -16,7 +17,7 @@ import com.example.groupassignment.dbmanagers.dbmanager_login_history;
 public class airline extends AppCompatActivity {
     private com.example.groupassignment.dbmanagers.dbmanager_choose_airline dbmanager_choose_airline;
     private com.example.groupassignment.dbmanagers.dbmanager_login_history dbmanager_login_history;
-     private VideoView bg;
+   private VideoView bg;
     private int currentPosition;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +26,8 @@ public class airline extends AppCompatActivity {
 
         //Top Navigation
         BaseActivity.setupToolbar(this);
-        //background.video(this);
+
+        //Background
         bg = findViewById(R.id.background);
 
         String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.background;
@@ -84,7 +86,23 @@ public class airline extends AppCompatActivity {
     }
 
     public void profile(View view) {
-        startActivity(new Intent(this, profile.class));
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor = dbmanager_login_history.fetch();
+        cursor.moveToLast();
+        String status=cursor.getString(3);
+        cursor.close();
+        dbmanager_login_history.close();
+        main.updateVersion();
+        Toast.makeText(this, status, Toast.LENGTH_SHORT).show();
+        if (status.equals("logged out")) {
+            Intent intent = new Intent(this, log_in.class);
+            startActivity(intent);
+        }
+        else if (status.equals("logged in")) {
+            Intent intent = new Intent(this, profile.class);
+            startActivity(intent);
+        }
     }
     @Override
     protected void onResume() {
