@@ -26,11 +26,11 @@ public class train_type extends AppCompatActivity {
     }
 
     public void ampang(View v) {
-        startActivity(new Intent(train_type.this, lrt_ampang.class));
+        startActivity(new Intent(train_type.this, lrt_sripetaling.class));
     }
 
     public void sri_petaling(View v) {
-        startActivity(new Intent(train_type.this, lrt_sripetaling.class));
+        startActivity(new Intent(train_type.this, lrt_ampang.class));
     }
 
     public void putrajaya(View v) {

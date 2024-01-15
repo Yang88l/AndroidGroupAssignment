@@ -18,11 +18,14 @@
         android:id="@+id/imageView15"
         android:layout_width="384dp"
         android:layout_height="333dp"
+        android:layout_marginTop="2dp"
         android:layout_marginBottom="396dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topnavi"
+        app:layout_constraintVertical_bias="0.75"
         app:srcCompat="@drawable/textbox" />
 
     <TextView
@@ -45,29 +48,30 @@
         android:id="@+id/sabahbut"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="268dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/button_design"
         android:onClick="sabah"
         android:text="Sabah"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/penangbut" />
 
     <Button
         android:id="@+id/sarawakbut"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="216dp"
         android:background="@drawable/button_design"
         android:onClick="sarawak"
         android:text="Sarawak"
         android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.355" />
 
     <Button
         android:id="@+id/penangbut"
@@ -97,6 +101,7 @@
 
 
     <ImageView
+        android:id="@+id/imageView17"
         android:layout_width="302dp"
         android:layout_height="52dp"
         android:layout_marginBottom="72dp"
