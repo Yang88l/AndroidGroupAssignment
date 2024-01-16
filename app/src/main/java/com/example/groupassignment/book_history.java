@@ -181,4 +181,7 @@ public class book_history extends AppCompatActivity {
         bg.pause();
         super.onBackPressed();
     }
+
+    public void plan_history(View view) {startActivity(new Intent(this, plan_history.class));
+    }
 }
