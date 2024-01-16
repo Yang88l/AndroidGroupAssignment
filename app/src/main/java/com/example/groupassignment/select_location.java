@@ -45,7 +45,7 @@ public class select_location extends AppCompatActivity implements View.OnClickLi
             if (child instanceof Button) {
                 int buttonId = child.getId();
                 System.out.println("Button at position " + i + " has ID: " + getResources().getResourceEntryName(buttonId));
-                if (i == 6) {
+                if (i == 5) {
                     child.setTag(BUTTON_TAG_SECOND);
                 } else {
                     child.setTag(BUTTON_TAG_FIRST);

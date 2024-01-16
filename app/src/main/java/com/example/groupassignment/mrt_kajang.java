@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -21,9 +22,9 @@ public class mrt_kajang extends AppCompatActivity {
     private com.example.groupassignment.dbmanagers.dbmanager_login_history dbmanager_login_history;
     private String location, from_where, to_where;
     public int pos, from_pos, to_pos;
- private VideoView bg;
+    private VideoView bg;
     private int currentPosition;
-
+    private Button kajang, stadium_kajang, sungai_jernih, bukit_dokong, batu_11_cheras;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +32,12 @@ public class mrt_kajang extends AppCompatActivity {
 
         //Top Navigation
         BaseActivity.setupToolbar(this);
+
+        kajang = findViewById(R.id.kajang);
+        stadium_kajang = findViewById(R.id.stadium_kajang);
+        sungai_jernih = findViewById(R.id.sungai_jernih);
+        bukit_dokong = findViewById(R.id.bukit_dokong);
+        batu_11_cheras = findViewById(R.id.batu_11_cheras);
 
         bg = findViewById(R.id.background);
 
@@ -51,26 +58,61 @@ public class mrt_kajang extends AppCompatActivity {
     public void kajang(View view) {
         location = "Kajang";
         pos=1;
+
+        kajang.setBackgroundResource(R.drawable.select);
+        stadium_kajang.setBackgroundResource(R.drawable.unselect);
+        sungai_jernih.setBackgroundResource(R.drawable.unselect);
+        bukit_dokong.setBackgroundResource(R.drawable.unselect);
+        batu_11_cheras.setBackgroundResource(R.drawable.unselect);
+
         Toast.makeText(this, "Please press from or to before selecting station", Toast.LENGTH_SHORT).show();
     }
     public void stadium_kajang(View view) {
         location = "Stadium Kajang";
         pos=2;
+
+        stadium_kajang.setBackgroundResource(R.drawable.select);
+        kajang.setBackgroundResource(R.drawable.unselect);
+        sungai_jernih.setBackgroundResource(R.drawable.unselect);
+        bukit_dokong.setBackgroundResource(R.drawable.unselect);
+        batu_11_cheras.setBackgroundResource(R.drawable.unselect);
+
         Toast.makeText(this, "Please press from or to before selecting station", Toast.LENGTH_SHORT).show();
     }
     public void sungai_jernih(View view) {
         location = "Sungai Jernih";
         pos=3;
+
+        sungai_jernih.setBackgroundResource(R.drawable.select);
+        stadium_kajang.setBackgroundResource(R.drawable.unselect);
+        kajang.setBackgroundResource(R.drawable.unselect);
+        bukit_dokong.setBackgroundResource(R.drawable.unselect);
+        batu_11_cheras.setBackgroundResource(R.drawable.unselect);
+
         Toast.makeText(this, "Please press from or to before selecting station", Toast.LENGTH_SHORT).show();
     }
     public void bukit_dokong(View view) {
         location = "Bukit Dokong";
         pos=4;
+
+        bukit_dokong.setBackgroundResource(R.drawable.select);
+        stadium_kajang.setBackgroundResource(R.drawable.unselect);
+        kajang.setBackgroundResource(R.drawable.unselect);
+        sungai_jernih.setBackgroundResource(R.drawable.unselect);
+        batu_11_cheras.setBackgroundResource(R.drawable.unselect);
+
         Toast.makeText(this, "Please press from or to before selecting station", Toast.LENGTH_SHORT).show();
     }
     public void batu_11_cheras(View view) {
         location = "Batu 11 Cheras";
         pos=5;
+
+        batu_11_cheras.setBackgroundResource(R.drawable.select);
+        stadium_kajang.setBackgroundResource(R.drawable.unselect);
+        kajang.setBackgroundResource(R.drawable.unselect);
+        sungai_jernih.setBackgroundResource(R.drawable.unselect);
+        bukit_dokong.setBackgroundResource(R.drawable.unselect);
+
         Toast.makeText(this, "Please press from or to before selecting station", Toast.LENGTH_SHORT).show();
     }
 
@@ -82,7 +124,7 @@ public class mrt_kajang extends AppCompatActivity {
             TextView from = findViewById(R.id.from);
             Button fromButton = findViewById(R.id.button_from);
             from.setText(location);
-            fromButton.setText("From (selected)");
+            fromButton.setText("From");
             from_pos=pos;
             from_where=location;
         }
@@ -96,7 +138,7 @@ public class mrt_kajang extends AppCompatActivity {
             TextView to = findViewById(R.id.to);
             Button toButton = findViewById(R.id.button_to);
             to.setText(location);
-            toButton.setText("To (selected)");
+            toButton.setText("To");
             to_pos=pos;
             to_where=location;
         }
@@ -141,7 +183,7 @@ public class mrt_kajang extends AppCompatActivity {
             dbmanager_train.close();
             main.updateVersion();
         }
-        else if (from_pos == to_pos) Toast.makeText(this, "Invalid location. Select different location.", Toast.LENGTH_SHORT).show();
+        else if (from_pos == to_pos) Toast.makeText(this, "Invalid location. \nSelect different location.", Toast.LENGTH_SHORT).show();
         else Toast.makeText(this, "Please select a location", Toast.LENGTH_SHORT).show();
     }
     public void notification(View view) { startActivity(new Intent(this, notification.class));}

@@ -32,6 +32,7 @@
         android:layout_marginEnd="256dp"
         android:onClick="sri_petaling"
         android:visibility="visible"
+        android:background="@drawable/unselect_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -162,6 +163,7 @@
         android:layout_marginEnd="256dp"
         android:onClick="bukit_jalil"
         android:visibility="visible"
+        android:background="@drawable/unselect_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sri_petaling" />
 
@@ -174,6 +176,7 @@
         android:layout_marginEnd="256dp"
         android:onClick="sungai_besi"
         android:visibility="visible"
+        android:background="@drawable/unselect_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bukit_jalil" />
 
@@ -185,6 +188,7 @@
         android:layout_marginEnd="256dp"
         android:onClick="tasik_selatan"
         android:visibility="visible"
+        android:background="@drawable/unselect_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sungai_besi" />
 
@@ -196,6 +200,7 @@
         android:layout_marginEnd="256dp"
         android:onClick="bandar_tun_razak"
         android:visibility="visible"
+        android:background="@drawable/unselect_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tasik_selatan" />
 

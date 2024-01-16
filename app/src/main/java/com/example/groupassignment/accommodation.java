@@ -17,7 +17,7 @@ import com.example.groupassignment.dbmanagers.dbmanager_login_history;
 public class accommodation extends AppCompatActivity {
     private com.example.groupassignment.dbmanagers.dbmanager_favourite dbmanager_favourite;
     private com.example.groupassignment.dbmanagers.dbmanager_login_history dbmanager_login_history;
-     private VideoView bg;
+    private VideoView bg;
     private int currentPosition;
 
     @Override

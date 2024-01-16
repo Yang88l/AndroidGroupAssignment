@@ -21,8 +21,9 @@ public class lrt_sripetaling extends AppCompatActivity {
     private com.example.groupassignment.dbmanagers.dbmanager_login_history dbmanager_login_history;
     private String location, from_where, to_where;
     public int pos, from_pos, to_pos;
- private VideoView bg;
+    private VideoView bg;
     private int currentPosition;
+    private Button sri_petaling, bukit_jalil ,sungai_besi ,tasik_selatan ,bandar_tun_razak;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,12 @@ public class lrt_sripetaling extends AppCompatActivity {
 
         //Top Navigation
         BaseActivity.setupToolbar(this);
+
+        sri_petaling = findViewById(R.id.sri_petaling);
+        bukit_jalil = findViewById(R.id.bukit_jalil);
+        sungai_besi = findViewById(R.id.sungai_besi);
+        tasik_selatan = findViewById(R.id.tasik_selatan);
+        bandar_tun_razak = findViewById(R.id.bandar_tun_razak);
 
         bg = findViewById(R.id.background);
 
@@ -51,26 +58,61 @@ public class lrt_sripetaling extends AppCompatActivity {
     public void sri_petaling(View view) {
         location = "Sri Petaling";
         pos=1;
+
+        sri_petaling.setBackgroundResource(R.drawable.select_2);
+        bukit_jalil.setBackgroundResource(R.drawable.unselect_2);
+        sungai_besi.setBackgroundResource(R.drawable.unselect_2);
+        tasik_selatan.setBackgroundResource(R.drawable.unselect_2);
+        bandar_tun_razak.setBackgroundResource(R.drawable.unselect_2);
+
         Toast.makeText(this, "Please press from or to before selecting station", Toast.LENGTH_SHORT).show();
     }
     public void bukit_jalil(View view) {
         location = "Bukit Jalil";
         pos=2;
+
+        bukit_jalil.setBackgroundResource(R.drawable.select_2);
+        sri_petaling.setBackgroundResource(R.drawable.unselect_2);
+        sungai_besi.setBackgroundResource(R.drawable.unselect_2);
+        tasik_selatan.setBackgroundResource(R.drawable.unselect_2);
+        bandar_tun_razak.setBackgroundResource(R.drawable.unselect_2);
+
         Toast.makeText(this, "Please press from or to before selecting station", Toast.LENGTH_SHORT).show();
     }
     public void sungai_besi(View view) {
         location = "Sungai Besi";
         pos=3;
+
+        sungai_besi.setBackgroundResource(R.drawable.select_2);
+        sri_petaling.setBackgroundResource(R.drawable.unselect_2);
+        bukit_jalil.setBackgroundResource(R.drawable.unselect_2);
+        tasik_selatan.setBackgroundResource(R.drawable.unselect_2);
+        bandar_tun_razak.setBackgroundResource(R.drawable.unselect_2);
+
         Toast.makeText(this, "Please press from or to before selecting station", Toast.LENGTH_SHORT).show();
     }
     public void tasik_selatan(View view) {
         location = "Tasik Selatan";
         pos=4;
+
+        tasik_selatan.setBackgroundResource(R.drawable.select_2);
+        sri_petaling.setBackgroundResource(R.drawable.unselect_2);
+        bukit_jalil.setBackgroundResource(R.drawable.unselect_2);
+        sungai_besi.setBackgroundResource(R.drawable.unselect_2);
+        bandar_tun_razak.setBackgroundResource(R.drawable.unselect_2);
+
         Toast.makeText(this, "Please press from or to before selecting station", Toast.LENGTH_SHORT).show();
     }
     public void bandar_tun_razak(View view) {
         location = "Bandar Tun Razak";
         pos=5;
+
+        bandar_tun_razak.setBackgroundResource(R.drawable.select_2);
+        sri_petaling.setBackgroundResource(R.drawable.unselect_2);
+        bukit_jalil.setBackgroundResource(R.drawable.unselect_2);
+        sungai_besi.setBackgroundResource(R.drawable.unselect_2);
+        tasik_selatan.setBackgroundResource(R.drawable.unselect_2);
+
         Toast.makeText(this, "Please press from or to before selecting station", Toast.LENGTH_SHORT).show();
     }
 
@@ -82,7 +124,7 @@ public class lrt_sripetaling extends AppCompatActivity {
             TextView from = findViewById(R.id.from);
             Button fromButton = findViewById(R.id.button_from);
             from.setText(location);
-            fromButton.setText("From (selected)");
+            fromButton.setText("From");
             from_pos=pos;
             from_where=location;
         }
@@ -96,7 +138,7 @@ public class lrt_sripetaling extends AppCompatActivity {
             TextView to = findViewById(R.id.to);
             Button toButton = findViewById(R.id.button_to);
             to.setText(location);
-            toButton.setText("To (selected)");
+            toButton.setText("To");
             to_pos=pos;
             to_where=location;
         }
@@ -141,7 +183,7 @@ public class lrt_sripetaling extends AppCompatActivity {
             dbmanager_train.close();
             main.updateVersion();
         }
-        else if (from_pos == to_pos) Toast.makeText(this, "Invalid location. Select different location.", Toast.LENGTH_SHORT).show();
+        else if (from_pos == to_pos) Toast.makeText(this, "Invalid location. \nSelect different location.", Toast.LENGTH_SHORT).show();
         else Toast.makeText(this, "Please select a location", Toast.LENGTH_SHORT).show();
     }
 

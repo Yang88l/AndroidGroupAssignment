@@ -21,7 +21,8 @@ public class mrt_putrajaya extends AppCompatActivity {
     private com.example.groupassignment.dbmanagers.dbmanager_login_history dbmanager_login_history;
     private String location, from_where, to_where;
     public int pos, from_pos, to_pos;
- private VideoView bg;
+    private Button putrajaya_sentral, cyberjaya_city_centre ,cyberjaya_utara ,sierra ,putra_permai;
+    private VideoView bg;
     private int currentPosition;
 
     @Override
@@ -31,6 +32,12 @@ public class mrt_putrajaya extends AppCompatActivity {
 
         //Top Navigation
         BaseActivity.setupToolbar(this);
+
+        putrajaya_sentral = findViewById(R.id.putrajaya_sentral);
+        cyberjaya_city_centre = findViewById(R.id.cyberjaya_city_centre);
+        cyberjaya_utara = findViewById(R.id.cyberjaya_utara);
+        sierra = findViewById(R.id.sierra);
+        putra_permai = findViewById(R.id.putra_permai);
 
         bg = findViewById(R.id.background);
 
@@ -51,26 +58,61 @@ public class mrt_putrajaya extends AppCompatActivity {
     public void putrajaya_sentral(View view) {
         location = "Putrajaya Sentral";
         pos=1;
+
+        putrajaya_sentral.setBackgroundResource(R.drawable.select);
+        cyberjaya_city_centre.setBackgroundResource(R.drawable.unselect);
+        cyberjaya_utara.setBackgroundResource(R.drawable.unselect);
+        sierra.setBackgroundResource(R.drawable.unselect);
+        putra_permai.setBackgroundResource(R.drawable.unselect);
+
         Toast.makeText(this, "Please press from or to before selecting station", Toast.LENGTH_SHORT).show();
     }
     public void cyberjaya_city_centre(View view) {
         location = "Cyberjaya City Centre";
         pos=2;
+
+        cyberjaya_city_centre.setBackgroundResource(R.drawable.select);
+        putrajaya_sentral.setBackgroundResource(R.drawable.unselect);
+        cyberjaya_utara.setBackgroundResource(R.drawable.unselect);
+        sierra.setBackgroundResource(R.drawable.unselect);
+        putra_permai.setBackgroundResource(R.drawable.unselect);
+
         Toast.makeText(this, "Please press from or to before selecting station", Toast.LENGTH_SHORT).show();
     }
     public void cyberjaya_utara(View view) {
         location = "Cyberjaya Utara";
         pos=3;
+
+        cyberjaya_utara.setBackgroundResource(R.drawable.select);
+        putrajaya_sentral.setBackgroundResource(R.drawable.unselect);
+        cyberjaya_city_centre.setBackgroundResource(R.drawable.unselect);
+        sierra.setBackgroundResource(R.drawable.unselect);
+        putra_permai.setBackgroundResource(R.drawable.unselect);
+
         Toast.makeText(this, "Please press from or to before selecting station", Toast.LENGTH_SHORT).show();
     }
     public void sierra(View view) {
         location = "16 Sierra";
         pos=4;
+
+        sierra.setBackgroundResource(R.drawable.select);
+        putrajaya_sentral.setBackgroundResource(R.drawable.unselect);
+        cyberjaya_city_centre.setBackgroundResource(R.drawable.unselect);
+        cyberjaya_utara.setBackgroundResource(R.drawable.unselect);
+        putra_permai.setBackgroundResource(R.drawable.unselect);
+
         Toast.makeText(this, "Please press from or to before selecting station", Toast.LENGTH_SHORT).show();
     }
     public void putra_permai(View view) {
         location = "Putra Permai";
         pos=5;
+
+        putra_permai.setBackgroundResource(R.drawable.select);
+        putrajaya_sentral.setBackgroundResource(R.drawable.unselect);
+        cyberjaya_city_centre.setBackgroundResource(R.drawable.unselect);
+        cyberjaya_utara.setBackgroundResource(R.drawable.unselect);
+        sierra.setBackgroundResource(R.drawable.unselect);
+
         Toast.makeText(this, "Please press from or to before selecting station", Toast.LENGTH_SHORT).show();
     }
 
@@ -82,7 +124,7 @@ public class mrt_putrajaya extends AppCompatActivity {
             TextView from = findViewById(R.id.from);
             Button fromButton = findViewById(R.id.button_from);
             from.setText(location);
-            fromButton.setText("From (selected)");
+            fromButton.setText("From");
             from_pos=pos;
             from_where=location;
         }
@@ -96,7 +138,7 @@ public class mrt_putrajaya extends AppCompatActivity {
             TextView to = findViewById(R.id.to);
             Button toButton = findViewById(R.id.button_to);
             to.setText(location);
-            toButton.setText("To (selected)");
+            toButton.setText("To");
             to_pos=pos;
             to_where=location;
         }
@@ -141,7 +183,7 @@ public class mrt_putrajaya extends AppCompatActivity {
             dbmanager_train.close();
             main.updateVersion();
         }
-        else if (from_pos == to_pos) Toast.makeText(this, "Invalid location. Select different location.", Toast.LENGTH_SHORT).show();
+        else if (from_pos == to_pos) Toast.makeText(this, "Invalid location. \nSelect different location.", Toast.LENGTH_SHORT).show();
         else Toast.makeText(this, "Please select a location", Toast.LENGTH_SHORT).show();
     }
 

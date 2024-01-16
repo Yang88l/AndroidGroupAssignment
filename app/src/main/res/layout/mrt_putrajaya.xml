@@ -153,6 +153,7 @@
         android:layout_marginTop="150dp"
         android:onClick="putrajaya_sentral"
         android:visibility="visible"
+        android:background="@drawable/unselect"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -165,6 +166,7 @@
         android:layout_marginTop="150dp"
         android:onClick="cyberjaya_utara"
         android:visibility="visible"
+        android:background="@drawable/unselect"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -176,6 +178,7 @@
         android:layout_marginTop="150dp"
         android:onClick="sierra"
         android:visibility="visible"
+        android:background="@drawable/unselect"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -187,6 +190,7 @@
         android:layout_marginTop="150dp"
         android:onClick="putra_permai"
         android:visibility="visible"
+        android:background="@drawable/unselect"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -198,6 +202,7 @@
         android:layout_marginTop="150dp"
         android:onClick="cyberjaya_city_centre"
         android:visibility="visible"
+        android:background="@drawable/unselect"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
