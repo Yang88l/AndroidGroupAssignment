@@ -84,34 +84,34 @@
             android:id="@+id/button2"
             android:layout_width="70dp"
             android:layout_height="match_parent"
+            android:layout_margin="1dp"
             android:layout_weight="1"
             android:background="#27caf2"
-            android:layout_margin="1dp"
             android:onClick="hotel"
             android:text="Hotel"
-            android:textSize="8sp" />
+            android:textSize="14sp" />
 
         <Button
             android:id="@+id/button3"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_margin="1dp"
             android:layout_weight="1"
             android:background="#27caf2"
-            android:layout_margin="1dp"
             android:onClick="food"
             android:text="Restaurant"
-            android:textSize="8sp" />
+            android:textSize="14sp" />
 
         <Button
             android:id="@+id/button4"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_margin="1dp"
             android:layout_weight="1"
             android:background="#27caf2"
-            android:layout_margin="1dp"
             android:onClick="play"
             android:text="Entertaiment"
-            android:textSize="8sp" />
+            android:textSize="14sp" />
 
     </LinearLayout>
 

@@ -106,7 +106,7 @@ public class food extends AppCompatActivity {
     }
     public void cielo_kl_favourite(View view) {
         if (login_status()) {
-            ImageView picture = findViewById(R.id.imageButton12);
+            ImageView picture = findViewById(R.id.imageButton14);
             dbmanager_favourite = new dbmanager_favourite(this);
             dbmanager_favourite.open();
             Cursor cursor = dbmanager_favourite.fetch(getUserID(), "food", 1);
@@ -124,7 +124,7 @@ public class food extends AppCompatActivity {
 
     public void horizon_grill_favourite(View view) {
         if (login_status()) {
-            ImageView picture = findViewById(R.id.imageButton22);
+            ImageView picture = findViewById(R.id.imageButton15);
             dbmanager_favourite = new dbmanager_favourite(this);
             dbmanager_favourite.open();
             Cursor cursor = dbmanager_favourite.fetch(getUserID(), "food", 2);

@@ -114,6 +114,10 @@ public class my_favourite extends AppCompatActivity {
                 picture2.setImageResource(getResources().getIdentifier(cursor_hotel.getString(3) + "_77", "drawable", getPackageName()));
                 cursor_hotel.close();
             }
+            if (!hotel_1&&!hotel_2) {
+                LinearLayout linearLayout = findViewById(R.id.linearLayout8); // Replace with your LinearLayout ID
+                linearLayout.setVisibility(View.GONE);
+            }
         }
         else if (hotel_2) {
             if (hotel_1) {
@@ -121,6 +125,10 @@ public class my_favourite extends AppCompatActivity {
                 name2.setText(cursor_hotel.getString(1));
                 picture2.setImageResource(getResources().getIdentifier(cursor_hotel.getString(3) + "_77", "drawable", getPackageName()));
                 cursor_hotel.close();
+            }
+            else {
+                LinearLayout linearLayout = findViewById(R.id.linearLayout8); // Replace with your LinearLayout ID
+                linearLayout.setVisibility(View.GONE);
             }
         }
         else {
@@ -205,6 +213,13 @@ public class my_favourite extends AppCompatActivity {
     }
 
     public void hotel(View view) {
+        LinearLayout linearLayout1 = findViewById(R.id.linearLayout6); // Replace with your LinearLayout ID
+        linearLayout1.setVisibility(View.VISIBLE);
+        LinearLayout linearLayout2 = findViewById(R.id.linearLayout8); // Replace with your LinearLayout ID
+        linearLayout2.setVisibility(View.VISIBLE);
+        LinearLayout linearLayout3 = findViewById(R.id.linearLayout9); // Replace with your LinearLayout ID
+        linearLayout3.setVisibility(View.VISIBLE);
+
         boolean hotel_1 = false;
         boolean hotel_2 = false;
         boolean hotel_3 = false;
@@ -254,8 +269,7 @@ public class my_favourite extends AppCompatActivity {
             }
         }
         else {
-            LinearLayout linearLayout = findViewById(R.id.linearLayout6); // Replace with your LinearLayout ID
-            linearLayout.setVisibility(View.GONE);
+            linearLayout1.setVisibility(View.GONE);
         }
 
         if (hotel_3) {
@@ -271,6 +285,9 @@ public class my_favourite extends AppCompatActivity {
                 picture2.setImageResource(getResources().getIdentifier(cursor_hotel.getString(3) + "_77", "drawable", getPackageName()));
                 cursor_hotel.close();
             }
+            if (!hotel_1&&!hotel_2) {
+                linearLayout2.setVisibility(View.GONE);
+            }
         }
         else if (hotel_2) {
             if (hotel_1) {
@@ -279,10 +296,12 @@ public class my_favourite extends AppCompatActivity {
                 picture2.setImageResource(getResources().getIdentifier(cursor_hotel.getString(3) + "_77", "drawable", getPackageName()));
                 cursor_hotel.close();
             }
+            else {
+                linearLayout2.setVisibility(View.GONE);
+            }
         }
         else {
-            LinearLayout linearLayout = findViewById(R.id.linearLayout8); // Replace with your LinearLayout ID
-            linearLayout.setVisibility(View.GONE);
+            linearLayout2.setVisibility(View.GONE);
         }
 
         if (hotel_1&&hotel_2&&hotel_3) {
@@ -294,8 +313,7 @@ public class my_favourite extends AppCompatActivity {
             }
         }
         else {
-            LinearLayout linearLayout = findViewById(R.id.linearLayout9); // Replace with your LinearLayout ID
-            linearLayout.setVisibility(View.GONE);
+            linearLayout3.setVisibility(View.GONE);
         }
 
         dbmanager_accomodation_info.close();
@@ -303,6 +321,13 @@ public class my_favourite extends AppCompatActivity {
     }
 
     public void food(View view) {
+        LinearLayout linearLayout1 = findViewById(R.id.linearLayout6); // Replace with your LinearLayout ID
+        linearLayout1.setVisibility(View.VISIBLE);
+        LinearLayout linearLayout2 = findViewById(R.id.linearLayout8); // Replace with your LinearLayout ID
+        linearLayout2.setVisibility(View.VISIBLE);
+        LinearLayout linearLayout3 = findViewById(R.id.linearLayout9); // Replace with your LinearLayout ID
+        linearLayout3.setVisibility(View.VISIBLE);
+
         boolean food_1 = false;
         boolean food_2 = false;
         boolean food_3 = false;
@@ -352,8 +377,7 @@ public class my_favourite extends AppCompatActivity {
             }
         }
         else {
-            LinearLayout linearLayout = findViewById(R.id.linearLayout6); // Replace with your LinearLayout ID
-            linearLayout.setVisibility(View.GONE);
+            linearLayout1.setVisibility(View.GONE);
         }
 
         if (food_3) {
@@ -369,6 +393,9 @@ public class my_favourite extends AppCompatActivity {
                 picture2.setImageResource(getResources().getIdentifier(cursor_food.getString(3) + "_77", "drawable", getPackageName()));
                 cursor_food.close();
             }
+            if (!food_1&&!food_2) {
+                linearLayout2.setVisibility(View.GONE);
+            }
         }
         else if (food_2) {
             if (food_1) {
@@ -376,12 +403,13 @@ public class my_favourite extends AppCompatActivity {
                 name2.setText(cursor_food.getString(1));
                 picture2.setImageResource(getResources().getIdentifier(cursor_food.getString(3) + "_77", "drawable", getPackageName()));
                 cursor_food.close();
-
+            }
+            else {
+                linearLayout2.setVisibility(View.GONE);
             }
         }
         else {
-            LinearLayout linearLayout = findViewById(R.id.linearLayout8); // Replace with your LinearLayout ID
-            linearLayout.setVisibility(View.GONE);
+            linearLayout2.setVisibility(View.GONE);
         }
 
         if (food_1&&food_2&&food_3) {
@@ -393,8 +421,7 @@ public class my_favourite extends AppCompatActivity {
             }
         }
         else {
-            LinearLayout linearLayout = findViewById(R.id.linearLayout9); // Replace with your LinearLayout ID
-            linearLayout.setVisibility(View.GONE);
+            linearLayout3.setVisibility(View.GONE);
         }
 
         dbmanager_food_info.close();
@@ -402,6 +429,13 @@ public class my_favourite extends AppCompatActivity {
     }
 
     public void play(View view) {
+        LinearLayout linearLayout1 = findViewById(R.id.linearLayout6); // Replace with your LinearLayout ID
+        linearLayout1.setVisibility(View.VISIBLE);
+        LinearLayout linearLayout2 = findViewById(R.id.linearLayout8); // Replace with your LinearLayout ID
+        linearLayout2.setVisibility(View.VISIBLE);
+        LinearLayout linearLayout3 = findViewById(R.id.linearLayout9); // Replace with your LinearLayout ID
+        linearLayout3.setVisibility(View.VISIBLE);
+
         boolean play_1 = false;
         boolean play_2 = false;
         boolean play_3 = false;
@@ -451,8 +485,7 @@ public class my_favourite extends AppCompatActivity {
             }
         }
         else {
-            LinearLayout linearLayout = findViewById(R.id.linearLayout6); // Replace with your LinearLayout ID
-            linearLayout.setVisibility(View.GONE);
+            linearLayout1.setVisibility(View.GONE);
         }
 
         if (play_3) {
@@ -468,6 +501,9 @@ public class my_favourite extends AppCompatActivity {
                 picture2.setImageResource(getResources().getIdentifier(cursor_play.getString(3) + "_77", "drawable", getPackageName()));
                 cursor_play.close();
             }
+            if (!play_1&&!play_2) {
+                linearLayout2.setVisibility(View.GONE);
+            }
         }
         else if (play_2) {
             if (play_1) {
@@ -476,10 +512,12 @@ public class my_favourite extends AppCompatActivity {
                 picture2.setImageResource(getResources().getIdentifier(cursor_play.getString(3) + "_77", "drawable", getPackageName()));
                 cursor_play.close();
             }
+            else {
+                linearLayout2.setVisibility(View.GONE);
+            }
         }
         else {
-            LinearLayout linearLayout = findViewById(R.id.linearLayout8); // Replace with your LinearLayout ID
-            linearLayout.setVisibility(View.GONE);
+            linearLayout2.setVisibility(View.GONE);
         }
 
         if (play_1&&play_2&&play_3) {
@@ -491,8 +529,7 @@ public class my_favourite extends AppCompatActivity {
             }
         }
         else {
-            LinearLayout linearLayout = findViewById(R.id.linearLayout9); // Replace with your LinearLayout ID
-            linearLayout.setVisibility(View.GONE);
+            linearLayout3.setVisibility(View.GONE);
         }
 
         dbmanager_play_info.close();

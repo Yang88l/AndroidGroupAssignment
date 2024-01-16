@@ -112,7 +112,7 @@ public class play extends AppCompatActivity {
     }
     public void sunway_favourite(View view) {
         if (login_status()) {
-            ImageView picture = findViewById(R.id.imageButton12);
+            ImageView picture = findViewById(R.id.heart1);
             dbmanager_favourite = new dbmanager_favourite(this);
             dbmanager_favourite.open();
             Cursor cursor = dbmanager_favourite.fetch(getUserID(), "play", 1);
@@ -130,7 +130,7 @@ public class play extends AppCompatActivity {
 
     public void genting_favourite(View view) {
         if (login_status()) {
-            ImageView picture = findViewById(R.id.imageButton22);
+            ImageView picture = findViewById(R.id.heart2);
             dbmanager_favourite = new dbmanager_favourite(this);
             dbmanager_favourite.open();
             Cursor cursor = dbmanager_favourite.fetch(getUserID(), "play", 2);
@@ -148,7 +148,7 @@ public class play extends AppCompatActivity {
 
     public void sky_favourite(View view) {
         if (login_status()) {
-            ImageView picture = findViewById(R.id.imageButton7);
+            ImageView picture = findViewById(R.id.heart3);
             dbmanager_favourite = new dbmanager_favourite(this);
             dbmanager_favourite.open();
             Cursor cursor = dbmanager_favourite.fetch(getUserID(), "play", 3);

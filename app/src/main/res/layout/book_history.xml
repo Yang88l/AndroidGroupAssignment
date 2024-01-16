@@ -95,7 +95,6 @@
             android:layout_width="205dp"
             android:layout_height="match_parent"
             android:background="#27caf2"
-            android:onClick="book_history"
             android:layout_margin="1dp"
             android:text="Book History" />
     </LinearLayout>
