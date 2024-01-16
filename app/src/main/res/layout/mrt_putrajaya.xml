@@ -150,12 +150,12 @@
         android:layout_width="28dp"
         android:layout_height="30dp"
         android:layout_marginStart="22dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/unselect"
         android:onClick="putrajaya_sentral"
         android:visibility="visible"
-        android:background="@drawable/unselect"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
 
     <Button
@@ -163,48 +163,48 @@
         android:layout_width="28dp"
         android:layout_height="30dp"
         android:layout_marginStart="200dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/unselect"
         android:onClick="cyberjaya_utara"
         android:visibility="visible"
-        android:background="@drawable/unselect"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
     <Button
         android:id="@+id/sierra"
         android:layout_width="28dp"
         android:layout_height="30dp"
         android:layout_marginStart="278dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/unselect"
         android:onClick="sierra"
         android:visibility="visible"
-        android:background="@drawable/unselect"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
     <Button
         android:id="@+id/putra_permai"
         android:layout_width="28dp"
         android:layout_height="30dp"
         android:layout_marginStart="346dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/unselect"
         android:onClick="putra_permai"
         android:visibility="visible"
-        android:background="@drawable/unselect"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
     <Button
         android:id="@+id/cyberjaya_city_centre"
         android:layout_width="28dp"
         android:layout_height="30dp"
         android:layout_marginStart="110dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/unselect"
         android:onClick="cyberjaya_city_centre"
         android:visibility="visible"
-        android:background="@drawable/unselect"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
     <ImageView
         android:layout_width="302dp"

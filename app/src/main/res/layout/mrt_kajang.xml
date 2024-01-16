@@ -150,36 +150,36 @@
         android:layout_width="28dp"
         android:layout_height="30dp"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="145dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/unselect"
         android:onClick="kajang"
         android:visibility="visible"
-        android:background="@drawable/unselect"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
     <Button
         android:id="@+id/sungai_jernih"
         android:layout_width="28dp"
         android:layout_height="30dp"
         android:layout_marginStart="130dp"
-        android:layout_marginTop="145dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/unselect"
         android:onClick="sungai_jernih"
         android:visibility="visible"
-        android:background="@drawable/unselect"
         app:layout_constraintStart_toEndOf="@+id/kajang"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
     <Button
         android:id="@+id/bukit_dokong"
         android:layout_width="28dp"
         android:layout_height="30dp"
         android:layout_marginStart="210dp"
-        android:layout_marginTop="145dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/unselect"
         android:onClick="bukit_dokong"
         android:visibility="visible"
-        android:background="@drawable/unselect"
         app:layout_constraintStart_toEndOf="@+id/kajang"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
 
     <Button
@@ -187,24 +187,24 @@
         android:layout_width="28dp"
         android:layout_height="30dp"
         android:layout_marginStart="296dp"
-        android:layout_marginTop="145dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/unselect"
         android:onClick="batu_11_cheras"
         android:visibility="visible"
-        android:background="@drawable/unselect"
         app:layout_constraintStart_toEndOf="@+id/kajang"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
     <Button
         android:id="@+id/stadium_kajang"
         android:layout_width="28dp"
         android:layout_height="30dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="145dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/unselect"
         android:onClick="stadium_kajang"
         android:visibility="visible"
-        android:background="@drawable/unselect"
         app:layout_constraintStart_toEndOf="@+id/kajang"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
     <ImageView
         android:layout_width="302dp"
