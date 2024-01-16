@@ -46,6 +46,7 @@ public class log_in extends AppCompatActivity {
 
     }
 
+
     public void log_in(View view) {
         int user_id;
         String passwd;
