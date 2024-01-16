@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.example.groupassignment.dbhelpers.dbhelper_hotel_neccessity;
 import com.example.groupassignment.dbhelpers.dbhelper_login_history;
 import com.example.groupassignment.main;
 
@@ -42,7 +43,12 @@ public class dbmanager_login_history {
 
 
     public Cursor fetch() {
-        Cursor cursor = database.query(dbhelper_login_history.TABLE_NAME, null, null, null, null, null, null);
+        String[] columns = new String[] {
+                dbhelper_login_history.LOGIN_ID,
+                dbhelper_login_history.USER_ID,
+                dbhelper_login_history.ACTIVITY,
+                dbhelper_login_history.STATUS };
+        Cursor cursor = database.query(dbhelper_login_history.TABLE_NAME, columns, null, null, null, null, null);
         if (cursor != null) {
             cursor.moveToFirst();
         }
@@ -53,7 +59,7 @@ public class dbmanager_login_history {
     public int update(int _id, String activity, String status) {
         ContentValues contentValues = new ContentValues();
         if(activity!=null)contentValues.put(dbhelper_login_history.ACTIVITY, activity);
-        else if(status!=null)contentValues.put(dbhelper_login_history.STATUS, status);
+        if(status!=null)contentValues.put(dbhelper_login_history.STATUS, status);
         int i = database.update(dbhelper_login_history.TABLE_NAME, contentValues, dbhelper_login_history.LOGIN_ID + " = " + _id, null);
         return i;
     }

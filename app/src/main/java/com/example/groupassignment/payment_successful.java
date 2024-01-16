@@ -79,11 +79,27 @@ private VideoView bg;
 
     //FINISH BUTTON
     public void finish(View view) {
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor_uid = dbmanager_login_history.fetch();
+        cursor_uid.moveToLast();
+        int user_id=Integer.parseInt(cursor_uid.getString(1));
+        cursor_uid.close();
+        dbmanager_login_history.update(user_id, null, "logged out");
+        dbmanager_login_history.insert(user_id, "logged in", "null");
+        Cursor cursor_login = dbmanager_login_history.fetch();
+        cursor_login.moveToLast();
+        int login_id=Integer.parseInt(cursor_login.getString(0));
+        cursor_login.close();
+        dbmanager_login_history.close();
+        main.updateVersion();
+
         dbmanager_book_history = new dbmanager_book_history(this);
         dbmanager_book_history.open();
-        dbmanager_book_history.insert(getUserID(), getLoginID(), "", "");
+        dbmanager_book_history.insert(user_id, login_id, "", "");
         dbmanager_book_history.close();
         main.updateVersion();
+
         Intent intent = new Intent(payment_successful.this, main.class);
         startActivity(intent);
     }
