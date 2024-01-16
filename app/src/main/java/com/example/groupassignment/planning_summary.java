@@ -21,6 +21,8 @@ import com.example.groupassignment.dbmanagers.dbmanager_plan_history;
 import com.example.groupassignment.dbmanagers.dbmanager_plan_summary;
 import com.example.groupassignment.dbmanagers.dbmanager_play_info;
 import com.example.groupassignment.dbmanagers.dbmanager_choose_bus;
+import com.example.groupassignment.dbmanagers.dbmanager_book_summary;
+
 
 
 public class planning_summary extends AppCompatActivity {
@@ -35,6 +37,8 @@ public class planning_summary extends AppCompatActivity {
     private dbmanager_choose_bus dbmanager_choose_bus;
      private VideoView bg;
     private int currentPosition;
+    private com.example.groupassignment.dbmanagers.dbmanager_book_summary dbmanager_book_summary;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -116,8 +120,8 @@ public class planning_summary extends AppCompatActivity {
                     Cursor cursor_bus = dbmanager_bus.fetch(bus_id);
                     displayText1.append(cursor_bus.getString(2));
 
-                    if(seat==1) displayText2.append(": RM"+(seat*5)+" for "+seat+" seat");
-                    else displayText2.append(": RM"+(seat*5)+" for "+seat+" seats");
+                    if(seat==1) displayText2.append(": RM5 (1 seat)");
+                    else displayText2.append(": RM"+(seat*5)+" ("+seat+" seats)");
                 }
                 else if (cursor_summary.getString(1).equals("flight")){
                     dbmanager_flight = new dbmanager_flight(this);
@@ -131,7 +135,7 @@ public class planning_summary extends AppCompatActivity {
                     main.updateVersion();
 
                     displayText1.append(flight_name);
-                    displayText2.append(": RM" + (pax * 99) + " for " + pax + " person.");
+                    displayText2.append(": RM" + (pax * 99) + " (" + pax + " pax)");
                 }
                 if (!cursor_summary.isLast()) {
                     displayText1.append("\n");
@@ -160,8 +164,40 @@ public class planning_summary extends AppCompatActivity {
         startActivity(intent);
     }
     public void book(View view) {
-        Intent intent = new Intent(this,main.class);
-        startActivity(intent);
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor = dbmanager_login_history.fetch();
+        cursor.moveToLast();
+        String status=cursor.getString(3);
+        cursor.close();
+        dbmanager_login_history.close();
+        main.updateVersion();
+        Toast.makeText(this, status, Toast.LENGTH_SHORT).show();
+        if (status.equals("logged out")) {
+            Toast.makeText(this, "Please log in first.", Toast.LENGTH_SHORT).show();
+        }
+        else if (status.equals("logged in")) {
+            dbmanager_plan_summary = new dbmanager_plan_summary(this);
+            dbmanager_plan_summary.open();
+            Cursor cursor_summary = dbmanager_plan_summary.fetch(getUserID(), getLoginID());
+            if (cursor_summary != null && cursor_summary.moveToFirst()) {
+                do {
+                    dbmanager_book_summary = new dbmanager_book_summary(this);
+                    dbmanager_book_summary.open();
+                    dbmanager_book_summary.insert(cursor_summary.getString(1),
+                            Integer.parseInt(cursor_summary.getString(2)),
+                            Integer.parseInt(cursor_summary.getString(3)),
+                            Integer.parseInt(cursor_summary.getString(4)));
+                    dbmanager_book_summary.close();
+                    main.updateVersion();
+                } while (cursor_summary.moveToNext());
+            }
+            cursor.close();
+            dbmanager_login_history.close();
+            main.updateVersion();
+            Intent intent = new Intent(this, payment_method.class);
+            startActivity(intent);
+        }
     }
     public void notification(View view) { startActivity(new Intent(this, notification.class));}
     public void home(View view) {
@@ -173,7 +209,7 @@ public class planning_summary extends AppCompatActivity {
     }
 
     public void history(View view) {
-        startActivity(new Intent(this, book_history.class));
+        startActivity(new Intent(this, plan_history.class));
     }
 
     public void profile(View view) {

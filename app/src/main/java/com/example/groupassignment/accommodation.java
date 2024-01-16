@@ -53,12 +53,8 @@ public class accommodation extends AppCompatActivity {
             else if (cursor1.getString(4).equals("0")) {
                 picture1.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
             }
-            dbmanager_favourite.close();
-            main.updateVersion();
 
             ImageView picture2 = findViewById(R.id.imageButton22);
-            dbmanager_favourite = new dbmanager_favourite(this);
-            dbmanager_favourite.open();
             Cursor cursor2 = dbmanager_favourite.fetch(getUserID(), "hotel", 2);
             if (cursor2.getString(4).equals("1")) {
                 picture2.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
@@ -66,12 +62,8 @@ public class accommodation extends AppCompatActivity {
             else if (cursor2.getString(4).equals("0")) {
                 picture2.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
             }
-            dbmanager_favourite.close();
-            main.updateVersion();
 
             ImageView picture3 = findViewById(R.id.imageButton7);
-            dbmanager_favourite = new dbmanager_favourite(this);
-            dbmanager_favourite.open();
             Cursor cursor3 = dbmanager_favourite.fetch(getUserID(), "hotel", 3);
             if (cursor3.getString(4).equals("1")) {
                 picture3.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));

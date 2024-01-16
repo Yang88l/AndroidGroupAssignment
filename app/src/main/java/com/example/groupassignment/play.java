@@ -53,26 +53,18 @@ public class play extends AppCompatActivity {
             else if (cursor1.getString(4).equals("0")) {
                 picture1.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
             }
-            dbmanager_favourite.close();
-            main.updateVersion();
 
             ImageView picture2 = findViewById(R.id.imageButton12);
-            dbmanager_favourite = new dbmanager_favourite(this);
-            dbmanager_favourite.open();
-            Cursor cursor2 = dbmanager_favourite.fetch(getUserID(), "play", 1);
+            Cursor cursor2 = dbmanager_favourite.fetch(getUserID(), "play", 2);
             if (cursor2.getString(4).equals("1")) {
                 picture2.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
             }
             else if (cursor2.getString(4).equals("0")) {
                 picture2.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
             }
-            dbmanager_favourite.close();
-            main.updateVersion();
 
             ImageView picture3 = findViewById(R.id.imageButton12);
-            dbmanager_favourite = new dbmanager_favourite(this);
-            dbmanager_favourite.open();
-            Cursor cursor3 = dbmanager_favourite.fetch(getUserID(), "play", 1);
+            Cursor cursor3 = dbmanager_favourite.fetch(getUserID(), "play", 3);
             if (cursor3.getString(4).equals("1")) {
                 picture3.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
             }

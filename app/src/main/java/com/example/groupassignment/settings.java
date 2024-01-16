@@ -65,6 +65,13 @@ public class settings extends AppCompatActivity {
         dbmanager_user.close();
         main.updateVersion();
 
+        //after delete account, log in as guest
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        dbmanager_login_history.insert(0, "logged out", "null");
+        dbmanager_login_history.close();
+        main.updateVersion();
+
         Intent intent = new Intent (this, main.class);
         startActivity(intent);
     }

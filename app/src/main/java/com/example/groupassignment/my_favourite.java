@@ -26,7 +26,7 @@ public class my_favourite extends AppCompatActivity {
     private com.example.groupassignment.dbmanagers.dbmanager_accomodation_info dbmanager_accomodation_info;
     private com.example.groupassignment.dbmanagers.dbmanager_food_info dbmanager_food_info;
     private com.example.groupassignment.dbmanagers.dbmanager_play_info dbmanager_play_info;
- private VideoView bg;
+    private VideoView bg;
     private int currentPosition;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -174,7 +174,7 @@ public class my_favourite extends AppCompatActivity {
         startActivity(new Intent(this, my_favourite.class));
     }
     public void history(View view) {
-        startActivity(new Intent(this, book_history.class));
+        startActivity(new Intent(this, plan_history.class));
     }
 
     public int getUserID(){
