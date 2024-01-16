@@ -14,12 +14,14 @@ import android.widget.VideoView;
 
 import com.example.groupassignment.dbmanagers.dbmanager_accomodation_info;
 import com.example.groupassignment.dbmanagers.dbmanager_bus;
+import com.example.groupassignment.dbmanagers.dbmanager_flight;
 import com.example.groupassignment.dbmanagers.dbmanager_food_info;
 import com.example.groupassignment.dbmanagers.dbmanager_login_history;
 import com.example.groupassignment.dbmanagers.dbmanager_book_history;
 import com.example.groupassignment.dbmanagers.dbmanager_book_summary;
 import com.example.groupassignment.dbmanagers.dbmanager_play_info;
 import com.example.groupassignment.dbmanagers.dbmanager_choose_bus;
+
 
 public class booking_summary extends AppCompatActivity {
 
@@ -33,6 +35,8 @@ public class booking_summary extends AppCompatActivity {
     private com.example.groupassignment.dbmanagers.dbmanager_bus dbmanager_bus;
    private VideoView bg;
     private int currentPosition;
+    private com.example.groupassignment.dbmanagers.dbmanager_flight dbmanager_flight;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -114,8 +118,25 @@ public class booking_summary extends AppCompatActivity {
                     Cursor cursor_bus = dbmanager_bus.fetch(bus_id);
                     displayText1.append(cursor_bus.getString(2));
 
-                    if(seat==1) displayText2.append(": RM"+(seat*5)+" for "+seat+" seat");
-                    else displayText2.append(": RM"+(seat*5)+" for "+seat+" seats");
+                    dbmanager_bus.close();
+                    main.updateVersion();
+
+                    if(seat==1) displayText2.append(": RM5 (1 seat)");
+                    else displayText2.append(": RM"+(seat*5)+" ("+seat+" seats)");
+                }
+                else if (cursor_summary.getString(1).equals("flight")){
+                    dbmanager_flight = new dbmanager_flight(this);
+                    dbmanager_flight.open();
+                    Cursor cursor = dbmanager_flight.fetch();
+                    cursor.moveToLast();
+                    String flight_name = cursor.getString(2);
+                    int pax = Integer.parseInt(cursor.getString(6));
+                    cursor.close();
+                    dbmanager_flight.close();
+                    main.updateVersion();
+
+                    displayText1.append(flight_name);
+                    displayText2.append(": RM" + (pax * 99) + " (" + pax + " pax)");
                 }
                 if (!cursor_summary.isLast()) {
                     displayText1.append("\n");
@@ -133,7 +154,7 @@ public class booking_summary extends AppCompatActivity {
 
         dbmanager_book_history = new dbmanager_book_history(this);
         dbmanager_book_history.open();
-        dbmanager_book_history.insert(getUserID(), getLoginID(), displayText1.toString(), displayText2.toString());
+        dbmanager_book_history.update(getUserID(), getLoginID(), displayText1.toString(), displayText2.toString());
         dbmanager_book_history.close();
         main.updateVersion();
     }

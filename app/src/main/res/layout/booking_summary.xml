@@ -13,37 +13,6 @@
         android:id="@+id/topnavi"
         layout="@layout/topnavi"/>
 
-    <Button
-        android:id="@+id/button17"
-        android:layout_width="125dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="60dp"
-        android:onClick="ok"
-        android:text="OK"
-        android:background="@drawable/button_design"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/booking_summary_text" />
-
-    <TextView
-        android:id="@+id/booking_summary_text"
-        android:layout_width="351dp"
-        android:layout_height="163dp"
-        android:layout_marginTop="60dp"
-        android:text="Hotel 2 day 3 night               RM123
-  Bus round trip 	                      RM123
-  Restaurant A 	                	 RM12/person
-  Restaurant B 	                	RM223/person
-  water park 	                     	RM456/family
-  Casino 		                          	RM789/game
-  Total:                                      RM1750"
-        android:textSize="19dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
@@ -54,6 +23,71 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/line" />
+
+    <Button
+        android:id="@+id/button18"
+        android:layout_width="125dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="248dp"
+        android:background="@drawable/button_design"
+        android:onClick="book"
+        android:text="Book"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:background="#27caf2"
+        android:gravity="center"
+        android:text="Booking Summary"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.102" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:text="TextView"
+        android:textAlignment="textEnd"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/space"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:text="TextView"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/space"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <Space
+        android:id="@+id/space"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <ImageView
         android:id="@+id/imageView9"

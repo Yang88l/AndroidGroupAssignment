@@ -195,9 +195,10 @@ public class information extends AppCompatActivity {
         else if (activity.equals("book")) {
             dbmanager_book_summary = new dbmanager_book_summary(this);
             dbmanager_book_summary.open();
-            dbmanager_book_summary.insert(from, _id, getUserID(), login_id); //add login_id
+            dbmanager_book_summary.insert(from, _id, getUserID(), login_id);
             dbmanager_book_summary.close();
             main.updateVersion();
+
             intent = new Intent(this,booking_summary.class);
             startActivity(intent);
         }

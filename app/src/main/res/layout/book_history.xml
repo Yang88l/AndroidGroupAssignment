@@ -86,8 +86,8 @@
             android:layout_width="205dp"
             android:layout_height="match_parent"
             android:background="#27caf2"
-            android:layout_margin="1dp"
             android:onClick="plan_history"
+            android:layout_margin="1dp"
             android:text="Plan History" />
 
         <Button
@@ -95,14 +95,15 @@
             android:layout_width="205dp"
             android:layout_height="match_parent"
             android:background="#27caf2"
-            android:layout_margin="1dp"
             android:onClick="book_history"
+            android:layout_margin="1dp"
             android:text="Book History" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="380dp"
-        android:layout_height="24dp"
+        android:id="@+id/linearLayout7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -112,316 +113,39 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.18">
 
+
         <TextView
             android:id="@+id/text_plan"
-            android:layout_width="260dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Plan"
+            android:layout_margin="1dp"
+            android:layout_weight="1"
+            android:background="@drawable/title_design"
+            android:text="Book"
             android:textAlignment="center"
-            android:textColor="#2196F3"
+            android:textColor="@color/black"
             android:textSize="20sp" />
 
         <TextView
+            android:layout_weight="1"
             android:id="@+id/text_status"
-            android:layout_width="120dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Price"
+            android:background="@drawable/title_design"
             android:textAlignment="center"
-            android:textColor="#2196F3"
+            android:layout_margin="1dp"
+            android:textColor="@color/black"
             android:textSize="20sp" />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="380dp"
-        android:layout_height="72dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25">
+    <ListView
+        android:id="@+id/simpleListView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout7"
+        tools:context="abhiandroid.com.listexample.MainActivity"></ListView>
 
-
-
-        <LinearLayout
-            android:layout_width="260dp"
-            android:layout_height="match_parent"
-            android:background="#3703A9F4"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/a"
-                android:layout_width="match_parent"
-                android:layout_height="24dp"
-                android:text="hotel A"
-                android:textAlignment="center"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/b"
-                android:layout_width="match_parent"
-                android:layout_height="24dp"
-                android:text="food B"
-                android:textAlignment="center"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/c"
-                android:layout_width="match_parent"
-                android:layout_height="24dp"
-                android:text="car C"
-                android:textAlignment="center"
-                android:textSize="16sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="123dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/price_text1"
-                android:layout_width="match_parent"
-                android:layout_height="24dp"
-                android:textAlignment="center"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/price_text2"
-                android:layout_width="match_parent"
-                android:layout_height="24dp"
-                android:textAlignment="center"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/price_text3"
-                android:layout_width="match_parent"
-                android:layout_height="24dp"
-                android:textAlignment="center"
-                android:text="TextView" />
-        </LinearLayout>
-
-
-
-    </LinearLayout>
-
-
-
-    <LinearLayout
-        android:layout_width="380dp"
-        android:layout_height="72dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.40">
-
-        <LinearLayout
-            android:layout_width="260dp"
-            android:layout_height="match_parent"
-            android:background="#3703A9F4"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/a2"
-                android:layout_width="match_parent"
-                android:layout_height="24dp"
-                android:text="state location"
-                android:textAlignment="center"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/b2"
-                android:layout_width="match_parent"
-                android:layout_height="24dp"
-                android:text="cost"
-                android:textAlignment="center"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/c2"
-                android:layout_width="match_parent"
-                android:layout_height="24dp"
-                android:text="date"
-                android:textAlignment="center"
-                android:textSize="16sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/price_text4"
-                android:layout_width="match_parent"
-                android:layout_height="24dp"
-                android:textAlignment="center"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/price_text5"
-                android:layout_width="match_parent"
-                android:layout_height="24dp"
-                android:textAlignment="center"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/price_text6"
-                android:layout_width="match_parent"
-                android:layout_height="24dp"
-                android:textAlignment="center"
-                android:text="TextView" />
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="380dp"
-        android:layout_height="72dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.549">
-
-        <LinearLayout
-            android:layout_width="260dp"
-            android:layout_height="match_parent"
-            android:background="#3703A9F4"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/a3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="state location"
-                android:textAlignment="center"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/b3"
-                android:layout_width="match_parent"
-                android:layout_height="24dp"
-                android:text="cost"
-                android:textAlignment="center"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/c3"
-                android:layout_width="match_parent"
-                android:layout_height="24dp"
-                android:text="date"
-                android:textAlignment="center"
-                android:textSize="16sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/price_text7"
-                android:layout_width="match_parent"
-                android:layout_height="24dp"
-                android:textAlignment="center"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/price_text8"
-                android:layout_width="match_parent"
-                android:layout_height="24dp"
-                android:textAlignment="center"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/price_text9"
-                android:layout_width="match_parent"
-                android:layout_height="24dp"
-                android:textAlignment="center"
-                android:text="TextView" />
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="380dp"
-        android:layout_height="72dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.70">
-
-        <LinearLayout
-            android:layout_width="260dp"
-            android:layout_height="match_parent"
-            android:background="#3703A9F4"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/a4"
-                android:layout_width="match_parent"
-                android:layout_height="24dp"
-                android:text="state location"
-                android:textAlignment="center"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/b4"
-                android:layout_width="match_parent"
-                android:layout_height="24dp"
-                android:text="cost"
-                android:textAlignment="center"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/c4"
-                android:layout_width="match_parent"
-                android:layout_height="24dp"
-                android:text="date"
-                android:textAlignment="center"
-                android:textSize="16sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/price_text10"
-                android:layout_width="match_parent"
-                android:layout_height="24dp"
-                android:textAlignment="center"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/price_text11"
-                android:layout_width="match_parent"
-                android:layout_height="24dp"
-                android:textAlignment="center"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/price_text12"
-                android:layout_width="match_parent"
-                android:layout_height="24dp"
-                android:textAlignment="center"
-                android:text="TextView" />
-        </LinearLayout>
-
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

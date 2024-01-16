@@ -14,12 +14,14 @@ import android.widget.VideoView;
 
 import com.example.groupassignment.dbmanagers.dbmanager_login_history;
 import com.example.groupassignment.dbmanagers.dbmanager_plan_history;
+import com.example.groupassignment.dbmanagers.dbmanager_book_history;
 import com.example.groupassignment.dbmanagers.dbmanager_user;
 
 public class log_in extends AppCompatActivity {
     private com.example.groupassignment.dbmanagers.dbmanager_user dbmanager_user;
     private com.example.groupassignment.dbmanagers.dbmanager_login_history dbmanager_login_history;
     private com.example.groupassignment.dbmanagers.dbmanager_plan_history dbmanager_plan_history;
+    private com.example.groupassignment.dbmanagers.dbmanager_book_history dbmanager_book_history;
  private VideoView bg;
     private int currentPosition;
     @Override
@@ -87,6 +89,12 @@ public class log_in extends AppCompatActivity {
                 dbmanager_plan_history.open();
                 dbmanager_plan_history.insert(getUserID(), getLoginID(), "", "");
                 dbmanager_plan_history.close();
+                main.updateVersion();
+
+                dbmanager_book_history = new dbmanager_book_history(this);
+                dbmanager_book_history.open();
+                dbmanager_book_history.insert(getUserID(), getLoginID(), "", "");
+                dbmanager_book_history.close();
                 main.updateVersion();
 
                 Intent intent = new Intent(this, profile.class);

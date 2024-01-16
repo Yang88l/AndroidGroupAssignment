@@ -35,6 +35,7 @@ public class dbmanager_book_summary {
     public void insert(String type, int activity_id, int user_id, int login_id ) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(dbhelper_book_summary.TYPE, type);
+        contentValue.put(dbhelper_book_summary.ACTIVITY_ID, activity_id);
         contentValue.put(dbhelper_book_summary.USER_ID, user_id);
         contentValue.put(dbhelper_book_summary.LOGIN_ID, login_id);
         database.insert(dbhelper_book_summary.TABLE_NAME, null, contentValue);
@@ -43,7 +44,7 @@ public class dbmanager_book_summary {
     // SELECT * FROM table
     public Cursor fetch(int user_id, int login_id) {
         String[] columns = new String[] {
-                dbhelper_book_summary.USER_ID,
+                dbhelper_book_summary.BOOK_SUMMARY_ID,
                 dbhelper_book_summary.TYPE,
                 dbhelper_book_summary.ACTIVITY_ID,
                 dbhelper_book_summary.USER_ID,

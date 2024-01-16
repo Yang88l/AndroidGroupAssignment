@@ -17,6 +17,7 @@ import com.example.groupassignment.dbhelpers.dbhelper_user;
 import com.example.groupassignment.dbmanagers.dbmanager_favourite;
 import com.example.groupassignment.dbmanagers.dbmanager_login_history;
 import com.example.groupassignment.dbmanagers.dbmanager_plan_history;
+import com.example.groupassignment.dbmanagers.dbmanager_book_history;
 import com.example.groupassignment.dbmanagers.dbmanager_user;
 
 public class sign_up extends AppCompatActivity {
@@ -27,6 +28,8 @@ public class sign_up extends AppCompatActivity {
     private com.example.groupassignment.dbmanagers.dbmanager_plan_history dbmanager_plan_history;
  private VideoView bg;
     private int currentPosition;
+    private com.example.groupassignment.dbmanagers.dbmanager_book_history dbmanager_book_history;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -121,6 +124,12 @@ public class sign_up extends AppCompatActivity {
                 dbmanager_plan_history.open();
                 dbmanager_plan_history.insert(getUserID(), getLoginID(), "", "");
                 dbmanager_plan_history.close();
+                main.updateVersion();
+
+                dbmanager_book_history = new dbmanager_book_history(this);
+                dbmanager_book_history.open();
+                dbmanager_book_history.insert(getUserID(), getLoginID(), "", "");
+                dbmanager_book_history.close();
                 main.updateVersion();
 
                 Toast.makeText(this, dbhelper_login_history.DB_VERSION + "" + dbhelper_user.DB_VERSION, Toast.LENGTH_SHORT).show();

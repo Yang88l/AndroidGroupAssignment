@@ -120,6 +120,9 @@ public class planning_summary extends AppCompatActivity {
                     Cursor cursor_bus = dbmanager_bus.fetch(bus_id);
                     displayText1.append(cursor_bus.getString(2));
 
+                    dbmanager_bus.close();
+                    main.updateVersion();
+
                     if(seat==1) displayText2.append(": RM5 (1 seat)");
                     else displayText2.append(": RM"+(seat*5)+" ("+seat+" seats)");
                 }
@@ -144,8 +147,6 @@ public class planning_summary extends AppCompatActivity {
             } while (cursor_summary.moveToNext());
         }
 
-        int login_id = getLoginID();
-
         cursor_summary.close();
         dbmanager_plan_summary.close();
         main.updateVersion();
@@ -169,6 +170,7 @@ public class planning_summary extends AppCompatActivity {
         Cursor cursor = dbmanager_login_history.fetch();
         cursor.moveToLast();
         String status=cursor.getString(3);
+        if (status.equals("logged in")) dbmanager_login_history.update(Integer.parseInt(cursor.getString(0)), "book", "logged in");
         cursor.close();
         dbmanager_login_history.close();
         main.updateVersion();
@@ -193,9 +195,9 @@ public class planning_summary extends AppCompatActivity {
                 } while (cursor_summary.moveToNext());
             }
             cursor.close();
-            dbmanager_login_history.close();
+            dbmanager_plan_summary.close();
             main.updateVersion();
-            Intent intent = new Intent(this, payment_method.class);
+            Intent intent = new Intent(this, booking_summary.class);
             startActivity(intent);
         }
     }
