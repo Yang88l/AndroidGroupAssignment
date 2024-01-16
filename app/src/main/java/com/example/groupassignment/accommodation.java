@@ -192,11 +192,26 @@ public class accommodation extends AppCompatActivity {
     }
 
     public void heart(View view) {
-        startActivity(new Intent(this, my_favourite.class));
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor = dbmanager_login_history.fetch();
+        cursor.moveToLast();
+        String status=cursor.getString(3);
+        cursor.close();
+        dbmanager_login_history.close();
+        main.updateVersion();
+        Toast.makeText(this, status, Toast.LENGTH_SHORT).show();
+        if (status.equals("logged out")) {
+            Toast.makeText(this, "You are not logged in", Toast.LENGTH_SHORT).show();
+        }
+        else if (status.equals("logged in")) {
+            Intent intent = new Intent(this, my_favourite.class);
+            startActivity(intent);
+        }
     }
 
     public void history(View view) {
-        startActivity(new Intent(this, book_history.class));
+        startActivity(new Intent(this, plan_history.class));
     }
 
     public void profile(View view) {
