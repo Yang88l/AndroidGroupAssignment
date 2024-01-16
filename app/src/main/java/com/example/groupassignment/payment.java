@@ -24,7 +24,7 @@ public class payment extends AppCompatActivity {
     private com.example.groupassignment.dbmanagers.dbmanager_user dbmanager_user;
     private Intent intent;
     private EditText password;
-    public int user_id;
+    public int user_id, login_id;
     public double price, totalPriceSum;
     public String user_password, input_password;
  private VideoView bg;
@@ -56,48 +56,37 @@ public class payment extends AppCompatActivity {
         price_text = findViewById(R.id.price_text);
         password = findViewById(R.id.password);
 
-        //GET VALUE
-        Intent intent = new Intent(getIntent());
-
-        dbmanager_book_history = new dbmanager_book_history(this);
-        dbmanager_login_history = new dbmanager_login_history(this);
-        dbmanager_user = new dbmanager_user(this);
-
         //identify account
+        dbmanager_login_history = new dbmanager_login_history(this);
         dbmanager_login_history.open();
         Cursor cursor = dbmanager_login_history.fetch();
         cursor.moveToLast();
+        login_id = cursor.getInt(0);
         user_id = cursor.getInt(1);
         cursor.close();
         dbmanager_login_history.close();
         main.updateVersion();
 
          //get price of user order
+        dbmanager_book_history = new dbmanager_book_history(this);
         dbmanager_book_history.open();
-        Cursor cursor2 = dbmanager_book_history.fetch(user_id);
-        price = cursor.getDouble(3);
-
-         //assuming price stores multiple value
-        double[] total_price = new double[] {price};
-
-        //sum up all price
-        for (double price : total_price) {
-        totalPriceSum += price;
-        }
-       dbmanager_book_history.close();
-        main.updateVersion();
+        Cursor cursor2 = dbmanager_book_history.fetchWithLoginID(user_id, login_id);
+        price = cursor2.getDouble(4);
         cursor2.close();
+        dbmanager_book_history.close();
+        main.updateVersion();
 
         //get user password
+        dbmanager_user = new dbmanager_user(this);
         dbmanager_user.open();
         Cursor cursor3 = dbmanager_user.fetch(user_id);
-        user_password = cursor.getString(4);
+        user_password = cursor3.getString(5);
         cursor3.close();
         dbmanager_user.close();
         main.updateVersion();
 
         //SET TEXT
-        price_text.setText("RM " + Double.toString(totalPriceSum));
+        price_text.setText(String.format("RM%.2f", price));
     }
     public void pay(View view) {
         input_password = password.getText().toString();

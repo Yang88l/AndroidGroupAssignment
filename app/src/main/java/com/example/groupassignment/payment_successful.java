@@ -13,7 +13,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
 
+import com.example.groupassignment.dbmanagers.dbmanager_book_history;
 import com.example.groupassignment.dbmanagers.dbmanager_login_history;
+import com.example.groupassignment.dbmanagers.dbmanager_user;
 
 public class payment_successful extends AppCompatActivity {
     private TextView price_text;
@@ -23,6 +25,8 @@ public class payment_successful extends AppCompatActivity {
     private com.example.groupassignment.dbmanagers.dbmanager_login_history dbmanager_login_history;
 private VideoView bg;
     private int currentPosition;
+    private com.example.groupassignment.dbmanagers.dbmanager_book_history dbmanager_book_history;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,15 +50,31 @@ private VideoView bg;
             }
         });
 
+        //identify account
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor = dbmanager_login_history.fetch();
+        cursor.moveToLast();
+        int login_id = cursor.getInt(0);
+        int user_id = cursor.getInt(1);
+        cursor.close();
+        dbmanager_login_history.close();
+        main.updateVersion();
+
+        //get price of user order
+        dbmanager_book_history = new dbmanager_book_history(this);
+        dbmanager_book_history.open();
+        Cursor cursor2 = dbmanager_book_history.fetchWithLoginID(user_id, login_id);
+        Double price = cursor2.getDouble(4);
+        cursor2.close();
+        dbmanager_book_history.close();
+        main.updateVersion();
+
         //ASSIGN ID
         price_text = findViewById(R.id.price_text);
 
-        //GET VALUE
-        payment = new payment();
-        price = String.valueOf(payment.totalPriceSum);
-
         //SET TEXT
-        price_text.setText("RM" + price);
+        price_text.setText(String.format("RM%.2f", price));
     }
 
     //FINISH BUTTON

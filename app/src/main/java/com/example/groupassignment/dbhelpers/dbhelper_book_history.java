@@ -18,6 +18,7 @@ public class dbhelper_book_history extends SQLiteOpenHelper {
     public static final String LOGIN_ID = "login_id";
     public static final String ACTIVITY = "activity";
     public static final String COST = "cost";
+    public static final String PRICE = "price";
 
     // Database Information
     static final String DB_NAME = "JOURNALDEV_TRAVEL_BOOKING.DB";
@@ -32,7 +33,8 @@ public class dbhelper_book_history extends SQLiteOpenHelper {
             + USER_ID + " INTEGER NOT NULL, "
             + LOGIN_ID + " INTEGER NOT NULL, "
             + ACTIVITY + " TEXT NOT NULL, "
-            + COST + " TEXT NOT NULL "
+            + COST + " TEXT NOT NULL, "
+            + PRICE + " DOUBLE NOT NULL "
             + ")";
 
     public dbhelper_book_history(Context context) {

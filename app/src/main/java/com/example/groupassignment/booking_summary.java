@@ -36,6 +36,7 @@ public class booking_summary extends AppCompatActivity {
    private VideoView bg;
     private int currentPosition;
     private com.example.groupassignment.dbmanagers.dbmanager_flight dbmanager_flight;
+    public double price=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +80,7 @@ public class booking_summary extends AppCompatActivity {
                     Toast.makeText(this, cursor.getString(1), Toast.LENGTH_SHORT).show();
                     displayText1.append(cursor.getString(1));
                     displayText2.append(": RM"+cursor.getString(2));
+                    price+=Integer.parseInt(cursor.getString(2));
                     cursor.close();
                     dbmanager_accomodation_info.close();
                     main.updateVersion();
@@ -89,6 +91,7 @@ public class booking_summary extends AppCompatActivity {
                     Cursor cursor = dbmanager_food_info.fetch(Integer.parseInt(cursor_summary.getString(2)));
                     displayText1.append(cursor.getString(1));
                     displayText2.append(": RM"+cursor.getString(2));
+                    price+=Integer.parseInt(cursor.getString(2));
                     cursor.close();
                     dbmanager_food_info.close();
                     main.updateVersion();
@@ -99,6 +102,7 @@ public class booking_summary extends AppCompatActivity {
                     Cursor cursor = dbmanager_play_info.fetch(Integer.parseInt(cursor_summary.getString(2)));
                     displayText1.append(cursor.getString(1));
                     displayText2.append(": RM"+cursor.getString(2));
+                    price+=Integer.parseInt(cursor.getString(2));
                     cursor.close();
                     dbmanager_play_info.close();
                     main.updateVersion();
@@ -109,6 +113,7 @@ public class booking_summary extends AppCompatActivity {
                     Cursor cursor = dbmanager_choose_bus.fetchID(Integer.parseInt(cursor_summary.getString(2)));
                     int bus_id = Integer.parseInt(cursor.getString(1));
                     int seat = Integer.parseInt(cursor.getString(4));
+                    price+=Integer.parseInt(cursor.getString(2));
                     cursor.close();
                     dbmanager_choose_bus.close();
                     main.updateVersion();
@@ -121,8 +126,15 @@ public class booking_summary extends AppCompatActivity {
                     dbmanager_bus.close();
                     main.updateVersion();
 
-                    if(seat==1) displayText2.append(": RM5 (1 seat)");
-                    else displayText2.append(": RM"+(seat*5)+" ("+seat+" seats)");
+                    if(seat==1) {
+                        displayText2.append(": RM5 (1 seat)");
+                        price+=5;
+                    }
+                    else {
+                        displayText2.append(": RM"+(seat*5)+" ("+seat+" seats)");
+                        price+=(seat*5);
+                        Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
+                    }
                 }
                 else if (cursor_summary.getString(1).equals("flight")){
                     dbmanager_flight = new dbmanager_flight(this);
@@ -137,6 +149,7 @@ public class booking_summary extends AppCompatActivity {
 
                     displayText1.append(flight_name);
                     displayText2.append(": RM" + (pax * 99) + " (" + pax + " pax)");
+                    price+=pax*99;
                 }
                 if (!cursor_summary.isLast()) {
                     displayText1.append("\n");
@@ -154,7 +167,7 @@ public class booking_summary extends AppCompatActivity {
 
         dbmanager_book_history = new dbmanager_book_history(this);
         dbmanager_book_history.open();
-        dbmanager_book_history.update(getUserID(), getLoginID(), displayText1.toString(), displayText2.toString());
+        dbmanager_book_history.update(getUserID(), getLoginID(), displayText1.toString(), displayText2.toString(), price);
         dbmanager_book_history.close();
         main.updateVersion();
     }

@@ -36,6 +36,7 @@ public class dbmanager_book_history {
         contentValue.put(dbhelper_book_history.LOGIN_ID, login_id);
         contentValue.put(dbhelper_book_history.ACTIVITY, activity);
         contentValue.put(dbhelper_book_history.COST, cost);
+        contentValue.put(dbhelper_book_history.PRICE, 0);
         database.insert(dbhelper_book_history.TABLE_NAME, null, contentValue);
     }
 
@@ -45,7 +46,8 @@ public class dbmanager_book_history {
                 dbhelper_book_history.USER_ID,
                 dbhelper_book_history.LOGIN_ID,
                 dbhelper_book_history.ACTIVITY,
-                dbhelper_book_history.COST
+                dbhelper_book_history.COST,
+                dbhelper_book_history.PRICE
         };
         Cursor cursor = database.query(dbhelper_book_history.TABLE_NAME, columns, dbhelper_book_history.USER_ID+"="+user_id, null, null, null, null);
         if (cursor != null) {
@@ -54,11 +56,27 @@ public class dbmanager_book_history {
         return cursor;
     }
 
+    public Cursor fetchWithLoginID(int user_id, int login_id) {
+        String[] columns = new String[] {
+                dbhelper_book_history.USER_ID,
+                dbhelper_book_history.LOGIN_ID,
+                dbhelper_book_history.ACTIVITY,
+                dbhelper_book_history.COST,
+                dbhelper_book_history.PRICE
+        };
+        Cursor cursor = database.query(dbhelper_book_history.TABLE_NAME, columns, dbhelper_book_history.USER_ID+"="+user_id+" AND "+dbhelper_book_history.LOGIN_ID+"="+login_id, null, null, null, null);
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
+        return cursor;
+    }
+
     //UPDATE * FROM table WHERE book_history_id = _id
-    public int update(int user_id, int login_id, String activity, String cost) {
+    public int update(int user_id, int login_id, String activity, String cost, double price) {
         ContentValues contentValues = new ContentValues();
         if(activity!=null)contentValues.put(dbhelper_book_history.ACTIVITY, activity);
         if(cost!=null)contentValues.put(dbhelper_book_history.COST, cost);
+        if(price!=-1)contentValues.put(dbhelper_book_history.PRICE, price);
         int i = database.update(dbhelper_book_history.TABLE_NAME, contentValues, dbhelper_book_history.USER_ID + " = " + user_id +" AND "+dbhelper_book_history.LOGIN_ID + " = " + login_id, null);
         return i;
     }
