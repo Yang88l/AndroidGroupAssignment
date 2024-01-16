@@ -113,7 +113,7 @@ public class booking_summary extends AppCompatActivity {
                     Cursor cursor = dbmanager_choose_bus.fetchID(Integer.parseInt(cursor_summary.getString(2)));
                     int bus_id = Integer.parseInt(cursor.getString(1));
                     int seat = Integer.parseInt(cursor.getString(4));
-                    price+=Integer.parseInt(cursor.getString(2));
+                    Integer.parseInt(cursor.getString(2));
                     cursor.close();
                     dbmanager_choose_bus.close();
                     main.updateVersion();
