@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="156dp"
         android:layout_marginEnd="156dp"
-        android:layout_marginBottom="220dp"
+        android:layout_marginBottom="248dp"
         android:onClick="confirm"
         android:text="Confirm"
         android:background="@drawable/button_design"
@@ -62,11 +62,13 @@
         android:id="@+id/date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="76dp"
         android:ems="10"
-        android:inputType="text"
         android:hint="date"
+        android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/confirm"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/booking2" />
 
