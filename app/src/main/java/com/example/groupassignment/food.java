@@ -44,7 +44,7 @@ public class food extends AppCompatActivity {
         });
 
         if (login_status()) {
-            ImageView picture1 = findViewById(R.id.imageButton12);
+            ImageView picture1 = findViewById(R.id.imageButton14);
             dbmanager_favourite = new dbmanager_favourite(this);
             dbmanager_favourite.open();
             Cursor cursor1 = dbmanager_favourite.fetch(getUserID(), "food", 1);
@@ -55,7 +55,7 @@ public class food extends AppCompatActivity {
                 picture1.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
             }
 
-            ImageView picture2 = findViewById(R.id.imageButton22);
+            ImageView picture2 = findViewById(R.id.imageButton15);
             Cursor cursor2 = dbmanager_favourite.fetch(getUserID(), "food", 2);
             if (cursor2.getString(4).equals("1")) {
                 picture2.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));

@@ -191,7 +191,7 @@ public class main extends AppCompatActivity {
             Toast.makeText(this, "You are not logged in", Toast.LENGTH_SHORT).show();
         }
         else if (status.equals("logged in")) {
-            Intent intent = new Intent(this, profile.class);
+            Intent intent = new Intent(this, my_favourite.class);
             startActivity(intent);
         }
     }
