@@ -213,6 +213,13 @@ public class my_favourite extends AppCompatActivity {
     }
 
     public void hotel(View view) {
+        LinearLayout linearLayout1 = findViewById(R.id.linearLayout6); // Replace with your LinearLayout ID
+        linearLayout1.setVisibility(View.VISIBLE);
+        LinearLayout linearLayout2 = findViewById(R.id.linearLayout8); // Replace with your LinearLayout ID
+        linearLayout2.setVisibility(View.VISIBLE);
+        LinearLayout linearLayout3 = findViewById(R.id.linearLayout9); // Replace with your LinearLayout ID
+        linearLayout3.setVisibility(View.VISIBLE);
+
         boolean hotel_1 = false;
         boolean hotel_2 = false;
         boolean hotel_3 = false;
@@ -262,8 +269,7 @@ public class my_favourite extends AppCompatActivity {
             }
         }
         else {
-            LinearLayout linearLayout = findViewById(R.id.linearLayout6); // Replace with your LinearLayout ID
-            linearLayout.setVisibility(View.GONE);
+            linearLayout1.setVisibility(View.GONE);
         }
 
         if (hotel_3) {
@@ -280,8 +286,7 @@ public class my_favourite extends AppCompatActivity {
                 cursor_hotel.close();
             }
             if (!hotel_1&&!hotel_2) {
-                LinearLayout linearLayout = findViewById(R.id.linearLayout8); // Replace with your LinearLayout ID
-                linearLayout.setVisibility(View.GONE);
+                linearLayout2.setVisibility(View.GONE);
             }
         }
         else if (hotel_2) {
@@ -292,13 +297,11 @@ public class my_favourite extends AppCompatActivity {
                 cursor_hotel.close();
             }
             else {
-                LinearLayout linearLayout = findViewById(R.id.linearLayout8); // Replace with your LinearLayout ID
-                linearLayout.setVisibility(View.GONE);
+                linearLayout2.setVisibility(View.GONE);
             }
         }
         else {
-            LinearLayout linearLayout = findViewById(R.id.linearLayout8); // Replace with your LinearLayout ID
-            linearLayout.setVisibility(View.GONE);
+            linearLayout2.setVisibility(View.GONE);
         }
 
         if (hotel_1&&hotel_2&&hotel_3) {
@@ -310,8 +313,7 @@ public class my_favourite extends AppCompatActivity {
             }
         }
         else {
-            LinearLayout linearLayout = findViewById(R.id.linearLayout9); // Replace with your LinearLayout ID
-            linearLayout.setVisibility(View.GONE);
+            linearLayout3.setVisibility(View.GONE);
         }
 
         dbmanager_accomodation_info.close();
@@ -319,6 +321,13 @@ public class my_favourite extends AppCompatActivity {
     }
 
     public void food(View view) {
+        LinearLayout linearLayout1 = findViewById(R.id.linearLayout6); // Replace with your LinearLayout ID
+        linearLayout1.setVisibility(View.VISIBLE);
+        LinearLayout linearLayout2 = findViewById(R.id.linearLayout8); // Replace with your LinearLayout ID
+        linearLayout2.setVisibility(View.VISIBLE);
+        LinearLayout linearLayout3 = findViewById(R.id.linearLayout9); // Replace with your LinearLayout ID
+        linearLayout3.setVisibility(View.VISIBLE);
+
         boolean food_1 = false;
         boolean food_2 = false;
         boolean food_3 = false;
@@ -368,8 +377,7 @@ public class my_favourite extends AppCompatActivity {
             }
         }
         else {
-            LinearLayout linearLayout = findViewById(R.id.linearLayout6); // Replace with your LinearLayout ID
-            linearLayout.setVisibility(View.GONE);
+            linearLayout1.setVisibility(View.GONE);
         }
 
         if (food_3) {
@@ -386,8 +394,7 @@ public class my_favourite extends AppCompatActivity {
                 cursor_food.close();
             }
             if (!food_1&&!food_2) {
-                LinearLayout linearLayout = findViewById(R.id.linearLayout8); // Replace with your LinearLayout ID
-                linearLayout.setVisibility(View.GONE);
+                linearLayout2.setVisibility(View.GONE);
             }
         }
         else if (food_2) {
@@ -398,13 +405,11 @@ public class my_favourite extends AppCompatActivity {
                 cursor_food.close();
             }
             else {
-                LinearLayout linearLayout = findViewById(R.id.linearLayout8); // Replace with your LinearLayout ID
-                linearLayout.setVisibility(View.GONE);
+                linearLayout2.setVisibility(View.GONE);
             }
         }
         else {
-            LinearLayout linearLayout = findViewById(R.id.linearLayout8); // Replace with your LinearLayout ID
-            linearLayout.setVisibility(View.GONE);
+            linearLayout2.setVisibility(View.GONE);
         }
 
         if (food_1&&food_2&&food_3) {
@@ -416,8 +421,7 @@ public class my_favourite extends AppCompatActivity {
             }
         }
         else {
-            LinearLayout linearLayout = findViewById(R.id.linearLayout9); // Replace with your LinearLayout ID
-            linearLayout.setVisibility(View.GONE);
+            linearLayout3.setVisibility(View.GONE);
         }
 
         dbmanager_food_info.close();
@@ -425,6 +429,13 @@ public class my_favourite extends AppCompatActivity {
     }
 
     public void play(View view) {
+        LinearLayout linearLayout1 = findViewById(R.id.linearLayout6); // Replace with your LinearLayout ID
+        linearLayout1.setVisibility(View.VISIBLE);
+        LinearLayout linearLayout2 = findViewById(R.id.linearLayout8); // Replace with your LinearLayout ID
+        linearLayout2.setVisibility(View.VISIBLE);
+        LinearLayout linearLayout3 = findViewById(R.id.linearLayout9); // Replace with your LinearLayout ID
+        linearLayout3.setVisibility(View.VISIBLE);
+
         boolean play_1 = false;
         boolean play_2 = false;
         boolean play_3 = false;
@@ -474,8 +485,7 @@ public class my_favourite extends AppCompatActivity {
             }
         }
         else {
-            LinearLayout linearLayout = findViewById(R.id.linearLayout6); // Replace with your LinearLayout ID
-            linearLayout.setVisibility(View.GONE);
+            linearLayout1.setVisibility(View.GONE);
         }
 
         if (play_3) {
@@ -492,8 +502,7 @@ public class my_favourite extends AppCompatActivity {
                 cursor_play.close();
             }
             if (!play_1&&!play_2) {
-                LinearLayout linearLayout = findViewById(R.id.linearLayout8); // Replace with your LinearLayout ID
-                linearLayout.setVisibility(View.GONE);
+                linearLayout2.setVisibility(View.GONE);
             }
         }
         else if (play_2) {
@@ -504,13 +513,11 @@ public class my_favourite extends AppCompatActivity {
                 cursor_play.close();
             }
             else {
-                LinearLayout linearLayout = findViewById(R.id.linearLayout8); // Replace with your LinearLayout ID
-                linearLayout.setVisibility(View.GONE);
+                linearLayout2.setVisibility(View.GONE);
             }
         }
         else {
-            LinearLayout linearLayout = findViewById(R.id.linearLayout8); // Replace with your LinearLayout ID
-            linearLayout.setVisibility(View.GONE);
+            linearLayout2.setVisibility(View.GONE);
         }
 
         if (play_1&&play_2&&play_3) {
@@ -522,8 +529,7 @@ public class my_favourite extends AppCompatActivity {
             }
         }
         else {
-            LinearLayout linearLayout = findViewById(R.id.linearLayout9); // Replace with your LinearLayout ID
-            linearLayout.setVisibility(View.GONE);
+            linearLayout3.setVisibility(View.GONE);
         }
 
         dbmanager_play_info.close();
