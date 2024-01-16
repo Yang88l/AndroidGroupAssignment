@@ -79,6 +79,11 @@ private VideoView bg;
 
     //FINISH BUTTON
     public void finish(View view) {
+        dbmanager_book_history = new dbmanager_book_history(this);
+        dbmanager_book_history.open();
+        dbmanager_book_history.insert(getUserID(), getLoginID(), "", "");
+        dbmanager_book_history.close();
+        main.updateVersion();
         Intent intent = new Intent(payment_successful.this, main.class);
         startActivity(intent);
     }
@@ -160,5 +165,29 @@ private VideoView bg;
         currentPosition = bg.getCurrentPosition();
         bg.pause();
         super.onBackPressed();
+    }
+
+    public int getUserID(){
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor_login = dbmanager_login_history.fetch();
+        cursor_login.moveToLast();
+        int user_id=Integer.parseInt(cursor_login.getString(1));
+        cursor_login.close();
+        dbmanager_login_history.close();
+        main.updateVersion();
+        return user_id;
+    }
+
+    public int getLoginID(){
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor_login = dbmanager_login_history.fetch();
+        cursor_login.moveToLast();
+        int login_id=Integer.parseInt(cursor_login.getString(0));
+        cursor_login.close();
+        dbmanager_login_history.close();
+        main.updateVersion();
+        return login_id;
     }
 }
