@@ -12,7 +12,9 @@
         layout="@layout/topnavi"/>
 
     <include
-        layout="@layout/background"/>
+        android:id="@+id/include5"
+        layout="@layout/background" />
+
 
     <Button
         android:id="@+id/next"
@@ -20,30 +22,28 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="156dp"
         android:layout_marginEnd="156dp"
-        android:layout_marginBottom="52dp"
+        android:layout_marginBottom="248dp"
+        android:background="@drawable/button_design"
         android:onClick="next"
         android:text="Next"
-        android:background="@drawable/button_design"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/imageView5"
+        app:layout_constraintBottom_toBottomOf="@+id/include5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
-
 
     <EditText
         android:id="@+id/time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="116dp"
+        android:layout_marginBottom="76dp"
         android:ems="10"
-        android:inputType="text"
         android:hint="time"
+        android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/next"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/booking2"
         app:layout_constraintVertical_bias="0.146" />
 
     <ImageView
