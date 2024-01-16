@@ -84,10 +84,6 @@ public class plan_history extends AppCompatActivity {
     }
 
     public void heart(View view) {
-        startActivity(new Intent(this, my_favourite.class));
-    }
-
-    public void history(View view) {
         dbmanager_login_history = new dbmanager_login_history(this);
         dbmanager_login_history.open();
         Cursor cursor = dbmanager_login_history.fetch();
@@ -97,11 +93,17 @@ public class plan_history extends AppCompatActivity {
         dbmanager_login_history.close();
         main.updateVersion();
         Toast.makeText(this, status, Toast.LENGTH_SHORT).show();
-        if (status.equals("logged in")) {
-            Intent intent = new Intent(this, book_history.class);
+        if (status.equals("logged out")) {
+            Toast.makeText(this, "You are not logged in", Toast.LENGTH_SHORT).show();
+        }
+        else if (status.equals("logged in")) {
+            Intent intent = new Intent(this, my_favourite.class);
             startActivity(intent);
         }
-        else Toast.makeText(this, "You are not logged in", Toast.LENGTH_SHORT).show();
+    }
+
+    public void history(View view) {
+        startActivity(new Intent(this, plan_history.class));
     }
 
     public void profile(View view) {
@@ -166,5 +168,26 @@ public class plan_history extends AppCompatActivity {
         currentPosition = bg.getCurrentPosition();
         bg.pause();
         super.onBackPressed();
+    }
+
+    public void book_history(View view) {
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor = dbmanager_login_history.fetch();
+        cursor.moveToLast();
+        String status=cursor.getString(3);
+        cursor.close();
+        dbmanager_login_history.close();
+        main.updateVersion();
+        Toast.makeText(this, status, Toast.LENGTH_SHORT).show();
+        if (status.equals("logged in")) {
+            Intent intent = new Intent(this, book_history.class);
+            startActivity(intent);
+        }
+        else Toast.makeText(this, "You are not logged in", Toast.LENGTH_SHORT).show();
+    }
+
+    public void plan_history(View view) {
+        startActivity(new Intent(this, plan_history.class));
     }
 }

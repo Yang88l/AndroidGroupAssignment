@@ -43,7 +43,7 @@ public class play extends AppCompatActivity {
         });
 
         if (login_status()) {
-            ImageView picture1 = findViewById(R.id.imageButton12);
+            ImageView picture1 = findViewById(R.id.heart1);
             dbmanager_favourite = new dbmanager_favourite(this);
             dbmanager_favourite.open();
             Cursor cursor1 = dbmanager_favourite.fetch(getUserID(), "play", 1);
@@ -53,26 +53,18 @@ public class play extends AppCompatActivity {
             else if (cursor1.getString(4).equals("0")) {
                 picture1.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
             }
-            dbmanager_favourite.close();
-            main.updateVersion();
 
-            ImageView picture2 = findViewById(R.id.imageButton12);
-            dbmanager_favourite = new dbmanager_favourite(this);
-            dbmanager_favourite.open();
-            Cursor cursor2 = dbmanager_favourite.fetch(getUserID(), "play", 1);
+            ImageView picture2 = findViewById(R.id.heart2);
+            Cursor cursor2 = dbmanager_favourite.fetch(getUserID(), "play", 2);
             if (cursor2.getString(4).equals("1")) {
                 picture2.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
             }
             else if (cursor2.getString(4).equals("0")) {
                 picture2.setImageResource(getResources().getIdentifier(("love"), "drawable", getPackageName()));
             }
-            dbmanager_favourite.close();
-            main.updateVersion();
 
-            ImageView picture3 = findViewById(R.id.imageButton12);
-            dbmanager_favourite = new dbmanager_favourite(this);
-            dbmanager_favourite.open();
-            Cursor cursor3 = dbmanager_favourite.fetch(getUserID(), "play", 1);
+            ImageView picture3 = findViewById(R.id.heart3);
+            Cursor cursor3 = dbmanager_favourite.fetch(getUserID(), "play", 3);
             if (cursor3.getString(4).equals("1")) {
                 picture3.setImageResource(getResources().getIdentifier(("love_red"), "drawable", getPackageName()));
             }
@@ -208,11 +200,26 @@ public class play extends AppCompatActivity {
     }
 
     public void heart(View view) {
-        startActivity(new Intent(this, my_favourite.class));
+        dbmanager_login_history = new dbmanager_login_history(this);
+        dbmanager_login_history.open();
+        Cursor cursor = dbmanager_login_history.fetch();
+        cursor.moveToLast();
+        String status=cursor.getString(3);
+        cursor.close();
+        dbmanager_login_history.close();
+        main.updateVersion();
+        Toast.makeText(this, status, Toast.LENGTH_SHORT).show();
+        if (status.equals("logged out")) {
+            Toast.makeText(this, "You are not logged in", Toast.LENGTH_SHORT).show();
+        }
+        else if (status.equals("logged in")) {
+            Intent intent = new Intent(this, my_favourite.class);
+            startActivity(intent);
+        }
     }
 
     public void history(View view) {
-        startActivity(new Intent(this, book_history.class));
+        startActivity(new Intent(this, plan_history.class));
     }
 
     public void profile(View view) {
