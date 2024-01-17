@@ -77,16 +77,25 @@ public class edit_profile extends AppCompatActivity {
         String phone = ((EditText) findViewById(R.id.phone_text)).getText().toString();
         String birthday = ((EditText) findViewById(R.id.birthday_text)).getText().toString();
 
-        Toast.makeText(this, phone, Toast.LENGTH_SHORT).show();
+        if (name.equals("")||email.equals("")||phone.equals("")||birthday.equals("")) {
+            Toast.makeText(this, "Please fill in all the blank!", Toast.LENGTH_LONG).show();
+        }
+        else if (!checkPhone(phone)) {
+            Toast.makeText(this, "Invalid phone number.", Toast.LENGTH_SHORT).show();
+        }
+        else if (checkDate(birthday)) {
+            dbmanager_user = new dbmanager_user(this);
+            dbmanager_user.open();
+            dbmanager_user.update(getUserID(), name, email, phone, birthday, null, null);
+            dbmanager_user.close();
+            main.updateVersion();
 
-        dbmanager_user = new dbmanager_user(this);
-        dbmanager_user.open();
-        dbmanager_user.update(getUserID(), name, email, phone, birthday, null, null);
-        dbmanager_user.close();
-        main.updateVersion();
-
-        Intent intent = new Intent (this, profile.class);
-        startActivity(intent);
+            Intent intent = new Intent(this, profile.class);
+            startActivity(intent);
+        }
+        else {
+            Toast.makeText(this, "Invalid date format.", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void edit_image(View view) {
@@ -184,4 +193,63 @@ public class edit_profile extends AppCompatActivity {
         bg.pause();
         super.onBackPressed();
     }
+
+        public boolean checkPhone(String input) {
+            if (input.charAt(0)=='0' && input.charAt(1)=='1'){
+                if (input.length() == 10) return true;
+                else if (input.length() == 11 && input.charAt(2)=='1') return true;
+                else return false;
+            }
+            else return false;
+        }
+
+        public boolean checkDate(String input) {
+            // DD-MM-YYYY
+            boolean valid = true;
+            int[] i = {0, 1, 3, 4, 6, 7, 8, 9};
+            for (int j = 0; j < 8; j++) {
+                if (input.length() == 10 && input.charAt(2) == '-' && input.charAt(5) == '-' && Character.isDigit(input.charAt(i[j]))) {
+                    int day = (input.charAt(0) - '0') * 10 + (input.charAt(1) - '0');
+                    int month = (input.charAt(3) - '0') * 10 + (input.charAt(4) - '0');
+                    int year = (input.charAt(6) - '0') * 1000 + (input.charAt(7) - '0') * 100 + (input.charAt(8) - '0') * 10 + (input.charAt(9) - '0');
+
+                    if (day < 1 || day > 31) valid = false;
+                    if (month < 1 || month > 12) valid = false;
+                    if (year < 2024 || year > 2025) valid = false;
+                    if (day < 1 || day > daysInMonth(month, year)) valid = false;
+                }
+                else valid = false;
+            }
+            return valid;
+        }
+
+        public int daysInMonth(int month, int year) {
+            switch (month) {
+                case 1: // January
+                case 3: // March
+                case 5: // May
+                case 7: // July
+                case 8: // August
+                case 10: // October
+                case 12: // December
+                    return 31;
+                case 4: // April
+                case 6: // June
+                case 9: // September
+                case 11: // November
+                    return 30;
+                case 2: // February
+                    if (checkLeapYear(year))
+                        return 29;
+                    else
+                        return 28;
+                default:
+                    return 0; // Invalid month
+            }
+        }
+
+        // Helper method to check if a year is a leap year
+        public boolean checkLeapYear(int year) {
+            return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+        }
 }

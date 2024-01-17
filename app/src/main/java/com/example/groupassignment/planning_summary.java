@@ -23,8 +23,6 @@ import com.example.groupassignment.dbmanagers.dbmanager_play_info;
 import com.example.groupassignment.dbmanagers.dbmanager_choose_bus;
 import com.example.groupassignment.dbmanagers.dbmanager_book_summary;
 
-
-
 public class planning_summary extends AppCompatActivity {
     private dbmanager_plan_summary dbmanager_plan_summary;
     private dbmanager_login_history dbmanager_login_history;
@@ -46,10 +44,7 @@ public class planning_summary extends AppCompatActivity {
 
         //Top Navigation
         BaseActivity.setupToolbar(this);
-
-        //Background
- bg = findViewById(R.id.background);
-
+        bg = findViewById(R.id.background);
         String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.background;
         Uri videoUri = Uri.parse(videoPath);
         bg.setVideoURI(videoUri);
@@ -71,14 +66,12 @@ public class planning_summary extends AppCompatActivity {
         dbmanager_plan_summary = new dbmanager_plan_summary(this);
         dbmanager_plan_summary.open();
         Cursor cursor_summary = dbmanager_plan_summary.fetch(getUserID(), getLoginID());
-        Toast.makeText(this, cursor_summary.getString(1), Toast.LENGTH_SHORT).show();
         if (cursor_summary != null && cursor_summary.moveToFirst()) {
             do {
                 if (cursor_summary.getString(1).equals("hotel")){
                     dbmanager_accomodation_info = new dbmanager_accomodation_info(this);
                     dbmanager_accomodation_info.open();
                     Cursor cursor = dbmanager_accomodation_info.fetch(Integer.parseInt(cursor_summary.getString(2)));
-                    Toast.makeText(this, cursor.getString(1), Toast.LENGTH_SHORT).show();
                     displayText1.append(cursor.getString(1));
                     displayText2.append(": RM"+cursor.getString(2));
                     cursor.close();
@@ -119,7 +112,6 @@ public class planning_summary extends AppCompatActivity {
                     dbmanager_bus.open();
                     Cursor cursor_bus = dbmanager_bus.fetch(bus_id);
                     displayText1.append(cursor_bus.getString(2));
-
                     dbmanager_bus.close();
                     main.updateVersion();
 
@@ -140,6 +132,7 @@ public class planning_summary extends AppCompatActivity {
                     displayText1.append(flight_name);
                     displayText2.append(": RM" + (pax * 99) + " (" + pax + " pax)");
                 }
+
                 if (!cursor_summary.isLast()) {
                     displayText1.append("\n");
                     displayText2.append("\n");
@@ -174,7 +167,6 @@ public class planning_summary extends AppCompatActivity {
         cursor.close();
         dbmanager_login_history.close();
         main.updateVersion();
-        Toast.makeText(this, status, Toast.LENGTH_SHORT).show();
         if (status.equals("logged out")) {
             Toast.makeText(this, "Please log in first.", Toast.LENGTH_SHORT).show();
         }
