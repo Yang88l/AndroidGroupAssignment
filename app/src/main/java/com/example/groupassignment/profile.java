@@ -31,7 +31,7 @@ public class profile extends AppCompatActivity {
         BaseActivity.setupToolbar(this);
 
         //Background
-  bg = findViewById(R.id.background);
+        bg = findViewById(R.id.background);
 
         String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.background;
         Uri videoUri = Uri.parse(videoPath);
@@ -44,6 +44,7 @@ public class profile extends AppCompatActivity {
                 bg.start();
             }
         });
+
         dbmanager_user = new dbmanager_user(this);
         dbmanager_user.open();
         Cursor cursor_user = dbmanager_user.fetch(getUserID());
@@ -59,7 +60,6 @@ public class profile extends AppCompatActivity {
         email.setText(cursor_user.getString(2));
         phone.setText(cursor_user.getString(3));
         birthday.setText(cursor_user.getString(4));
-
 
         ImageView picture = findViewById(R.id.imageView);
         picture.setImageResource(getResources().getIdentifier((cursor_user.getString(6) + "_100"), "drawable", getPackageName()));

@@ -17,12 +17,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="387dp"
         android:layout_height="597dp"
-        android:layout_marginTop="20dp"
         android:background="@color/material_dynamic_secondary90"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/linear1">
 
         <!-- Start Content -->
         <TextView
@@ -197,12 +195,9 @@
         android:id="@+id/linear1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="550dp"
-        android:layout_marginTop="-90dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topnavi">
 
 
         <TextView

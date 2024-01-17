@@ -22,7 +22,6 @@ public class plan_history extends AppCompatActivity {
 
     private com.example.groupassignment.dbmanagers.dbmanager_plan_history dbmanager_plan_history;
     private com.example.groupassignment.dbmanagers.dbmanager_login_history dbmanager_login_history;
-    //private ListView simpleList;
 
      private VideoView bg;
     private int currentPosition;
@@ -31,12 +30,12 @@ public class plan_history extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.plan_history);
 
+        //Top Navigation
+        BaseActivity.setupToolbar(this);
         bg = findViewById(R.id.background);
-
         String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.background;
         Uri videoUri = Uri.parse(videoPath);
         bg.setVideoURI(videoUri);
-
         bg.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
@@ -44,19 +43,18 @@ public class plan_history extends AppCompatActivity {
                 bg.start();
             }
         });
-        ArrayList<String> namesList = new ArrayList<>();
-        ArrayList<String> pricesList = new ArrayList<>();
-        //ArrayList<String> imagesList = new ArrayList<>();
 
         dbmanager_plan_history = new dbmanager_plan_history(this);
         dbmanager_plan_history.open();
         Cursor cursor = dbmanager_plan_history.fetch(getUserID());
 
+        ArrayList<String> namesList = new ArrayList<>();
+        ArrayList<String> pricesList = new ArrayList<>();
+
         if (cursor != null && cursor.moveToFirst()) {
             do {
                 String itemName = cursor.getString(2);
                 String itemPrice = cursor.getString(3);
-
                 namesList.add(itemName);
                 pricesList.add(itemPrice);
             } while (cursor.moveToNext());
@@ -64,15 +62,10 @@ public class plan_history extends AppCompatActivity {
 
         String[] names = namesList.toArray(new String[0]);
         String[] prices = pricesList.toArray(new String[0]);
-        //String[] images = imagesList.toArray(new String[0]);
 
         ListView simpleList = findViewById(R.id.simpleListView);
         CustomAdapter customAdapter = new CustomAdapter(this, names, prices);
         simpleList.setAdapter(customAdapter);
-
-        //Top Navigation
-        BaseActivity.setupToolbar(this);
-
 
         dbmanager_plan_history.close();
         main.updateVersion();

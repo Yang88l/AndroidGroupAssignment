@@ -104,8 +104,11 @@ public class sign_up extends AppCompatActivity {
         else if (same_name) {
             Toast.makeText(this, "The name is used. Try another name.", Toast.LENGTH_SHORT).show();
         }
+        else if (!checkPhone(phone)) {
+            Toast.makeText(this, "Invalid phone number.", Toast.LENGTH_SHORT).show();
+        }
         else if (!checkDate(birthday)) {
-            Toast.makeText(this, "Invalid date format", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Invalid date format.", Toast.LENGTH_SHORT).show();
         }
         else if (password.equals(password2)) {
             if (isChecked) {
@@ -117,6 +120,7 @@ public class sign_up extends AppCompatActivity {
                 cursor.close();
                 dbmanager_user.close();
                 main.updateVersion();
+
                 dbmanager_login_history = new dbmanager_login_history(this);
                 dbmanager_login_history.open();
                 dbmanager_login_history.insert(user_id, "logged in", "null");
@@ -134,7 +138,6 @@ public class sign_up extends AppCompatActivity {
                 dbmanager_book_history.insert(getUserID(), getLoginID(), "", "");
                 dbmanager_book_history.close();
                 main.updateVersion();
-
 
                 dbmanager_favourite = new dbmanager_favourite(this);
                 dbmanager_favourite.open();
@@ -290,6 +293,15 @@ public class sign_up extends AppCompatActivity {
         currentPosition = bg.getCurrentPosition();
         bg.pause();
         super.onBackPressed();
+    }
+
+    public boolean checkPhone(String input) {
+        if (input.charAt(0)=='0' && input.charAt(1)=='1'){
+            if (input.length() == 10) return true;
+            else if (input.length() == 11 && input.charAt(2)=='1') return true;
+            else return false;
+        }
+        else return false;
     }
 
     public boolean checkDate(String input) {

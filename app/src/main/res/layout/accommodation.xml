@@ -11,7 +11,9 @@
         android:id="@+id/topnavi"
         layout="@layout/topnavi"/>
 
-    <include layout="@layout/background"/>
+    <include
+        android:id="@+id/include6"
+        layout="@layout/background" />
 
     <ImageButton
         android:id="@+id/imageButton22"
@@ -127,7 +129,7 @@
         android:layout_marginBottom="10dp"
         android:onClick="home"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/include6"
         app:srcCompat="@drawable/home" />
 
     <ImageView
@@ -156,11 +158,12 @@
         android:id="@+id/imageView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="19dp"
         android:layout_marginBottom="10dp"
         android:onClick="profile"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:srcCompat="@drawable/profile"
-        tools:layout_editor_absoluteX="299dp" />
+        app:layout_constraintEnd_toEndOf="@+id/include6"
+        app:srcCompat="@drawable/profile" />
 
     <ImageView
         android:id="@+id/line2"

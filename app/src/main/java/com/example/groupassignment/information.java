@@ -25,17 +25,13 @@ import com.example.groupassignment.dbmanagers.dbmanager_plan_summary;
 import com.example.groupassignment.dbmanagers.dbmanager_play_info;
 
 public class information extends AppCompatActivity {
-
-    private com.example.groupassignment.dbmanagers.dbmanager_choose_accomodation dbmanager_choose_accomodation;
-    private com.example.groupassignment.dbmanagers.dbmanager_choose_food dbmanager_choose_food;
-    private com.example.groupassignment.dbmanagers.dbmanager_choose_play dbmanager_choose_play;
     private com.example.groupassignment.dbmanagers.dbmanager_accomodation_info dbmanager_accomodation_info;
     private com.example.groupassignment.dbmanagers.dbmanager_food_info dbmanager_food_info;
     private com.example.groupassignment.dbmanagers.dbmanager_play_info dbmanager_play_info;
     private com.example.groupassignment.dbmanagers.dbmanager_login_history dbmanager_login_history;
     private com.example.groupassignment.dbmanagers.dbmanager_plan_summary dbmanager_plan_summary;
     private com.example.groupassignment.dbmanagers.dbmanager_book_summary dbmanager_book_summary;
- private VideoView bg;
+    private VideoView bg;
     private int currentPosition;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,13 +40,10 @@ public class information extends AppCompatActivity {
 
         //Top Navigation
         BaseActivity.setupToolbar(this);
-
         bg = findViewById(R.id.background);
-
         String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.background;
         Uri videoUri = Uri.parse(videoPath);
         bg.setVideoURI(videoUri);
-
         bg.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
@@ -59,15 +52,10 @@ public class information extends AppCompatActivity {
             }
         });
 
-
         Intent intent = getIntent();
         int _id = intent.getIntExtra("_id", 0);
         String from = intent.getStringExtra("from");
-
-        Toast.makeText(this, _id+from, Toast.LENGTH_SHORT).show();
-
         Button button = findViewById(R.id.button19);
-
         dbmanager_login_history = new dbmanager_login_history(this);
         dbmanager_login_history.open();
         Cursor cursor_login = dbmanager_login_history.fetch();
@@ -82,23 +70,11 @@ public class information extends AppCompatActivity {
         dbmanager_login_history.close();
         main.updateVersion();
 
-
         if (from.equals("hotel")) {
             dbmanager_accomodation_info = new dbmanager_accomodation_info(this);
             dbmanager_accomodation_info.open();
             Cursor cursor = dbmanager_accomodation_info.fetch(_id);
-
-            //display name
-            TextView name = findViewById(R.id.textView28);
-            name.setText(cursor.getString(1));
-
-            //display price
-            TextView price = findViewById(R.id.textView29);
-            price.setText("RM"+cursor.getString(2));
-
-            //display image
-            ImageView img = findViewById(R.id.output_user_choose);
-            img.setImageResource(getResources().getIdentifier(cursor.getString(3) + "_180", "drawable", getPackageName()));
+            display(cursor);
             cursor.close();
             dbmanager_accomodation_info.close();
             main.updateVersion();
@@ -107,18 +83,7 @@ public class information extends AppCompatActivity {
             dbmanager_food_info = new dbmanager_food_info(this);
             dbmanager_food_info.open();
             Cursor cursor = dbmanager_food_info.fetch(_id);
-
-            //display name
-            TextView name = findViewById(R.id.textView28);
-            name.setText(cursor.getString(1));
-
-            //display price
-            TextView price = findViewById(R.id.textView29);
-            price.setText("RM"+cursor.getString(2));
-
-            //display image
-            ImageView img = findViewById(R.id.output_user_choose);
-            img.setImageResource(getResources().getIdentifier(cursor.getString(3) + "_180", "drawable", getPackageName()));
+            display(cursor);
             cursor.close();
             dbmanager_food_info.close();
             main.updateVersion();
@@ -127,18 +92,7 @@ public class information extends AppCompatActivity {
             dbmanager_play_info = new dbmanager_play_info(this);
             dbmanager_play_info.open();
             Cursor cursor = dbmanager_play_info.fetch(_id);
-
-            //display name
-            TextView name = findViewById(R.id.textView28);
-            name.setText(cursor.getString(1));
-
-            //display price
-            TextView price = findViewById(R.id.textView29);
-            price.setText("RM"+cursor.getString(2));
-
-            //display image
-            ImageView img = findViewById(R.id.output_user_choose);
-            img.setImageResource(getResources().getIdentifier(cursor.getString(3) + "_180", "drawable", getPackageName()));
+            display(cursor);
             cursor.close();
             dbmanager_play_info.close();
             main.updateVersion();
@@ -146,9 +100,9 @@ public class information extends AppCompatActivity {
     }
 
     public void book(View view) {
-        Intent intent = getIntent();
-        int _id = intent.getIntExtra("_id", 0);
-        String from = intent.getStringExtra("from");
+        Intent intentFrom = getIntent();
+        int _id = intentFrom.getIntExtra("_id", 0);
+        String from = intentFrom.getStringExtra("from");
 
         dbmanager_login_history = new dbmanager_login_history(this);
         dbmanager_login_history.open();
@@ -159,29 +113,7 @@ public class information extends AppCompatActivity {
         cursor_login.close();
         dbmanager_login_history.close();
         main.updateVersion();
-/*
-        if (from.equals("hotel")) {
-            dbmanager_choose_accomodation = new dbmanager_choose_accomodation(this);
-            dbmanager_choose_accomodation.open();
-            dbmanager_choose_accomodation.insert(_id, getUserID());
-            dbmanager_choose_accomodation.close();
-            main.updateVersion();
-        }
-        else if (from.equals("food")) {
-            dbmanager_choose_food = new dbmanager_choose_food(this);
-            dbmanager_choose_food.open();
-            dbmanager_choose_food.insert(_id, getUserID());
-            dbmanager_choose_food.close();
-            main.updateVersion();
-        }
-        else if (from.equals("play")) {
-            dbmanager_choose_play = new dbmanager_choose_play(this);
-            dbmanager_choose_play.open();
-            dbmanager_choose_play.insert(_id, getUserID());
-            dbmanager_choose_play.close();
-            main.updateVersion();
-        }
-*/
+
         if (activity.equals("plan")) {
             dbmanager_plan_summary = new dbmanager_plan_summary(this);
             dbmanager_plan_summary.open();
@@ -189,7 +121,7 @@ public class information extends AppCompatActivity {
             dbmanager_plan_summary.close();
             main.updateVersion();
 
-            intent = new Intent(this,planning_summary.class);
+            Intent intent = new Intent(this,planning_summary.class);
             startActivity(intent);
         }
         else if (activity.equals("book")) {
@@ -199,7 +131,7 @@ public class information extends AppCompatActivity {
             dbmanager_book_summary.close();
             main.updateVersion();
 
-            intent = new Intent(this,booking_summary.class);
+            Intent intent = new Intent(this,booking_summary.class);
             startActivity(intent);
         }
     }
@@ -293,5 +225,19 @@ public class information extends AppCompatActivity {
         currentPosition = bg.getCurrentPosition();
         bg.pause();
         super.onBackPressed();
+    }
+
+    public void display(Cursor cursor){
+        //display name
+        TextView name = findViewById(R.id.textView28);
+        name.setText(cursor.getString(1));
+
+        //display price
+        TextView price = findViewById(R.id.textView29);
+        price.setText("RM"+cursor.getString(2));
+
+        //display image
+        ImageView img = findViewById(R.id.output_user_choose);
+        img.setImageResource(getResources().getIdentifier(cursor.getString(3) + "_180", "drawable", getPackageName()));
     }
 }

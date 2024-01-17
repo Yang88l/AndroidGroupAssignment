@@ -6,15 +6,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
-import android.net.Uri;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 import android.net.Uri;
 import android.widget.VideoView;
@@ -51,21 +45,16 @@ import com.example.groupassignment.dbmanagers.dbmanager_airline_info;
 import com.example.groupassignment.dbmanagers.dbmanager_bus;
 import com.example.groupassignment.dbmanagers.dbmanager_food_info;
 import com.example.groupassignment.dbmanagers.dbmanager_plan_history;
-import com.example.groupassignment.dbmanagers.dbmanager_plan_summary;
 import com.example.groupassignment.dbmanagers.dbmanager_play_info;
 import com.example.groupassignment.dbmanagers.dbmanager_accomodation_info;
-import com.google.android.material.bottomappbar.BottomAppBar;
-
 
 public class main extends AppCompatActivity {
     private com.example.groupassignment.dbmanagers.dbmanager_login_history dbmanager_login_history;
-    private SQLiteDatabase database;
     private com.example.groupassignment.dbmanagers.dbmanager_airline_info dbmanager_airline_info;
     private com.example.groupassignment.dbmanagers.dbmanager_bus dbmanager_bus;
     private com.example.groupassignment.dbmanagers.dbmanager_food_info dbmanager_food_info;
     private com.example.groupassignment.dbmanagers.dbmanager_play_info dbmanager_play_info;
     private com.example.groupassignment.dbmanagers.dbmanager_accomodation_info dbmanager_accomodation_info;
-    private com.example.groupassignment.dbmanagers.dbmanager_plan_summary dbmanager_plan_summary;
     private com.example.groupassignment.dbmanagers.dbmanager_plan_history dbmanager_plan_history;
     private VideoView bg;
     private int currentPosition;
@@ -76,13 +65,10 @@ public class main extends AppCompatActivity {
 
         //Top Navigation
         BaseActivity.setupToolbar(this);
-
         bg = findViewById(R.id.background);
-
         String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.background;
         Uri videoUri = Uri.parse(videoPath);
         bg.setVideoURI(videoUri);
-
         bg.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
@@ -93,18 +79,14 @@ public class main extends AppCompatActivity {
 
         //get latest version
         SharedPreferences preferences = getSharedPreferences("DatabasePrefs", Context.MODE_PRIVATE);
-        for (int i=0; i<preferences.getInt("LatestDBVersion", 0); i++){
+        for (int i=0; i<preferences.getInt("LatestDBVersion", 0); i++) {
             updateVersion();
         }
-
-        int version=0;
-
         dbmanager_login_history = new dbmanager_login_history(this);
         dbmanager_login_history.open();
-        version=dbhelper_login_history.DB_VERSION;
+        int version=dbhelper_login_history.DB_VERSION;
         dbmanager_login_history.close();
         main.updateVersion();
-
         if (version == 1) {
             initializeData();
         }
@@ -186,7 +168,6 @@ public class main extends AppCompatActivity {
         cursor.close();
         dbmanager_login_history.close();
         main.updateVersion();
-        Toast.makeText(this, status, Toast.LENGTH_SHORT).show();
         if (status.equals("logged out")) {
             Toast.makeText(this, "You are not logged in", Toast.LENGTH_SHORT).show();
         }

@@ -13,40 +13,35 @@
     <include
         layout="@layout/background"/>
 
-   <LinearLayout
+    <LinearLayout
         android:id="@+id/linear1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="550dp"
-        android:layout_marginTop="-80dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topnavi">
 
 
-       <TextView
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:layout_margin="1dp"
-           android:background="#27caf2"
-           android:gravity="center"
-           android:text="Login"
-           android:textSize="30dp" />
-   </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#27caf2"
+            android:gravity="center"
+            android:text="Login"
+            android:textSize="30dp" />
+    </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="369dp"
-        android:layout_height="503dp"
+        android:layout_height="480dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:background="@color/material_dynamic_secondary90"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.451">
+        app:layout_constraintTop_toBottomOf="@+id/linear1">
 
         <TextView
             android:id="@+id/textView2"
@@ -128,7 +123,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView13" />
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
