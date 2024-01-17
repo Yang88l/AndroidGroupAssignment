@@ -117,7 +117,6 @@ public class sign_up extends AppCompatActivity {
                 cursor.close();
                 dbmanager_user.close();
                 main.updateVersion();
-                Toast.makeText(this, dbhelper_login_history.DB_VERSION + "" + dbhelper_user.DB_VERSION, Toast.LENGTH_SHORT).show();
                 dbmanager_login_history = new dbmanager_login_history(this);
                 dbmanager_login_history.open();
                 dbmanager_login_history.insert(user_id, "logged in", "null");
@@ -136,7 +135,6 @@ public class sign_up extends AppCompatActivity {
                 dbmanager_book_history.close();
                 main.updateVersion();
 
-                Toast.makeText(this, dbhelper_login_history.DB_VERSION + "" + dbhelper_user.DB_VERSION, Toast.LENGTH_SHORT).show();
 
                 dbmanager_favourite = new dbmanager_favourite(this);
                 dbmanager_favourite.open();

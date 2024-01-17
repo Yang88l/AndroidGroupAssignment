@@ -35,7 +35,7 @@ public class info_flight extends AppCompatActivity {
         BaseActivity.setupToolbar(this);
 
         //Background
-     bg = findViewById(R.id.background);
+        bg = findViewById(R.id.background);
 
         String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.background;
         Uri videoUri = Uri.parse(videoPath);
@@ -59,7 +59,6 @@ public class info_flight extends AppCompatActivity {
         String state = cursor.getString(4);
         String pax = cursor.getString(6);
 
-        Toast.makeText(this, date+"", Toast.LENGTH_SHORT).show();
 
         cursor.close();
         dbmanager_flight.close();
