@@ -15,6 +15,7 @@ import android.widget.VideoView;
 
 import com.example.groupassignment.dbmanagers.dbmanager_book_history;
 import com.example.groupassignment.dbmanagers.dbmanager_login_history;
+import com.example.groupassignment.dbmanagers.dbmanager_plan_history;
 import com.example.groupassignment.dbmanagers.dbmanager_user;
 
 public class payment_successful extends AppCompatActivity {
@@ -26,6 +27,7 @@ public class payment_successful extends AppCompatActivity {
 private VideoView bg;
     private int currentPosition;
     private com.example.groupassignment.dbmanagers.dbmanager_book_history dbmanager_book_history;
+    private com.example.groupassignment.dbmanagers.dbmanager_plan_history dbmanager_plan_history;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,6 +100,12 @@ private VideoView bg;
         dbmanager_book_history.open();
         dbmanager_book_history.insert(user_id, login_id, "", "");
         dbmanager_book_history.close();
+        main.updateVersion();
+
+        dbmanager_plan_history = new dbmanager_plan_history(this);
+        dbmanager_plan_history.open();
+        dbmanager_plan_history.insert(user_id, login_id, "", "");
+        dbmanager_plan_history.close();
         main.updateVersion();
 
         Intent intent = new Intent(payment_successful.this, main.class);
