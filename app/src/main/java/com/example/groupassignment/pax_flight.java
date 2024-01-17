@@ -49,28 +49,15 @@ public class pax_flight extends AppCompatActivity {
         });    }
 
     public void buy(View view) {
-        EditText ticket_amount = findViewById(R.id.ticket_amount);
+        EditText ticket_amount = findViewById(R.id.editTextNumber2);
         int amount = Integer.parseInt(ticket_amount.getText().toString());
-        EditText adult_amount = findViewById(R.id.ticket_amount);
+        /*
+        EditText adult_amount = findViewById(R.id.adult_amount);
         int adult = Integer.parseInt(adult_amount.getText().toString());
-        EditText kid_amount = findViewById(R.id.ticket_amount);
+        EditText kid_amount = findViewById(R.id.kid_amount);
         int kid = Integer.parseInt(kid_amount.getText().toString());
-/*
-        dbmanager_user = new dbmanager_user(this);
-        dbmanager_user.open();
-        Cursor cursor_user = dbmanager_user.fetchALL();
-        cursor_user.moveToLast();
-        int user_id=Integer.parseInt(cursor_user.getString(0));
-        cursor_user.close();
-        dbmanager_user.close();
-        main.updateVersion();
-/*
-        dbmanager_pax = new dbmanager_pax(this);
-        dbmanager_pax.open();
-        dbmanager_pax.insert(user_id, amount, adult, kid);
-        dbmanager_pax.close();
-        main.updateVersion();
 */
+
         dbmanager_flight = new dbmanager_flight(this);
         dbmanager_flight.open();
         Cursor cursor = dbmanager_flight.fetch();

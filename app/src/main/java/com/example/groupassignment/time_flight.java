@@ -48,16 +48,21 @@ public class time_flight extends AppCompatActivity {
     public void next(View view) {
         EditText time = findViewById(R.id.time);
 
-        dbmanager_flight = new dbmanager_flight(this);
-        dbmanager_flight.open();
-        Cursor cursor = dbmanager_flight.fetch();
-        cursor.moveToLast();
-        dbmanager_flight.update(Integer.parseInt(cursor.getString(0)), time.getText().toString(), null,null, null,-1, -1);
-        cursor.close();
-        dbmanager_flight.close();
-        main.updateVersion();
-        Intent intent = new Intent(this, pax_flight.class);
-        startActivity(intent);
+        if (checkTime(time.getText().toString())) {
+            dbmanager_flight = new dbmanager_flight(this);
+            dbmanager_flight.open();
+            Cursor cursor = dbmanager_flight.fetch();
+            cursor.moveToLast();
+            dbmanager_flight.update(Integer.parseInt(cursor.getString(0)), time.getText().toString(), null,null, null,-1, -1);
+            cursor.close();
+            dbmanager_flight.close();
+            main.updateVersion();
+            Intent intent = new Intent(this, pax_flight.class);
+            startActivity(intent);
+        }
+        else {
+            Toast.makeText(this, "Invalid time format", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public int getUserID(){
@@ -151,4 +156,27 @@ public class time_flight extends AppCompatActivity {
         bg.pause();
         super.onBackPressed();
     }
+    public boolean checkTime(String input) {
+        // hh:mm:ss
+        // 00:00:00 - 23:59:59
+        boolean valid = true;
+        int[] i = {0, 1, 3, 4, 6, 7};
+        for (int j = 0; j < 6; j++) {
+            if (input.length() == 8 && input.charAt(2) == ':' && input.charAt(5) == ':' && Character.isDigit(input.charAt(i[j]))) {
+                int hour = (input.charAt(0) - '0') * 10 + (input.charAt(1) - '0');
+                if (hour < 0 || hour > 23)
+                    valid = false;
+                int min = (input.charAt(3) - '0') * 10 + (input.charAt(4) - '0');
+                if (min < 0 || min > 59)
+                    valid = false;
+                int sec = (input.charAt(6) - '0') * 10 + (input.charAt(7) - '0');
+                if (sec < 0 || sec > 59)
+                    valid = false;
+            } else {
+                valid = false;
+            }
+        }
+        return valid;
+    }
+
 }
