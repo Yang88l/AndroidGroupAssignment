@@ -70,14 +70,12 @@ public class booking_summary extends AppCompatActivity {
         dbmanager_book_summary = new dbmanager_book_summary(this);
         dbmanager_book_summary.open();
         Cursor cursor_summary = dbmanager_book_summary.fetch(getUserID(), getLoginID());
-        Toast.makeText(this, cursor_summary.getString(1), Toast.LENGTH_SHORT).show();
         if (cursor_summary != null && cursor_summary.moveToFirst()) {
             do {
                 if (cursor_summary.getString(1).equals("hotel")){
                     dbmanager_accomodation_info = new dbmanager_accomodation_info(this);
                     dbmanager_accomodation_info.open();
                     Cursor cursor = dbmanager_accomodation_info.fetch(Integer.parseInt(cursor_summary.getString(2)));
-                    Toast.makeText(this, cursor.getString(1), Toast.LENGTH_SHORT).show();
                     displayText1.append(cursor.getString(1));
                     displayText2.append(": RM"+cursor.getString(2));
                     price+=Integer.parseInt(cursor.getString(2));
@@ -133,7 +131,6 @@ public class booking_summary extends AppCompatActivity {
                     else {
                         displayText2.append(": RM"+(seat*5)+" ("+seat+" seats)");
                         price+=(seat*5);
-                        Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
                     }
                 }
                 else if (cursor_summary.getString(1).equals("flight")){
@@ -193,7 +190,6 @@ public class booking_summary extends AppCompatActivity {
         cursor.close();
         dbmanager_login_history.close();
         main.updateVersion();
-        Toast.makeText(this, status, Toast.LENGTH_SHORT).show();
         if (status.equals("logged out")) {
             Toast.makeText(this, "You are not logged in", Toast.LENGTH_SHORT).show();
         }
@@ -216,7 +212,6 @@ public class booking_summary extends AppCompatActivity {
         cursor.close();
         dbmanager_login_history.close();
         main.updateVersion();
-        Toast.makeText(this, status, Toast.LENGTH_SHORT).show();
         if (status.equals("logged out")) {
             Intent intent = new Intent(this, log_in.class);
             startActivity(intent);

@@ -79,37 +79,36 @@ public class seat_bus extends AppCompatActivity {
         else {
             if (activity.equals("book"))
                 dbmanager_bus.update(getBusID(), (Integer.parseInt(cursor_bus.getString(1)) - seat));
+            dbmanager_choose_bus = new dbmanager_choose_bus(this);
+            dbmanager_choose_bus.open();
+            Cursor cursor_choose = dbmanager_choose_bus.fetch();
+            cursor_choose.moveToLast();
+            int _id=Integer.parseInt(cursor_choose.getString(0));
+            dbmanager_choose_bus.update(_id, -1, seat);
+            dbmanager_choose_bus.close();
+            main.updateVersion();
+
+            if (activity.equals("plan")) {
+                dbmanager_plan_summary = new dbmanager_plan_summary(this);
+                dbmanager_plan_summary.open();
+                dbmanager_plan_summary.insert("bus", _id, getUserID(), getLoginID());
+                dbmanager_plan_summary.close();
+                main.updateVersion();
+                Intent intent = new Intent(this,planning_summary.class);
+                startActivity(intent);
+            }
+            else if (activity.equals("book")) {
+                dbmanager_book_summary = new dbmanager_book_summary(this);
+                dbmanager_book_summary.open();
+                dbmanager_book_summary.insert("bus", _id, getUserID(), getLoginID());
+                dbmanager_book_summary.close();
+                main.updateVersion();
+                Intent intent = new Intent(this,booking_summary.class);
+                startActivity(intent);
+            }
         }
         dbmanager_bus.close();
         main.updateVersion();
-
-        dbmanager_choose_bus = new dbmanager_choose_bus(this);
-        dbmanager_choose_bus.open();
-        Cursor cursor_choose = dbmanager_choose_bus.fetch();
-        cursor_choose.moveToLast();
-        int _id=Integer.parseInt(cursor_choose.getString(0));
-        dbmanager_choose_bus.update(_id, -1, seat);
-        dbmanager_choose_bus.close();
-        main.updateVersion();
-
-        if (activity.equals("plan")) {
-            dbmanager_plan_summary = new dbmanager_plan_summary(this);
-            dbmanager_plan_summary.open();
-            dbmanager_plan_summary.insert("bus", _id, getUserID(), getLoginID());
-            dbmanager_plan_summary.close();
-            main.updateVersion();
-            Intent intent = new Intent(this,planning_summary.class);
-            startActivity(intent);
-        }
-        else if (activity.equals("book")) {
-            dbmanager_book_summary = new dbmanager_book_summary(this);
-            dbmanager_book_summary.open();
-            dbmanager_book_summary.insert("bus", _id, getUserID(), getLoginID());
-            dbmanager_book_summary.close();
-            main.updateVersion();
-            Intent intent = new Intent(this,booking_summary.class);
-            startActivity(intent);
-        }
     }
 
 
@@ -151,7 +150,6 @@ public class seat_bus extends AppCompatActivity {
         cursor.close();
         dbmanager_login_history.close();
         main.updateVersion();
-        Toast.makeText(this, status, Toast.LENGTH_SHORT).show();
         if (status.equals("logged out")) {
             Toast.makeText(this, "You are not logged in", Toast.LENGTH_SHORT).show();
         }
@@ -174,7 +172,6 @@ public class seat_bus extends AppCompatActivity {
         cursor.close();
         dbmanager_login_history.close();
         main.updateVersion();
-        Toast.makeText(this, status, Toast.LENGTH_SHORT).show();
         if (status.equals("logged out")) {
             Intent intent = new Intent(this, log_in.class);
             startActivity(intent);

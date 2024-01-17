@@ -202,7 +202,6 @@ public class lrt_ampang extends AppCompatActivity {
         cursor.close();
         dbmanager_login_history.close();
         main.updateVersion();
-        Toast.makeText(this, status, Toast.LENGTH_SHORT).show();
         if (status.equals("logged out")) {
             Toast.makeText(this, "You are not logged in", Toast.LENGTH_SHORT).show();
         }
