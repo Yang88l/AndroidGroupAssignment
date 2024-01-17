@@ -123,7 +123,7 @@
         android:id="@+id/imageView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="22dp"
+        android:layout_marginStart="19dp"
         android:layout_marginBottom="10dp"
         android:onClick="home"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -134,7 +134,7 @@
         android:id="@+id/imageView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="22dp"
+        android:layout_marginStart="19dp"
         android:layout_marginBottom="10dp"
         android:onClick="heart"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -145,7 +145,7 @@
         android:id="@+id/imageView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="22dp"
+        android:layout_marginEnd="19dp"
         android:layout_marginBottom="10dp"
         android:onClick="history"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -156,12 +156,11 @@
         android:id="@+id/imageView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="22dp"
         android:layout_marginBottom="10dp"
         android:onClick="profile"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/profile" />
+        app:srcCompat="@drawable/profile"
+        tools:layout_editor_absoluteX="299dp" />
 
     <ImageView
         android:id="@+id/line2"
