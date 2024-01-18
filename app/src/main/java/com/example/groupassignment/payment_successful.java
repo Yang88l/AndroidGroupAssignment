@@ -21,14 +21,13 @@ import com.example.groupassignment.dbmanagers.dbmanager_user;
 public class payment_successful extends AppCompatActivity {
     private TextView price_text;
     private Intent intent;
-    private String price;
+    private double price;
     private payment payment;
     private com.example.groupassignment.dbmanagers.dbmanager_login_history dbmanager_login_history;
 private VideoView bg;
     private int currentPosition;
     private com.example.groupassignment.dbmanagers.dbmanager_book_history dbmanager_book_history;
     private com.example.groupassignment.dbmanagers.dbmanager_plan_history dbmanager_plan_history;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,7 +66,7 @@ private VideoView bg;
         dbmanager_book_history = new dbmanager_book_history(this);
         dbmanager_book_history.open();
         Cursor cursor2 = dbmanager_book_history.fetchWithLoginID(user_id, login_id);
-        Double price = cursor2.getDouble(4);
+        price = cursor2.getDouble(4);
         cursor2.close();
         dbmanager_book_history.close();
         main.updateVersion();
@@ -77,6 +76,7 @@ private VideoView bg;
 
         //SET TEXT
         price_text.setText(String.format("RM%.2f", price));
+
     }
 
     //FINISH BUTTON
@@ -108,7 +108,8 @@ private VideoView bg;
         dbmanager_plan_history.close();
         main.updateVersion();
 
-        Intent intent = new Intent(payment_successful.this, main.class);
+        Intent intent = new Intent(payment_successful.this, QRcode.class);
+        intent.putExtra("price", price);
         startActivity(intent);
     }
     public void notification(View view) { startActivity(new Intent(this, notification.class));}

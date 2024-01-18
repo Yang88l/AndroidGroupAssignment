@@ -31,6 +31,7 @@ public class book_history extends AppCompatActivity {
 
         bg = findViewById(R.id.background);
 
+
         String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.background;
         Uri videoUri = Uri.parse(videoPath);
         bg.setVideoURI(videoUri);
@@ -51,6 +52,7 @@ public class book_history extends AppCompatActivity {
         dbmanager_book_history = new dbmanager_book_history(this);
         dbmanager_book_history.open();
         Cursor cursor = dbmanager_book_history.fetch(getUserID());
+
 
         if (cursor != null && cursor.moveToFirst()) {
             do {
@@ -182,4 +184,5 @@ public class book_history extends AppCompatActivity {
 
     public void plan_history(View view) {startActivity(new Intent(this, plan_history.class));
     }
+
 }

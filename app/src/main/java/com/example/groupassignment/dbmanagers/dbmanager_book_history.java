@@ -56,6 +56,8 @@ public class dbmanager_book_history {
         return cursor;
     }
 
+
+
     public Cursor fetchWithLoginID(int user_id, int login_id) {
         String[] columns = new String[] {
                 dbhelper_book_history.USER_ID,
