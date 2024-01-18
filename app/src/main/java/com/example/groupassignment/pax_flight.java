@@ -21,7 +21,7 @@ public class pax_flight extends AppCompatActivity {
     private com.example.groupassignment.dbmanagers.dbmanager_pax dbmanager_pax;
     private com.example.groupassignment.dbmanagers.dbmanager_user dbmanager_user;
     private com.example.groupassignment.dbmanagers.dbmanager_login_history dbmanager_login_history;
- private VideoView bg;
+    private VideoView bg;
     private int currentPosition;
     private com.example.groupassignment.dbmanagers.dbmanager_flight dbmanager_flight;
 
@@ -34,7 +34,7 @@ public class pax_flight extends AppCompatActivity {
         BaseActivity.setupToolbar(this);
 
         //Background
-  bg = findViewById(R.id.background);
+        bg = findViewById(R.id.background);
 
         String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.background;
         Uri videoUri = Uri.parse(videoPath);
@@ -50,31 +50,34 @@ public class pax_flight extends AppCompatActivity {
 
     public void buy(View view) {
         EditText ticket_amount = findViewById(R.id.editTextNumber2);
-        int amount = Integer.parseInt(ticket_amount.getText().toString());
-
         EditText adult_amount = findViewById(R.id.adult_amount);
-        int adult = Integer.parseInt(adult_amount.getText().toString());
         EditText kid_amount = findViewById(R.id.kid_amount);
-        int kid = Integer.parseInt(kid_amount.getText().toString());
 
-
-        int sum = adult+kid;;
-
-        if(sum == amount) {
-            dbmanager_flight = new dbmanager_flight(this);
-            dbmanager_flight.open();
-            Cursor cursor = dbmanager_flight.fetch();
-            cursor.moveToLast();
-            dbmanager_flight.update(Integer.parseInt(cursor.getString(0)), null, null, null, null, -1, amount);
-            cursor.close();
-            dbmanager_flight.close();
-            main.updateVersion();
-
-            Intent intent = new Intent(pax_flight.this, info_flight.class);
-            startActivity(intent);
+        if (ticket_amount.getText().toString().equals("")||adult_amount.getText().toString().equals("")||kid_amount.getText().toString().equals("")) {
+            Toast.makeText(this, "Please fill in all the blanks", Toast.LENGTH_SHORT).show();
         }
         else {
-            Toast.makeText(this, "The sum of adult and kid tickets (" + sum + ") doesn't match the total amount.", Toast.LENGTH_SHORT).show();
+            int amount = Integer.parseInt(ticket_amount.getText().toString());
+            int adult = Integer.parseInt(adult_amount.getText().toString());
+            int kid = Integer.parseInt(kid_amount.getText().toString());
+            int sum = adult+kid;
+
+            if(sum == amount) {
+                dbmanager_flight = new dbmanager_flight(this);
+                dbmanager_flight.open();
+                Cursor cursor = dbmanager_flight.fetch();
+                cursor.moveToLast();
+                dbmanager_flight.update(Integer.parseInt(cursor.getString(0)), null, null, null, null, -1, amount);
+                cursor.close();
+                dbmanager_flight.close();
+                main.updateVersion();
+
+                Intent intent = new Intent(pax_flight.this, info_flight.class);
+                startActivity(intent);
+            }
+            else {
+                Toast.makeText(this, "The sum of adult and kid tickets (" + sum + ") doesn't match the total amount.", Toast.LENGTH_SHORT).show();
+            }
         }
     }
     public void notification(View view) { startActivity(new Intent(this, notification.class));}
